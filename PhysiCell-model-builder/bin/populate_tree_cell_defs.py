@@ -4,17 +4,26 @@ Parse the .xml config file and create the appropriate data structures that conta
 
 Authors:
 Randy Heiland (heiland@iu.edu)
-Adam Morrow, Grant Waldrow, Drew Willis, Kim Crevecoeur
 Dr. Paul Macklin (macklinp@iu.edu)
+and rf. Credits.md
 
 """
 
 import sys
+import logging
 from PyQt5.QtWidgets import QTreeWidgetItem
 from PyQt5 import QtCore
 
+
+def invertf2s(sval):  # takes a numeric string, converts to float, returns string with num_dec decimal places.
+    num_dec = 5
+    if float(sval) < 1.e-6:   # e.g., necrosis duration=0 for index=0 (in biorobots, etc)
+        return('9.e9')
+    else:
+        return f'{1.0/float(sval):{num_dec}f}' # invert
+
 def validate_cell_defs(cell_defs_elm, skip_validate):
-    print("\n\n=======================  validate_cell_defs(): ======================= ")
+    logging.debug(f'\n\n=======================  validate_cell_defs(): ======================= ')
 
     # pheno_names = ['cycle','death','volume','mechanics','motility','secretion','cell_interactions','cell_transformations']
 
@@ -22,17 +31,17 @@ def validate_cell_defs(cell_defs_elm, skip_validate):
     pheno_names = ['cycle','death','volume','mechanics','motility','secretion']
     valid = True
     for cd in cell_defs_elm.findall('cell_definition'):  # for each cell def
-        print("Checking ",cd.attrib['name'])
+        logging.debug(f'Checking {cd.attrib["name"]}')
         for pn in pheno_names:
             phenotype = "phenotype//" + pn
             if cd.find(phenotype) == None:
                 valid = False
-                print("Validation Error: Missing ",phenotype)
+                logging.debug(f'Validation Error: Missing {phenotype}')
     if not valid:
         if skip_validate:
-            print("Continuing in spite of these missing elements.")
+            logging.debug(f'Continuing in spite of these missing elements.')
         else:
-            # print("\n A configuration file (.xml) for the PMB needs to explicitly \nprovide all required parameters for each <cell_definition>.\nIt cannot use the legacy hierarchical format where only\n partial parameters are provided and the rest are inherited from a parent.")
+            # logging.debug(f'\n A configuration file (.xml) for the PMB needs to explicitly \nprovide all required parameters for each <cell_definition>.\nIt cannot use the legacy hierarchical format where only\n partial parameters are provided and the rest are inherited from a parent.")
             warn_user = """
             A configuration file (.xml) for the PMB needs to explicitly 
             provide all required parameters for each <cell_definition>.
@@ -44,15 +53,14 @@ def validate_cell_defs(cell_defs_elm, skip_validate):
             """
             print(warn_user)
             sys.exit(-1)
-    print("=======================  end validate_cell_defs(): =======================\n\n")
+    logging.debug(f'=======================  end validate_cell_defs(): =======================\n\n')
 
 
 def populate_tree_cell_defs(cell_def_tab, skip_validate):
-    print("=======================  populate_tree_cell_defs(): ======================= ")
-    print("    cell_def_tab.param_d = ",cell_def_tab.param_d)
-    cell_def_tab.master_custom_varname.clear()
-
-    debug_print = True
+    logging.debug(f'=======================  populate_tree_cell_defs(): ======================= ')
+    logging.debug(f'    cell_def_tab.param_d = {cell_def_tab.param_d}')
+    # cell_def_tab.master_custom_varname.clear()
+    cell_def_tab.master_custom_var_d.clear()
 
     uep = cell_def_tab.xml_root.find(".//cell_definitions")
     validate_cell_defs(uep, skip_validate)
@@ -63,9 +71,9 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
         idx = 0
         for cell_def in uep:
             # <cell_definition name="default" ID="0">
-            print("----- cell_def.tag= ", cell_def.tag)
+            logging.debug(f'----- cell_def.tag= {cell_def.tag}')
             if cell_def.tag == "cell_rules":
-                print("-------- found cell_rules child; break out on ",cell_def)
+                logging.debug(f'-------- found cell_rules child; break out on {cell_def}')
                 break
             cell_def_tab.new_cell_def_count += 1
             # print(cell_def.attrib['name'])
@@ -77,7 +85,24 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
                 cell_def_tab.fusion_rate_celltype = cell_def_0th 
                 cell_def_tab.transformation_rate_celltype = cell_def_0th 
 
+            # create master dict for this cell_def
             cell_def_tab.param_d[cell_def_name] = {}
+
+            # create additional sub-dicts
+            cell_def_tab.param_d[cell_def_name]["secretion"] = {}
+            cell_def_tab.param_d[cell_def_name]['chemotactic_sensitivity'] = {}
+            cell_def_tab.param_d[cell_def_name]["cell_adhesion_affinity"] = {}
+            cell_def_tab.param_d[cell_def_name]['transformation_rate'] = {}
+            cell_def_tab.param_d[cell_def_name]["live_phagocytosis_rate"] = {}
+            cell_def_tab.param_d[cell_def_name]["attack_rate"] = {}
+            cell_def_tab.param_d[cell_def_name]["fusion_rate"] = {}
+
+            # fill this cell_def with default params (rf. C++ values)
+            cell_def_tab.init_default_phenotype_params(cell_def_name)
+            # print("populate_(): ",cell_def_tab.param_d)
+            # print("------   after populate ----------\n\n")
+
+
             cell_def_tab.param_d[cell_def_name]['ID'] = cell_def.attrib['ID']  # e.g., "0"
             # cell_def_tab.param_d[cell_def_name]["name"] = cell_def_name
             cell_def_tab.current_cell_def = cell_def_name  # do this for the callback methods?
@@ -92,14 +117,13 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
 
             # Now fill the param dict for each substrate and the Qt widget values for the 0th
 
-            if debug_print:
-                print("\n===== populate_tree():  cycle")
+            logging.debug(f'\n===== populate_tree():  cycle')
 
             cycle_path = ".//cell_definition[" + str(idx) + "]//phenotype//cycle"
             cycle_code = int(uep.find(cycle_path).attrib['code'])
-            if debug_print:
-                print(" >> cycle_path=",cycle_path)
-                print("   cycle code=",cycle_code)
+            logging.debug(f' >> cycle_path= {cycle_path}')
+            logging.debug(f'   cycle code= {cycle_code}')
+                
 
             # NOTE: we don't seem to use 3 or 4
             # static const int advanced_Ki67_cycle_model= 0;
@@ -156,65 +180,20 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
 
 
             #  transition rates: set default values for all params
+            #rwh - yipeee, don't need now
             default_sval = '0.0'
-            cell_def_tab.param_d[cell_def_name]['cycle_live_trate00'] = default_sval
-
-            cell_def_tab.param_d[cell_def_name]['cycle_Ki67_trate01'] = default_sval
-            cell_def_tab.param_d[cell_def_name]['cycle_Ki67_trate10'] = default_sval
-
-            cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_trate01'] = default_sval
-            cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_trate12'] = default_sval
-            cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_trate20'] = default_sval
-
-            cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_trate01'] = default_sval
-            cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_trate12'] = default_sval
-            cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_trate20'] = default_sval
-
-            cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_trate01'] = default_sval
-            cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_trate12'] = default_sval
-            cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_trate23'] = default_sval
-            cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_trate30'] = default_sval
-
-            cell_def_tab.param_d[cell_def_name]['cycle_quiescent_trate01'] = default_sval
-            cell_def_tab.param_d[cell_def_name]['cycle_quiescent_trate10'] = default_sval
-
-
-            #  transition rates: set default values for all "fixed_duration" checkboxes
-            default_bval = False
-            cell_def_tab.param_d[cell_def_name]['cycle_live_trate00_fixed'] = default_bval
-
-            cell_def_tab.param_d[cell_def_name]['cycle_Ki67_trate01_fixed'] = default_bval
-            cell_def_tab.param_d[cell_def_name]['cycle_Ki67_trate10_fixed'] = default_bval
-
-            cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_trate01_fixed'] = default_bval
-            cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_trate12_fixed'] = default_bval
-            cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_trate20_fixed'] = default_bval
-
-            cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_trate01_fixed'] = default_bval
-            cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_trate12_fixed'] = default_bval
-            cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_trate20_fixed'] = default_bval
-
-            cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_trate01_fixed'] = default_bval
-            cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_trate12_fixed'] = default_bval
-            cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_trate23_fixed'] = default_bval
-            cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_trate30_fixed'] = default_bval
-
-            cell_def_tab.param_d[cell_def_name]['cycle_quiescent_trate01_fixed'] = default_bval
-            cell_def_tab.param_d[cell_def_name]['cycle_quiescent_trate10_fixed'] = default_bval
-
 
             old_cycle_transition_path = cycle_path + "//transition_rates"
             pt_uep = uep.find(old_cycle_transition_path)
             if pt_uep:
-                print("\n\n--------------------- NOTE -----------------------------")
-                print("populate_tree_cell_defs():\nFound deprecated cycle 'transition_rates'")
-                print("Update to use 'phase_transition_rates'\n\n")
-                print("-------------------------------------------------------\n\n")
+                logging.debug(f'\n\n--------------------- NOTE -----------------------------')
+                logging.debug(f'populate_tree_cell_defs():\nFound deprecated cycle transition_rates')
+                logging.debug(f'Update to use phase_transition_rates \n\n')
+                logging.debug(f'-------------------------------------------------------\n\n')
                 # sys.exit(1)
             else:
                 phase_transition_path = cycle_path + "//phase_transition_rates"
-                if debug_print:
-                    print(' >> phase_transition_path ')
+                logging.debug(f' >> phase_transition_path ')
                 pt_uep = uep.find(phase_transition_path)
             if pt_uep:
                 cell_def_tab.cycle_rb1.setChecked(True)
@@ -223,8 +202,7 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
                 cell_def_tab.customize_cycle_choices()
 
                 for rate in pt_uep: 
-                    if debug_print:
-                        print(rate)
+                    logging.debug(f'{rate}')
                     # print("start_index=",rate.attrib["start_index"])
                     # We only use cycle code=5 or 6 in ALL sample projs?
 
@@ -238,83 +216,114 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
                     sval = rate.text
                     if (rate.attrib['start_index'] == "0"): 
                         if (rate.attrib['end_index'] == "0"): #  Must be 'live'
-                            if debug_print:
-                                print('--  cycle_live_trate00',  sval)
-                            cell_def_tab.param_d[cell_def_name]['cycle_live_trate00'] = rate.text
+                            logging.debug(f'--  cycle_live_trate00 {sval}')
+                            cell_def_tab.param_d[cell_def_name]['cycle_live_trate00'] = sval
+                            cell_def_tab.param_d[cell_def_name]['cycle_live_duration00'] = invertf2s(sval) # invert
                             if (rate.attrib['fixed_duration'].lower() == "true"): 
                                 cell_def_tab.param_d[cell_def_name]['cycle_live_trate00_fixed'] = True
+                                cell_def_tab.param_d[cell_def_name]['cycle_live_duration00_fixed'] = True
                         elif (rate.attrib['end_index'] == "1"): 
                             if cycle_code == 0: #'advanced Ki67'
                                 cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_trate01'] = sval
+                                cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_duration01'] = invertf2s(sval) # invert
                                 if (rate.attrib['fixed_duration'].lower() == "true"): 
                                     cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_trate01_fixed'] = True
+                                    cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_duration01_fixed'] = True
                             elif cycle_code == 1: # 'basic Ki67'
                                 cell_def_tab.param_d[cell_def_name]['cycle_Ki67_trate01'] = sval
+                                cell_def_tab.param_d[cell_def_name]['cycle_Ki67_duration01'] = invertf2s(sval) # invert
                                 if (rate.attrib['fixed_duration'].lower() == "true"): 
                                     cell_def_tab.param_d[cell_def_name]['cycle_Ki67_trate01_fixed'] = True
+                                    cell_def_tab.param_d[cell_def_name]['cycle_Ki67_duration01_fixed'] = True
                             elif cycle_code == 2: # 'flow cytometry'
                                 cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_trate01'] = sval
+                                cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_duration01'] = invertf2s(sval) # invert
                                 if (rate.attrib['fixed_duration'].lower() == "true"): 
                                     cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_trate01_fixed'] = True
+                                    cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_duration01_fixed'] = True
                             elif cycle_code == 6: # 'flow cytometry separated'
                                 cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_trate01'] = sval
+                                cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_duration01'] = invertf2s(sval) # invert
                                 if (rate.attrib['fixed_duration'].lower() == "true"): 
                                     cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_trate01_fixed'] = True
+                                    cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_duration01_fixed'] = True
                             elif cycle_code == 7: # 'cycling quiescent'
                                 cell_def_tab.param_d[cell_def_name]['cycle_quiescent_trate01'] = sval
+                                cell_def_tab.param_d[cell_def_name]['cycle_quiescent_duration01'] = invertf2s(sval) # invert
                                 if (rate.attrib['fixed_duration'].lower() == "true"): 
                                     cell_def_tab.param_d[cell_def_name]['cycle_quiescent_trate01_fixed'] = True
+                                    cell_def_tab.param_d[cell_def_name]['cycle_quiescent_duration01_fixed'] = True
 
                     elif (rate.attrib['start_index'] == "1"):
                         if (rate.attrib['end_index'] == "0"):
                             if cycle_code == 1: # 'basic Ki67'
                                 cell_def_tab.param_d[cell_def_name]['cycle_Ki67_trate10'] = sval
+                                cell_def_tab.param_d[cell_def_name]['cycle_Ki67_duration10'] = invertf2s(sval) # invert
                                 if (rate.attrib['fixed_duration'].lower() == "true"): 
                                     cell_def_tab.param_d[cell_def_name]['cycle_Ki67_trate10_fixed'] = True
+                                    cell_def_tab.param_d[cell_def_name]['cycle_Ki67_duration10_fixed'] = True
                             elif cycle_code == 7: # 'cycling quiescent'
                                 cell_def_tab.param_d[cell_def_name]['cycle_quiescent_trate10'] = sval
+                                cell_def_tab.param_d[cell_def_name]['cycle_quiescent_duration10'] = invertf2s(sval) # invert
                                 if (rate.attrib['fixed_duration'].lower() == "true"): 
                                     cell_def_tab.param_d[cell_def_name]['cycle_quiescent_trate10_fixed'] = True
+                                    cell_def_tab.param_d[cell_def_name]['cycle_quiescent_duration10_fixed'] = True
                         elif (rate.attrib['end_index'] == "2"):
                             if cycle_code == 0: #'advanced Ki67'
                                 cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_trate12'] = sval
+                                cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_duration12'] = invertf2s(sval) # invert
                                 if (rate.attrib['fixed_duration'].lower() == "true"): 
                                     cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_trate12_fixed'] = True
+                                    cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_duration12_fixed'] = True
                             elif cycle_code == 2: # 'flow cytometry'
                                 cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_trate12'] = sval
+                                cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_duration12'] = invertf2s(sval) # invert
                                 if (rate.attrib['fixed_duration'].lower() == "true"): 
                                     cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_trate12_fixed'] = True
+                                    cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_duration12_fixed'] = True
                             elif cycle_code == 6: # 'flow cytometry separated'
                                 cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_trate12'] = sval
+                                cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_duration12'] = invertf2s(sval) # invert
                                 if (rate.attrib['fixed_duration'].lower() == "true"): 
                                     cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_trate12_fixed'] = True
+                                    cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_duration12_fixed'] = True
                             elif cycle_code == 7: # 'cycling quiescent'
                                 cell_def_tab.param_d[cell_def_name]['cycle_quiescent_trate12'] = sval
+                                cell_def_tab.param_d[cell_def_name]['cycle_quiescent_duration12'] = invertf2s(sval) # invert
                                 if (rate.attrib['fixed_duration'].lower() == "true"): 
                                     cell_def_tab.param_d[cell_def_name]['cycle_quiescent_trate12_fixed'] = True
+                                    cell_def_tab.param_d[cell_def_name]['cycle_quiescent_duration12_fixed'] = True
 
                     elif (rate.attrib['start_index'] == "2"):
                         if (rate.attrib['end_index'] == "0"):
                             if cycle_code == 0: #'advanced Ki67'
                                 cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_trate20'] = sval
+                                cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_duration20'] = invertf2s(sval) # invert
                                 if (rate.attrib['fixed_duration'].lower() == "true"): 
                                     cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_trate20_fixed'] = True
+                                    cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_duration20_fixed'] = True
                             elif cycle_code == 2: # 'flow cytometry'
                                 cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_trate20'] = sval
+                                cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_duration20'] = invertf2s(sval) # invert
                                 if (rate.attrib['fixed_duration'].lower() == "true"): 
                                     cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_trate20_fixed'] = True
+                                    cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_duration20_fixed'] = True
 
                         elif (rate.attrib['end_index'] == "3"):
                             # if cycle_code == 6: # 'flow cytometry separated'
                             cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_trate23'] = sval
+                            cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_duration23'] = invertf2s(sval) # invert
                             if (rate.attrib['fixed_duration'].lower() == "true"): 
                                 cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_trate23_fixed'] = True
+                                cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_duration23_fixed'] = True
 
                     elif (rate.attrib['start_index'] == "3") and (rate.attrib['end_index'] == "0"):
                         # cell_def_tab.cycle_flowcytosep_trate30.setText(rate.text)
                         cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_trate30'] = rate.text
+                        cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_duration30'] = invertf2s(sval) # invert
                         if (rate.attrib['fixed_duration'].lower() == "true"): 
                             cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_trate30_fixed'] = True
+                            cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_duration30_fixed'] = True
 
 
             # template.xml:
@@ -327,59 +336,14 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
             #     </phase_durations>
             #
             # cell_def_tab.phase0_duration = QLineEdit()
+            #rwh - yipeee, don't need now?
             default_sval = '0.0'
 
-            cell_def_tab.param_d[cell_def_name]['cycle_live_duration00'] = default_sval
-
-            cell_def_tab.param_d[cell_def_name]['cycle_Ki67_duration01'] = default_sval
-            cell_def_tab.param_d[cell_def_name]['cycle_Ki67_duration10'] = default_sval
-
-            cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_duration01'] = default_sval
-            cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_duration12'] = default_sval
-            cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_duration20'] = default_sval
-
-            cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_duration01'] = default_sval
-            cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_duration12'] = default_sval
-            cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_duration20'] = default_sval
-
-            cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_duration00'] = default_sval
-            cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_duration01'] = default_sval
-            cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_duration12'] = default_sval
-            cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_duration23'] = default_sval
-            cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_duration30'] = default_sval
-
-            cell_def_tab.param_d[cell_def_name]['cycle_quiescent_duration01'] = default_sval
-            cell_def_tab.param_d[cell_def_name]['cycle_quiescent_duration10'] = default_sval
-
-            #  duration: set default values for all "fixed_duration" checkboxes
-            default_bval = False
-            cell_def_tab.param_d[cell_def_name]['cycle_live_duration00_fixed'] = default_bval
-
-            cell_def_tab.param_d[cell_def_name]['cycle_Ki67_duration01_fixed'] = default_bval
-            cell_def_tab.param_d[cell_def_name]['cycle_Ki67_duration10_fixed'] = default_bval
-
-            cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_duration01_fixed'] = default_bval
-            cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_duration12_fixed'] = default_bval
-            cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_duration20_fixed'] = default_bval
-
-            cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_duration01_fixed'] = default_bval
-            cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_duration12_fixed'] = default_bval
-            cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_duration20_fixed'] = default_bval
-
-            cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_duration01_fixed'] = default_bval
-            cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_duration12_fixed'] = default_bval
-            cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_duration23_fixed'] = default_bval
-            cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_duration30_fixed'] = default_bval
-
-            cell_def_tab.param_d[cell_def_name]['cycle_quiescent_duration01_fixed'] = default_bval
-            cell_def_tab.param_d[cell_def_name]['cycle_quiescent_duration10_fixed'] = default_bval
-
+            # Hmm, todo? If the rates were previously defined, then defining durations should raise a warning or error.
             phase_durations_path = cycle_path + "//phase_durations"
-            if debug_print:
-                print(' >> phase_durations_path =',phase_durations_path )
+            logging.debug(f' >> phase_durations_path ={phase_durations_path}')
             pd_uep = uep.find(phase_durations_path)
-            if debug_print:
-                print(' >> pd_uep =',pd_uep )
+            logging.debug(f' >> pd_uep ={pd_uep}')
             if pd_uep:
                 cell_def_tab.cycle_rb2.setChecked(True)
                 cell_def_tab.param_d[cell_def_name]['cycle_duration_flag'] = True
@@ -394,79 +358,111 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
             # elif cycle_code == 7: # 'cycling quiescent'
 
                 for pd in pd_uep:   # phase_duration
-                    if debug_print:
-                        print(pd)
+                    logging.debug(f'phase_duration= {pd}')
                     # print("index=",pd.attrib["index"])
                     sval = pd.text
-                    print("------------ sval for phase duration= ",sval)
+                    logging.debug(f'------------ sval for phase duration= {sval}')
 
                     if (pd.attrib['index'] == "0"): 
                         if cycle_code == 0: #'advanced Ki67'
                             cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_duration01'] = sval
+                            cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_trate01'] = invertf2s(sval) # invert
                             if (pd.attrib['fixed_duration'].lower() == "true"): 
                                 cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_duration01_fixed'] = True
+                                cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_trate01_fixed'] = True
                         elif cycle_code == 1: # 'basic Ki67'
                             cell_def_tab.param_d[cell_def_name]['cycle_Ki67_duration01'] = sval
+                            cell_def_tab.param_d[cell_def_name]['cycle_Ki67_trate01'] = invertf2s(sval) # invert
                             if (pd.attrib['fixed_duration'].lower() == "true"): 
                                 cell_def_tab.param_d[cell_def_name]['cycle_Ki67_duration01_fixed'] = True
+                                cell_def_tab.param_d[cell_def_name]['cycle_Ki67_trate01_fixed'] = True
                         elif cycle_code == 2: # 'flow cytometry'
                             cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_duration01'] = sval
+                            cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_trate01'] = invertf2s(sval) # invert
                             if (pd.attrib['fixed_duration'].lower() == "true"): 
                                 cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_duration01_fixed'] = True
+                                cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_trate01_fixed'] = True
                         elif cycle_code == 5: # 'live'
-                            print("------------ for live: sval for phase duration= ",sval)
+                            logging.debug(f'------------ for live: sval for phase duration= {sval}')
                             cell_def_tab.param_d[cell_def_name]['cycle_live_duration00'] = sval
+                            cell_def_tab.param_d[cell_def_name]['cycle_live_trate00'] = invertf2s(sval) # invert
                             if (pd.attrib['fixed_duration'].lower() == "true"): 
                                 cell_def_tab.param_d[cell_def_name]['cycle_live_duration00_fixed'] = True
+                                cell_def_tab.param_d[cell_def_name]['cycle_live_trate00_fixed'] = True
                         elif cycle_code == 6: # 'flow cytometry separated'
                             cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_duration01'] = sval
+                            # cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_trate01'] = str(1.0/float(sval)) # invert
+                            # val3.setText(f'{fval:.{number_of_decimals}f}')
+                            # cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_trate01'] = f'{1.0/float(sval):{num_dec}f}' # invert
+                            cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_trate01'] = invertf2s(sval)
                             if (pd.attrib['fixed_duration'].lower() == "true"): 
                                 cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_duration01_fixed'] = True
+                                cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_trate01_fixed'] = True
                         elif cycle_code == 7: # 'cycling quiescent'
                             cell_def_tab.param_d[cell_def_name]['cycle_quiescent_duration01'] = sval
+                            cell_def_tab.param_d[cell_def_name]['cycle_quiescent_trate01'] = invertf2s(sval) # invert
                             if (pd.attrib['fixed_duration'].lower() == "true"): 
                                 cell_def_tab.param_d[cell_def_name]['cycle_quiescent_duration01_fixed'] = True
+                                cell_def_tab.param_d[cell_def_name]['cycle_quiescent_trate01_fixed'] = True
 
                     elif (pd.attrib['index'] == "1"):
                         if cycle_code == 0: #'advanced Ki67'
                             cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_duration12'] = sval
+                            cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_trate12'] = invertf2s(sval) # invert
                             if (pd.attrib['fixed_duration'].lower() == "true"): 
                                 cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_duration12_fixed'] = True
+                                cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_trate12_fixed'] = True
                         elif cycle_code == 1: #'basic Ki67'
                             cell_def_tab.param_d[cell_def_name]['cycle_Ki67_duration10'] = sval
+                            cell_def_tab.param_d[cell_def_name]['cycle_Ki67_trate10'] = invertf2s(sval) # invert
                             if (pd.attrib['fixed_duration'].lower() == "true"): 
                                 cell_def_tab.param_d[cell_def_name]['cycle_Ki67_duration10_fixed'] = True
+                                cell_def_tab.param_d[cell_def_name]['cycle_Ki67_trate10_fixed'] = True
                         elif cycle_code == 2: # 'flow cytometry'
                             cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_duration12'] = sval
+                            cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_trate12'] = invertf2s(sval) # invert
                             if (pd.attrib['fixed_duration'].lower() == "true"): 
                                 cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_duration12_fixed'] = True
+                                cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_trate12_fixed'] = True
                         elif cycle_code == 6: # 'flow cytometry separated'
                             cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_duration12'] = sval
+                            cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_trate12'] = invertf2s(sval) # invert
                             if (pd.attrib['fixed_duration'].lower() == "true"): 
                                 cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_duration12_fixed'] = True
+                                cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_trate12_fixed'] = True
                         elif cycle_code == 7: # 'cycling quiescent'
                             cell_def_tab.param_d[cell_def_name]['cycle_quiescent_duration10'] = sval
+                            cell_def_tab.param_d[cell_def_name]['cycle_quiescent_trate10'] = invertf2s(sval) # invert
                             if (pd.attrib['fixed_duration'].lower() == "true"): 
                                 cell_def_tab.param_d[cell_def_name]['cycle_quiescent_duration10_fixed'] = True
+                                cell_def_tab.param_d[cell_def_name]['cycle_quiescent_trate10_fixed'] = True
 
                     elif (pd.attrib['index'] == "2"):
                         if cycle_code == 0: #'advanced Ki67'
                             cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_duration20'] = sval
+                            cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_trate20'] = invertf2s(sval) # invert
                             if (pd.attrib['fixed_duration'].lower() == "true"): 
                                 cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_duration20_fixed'] = True
+                                cell_def_tab.param_d[cell_def_name]['cycle_advancedKi67_trate20_fixed'] = True
                         elif cycle_code == 2: # 'flow cytometry'
                             cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_duration20'] = sval
+                            cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_trate20'] = invertf2s(sval) # invert
                             if (pd.attrib['fixed_duration'].lower() == "true"): 
                                 cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_duration20_fixed'] = True
+                                cell_def_tab.param_d[cell_def_name]['cycle_flowcyto_trate20_fixed'] = True
                         elif cycle_code == 6: # 'flow cytometry separated'
                             cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_duration23'] = sval
+                            cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_trate23'] = invertf2s(sval) # invert
                             if (pd.attrib['fixed_duration'].lower() == "true"): 
                                 cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_duration23_fixed'] = True
+                                cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_trate23_fixed'] = True
 
                     elif (pd.attrib['index'] == "3"):
                         cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_duration30'] = sval
+                        cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_trate30'] = invertf2s(sval) # invert
                         if (pd.attrib['fixed_duration'].lower() == "true"): 
                             cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_duration30_fixed'] = True
+                            cell_def_tab.param_d[cell_def_name]['cycle_flowcytosep_trate30_fixed'] = True
 
 
             # rf. microenv:
@@ -480,8 +476,7 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
             # cell_def_tab.param_d[cell_def_name]['cycle_live_duration00'] = default_sval  # rwh - WHY?!
 
             # ---------  death 
-            if debug_print:
-                print("\n===== populate_tree():  death")
+            logging.debug(f'\n===== populate_tree():  death')
 
                     #------ using transition_rates
                     # <death> 
@@ -528,31 +523,33 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
 
             death_path = ".//cell_definition[" + str(idx) + "]//phenotype//death//"
 
-            cell_def_tab.param_d[cell_def_name]['apoptosis_duration_flag'] = False
-            cell_def_tab.param_d[cell_def_name]["apoptosis_phase0_duration"] = "0.0"
-            cell_def_tab.param_d[cell_def_name]["apoptosis_phase0_fixed"] = False
-            cell_def_tab.param_d[cell_def_name]["apoptosis_trate01"] = "0.0"
-            cell_def_tab.param_d[cell_def_name]["apoptosis_trate01_fixed"] = False
+            # rwh: init death params to default? - yipeee, don't need now?
+            # cell_def_tab.param_d[cell_def_name]['apoptosis_duration_flag'] = False
+            # cell_def_tab.param_d[cell_def_name]["apoptosis_phase0_duration"] = "0.0"
+            # cell_def_tab.param_d[cell_def_name]["apoptosis_phase0_fixed"] = False
+            # cell_def_tab.param_d[cell_def_name]["apoptosis_trate01"] = "0.0"
+            # cell_def_tab.param_d[cell_def_name]["apoptosis_trate01_fixed"] = False
 
-            cell_def_tab.param_d[cell_def_name]['necrosis_duration_flag'] = False
-            cell_def_tab.param_d[cell_def_name]["necrosis_phase0_duration"] = "0.0"
-            cell_def_tab.param_d[cell_def_name]["necrosis_phase0_fixed"] = False
-            cell_def_tab.param_d[cell_def_name]["necrosis_phase1_duration"] = "0.0"
-            cell_def_tab.param_d[cell_def_name]["necrosis_phase1_fixed"] = False
-            cell_def_tab.param_d[cell_def_name]["necrosis_trate01"] = "0.0"
-            cell_def_tab.param_d[cell_def_name]["necrosis_trate01_fixed"] = False
-            cell_def_tab.param_d[cell_def_name]["necrosis_trate12"] = "0.0"
-            cell_def_tab.param_d[cell_def_name]["necrosis_trate12_fixed"] = False
+            # cell_def_tab.param_d[cell_def_name]['necrosis_duration_flag'] = False
+            # cell_def_tab.param_d[cell_def_name]["necrosis_phase0_duration"] = "0.0"
+            # cell_def_tab.param_d[cell_def_name]["necrosis_phase0_fixed"] = False
+            # cell_def_tab.param_d[cell_def_name]["necrosis_phase1_duration"] = "0.0"
+            # cell_def_tab.param_d[cell_def_name]["necrosis_phase1_fixed"] = False
+            # cell_def_tab.param_d[cell_def_name]["necrosis_trate01"] = "0.0"
+            # cell_def_tab.param_d[cell_def_name]["necrosis_trate01_fixed"] = False
+            # cell_def_tab.param_d[cell_def_name]["necrosis_trate12"] = "0.0"
+            # cell_def_tab.param_d[cell_def_name]["necrosis_trate12_fixed"] = False
 
             # uep = cell_def_tab.xml_root.find('.//microenvironment_setup')  # find unique entry point
             death_uep = uep.find(".//cell_definition[" + str(idx) + "]//phenotype//death")
-            if debug_print:
-                print('death_uep=',death_uep)
+            logging.debug(f'death_uep={death_uep}')
 
             for death_model in death_uep.findall('model'):
+
+                #-----------------------------------
+                # apoptosis only has 1 rate | duration (necrosis has 2) -------------------------
                 if "apoptosis" in death_model.attrib["name"].lower():
-                    if debug_print:
-                        print("-------- parsing apoptosis!")
+                    logging.debug(f'-------- parsing apoptosis!')
                     cell_def_tab.param_d[cell_def_name]["apoptosis_death_rate"] = death_model.find('death_rate').text
 
                     # 	<model code="100" name="apoptosis"> 
@@ -564,43 +561,51 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
                     # 			<unlysed_fluid_change_rate units="1/min">0.01</unlysed_fluid_change_rate>
                     pd_uep = death_model.find("phase_durations")
                     if pd_uep is not None:
-                        if debug_print:
-                            print(' >> pd_uep =',pd_uep )
+                        logging.debug(f' >> pd_uep ={pd_uep}')
                         cell_def_tab.param_d[cell_def_name]['apoptosis_duration_flag'] = True
                         # cell_def_tab.apoptosis_rb2.setChecked(True)  # duration
 
                         for pd in pd_uep:   # <duration index= ... >
-                            if debug_print:
-                                print(pd)
-                                print("index=",pd.attrib["index"])
+                            logging.debug(f'phase_duration= {pd}')
+                            logging.debug(f'index= {pd.attrib["index"]}')
                             if  pd.attrib['index'] == "0":
+                    # 			<duration index="0" fixed_duration="true">86400.1</duration>
                                 cell_def_tab.param_d[cell_def_name]["apoptosis_phase0_duration"] = pd.text
+                                # print("populate(): apop phase0 duration= ",pd.text)  # rwh
+                                cell_def_tab.param_d[cell_def_name]["apoptosis_trate01"] = invertf2s(pd.text)
                                 if  pd.attrib['fixed_duration'].lower() == "true":
                                     cell_def_tab.param_d[cell_def_name]["apoptosis_phase0_fixed"] = True
+                                    cell_def_tab.param_d[cell_def_name]["apoptosis_trate01_fixed"] = True
                                 else:
                                     cell_def_tab.param_d[cell_def_name]["apoptosis_phase0_fixed"] = False
+                                    cell_def_tab.param_d[cell_def_name]["apoptosis_trate01_fixed"] = False
 
-                    else:  #  transition rates
+                    # 			<duration index="1" fixed_duration="true">86400.1</duration>
+
+                    else:  #  apoptosis transition rate
+                    #   <model code="100" name="apoptosis"> 
+                        #     <death_rate units="1/min">0</death_rate>  
                         #     <phase_transition_rates units="1/min">
                         #         <rate start_index="0" end_index="1" fixed_duration="true">0.00193798</rate>
                         #     </phase_transition_rates>
                         tr_uep = death_model.find("phase_transition_rates")
                         if tr_uep is not None:
-                            if debug_print:
-                                print(' >> tr_uep =',tr_uep )
+                            logging.debug(f' >> tr_uep ={tr_uep}')
                             # cell_def_tab.apoptosis_rb1.setChecked(True)  # trate01
 
-                            for tr in tr_uep:   # <duration index= ... >
-                                if debug_print:
-                                    print(tr)
-                                    print("start_index=",tr.attrib["start_index"])
+                            for tr in tr_uep:   # <rate start_index= ... >
+                                logging.debug(f'death: phase_transition_rates= {tr}')
+                                logging.debug(f'start_index= {tr.attrib["start_index"]}')
 
                                 if  tr.attrib['start_index'] == "0":
                                     cell_def_tab.param_d[cell_def_name]["apoptosis_trate01"] = tr.text
+                                    cell_def_tab.param_d[cell_def_name]["apoptosis_phase0_duration"] = invertf2s(tr.text)
                                     if  tr.attrib['fixed_duration'].lower() == "true":
                                         cell_def_tab.param_d[cell_def_name]["apoptosis_trate01_fixed"] = True
+                                        cell_def_tab.param_d[cell_def_name]["apoptosis_phase0_fixed"] = True
                                     else:
                                         cell_def_tab.param_d[cell_def_name]["apoptosis_trate01_fixed"] = False
+                                        cell_def_tab.param_d[cell_def_name]["apoptosis_phase0_fixed"] = False
 
                     # apoptosis_params_path = apoptosis_path + "parameters//"
                     params_uep = death_model.find("parameters")
@@ -608,7 +613,7 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
 
                     # cell_def_tab.param_d[cell_def_name]["apoptosis_unlysed_rate"] = params_uep.find("unlysed_fluid_change_rate").text
                     if params_uep is None:
-                        print("\npopulate_tree_cell_defs.py: Error: missing death params.\nIt is possible your .xml is the old hierarchical format\nand not the flattened, explicit format.  \nExiting.\n")
+                        logging.error(f'\npopulate_tree_cell_defs.py: Error: missing death params.\nIt is possible your .xml is the old hierarchical format\nand not the flattened, explicit format.  \nExiting.\n')
                         sys.exit(1)
                     cell_def_tab.param_d[cell_def_name]["apoptosis_unlysed_rate"] = params_uep.find("unlysed_fluid_change_rate").text
                     cell_def_tab.param_d[cell_def_name]["apoptosis_lysed_rate"] = params_uep.find("lysed_fluid_change_rate").text
@@ -617,72 +622,90 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
                     cell_def_tab.param_d[cell_def_name]["apoptosis_calcif_rate"] = params_uep.find("calcification_rate").text
                     cell_def_tab.param_d[cell_def_name]["apoptosis_rel_rupture_volume"] = params_uep.find("relative_rupture_volume").text
 
-            #--------------
+            #-----------------------------------
             # necrosis_params_path = necrosis_path + "parameters//"
                 elif "necrosis" in death_model.attrib["name"].lower():
-                    if debug_print:
-                        print("-------- parsing necrosis!")
+                    logging.debug(f'-------- parsing necrosis!')
                     cell_def_tab.param_d[cell_def_name]["necrosis_death_rate"] = death_model.find('death_rate').text
 
+                    # necrosis has 2 rates | durations (apoptosis only has 1) -------------------------
                     pd_uep = death_model.find("phase_durations")
-                    if pd_uep is not None:
-                        if debug_print:
-                            print(' >> pd_uep =',pd_uep )
+                    #------------------------
+                    if pd_uep is not None:   # necrosis durations
+                        logging.debug(f' >> pd_uep ={pd_uep}')
                         # cell_def_tab.necrosis_rb2.setChecked(True)  # duration
                         cell_def_tab.param_d[cell_def_name]['necrosis_duration_flag'] = True
 
                         for pd in pd_uep:   # <duration index= ... >
-                            if debug_print:
-                                print(pd)
-                                print("index=",pd.attrib["index"])
+                            logging.debug(f'{pd}')
+                            logging.debug(f'index= {pd.attrib["index"]}')
                             if  pd.attrib['index'] == "0":
                                 cell_def_tab.param_d[cell_def_name]["necrosis_phase0_duration"] = pd.text
+                                cell_def_tab.param_d[cell_def_name]["necrosis_trate01"] = invertf2s(pd.text)
                                 if  pd.attrib['fixed_duration'].lower() == "true":
                                     cell_def_tab.param_d[cell_def_name]["necrosis_phase0_fixed"] = True
+                                    cell_def_tab.param_d[cell_def_name]["necrosis_trate01_fixed"] = True
                                 else:
                                     cell_def_tab.param_d[cell_def_name]["necrosis_phase0_fixed"] = False
+                                    cell_def_tab.param_d[cell_def_name]["necrosis_trate01_fixed"] = False
+
                             elif  pd.attrib['index'] == "1":
                                 cell_def_tab.param_d[cell_def_name]["necrosis_phase1_duration"] = pd.text
+                                cell_def_tab.param_d[cell_def_name]["necrosis_trate12"] = invertf2s(pd.text)
                                 if  pd.attrib['fixed_duration'].lower() == "true":
                                     cell_def_tab.param_d[cell_def_name]["necrosis_phase1_fixed"] = True
+                                    cell_def_tab.param_d[cell_def_name]["necrosis_trate12_fixed"] = True
                                 else:
                                     cell_def_tab.param_d[cell_def_name]["necrosis_phase1_fixed"] = False
+                                    cell_def_tab.param_d[cell_def_name]["necrosis_trate12_fixed"] = False
 
-                    else:  # transition rates
+                    #------------------------
+                    else:  # necrosis transition rates
                         #     <phase_transition_rates units="1/min">
                         #         <rate start_index="0" end_index="1" fixed_duration="true">0.00193798</rate>
                         #     </phase_transition_rates>
                         tr_uep = death_model.find("phase_transition_rates")
                         if tr_uep is not None:
-                            if debug_print:
-                                print(' >> tr_uep =',tr_uep )
+                            logging.debug(f' >> tr_uep ={tr_uep}')
                             # cell_def_tab.necrosis_rb1.setChecked(True)  
                             for tr in tr_uep:  # transition rate 
-                                if debug_print:
-                                    print(tr)
-                                    print("start_index=",tr.attrib["start_index"])
+                                logging.debug(f'death: phase_transition_rates= {tr}')
+                                logging.debug(f'start_index= {tr.attrib["start_index"]}')
                                 if  tr.attrib['start_index'] == "0":
                                     rate = float(tr.text)
-                                    if debug_print:
-                                        print(" --- transition rate (float) = ",rate)
-                                    if abs(rate) < 1.e-6:
-                                        dval = 9.e99
-                                    else:
-                                        dval = rate * 60.0
-                                    if debug_print:
-                                        print(" --- transition rate (float) = ",rate)
+                                    if abs(rate) < 1.e-6:   # rwh: necessary??
+                                        rate = 1.e-6
+                                        # dval = 9.e99
+                                    # else:
+                                        # dval = rate * 60.0
+                                    logging.debug(f' --- transition rate 01 (float) = {rate}')
                                     # cell_def_tab.param_d[cell_def_name]["necrosis_phase0_duration"] = tr.text
-                                    cell_def_tab.param_d[cell_def_name]["necrosis_phase0_duration"] = str(dval)
+                                    # cell_def_tab.param_d[cell_def_name]["necrosis_phase0_duration"] = str(dval)
+                                    # cell_def_tab.param_d[cell_def_name]["necrosis_trate01"] = str(dval)
+                                    cell_def_tab.param_d[cell_def_name]["necrosis_trate01"] = str(rate)
+                                    cell_def_tab.param_d[cell_def_name]["necrosis_phase0_duration"] = invertf2s(str(rate))
                                     if  tr.attrib['fixed_duration'].lower() == "true":
-                                        cell_def_tab.param_d[cell_def_name]["necrosis_phase0_fixed"] = True
+                                        # cell_def_tab.param_d[cell_def_name]["necrosis_phase0_fixed"] = True
+                                        cell_def_tab.param_d[cell_def_name]["necrosis_trate01_fixed"] = True
+                                        cell_def_tab.param_d[cell_def_name]["necrosis_phase0_duration_fixed"] = True
                                     else:
-                                        cell_def_tab.param_d[cell_def_name]["necrosis_phase0_fixed"] = False
+                                        # cell_def_tab.param_d[cell_def_name]["necrosis_phase0_fixed"] = False
+                                        cell_def_tab.param_d[cell_def_name]["necrosis_trate01_fixed"] = False
+                                        cell_def_tab.param_d[cell_def_name]["necrosis_phase0_duration_fixed"] = False
+
                                 elif  tr.attrib['start_index'] == "1":
-                                    cell_def_tab.param_d[cell_def_name]["necrosis_phase1_duration"] = tr.text
+                                    rate = float(tr.text)
+                                    if abs(rate) < 1.e-6:
+                                        rate = 1.e-6
+                                    logging.debug(f' --- transition rate 12 (float) = {rate}')
+                                    cell_def_tab.param_d[cell_def_name]["necrosis_trate12"] = str(rate)
+                                    cell_def_tab.param_d[cell_def_name]["necrosis_phase1_duration"] = invertf2s(str(rate))
                                     if  tr.attrib['fixed_duration'].lower() == "true":
-                                        cell_def_tab.param_d[cell_def_name]["necrosis_phase1_fixed"] = True
+                                        cell_def_tab.param_d[cell_def_name]["necrosis_trate12_fixed"] = True
+                                        cell_def_tab.param_d[cell_def_name]["necrosis_phase1_duration_fixed"] = True
                                     else:
-                                        cell_def_tab.param_d[cell_def_name]["necrosis_phase1_fixed"] = False
+                                        cell_def_tab.param_d[cell_def_name]["necrosis_trate12_fixed"] = False
+                                        cell_def_tab.param_d[cell_def_name]["necrosis_phase1_duration_fixed"] = False
 
 
                     params_uep = death_model.find("parameters")
@@ -711,8 +734,7 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
                     # 	<relative_rupture_volume units="dimensionless">2.0</relative_rupture_volume>
 
             volume_path = ".//cell_definition[" + str(idx) + "]//phenotype//volume//"
-            if debug_print:
-                print('volume_path=',volume_path)
+            logging.debug(f'volume_path={volume_path}')
 
             # cell_def_tab.volume_total.setText(uep.find(volume_path+"total").text)
             # cell_def_tab.volume_fluid_fraction.setText(uep.find(volume_path+"fluid_fraction").text)
@@ -736,8 +758,7 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
 
 
             # # ---------  mechanics 
-            if debug_print:
-                print("\n===== populate_tree():  mechanics")
+            logging.debug(f'\n===== populate_tree():  mechanics')
                     # <mechanics> 
                     # 	<cell_cell_adhesion_strength units="micron/min">0.4</cell_cell_adhesion_strength>
                     # 	<cell_cell_repulsion_strength units="micron/min">10.0</cell_cell_repulsion_strength>
@@ -749,8 +770,7 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
                     # 	</options>
 
             mechanics_path = ".//cell_definition[" + str(idx) + "]//phenotype//mechanics//"
-            if debug_print:
-                print('mechanics_path=',mechanics_path)
+            logging.debug(f'mechanics_path={mechanics_path}')
 
             # cell_def_tab.cell_cell_adhesion_strength.setText(uep.find(mechanics_path+"cell_cell_adhesion_strength").text)
             # cell_def_tab.cell_cell_repulsion_strength.setText(uep.find(mechanics_path+"cell_cell_repulsion_strength").text)
@@ -781,8 +801,7 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
 
             #----------
             cell_adhesion_affinities_path = ".//cell_definition[" + str(idx) + "]//phenotype//mechanics//cell_adhesion_affinities"
-            if debug_print:
-                print("---- cell_interactions_path= ",cell_adhesion_affinities_path)
+            logging.debug(f'---- cell_interactions_path= {cell_adhesion_affinities_path}')
             # motility_options_path = ".//cell_definition[" + str(idx) + "]//phenotype//motility//options//"
             # motility_chemotaxis_path = motility_options_path + "chemotaxis//"
             # if uep.find(motility_chemotaxis_path) is None:
@@ -790,30 +809,30 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
             # if uep.find(motility_advanced_chemotaxis_path) is None:
             cap = uep.find(cell_adhesion_affinities_path)
             if cap is None:
-                # print("---- no cell_adhesion_affinities_path found. Setting to default values")
-                print("---- No cell_adhesion_affinities_path found. Setting to default.")
+                # logging.debug(f'---- no cell_adhesion_affinities_path found. Setting to default values")
+                logging.debug(f'---- No cell_adhesion_affinities_path found. Setting to default.')
 
                 # for var in cap.findall('cell_adhesion_affinity'):
                 #     print(" --> ",var.attrib['name'])
                 #     name = var.attrib['name']
 
-                cell_def_tab.param_d[cell_def_name]["cell_adhesion_affinity"] = {}
+                # cell_def_tab.param_d[cell_def_name]["cell_adhesion_affinity"] = {}
                 # print("\nFor now, you need to manually enter these into your .xml\n")
                 # sys.exit(-1)
 
                 cds_uep = cell_def_tab.xml_root.find('.//cell_definitions')  # find unique entry point
                 if cds_uep is None:
-                    print("---- Error: cell_definitions is not defined.")
+                    logging.debug(f'---- Error: cell_definitions is not defined.')
                     sys.exit(-1)
 
                 sval = '1.0'
                 for var in cds_uep.findall('cell_definition'):
-                    print(" --> ",var.attrib['name'])
+                    logging.debug(f' --> {var.attrib["name"]}')
                     name = var.attrib['name']
                     cell_def_tab.param_d[cell_def_name]["cell_adhesion_affinity"][name] = sval
 
             else:
-                print("---- found cell_adhesion_affinities_path:")
+                logging.debug(f'---- found cell_adhesion_affinities_path:')
                 cell_def_tab.param_d[cell_def_name]["cell_adhesion_affinity"] = {}
                     # <cell_adhesion_affinities>
 	  				# 	<cell_adhesion_affinity name="bacteria">1</cell_adhesion_affinity> 
@@ -823,7 +842,7 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
                     val = var.text
                     # print(celltype_name,val)
                     cell_def_tab.param_d[cell_def_name]["cell_adhesion_affinity"][celltype_name] = val
-                    print("--> ",cell_def_tab.param_d[cell_def_name]["cell_adhesion_affinity"])
+                    logging.debug(f'--> {cell_def_tab.param_d[cell_def_name]["cell_adhesion_affinity"]}')
 
 
                 # cell_def_tab.param_d[cell_def_name]["cell_adhesion_affinity"] = {}
@@ -875,8 +894,7 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
 
 
             # # ---------  motility 
-            if debug_print:
-                print("\n===== populate_tree():  motility")
+            logging.debug(f'\n===== populate_tree():  motility')
                     # <motility>  
                     # 	<speed units="micron/min">5.0</speed>
                     # 	<persistence_time units="min">5.0</persistence_time>
@@ -893,8 +911,7 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
                     # 	</options>
 
             motility_path = ".//cell_definition[" + str(idx) + "]//phenotype//motility//"
-            if debug_print:
-                print('motility_path=',motility_path)
+            logging.debug(f'motility_path={motility_path}')
 
             val = uep.find(motility_path+"speed").text
             cell_def_tab.param_d[cell_def_name]["speed"] = val
@@ -936,7 +953,7 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
 
                 val = uep.find(motility_chemotaxis_path +'substrate').text
                 cell_def_tab.param_d[cell_def_name]["motility_chemotaxis_substrate"] = val
-                print("\n----------- populate_tree_cell_defs.py: cell_def_name=",cell_def_name,", cell_def_tab.param_d[cell_def_name]['motility_chemotaxis_substrate'] = ",cell_def_tab.param_d[cell_def_name]["motility_chemotaxis_substrate"])
+                logging.debug(f'\n----------- populate_tree_cell_defs.py: cell_def_name= {cell_def_name},  cell_def_tab.param_d[cell_def_name]["motility_chemotaxis_substrate"] = {cell_def_tab.param_d[cell_def_name]["motility_chemotaxis_substrate"]}')
 
                 val = uep.find(motility_chemotaxis_path +'direction').text
                 if val == '1':
@@ -957,20 +974,20 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
         #   </advanced_chemotaxis>
             motility_advanced_chemotaxis_path = motility_options_path + "advanced_chemotaxis//"
             # motility_advanced_chemotaxis_path = motility_options_path + "advanced_chemotaxis"
-            print(motility_advanced_chemotaxis_path)
+            logging.debug(f'motility_advanced_chemotaxis_path= {motility_advanced_chemotaxis_path}')
 
 
             # Just initialize sensitivities to default value (0) for all substrates
-            cell_def_tab.param_d[cell_def_name]['chemotactic_sensitivity'] = {}
+            # cell_def_tab.param_d[cell_def_name]['chemotactic_sensitivity'] = {}
             uep_microenv = cell_def_tab.xml_root.find(".//microenvironment_setup")
             for subelm in uep_microenv.findall('variable'):
                 substrate_name = subelm.attrib['name']
                 cell_def_tab.param_d[cell_def_name]["chemotactic_sensitivity"][substrate_name] = '0.0'
-            print("chemotactic_sensitivity= ",cell_def_tab.param_d[cell_def_name]["chemotactic_sensitivity"])
+            logging.debug(f'chemotactic_sensitivity= {cell_def_tab.param_d[cell_def_name]["chemotactic_sensitivity"]}')
             # sys.exit(-1)
 
             if uep.find(motility_advanced_chemotaxis_path) is None:  # advanced_chemotaxis not present in .xml
-                print("---- no motility_advanced_chemotaxis_path found. Setting to default values")
+                logging.debug(f'---- no motility_advanced_chemotaxis_path found. Setting to default values')
                 cell_def_tab.param_d[cell_def_name]["motility_advanced_chemotaxis"] = False
                 cell_def_tab.param_d[cell_def_name]["motility_advanced_chemotaxis_substrate"] = ""
                 # cell_def_tab.param_d[cell_def_name]['chemotactic_sensitivity'] = {}
@@ -1012,27 +1029,23 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
 
                 #-----
                 sensitivity_path = motility_options_path + "advanced_chemotaxis//chemotactic_sensitivities"
-                print(sensitivity_path)
+                logging.debug(f'sensitivity_path= {sensitivity_path}')
                 # sys.exit(-1)
                 if uep.find(sensitivity_path) is None:
-                    print("---- chemotactic_sensitivities not found. Set to defaults (0). ")
+                    logging.debug(f'---- chemotactic_sensitivities not found. Set to defaults (0). ')
                     # sys.exit(-1)
         #       <chemotactic_sensitivity substrate="resource">0</chemotactic_sensitivity> 
                 else:
                     # cell_def_tab.param_d[cell_def_name]['chemotactic_sensitivity'] = {}
-                    if debug_print:
-                        print("---- found chemotactic_sensitivities: ",uep.find(sensitivity_path))
+                    logging.debug(f'---- found chemotactic_sensitivities: {uep.find(sensitivity_path)}')
                     for subelm in uep.find(sensitivity_path).findall('chemotactic_sensitivity'):
                         subname = subelm.attrib['substrate']
                         subval = subelm.text # float?
-                        if debug_print:
-                            print('subelm=',subelm)
-                            print(" chemotactic_sensitivity--> ",subname,' = ',subval)
+                        logging.debug(f'subelm={subelm}')
+                        logging.debug(f' chemotactic_sensitivity--> {subname} = {subval}')
                         # cell_def_tab.chemotactic_sensitivity_dict[subname] = subval
                         cell_def_tab.param_d[cell_def_name]['chemotactic_sensitivity'][subname] = subval
-                if debug_print:
-                    # print("sensitivity_dict = ",cell_def_tab.chemotactic_sensitivity_dict)
-                    print(cell_def_tab.param_d[cell_def_name]['chemotactic_sensitivity'])
+                logging.debug(f'{cell_def_tab.param_d[cell_def_name]["chemotactic_sensitivity"]}')
 
                 cell_def_tab.motility2_substrate_changed_cb(0)  # update the sensitivity value in the widget
 
@@ -1049,8 +1062,7 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
 
 
             # # ---------  secretion 
-            if debug_print:
-                print("\n===== populate_tree():  secretion")
+            logging.debug(f'\n===== populate_tree():  secretion')
 
             # <substrate name="virus">
             #     <secretion_rate units="1/min">0</secretion_rate>
@@ -1060,19 +1072,17 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
             # </substrate> 
 
             secretion_path = ".//cell_definition[" + str(idx) + "]//phenotype//secretion//"
-            if debug_print:
-                print('secretion_path =',secretion_path)
+            logging.debug(f'secretion_path = {secretion_path}')
             secretion_sub1_path = ".//cell_definition[" + str(idx) + "]//phenotype//secretion//substrate[1]//"
 
             uep_secretion = cell_def_tab.xml_root.find(".//cell_definitions//cell_definition[" + str(idx) + "]//phenotype//secretion")
-            if debug_print:
-                print('uep_secretion = ',uep_secretion )
+            logging.debug(f'uep_secretion = {uep_secretion}')
             
 
             # e.g.: param_d["cancer cell"]["oxygen"]["secretion_rate"] = 0.0
             # or,   param_d["cancer cell"]["oxygen"]["secretion_rate"] = 0.0
             # or,   param_d["cancer cell"]["secretion"] = {"oxygen" : { "secretion_rate" : 42.0 } }
-            cell_def_tab.param_d[cell_def_name]["secretion"] = {}  # a dict for these params
+            # cell_def_tab.param_d[cell_def_name]["secretion"] = {}  # a dict for these params
 
             # Initialize (set to 0.0) all substrates' secretion params
             # val = "0.0"
@@ -1092,8 +1102,7 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
                 if jdx == 0:
                     cell_def_tab.current_secretion_substrate = substrate_name
 
-                if debug_print:
-                    print(jdx,") -- secretion substrate = ",substrate_name)
+                logging.debug(f'{jdx}) -- secretion substrate = {substrate_name}')
                 # cell_def_tab.param_d[cell_def_tab.current_cell_def]["secretion"][substrate_name]["secretion_rate"] = {}
                 cell_def_tab.param_d[cell_def_name]["secretion"][substrate_name] = {}
 
@@ -1128,13 +1137,12 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
 
                 jdx += 1
 
-            if debug_print:
-                print("------ done parsing secretion:")
+            logging.debug(f'------ done parsing secretion:')
             # print("------ cell_def_tab.param_d = ",cell_def_tab.param_d)
             
 
             # # --------- cell_interactions  
-            print("\n===== populate_tree():  cell_interactions")
+            logging.debug(f'\n===== populate_tree():  cell_interactions')
             # <cell_interactions>
             #  <dead_phagocytosis_rate units="1/min">0</dead_phagocytosis_rate>
             #  <live_phagocytosis_rates>
@@ -1144,8 +1152,7 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
             # cell_def_tab.dead_phagocytosis_rate.setText(cell_def_tab.param_d[cdname]["dead_phagocytosis_rate"])
             # cell_interactions_path = cell_def_tab.xml_root.find(".//cell_definitions//cell_definition[" + str(idx) + "]//phenotype//cell_interactions")
             cell_interactions_path = ".//cell_definition[" + str(idx) + "]//phenotype//cell_interactions"
-            if debug_print:
-                print("---- cell_interactions_path= ",cell_interactions_path)
+            logging.debug(f'---- cell_interactions_path= {cell_interactions_path}')
             # motility_options_path = ".//cell_definition[" + str(idx) + "]//phenotype//motility//options//"
             # motility_chemotaxis_path = motility_options_path + "chemotaxis//"
             # if uep.find(motility_chemotaxis_path) is None:
@@ -1153,7 +1160,7 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
             # if uep.find(motility_advanced_chemotaxis_path) is None:
             cep = uep.find(cell_interactions_path)
             if cep is None:
-                print("---- no cell_interactions found. Setting to default values")
+                logging.debug(f'---- no cell_interactions found. Setting to default values')
                 # print("---- no cell_interactions found.")
                 # print("\nFor now, you need to manually enter these (and cell_transformations) into your .xml \n")
                 # sys.exit(-1)
@@ -1161,24 +1168,24 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
                 cell_def_tab.param_d[cell_def_name]["dead_phagocytosis_rate"] = '0.0'
                 cell_def_tab.param_d[cell_def_name]["damage_rate"] = '1.0'
 
-                cell_def_tab.param_d[cell_def_name]["live_phagocytosis_rate"] = {}
-                cell_def_tab.param_d[cell_def_name]["attack_rate"] = {}
-                cell_def_tab.param_d[cell_def_name]["fusion_rate"] = {}
+                # cell_def_tab.param_d[cell_def_name]["live_phagocytosis_rate"] = {}
+                # cell_def_tab.param_d[cell_def_name]["attack_rate"] = {}
+                # cell_def_tab.param_d[cell_def_name]["fusion_rate"] = {}
 
                 cds_uep = cell_def_tab.xml_root.find('.//cell_definitions')  # find unique entry point
                 if cds_uep is None:
-                    print("---- Error: cell_definitions is not defined.")
+                    logging.debug(f'---- Error: cell_definitions is not defined.')
                     sys.exit(-1)
 
                 sval = '0.0'
                 for var in cds_uep.findall('cell_definition'):
-                    print(" --> ",var.attrib['name'])
+                    logging.debug(f' --> {var.attrib["name"]}')
                     name = var.attrib['name']
                     cell_def_tab.param_d[cell_def_name]["live_phagocytosis_rate"][name] = sval
                     cell_def_tab.param_d[cell_def_name]["attack_rate"][name] = sval
                     cell_def_tab.param_d[cell_def_name]["fusion_rate"][name] = sval
             else:
-                print("---- found cell_interactions:")
+                logging.debug(f'---- found cell_interactions:')
                 val = cep.find("dead_phagocytosis_rate").text
                 cell_def_tab.param_d[cell_def_name]["dead_phagocytosis_rate"] = val
 
@@ -1193,7 +1200,7 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
                 # uep_lpr = cep.find(cell_interactions_path + "//live_phagocytosis_rates")
                 # uep_lpr = cep.find(cell_interactions_path + "//live_phagocytosis_rates")
                 uep2 = uep.find(cell_interactions_path + "//live_phagocytosis_rates")
-                print("uep2= ",uep2)
+                logging.debug(f'uep2= {uep2}')
                 cell_def_tab.param_d[cell_def_name]["live_phagocytosis_rate"] = {}
                 for pr in uep2.findall('phagocytosis_rate'):
                     celltype_name = pr.attrib['name']
@@ -1217,35 +1224,32 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
                     # print(celltype_name,val)
                     cell_def_tab.param_d[cell_def_name]["fusion_rate"][celltype_name] = val
 
-            if debug_print:
-                # print(cell_def_tab.param_d[cell_def_name])
-                print(" live_phagocytosis_rate=",cell_def_tab.param_d[cell_def_name]["live_phagocytosis_rate"])
-                print(" attack_rate=",cell_def_tab.param_d[cell_def_name]["attack_rate"])
-                print(" fusion_rate=",cell_def_tab.param_d[cell_def_name]["fusion_rate"])
-                print("------ done parsing cell_interactions:")
+            logging.debug(f' live_phagocytosis_rate= {cell_def_tab.param_d[cell_def_name]["live_phagocytosis_rate"]}')
+            logging.debug(f' attack_rate= {cell_def_tab.param_d[cell_def_name]["attack_rate"]}')
+            logging.debug(f' fusion_rate= {cell_def_tab.param_d[cell_def_name]["fusion_rate"]}')
+            logging.debug(f'------ done parsing cell_interactions:')
 
 
             # # --------- cell_transformations  
             transformation_rates_path = ".//cell_definition[" + str(idx) + "]//phenotype//cell_transformations//transformation_rates"
-            if debug_print:
-                print("---- transformation_rates_path = ",transformation_rates_path)
+            logging.debug(f'---- transformation_rates_path = {transformation_rates_path}')
             trp = uep.find(transformation_rates_path)
-            cell_def_tab.param_d[cell_def_name]['transformation_rate'] = {}
+            # cell_def_tab.param_d[cell_def_name]['transformation_rate'] = {}
             if trp is None:
                 # print("---- No cell_transformations found.")
                 # print("\nFor now, you need to manually enter these into your .xml\n")
                 # sys.exit(-1)
-                print("---- No cell_transformations found. Setting to default values")
+                logging.debug(f'---- No cell_transformations found. Setting to default values')
                 cell_def_tab.param_d[cell_def_name]['transformation_rate'] = {}
 
                 cds_uep = cell_def_tab.xml_root.find('.//cell_definitions')  # find unique entry point
                 if cds_uep is None:
-                    print("---- Error: cell_definitions is not defined.")
+                    logging.error(f'---- Error: cell_definitions is not defined.')
                     sys.exit(-1)
 
                 sval = '0.0'
                 for var in cds_uep.findall('cell_definition'):
-                    print(" --> ",var.attrib['name'])
+                    logging.debug(f' --> {var.attrib["name"]}')
                     name = var.attrib['name']
                     cell_def_tab.param_d[cell_def_name]["transformation_rate"][name] = sval
             else:
@@ -1255,19 +1259,18 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
                     cell_def_tab.param_d[cell_def_name]['transformation_rate'][celltype_name] = val
 
 
-            if debug_print:
-                print(" transformation_rate=",cell_def_tab.param_d[cell_def_name]["transformation_rate"])
-                print("------ done parsing cell_transformations:")
+            logging.debug(f' transformation_rate= {cell_def_tab.param_d[cell_def_name]["transformation_rate"]}')
+            logging.debug(f'------ done parsing cell_transformations:')
 
             # sys.exit(-1)
 
 
             # # ---------  molecular 
-            print("\n===== populate_tree():  molecular")
+            logging.debug(f'\n===== populate_tree():  molecular')
 
 
             # # ---------  intracellular 
-            print("\n===== populate_tree():  intracellular")
+            logging.debug(f'\n===== populate_tree():  intracellular')
             # <intracellular type="maboss">
             # 	<bnd_filename>./config/model_0.bnd</bnd_filename>
             # 	<cfg_filename>./config/model.cfg</cfg_filename>
@@ -1371,19 +1374,19 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
                 cell_def_tab.physiboss_update_list_nodes()
             
 
-            print("------ done parsing intracellular:")
+            logging.debug(f'------ done parsing intracellular:')
 
             # # ---------  custom data 
-            print("\n===== populate_tree():  custom data")
+            logging.debug(f'\n===== populate_tree():  custom data')
             # <custom_data>  
             # 	<receptor units="dimensionless">0.0</receptor>
             # 	<cargo_release_o2_threshold units="mmHg">10</cargo_release_o2_threshold>
 
             uep_custom_data = cell_def_tab.xml_root.find(".//cell_definitions//cell_definition[" + str(idx) + "]//custom_data")
             # custom_data_path = ".//cell_definition[" + str(cell_def_tab.idx_current_cell_def) + "]//custom_data//"
-            print('uep_custom_data=',uep_custom_data)
+            logging.debug(f'uep_custom_data= {uep_custom_data}')
 
-            # for jdx in range(cell_def_tab.custom_data_count):
+            # for jdx in range(cell_def_tab.custom_var_count):
             #     cell_def_tab.custom_data_name[jdx].setText('')
             #     cell_def_tab.custom_data_value[jdx].setText('')
                 
@@ -1391,12 +1394,14 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
             jdx = 0
             # rwh/TODO: if we have more vars than we initially created rows for, we'll need
             # to call 'append_more_cb' for the excess.
-            cell_def_tab.custom_data_count = 0
+            cell_def_tab.custom_var_count = 0
             cell_def_tab.param_d[cell_def_name]['custom_data'] = {}
+            # print("------- in populate*:  param_d=",cell_def_tab.param_d)
+            # print("-------\n\n")
             if uep_custom_data:
                 # print("--------------- populate_tree: custom_dat for cell_def_name= ",cell_def_name)
                 # cell_def_tab.param_d[cell_def_name]['custom_data'] = {}
-                print("--------------- populate_tree: (empty)custom_data = ",cell_def_tab.param_d[cell_def_name]['custom_data'])
+                logging.debug(f'--------------- populate_tree: (empty)custom_data = {cell_def_tab.param_d[cell_def_name]["custom_data"]}')
                 for var in uep_custom_data:
                     # print("-------- var in uep_",var)
                     # print(jdx, ") ",var)
@@ -1407,28 +1412,50 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
                     # cell_def_tab.param_d[cell_def_name]["secretion"][substrate_name]["secretion_rate"] = val
 
                     # cell_def_tab.param_d[cell_def_name]['custom_data'][var.tag] = val
-                    if var.tag not in cell_def_tab.master_custom_varname:
-                        cell_def_tab.master_custom_varname.append(var.tag)
+                    # if var.tag not in cell_def_tab.master_custom_varname:
+                    if var.tag not in cell_def_tab.master_custom_var_d.keys():
+                        # cell_def_tab.master_custom_varname.append(var.tag)  # unique entries
+                        cell_def_tab.master_custom_var_d[var.tag] = [cell_def_tab.custom_var_count, '', '']  # [row#, units, desc]
 
                     conserved_flag = False
-                    print("var.attrib.keys() = ",var.attrib.keys())
+                    logging.debug(f'var.attrib.keys() = {var.attrib.keys()}')
                     if 'conserved' in var.attrib.keys() and var.attrib['conserved'].lower() == 'true':
                         # self.cells_csv.setChecked(True)
-                        print("-------- conserved is true for ",var)
+                        logging.debug(f'-------- conserved is true for {var}')
                         conserved_flag = True
 
-                    units_val = "dimensionless"
+                    # units_str = "dimensionless"
+                    # desc_str = ""
                     if 'units' in var.attrib.keys():
-                        units_val = var.attrib['units']
-                        print("--------- units_val= ",units_val)
+                        units_str = var.attrib['units']
+                        # for multiple cell types, use longest "units" string
+                        if len(units_str) > len(cell_def_tab.master_custom_var_d[var.tag][1]):
+                            cell_def_tab.master_custom_var_d[var.tag][1] = units_str  # hack: hard-coded index
+                        # cell_def_tab.custom_var_d[var.tag] = [units_str, desc_str]
+                        # logging.debug(f'--------- units_str= {units_str}')
+
+                    if 'description' in var.attrib.keys():
+                        desc_str = var.attrib['description']
+                        # for multiple cell types, use longest "description" string
+                        if len(desc_str) > len(cell_def_tab.master_custom_var_d[var.tag][2]):
+                            cell_def_tab.master_custom_var_d[var.tag][2] = desc_str  # hack: hard-coded index
+                        # cell_def_tab.custom_var_d[var.tag] = [units_val, desc_str]
+                        # logging.debug(f'--------- desc_str= {desc_str}')
+
+                    # print(f"populate():  master_custom_var_d= {cell_def_tab.master_custom_var_d}")
+                    # cell_def_tab.master_custom_units.append(units_str)
+                    # cell_def_tab.master_custom_desc.append(desc_str)
+                    # cell_def_tab.master_custom_var_d[var.tag]=[units_str, desc_str]
 
                         # no can do: RuntimeError: dictionary changed size during iteration
                         # cell_def_tab.param_d[cell_def_name]['custom_data'][var.tag+'__conserved'] = True
 
-                    cell_def_tab.param_d[cell_def_name]['custom_data'][var.tag] = [val, conserved_flag, units_val]
-                    print("populate: cell_def_name= ",cell_def_name," --> custom_data: ",cell_def_tab.param_d[cell_def_name]['custom_data'])
+                    # cell_def_tab.param_d[cell_def_name]['custom_data'][var.tag] = [val, conserved_flag, units_val]
+                    cell_def_tab.param_d[cell_def_name]['custom_data'][var.tag] = [val, conserved_flag]
+                    # cell_def_tab.custom_var_d[var.tag] = [units_val, desc_str]
+                    logging.debug(f'populate: cell_def_name= {cell_def_name} --> custom_data: {cell_def_tab.param_d[cell_def_name]["custom_data"]}')
 
-                    cell_def_tab.custom_data_count += 1
+                    cell_def_tab.custom_var_count += 1
             #     cell_def_tab.custom_data_name[jdx].setText(var.tag)
             #     print("tag=",var.tag)
             #     cell_def_tab.custom_data_value[jdx].setText(var.text)
@@ -1457,8 +1484,8 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
     if uep_cell_rules:
         rules_folder = uep_cell_rules.find(".//folder").text 
         rules_file = uep_cell_rules.find(".//filename").text 
-        print("------- populate_tree_cell_defs.py: setting rules.csv folder = ",rules_folder)
-        print("------- populate_tree_cell_defs.py: setting rules.csv file = ",rules_file)
+        logging.debug(f'------- populate_tree_cell_defs.py: setting rules.csv folder = {rules_folder}')
+        logging.debug(f'------- populate_tree_cell_defs.py: setting rules.csv file = {rules_file}')
 
     # print("\n\n=======================  leaving cell_def populate_tree  ======================= ")
     # print()

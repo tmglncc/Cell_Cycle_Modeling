@@ -6,6 +6,7 @@ Dr. Paul Macklin (macklinp@iu.edu)
 """
 
 import sys
+import logging
 # import xml.etree.ElementTree as ET  # https://docs.python.org/2/library/xml.etree.elementtree.html
 from PyQt5 import QtCore, QtGui
 from PyQt5.QtWidgets import QFrame,QApplication,QWidget,QTabWidget,QLineEdit, QVBoxLayout,QRadioButton,QLabel,QCheckBox,QComboBox,QScrollArea,QGridLayout
@@ -253,16 +254,16 @@ class Config(QWidget):
         if self.nanohub_flag:
             self.folder.setEnabled(False)
         self.config_tab_layout.addWidget(self.folder, idx_row,1,1,1) # w, row, column, rowspan, colspan
-        self.folder.textChanged.connect(self.folder_name_cb)
+        # self.folder.textChanged.connect(self.folder_name_cb)
 
-        if self.studio_flag:
-            label = QLabel("Plot/Legend folder")
-            label.setAlignment(QtCore.Qt.AlignRight)
-            self.config_tab_layout.addWidget(label, idx_row,2,1,1) # w, row, column, rowspan, colspan
+        # if self.studio_flag:
+        #     label = QLabel("Plot/Legend folder")
+        #     label.setAlignment(QtCore.Qt.AlignRight)
+        #     self.config_tab_layout.addWidget(label, idx_row,2,1,1) # w, row, column, rowspan, colspan
 
-            self.plot_folder = QLineEdit()
-            self.config_tab_layout.addWidget(self.plot_folder, idx_row,3,1,1) # w, row, column, rowspan, colspan
-            self.plot_folder.textChanged.connect(self.plot_folder_name_cb)
+        #     self.plot_folder = QLineEdit()
+        #     self.config_tab_layout.addWidget(self.plot_folder, idx_row,3,1,1) # w, row, column, rowspan, colspan
+        #     self.plot_folder.textChanged.connect(self.plot_folder_name_cb)
 
         #------------------
         label = QLabel("Save data (intervals):")
@@ -322,7 +323,8 @@ class Config(QWidget):
 
         idx_row += 1
         self.cells_csv = QCheckBox("enable")
-        icol = 0
+        self.cells_csv.setEnabled(True)
+        icol = 1
         self.config_tab_layout.addWidget(self.cells_csv, idx_row,icol,1,1) # w, row, column, rowspan, colspan
 
         label = QLabel("folder")
@@ -361,17 +363,17 @@ class Config(QWidget):
         self.layout.addWidget(self.scroll)
 
 
-    def folder_name_cb(self):
-        try:  # due to the initial callback
-            self.plot_folder.setText(self.folder.text())
-        except:
-            pass
+    # def folder_name_cb(self):
+    #     try:  # due to the initial callback
+    #         self.plot_folder.setText(self.folder.text())
+    #     except:
+    #         pass
 
-    def plot_folder_name_cb(self):   # allow plotting data from *any* output dir
-        try:  # due to the initial callback
-            self.vis_tab.output_dir = self.plot_folder.text()
-        except:
-            pass
+    # def plot_folder_name_cb(self):   # allow plotting data from *any* output dir
+    #     try:  # due to the initial callback
+    #         self.vis_tab.output_dir = self.plot_folder.text()
+    #     except:
+    #         pass
 
         #--------------------------------------------------------
     def insert_hacky_blank_lines(self, glayout):
@@ -395,10 +397,10 @@ class Config(QWidget):
         self.zmax.setText(self.xml_root.find(".//z_max").text)
         self.zdel.setText(self.xml_root.find(".//dz").text)
 
-        if self.xml_root.find(".//virtual_wall_at_domain_edge").text.lower() == "true":
-            self.virtual_walls.setChecked(True)
-        else:
-            self.virtual_walls.setChecked(False)
+        self.virtual_walls.setChecked(False)
+        if self.xml_root.find(".//virtual_wall_at_domain_edge") is not None:
+            if self.xml_root.find(".//virtual_wall_at_domain_edge").text.lower() == "true":
+                self.virtual_walls.setChecked(True)
         
         self.max_time.setText(self.xml_root.find(".//max_time").text)
         self.diffusion_dt.setText(self.xml_root.find(".//dt_diffusion").text)
@@ -408,8 +410,8 @@ class Config(QWidget):
         self.num_threads.setText(self.xml_root.find(".//omp_num_threads").text)
 
         self.folder.setText(self.xml_root.find(".//folder").text)
-        if self.studio_flag:
-            self.plot_folder.setText(self.xml_root.find(".//folder").text)
+        # if self.studio_flag:
+        #     self.plot_folder.setText(self.xml_root.find(".//folder").text)
         
         self.svg_interval.setText(self.xml_root.find(".//SVG//interval").text)
         # NOTE: do this *after* filling the mcds_interval, directly above, due to the callback/constraints on them??
@@ -527,7 +529,7 @@ class Config(QWidget):
         self.xml_root.find(".//dt_phenotype").text = self.phenotype_dt.text()
         self.xml_root.find(".//omp_num_threads").text = self.num_threads.text()
         self.xml_root.find(".//folder").text = self.folder.text()
-        print("------- config_tab.py: fill_xml(): setting folder = ",self.folder.text())
+        logging.debug(f'------- config_tab.py: fill_xml(): setting folder = {self.folder.text()}')
 
         if self.save_svg.isChecked():
             self.xml_root.find(".//SVG//enable").text = 'true'
@@ -549,10 +551,10 @@ class Config(QWidget):
 
         # self.xml_root.find(".//initial_conditions//cell_positions/folder").text = './data'
         self.xml_root.find(".//initial_conditions//cell_positions/folder").text = self.csv_folder.text()
-        print("------- config_tab.py: fill_xml(): setting csv folder = ",self.csv_folder.text())
+        logging.debug(f'------- config_tab.py: fill_xml(): setting csv folder = {self.csv_folder.text()}')
 
         self.xml_root.find(".//initial_conditions//cell_positions/filename").text = self.csv_file.text()
-        print("------- config_tab.py: fill_xml(): setting csv filename = ",self.csv_file.text())
+        logging.debug(f'------- config_tab.py: fill_xml(): setting csv filename = {self.csv_file.text()}')
         # if self.csv_rb1.isChecked():
         #     self.xml_root.find(".//initial_conditions//cell_positions/filename").text = 'all_cells.csv'
         # else:

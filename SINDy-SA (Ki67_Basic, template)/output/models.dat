@@ -1,0 +1,659 @@
+Experimento 1: Grau = 1, Frequência = 1, alpha = 0.001
+
+---------- ITERATION 1 ----------
+SSE = 0.09059546461591853
+Coefficients before sensitivity analysis = [[-0.01349162 -0.00267578  0.00184675]
+ [ 0.00954591  0.00291683 -0.00084928]]
+ST_sum = [array([0.00539665, 0.15979749, 0.20594974, 0.00381836, 0.17419324,
+       0.09471154])]
+Total points = [ 2.  1. -1.  2. -1.  1.]
+Less important parameter = [0 3]
+Coefficients after sensitivity analysis = [[ 0.         -0.00267578  0.00184675]
+ [ 0.          0.00291683 -0.00084928]]
+
+---------- ITERATION 2 ----------
+SSE = 0.09997226356527378
+Comparing 0.09059546461591853 + 9.0*0.009059546461591853 with 0.09997226356527378: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.         -0.00319893  0.00202461]
+ [ 0.          0.00328699 -0.00097512]]
+ST_sum = [array([0.19104033, 0.22578436, 0.1962989 , 0.10874539])]
+Total points = [ 1. -1. -1.  1.]
+Less important parameter = [0 3]
+Coefficients after sensitivity analysis = [[0.         0.         0.00202461]
+ [0.         0.00328699 0.        ]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.09997226356527378
+Loss at the current iteration = 0.17335233355897683
+Number of bases at the previous iteration = 4
+Number of bases at the current iteration = 2
+Total number of bases = 6
+F-test = 0.7340042865568591
+SSE = 0.17335233355897683
+Comparing 0.09528386409059615 + 9.0*0.004688399474677626 with 0.17335233355897683: error has increased
+Ki67_neg' = -3.199e-03 Ki67_neg + 2.025e-03 Ki67_pos
+Ki67_pos' = 3.287e-03 Ki67_neg + -9.751e-04 Ki67_pos
+
+
+Experimento 2: Grau = 1, Frequência = 1, alpha = 0.01
+
+---------- ITERATION 1 ----------
+SSE = 0.09059546538701865
+Coefficients before sensitivity analysis = [[-0.01348812 -0.00267591  0.00184679]
+ [ 0.00954344  0.00291692 -0.00084931]]
+ST_sum = [array([0.00539525, 0.15980524, 0.20595454, 0.00381738, 0.17419862,
+       0.09471484])]
+Total points = [ 2.  1. -1.  2. -1.  1.]
+Less important parameter = [0 3]
+Coefficients after sensitivity analysis = [[ 0.         -0.00267591  0.00184679]
+ [ 0.          0.00291692 -0.00084931]]
+
+---------- ITERATION 2 ----------
+SSE = 0.09997226356587677
+Comparing 0.09059546538701865 + 9.0*0.009059546538701866 with 0.09997226356587677: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.         -0.00319893  0.00202461]
+ [ 0.          0.00328698 -0.00097512]]
+ST_sum = [array([0.1910399 , 0.22578395, 0.19629851, 0.10874502])]
+Total points = [ 1. -1. -1.  1.]
+Less important parameter = [0 3]
+Coefficients after sensitivity analysis = [[0.         0.         0.00202461]
+ [0.         0.00328698 0.        ]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.09997226356587677
+Loss at the current iteration = 0.17335233355897722
+Number of bases at the previous iteration = 4
+Number of bases at the current iteration = 2
+Total number of bases = 6
+F-test = 0.7340042865464041
+SSE = 0.17335233355897722
+Comparing 0.09528386447644771 + 9.0*0.004688399089429057 with 0.17335233355897722: error has increased
+Ki67_neg' = -3.199e-03 Ki67_neg + 2.025e-03 Ki67_pos
+Ki67_pos' = 3.287e-03 Ki67_neg + -9.751e-04 Ki67_pos
+
+
+Experimento 3: Grau = 1, Frequência = 1, alpha = 0.1
+
+---------- ITERATION 1 ----------
+SSE = 0.09059554209036073
+Coefficients before sensitivity analysis = [[-0.01345319 -0.0026772   0.00184722]
+ [ 0.00951881  0.00291782 -0.0008496 ]]
+ST_sum = [array([0.00538128, 0.15988244, 0.2060024 , 0.00380753, 0.17425223,
+       0.09474781])]
+Total points = [ 2.  1. -1.  2. -1.  1.]
+Less important parameter = [0 3]
+Coefficients after sensitivity analysis = [[ 0.         -0.0026772   0.00184722]
+ [ 0.          0.00291782 -0.0008496 ]]
+
+---------- ITERATION 2 ----------
+SSE = 0.09997226362617237
+Comparing 0.09059554209036073 + 9.0*0.009059554209036074 with 0.09997226362617237: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.         -0.00319885  0.00202457]
+ [ 0.          0.00328692 -0.00097508]]
+ST_sum = [array([0.1910356 , 0.22577987, 0.19629466, 0.10874138])]
+Total points = [ 1. -1. -1.  1.]
+Less important parameter = [0 3]
+Coefficients after sensitivity analysis = [[0.         0.         0.00202457]
+ [0.         0.00328692 0.        ]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.09997226362617237
+Loss at the current iteration = 0.17335233355901672
+Number of bases at the previous iteration = 4
+Number of bases at the current iteration = 2
+Total number of bases = 6
+F-test = 0.7340042855009808
+SSE = 0.17335233355901672
+Comparing 0.09528390285826654 + 9.0*0.004688360767905818 with 0.17335233355901672: error has increased
+Ki67_neg' = -3.199e-03 Ki67_neg + 2.025e-03 Ki67_pos
+Ki67_pos' = 3.287e-03 Ki67_neg + -9.751e-04 Ki67_pos
+
+
+Experimento 4: Grau = 1, Frequência = 1, alpha = 1.0
+
+---------- ITERATION 1 ----------
+SSE = 0.09060282273672716
+Coefficients before sensitivity analysis = [[-0.01311373 -0.00268975  0.00185138]
+ [ 0.00927949  0.00292653 -0.00085247]]
+ST_sum = [array([0.00524549, 0.16063159, 0.20646641, 0.00371179, 0.17477224,
+       0.09506727])]
+Total points = [ 2.  1. -1.  2. -1.  1.]
+Less important parameter = [0 3]
+Coefficients after sensitivity analysis = [[ 0.         -0.00268975  0.00185138]
+ [ 0.          0.00292653 -0.00085247]]
+
+---------- ITERATION 2 ----------
+SSE = 0.09997226965312671
+Comparing 0.09060282273672716 + 9.0*0.009060282273672718 with 0.09997226965312671: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.         -0.00319813  0.0020242 ]
+ [ 0.          0.00328627 -0.00097476]]
+ST_sum = [array([0.1909926 , 0.2257391 , 0.19625618, 0.10870493])]
+Total points = [ 1. -1. -1.  1.]
+Less important parameter = [0 3]
+Coefficients after sensitivity analysis = [[0.         0.         0.0020242 ]
+ [0.         0.00328627 0.        ]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.09997226965312671
+Loss at the current iteration = 0.17335233356296684
+Number of bases at the previous iteration = 4
+Number of bases at the current iteration = 2
+Total number of bases = 6
+F-test = 0.7340041810038581
+SSE = 0.17335233356296684
+Comparing 0.09528754619492694 + 9.0*0.0046847234581997715 with 0.17335233356296684: error has increased
+Ki67_neg' = -3.199e-03 Ki67_neg + 2.025e-03 Ki67_pos
+Ki67_pos' = 3.287e-03 Ki67_neg + -9.751e-04 Ki67_pos
+
+
+Experimento 5: Grau = 1, Frequência = 1, alpha = 10.0
+
+---------- ITERATION 1 ----------
+SSE = 0.09106272259502987
+Coefficients before sensitivity analysis = [[-0.01047821 -0.00278555  0.00188288]
+ [ 0.00742136  0.00299271 -0.00087399]]
+ST_sum = [array([0.00419128, 0.16635278, 0.20997874, 0.00296854, 0.17872452,
+       0.09746688])]
+Total points = [ 2.  1. -1.  2. -1.  1.]
+Less important parameter = [0 3]
+Coefficients after sensitivity analysis = [[ 0.         -0.00278555  0.00188288]
+ [ 0.          0.00299271 -0.00087399]]
+
+---------- ITERATION 2 ----------
+SSE = 0.09997286975086195
+Comparing 0.09106272259502987 + 9.0*0.009106272259502987 with 0.09997286975086195: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.         -0.00319095  0.00202056]
+ [ 0.          0.00327984 -0.0009715 ]]
+ST_sum = [array([0.19056364, 0.2253323 , 0.19587225, 0.10834128])]
+Total points = [ 1. -1. -1.  1.]
+Less important parameter = [0 3]
+Coefficients after sensitivity analysis = [[0.         0.         0.00202056]
+ [0.         0.00327984 0.        ]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.09997286975086195
+Loss at the current iteration = 0.17335233395796454
+Number of bases at the previous iteration = 4
+Number of bases at the current iteration = 2
+Total number of bases = 6
+F-test = 0.7339937764112241
+SSE = 0.17335233395796454
+Comparing 0.09551779617294591 + 9.0*0.004455073577916038 with 0.17335233395796454: error has increased
+Ki67_neg' = -3.199e-03 Ki67_neg + 2.025e-03 Ki67_pos
+Ki67_pos' = 3.287e-03 Ki67_neg + -9.751e-04 Ki67_pos
+
+
+Experimento 6: Grau = 2, Frequência = 1, alpha = 0.001
+
+---------- ITERATION 1 ----------
+SSE = 0.03678560935846159
+Coefficients before sensitivity analysis = [[ 7.41106393e-03 -4.54612970e-03  2.44402310e-03  2.37036913e-07
+   3.78433314e-05 -1.81054173e-05]
+ [-2.52728920e-03  3.88620323e-03 -1.15252950e-03  1.23814450e-05
+  -4.10122236e-05  1.70180724e-05]]
+ST_sum = [array([0.00296443, 0.27149487, 0.27255746, 0.00211347, 0.63008905,
+       0.56292958, 0.00101092, 0.23208406, 0.12853009, 0.11039539,
+       0.6828509 , 0.5291221 ])]
+Total points = [ 4.  3.  2.  5. -1.  1.  5.  2.  3.  4. -1.  1.]
+Less important parameter = [3 6]
+Coefficients after sensitivity analysis = [[ 7.41106393e-03 -4.54612970e-03  2.44402310e-03  0.00000000e+00
+   3.78433314e-05 -1.81054173e-05]
+ [ 0.00000000e+00  3.88620323e-03 -1.15252950e-03  1.23814450e-05
+  -4.10122236e-05  1.70180724e-05]]
+
+---------- ITERATION 2 ----------
+SSE = 0.03684134140320024
+Comparing 0.03678560935846159 + 9.0*0.0036785609358461592 with 0.03684134140320024: error has NOT increased
+Coefficients before sensitivity analysis = [[ 7.39755598e-03 -4.53918715e-03  2.44068837e-03  0.00000000e+00
+   3.80501201e-05 -1.81497432e-05]
+ [ 0.00000000e+00  3.70948753e-03 -1.10593759e-03  1.53656901e-05
+  -4.36892591e-05  1.77460588e-05]]
+ST_sum = [array([0.00295902, 0.27108026, 0.27218557, 0.63353206, 0.56430775,
+       0.2215306 , 0.12333416, 0.1370035 , 0.72742337, 0.55175649])]
+Total points = [ 4.  3.  2. -1.  1.  2.  4.  3. -1.  1.]
+Less important parameter = [0 6]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -4.53918715e-03  2.44068837e-03  0.00000000e+00
+   3.80501201e-05 -1.81497432e-05]
+ [ 0.00000000e+00  3.70948753e-03  0.00000000e+00  1.53656901e-05
+  -4.36892591e-05  1.77460588e-05]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.03684134140320024
+Loss at the current iteration = 0.0397974817197697
+Number of bases at the previous iteration = 10
+Number of bases at the current iteration = 8
+Total number of bases = 12
+F-test = 0.08023975794520541
+SSE = 0.0397974817197697
+Comparing 0.036813475380830914 + 9.0*2.7866022369323062e-05 with 0.0397974817197697: error has increased
+Ki67_neg' = 7.398e-03 1 + -4.539e-03 Ki67_neg + 2.441e-03 Ki67_pos + 3.805e-05 Ki67_neg Ki67_pos + -1.815e-05 Ki67_pos^2
+Ki67_pos' = 3.709e-03 Ki67_neg + -1.106e-03 Ki67_pos + 1.537e-05 Ki67_neg^2 + -4.369e-05 Ki67_neg Ki67_pos + 1.775e-05 Ki67_pos^2
+
+
+Experimento 7: Grau = 2, Frequência = 1, alpha = 0.01
+
+---------- ITERATION 1 ----------
+SSE = 0.036785610143202085
+Coefficients before sensitivity analysis = [[ 7.40304925e-03 -4.54547204e-03  2.44382508e-03  2.24433865e-07
+   3.78544736e-05 -1.81082577e-05]
+ [-2.52438166e-03  3.88592489e-03 -1.15243716e-03  1.23873008e-05
+  -4.10173514e-05  1.70193209e-05]]
+ST_sum = [array([0.00296122, 0.27145559, 0.27253537, 0.0020011 , 0.63027456,
+       0.56301789, 0.00100975, 0.23206743, 0.12851979, 0.1104476 ,
+       0.68293628, 0.52916091])]
+Total points = [ 4.  3.  2.  5. -1.  1.  5.  2.  3.  4. -1.  1.]
+Less important parameter = [3 6]
+Coefficients after sensitivity analysis = [[ 7.40304925e-03 -4.54547204e-03  2.44382508e-03  0.00000000e+00
+   3.78544736e-05 -1.81082577e-05]
+ [ 0.00000000e+00  3.88592489e-03 -1.15243716e-03  1.23873008e-05
+  -4.10173514e-05  1.70193209e-05]]
+
+---------- ITERATION 2 ----------
+SSE = 0.03684134201369561
+Comparing 0.036785610143202085 + 9.0*0.0036785610143202085 with 0.03684134201369561: error has NOT increased
+Coefficients before sensitivity analysis = [[ 7.39027205e-03 -4.53889911e-03  2.44066769e-03  0.00000000e+00
+   3.80502673e-05 -1.81502260e-05]
+ [ 0.00000000e+00  3.70941586e-03 -1.10590058e-03  1.53680040e-05
+  -4.36912152e-05  1.77464514e-05]]
+ST_sum = [array([0.00295611, 0.27106305, 0.27218326, 0.63353452, 0.56432276,
+       0.22152631, 0.12333003, 0.13702414, 0.72745594, 0.55176869])]
+Total points = [ 4.  3.  2. -1.  1.  2.  4.  3. -1.  1.]
+Less important parameter = [0 6]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -4.53889911e-03  2.44066769e-03  0.00000000e+00
+   3.80502673e-05 -1.81502260e-05]
+ [ 0.00000000e+00  3.70941586e-03  0.00000000e+00  1.53680040e-05
+  -4.36912152e-05  1.77464514e-05]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.03684134201369561
+Loss at the current iteration = 0.039797481720475675
+Number of bases at the previous iteration = 10
+Number of bases at the current iteration = 8
+Total number of bases = 12
+F-test = 0.08023974006378837
+SSE = 0.039797481720475675
+Comparing 0.03681347607844885 + 9.0*2.7865935246763895e-05 with 0.039797481720475675: error has increased
+Ki67_neg' = 7.398e-03 1 + -4.539e-03 Ki67_neg + 2.441e-03 Ki67_pos + 3.805e-05 Ki67_neg Ki67_pos + -1.815e-05 Ki67_pos^2
+Ki67_pos' = 3.709e-03 Ki67_neg + -1.106e-03 Ki67_pos + 1.537e-05 Ki67_neg^2 + -4.369e-05 Ki67_neg Ki67_pos + 1.775e-05 Ki67_pos^2
+
+
+Experimento 8: Grau = 2, Frequência = 1, alpha = 0.1
+
+---------- ITERATION 1 ----------
+SSE = 0.036785687017601224
+Coefficients before sensitivity analysis = [[ 7.32380761e-03 -4.53896009e-03  2.44186230e-03  9.95170455e-08
+   3.79648995e-05 -1.81363935e-05]
+ [-2.49563504e-03  3.88316506e-03 -1.15152004e-03  1.24454513e-05
+  -4.10682643e-05  1.70317079e-05]]
+ST_sum = [array([0.00292952, 0.2710667 , 0.27231648, 0.00088731, 0.63211315,
+       0.56389268, 0.00099825, 0.23190262, 0.12841752, 0.11096608,
+       0.68378397, 0.52954605])]
+Total points = [ 4.  3.  2.  5. -1.  1.  5.  2.  3.  4. -1.  1.]
+Less important parameter = [3 6]
+Coefficients after sensitivity analysis = [[ 7.32380761e-03 -4.53896009e-03  2.44186230e-03  0.00000000e+00
+   3.79648995e-05 -1.81363935e-05]
+ [ 0.00000000e+00  3.88316506e-03 -1.15152004e-03  1.24454513e-05
+  -4.10682643e-05  1.70317079e-05]]
+
+---------- ITERATION 2 ----------
+SSE = 0.03684140190124378
+Comparing 0.036785687017601224 + 9.0*0.0036785687017601224 with 0.03684140190124378: error has NOT increased
+Coefficients before sensitivity analysis = [[ 7.31819706e-03 -4.53604772e-03  2.44046241e-03  0.00000000e+00
+   3.80517159e-05 -1.81549992e-05]
+ [ 0.00000000e+00  3.70869927e-03 -1.10553057e-03  1.53911383e-05
+  -4.37107719e-05  1.77503760e-05]]
+ST_sum = [array([0.00292728, 0.27089277, 0.27216037, 0.63355863, 0.56447117,
+       0.22148352, 0.12328877, 0.13723041, 0.72778155, 0.55189071])]
+Total points = [ 4.  3.  2. -1.  1.  2.  4.  3. -1.  1.]
+Less important parameter = [0 6]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -4.53604772e-03  2.44046241e-03  0.00000000e+00
+   3.80517159e-05 -1.81549992e-05]
+ [ 0.00000000e+00  3.70869927e-03  0.00000000e+00  1.53911383e-05
+  -4.37107719e-05  1.77503760e-05]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.03684140190124378
+Loss at the current iteration = 0.03979748179107301
+Number of bases at the previous iteration = 10
+Number of bases at the current iteration = 8
+Total number of bases = 12
+F-test = 0.08023798599611469
+SSE = 0.03979748179107301
+Comparing 0.036813544459422504 + 9.0*2.785744182127667e-05 with 0.03979748179107301: error has increased
+Ki67_neg' = 7.398e-03 1 + -4.539e-03 Ki67_neg + 2.441e-03 Ki67_pos + 3.805e-05 Ki67_neg Ki67_pos + -1.815e-05 Ki67_pos^2
+Ki67_pos' = 3.709e-03 Ki67_neg + -1.106e-03 Ki67_pos + 1.537e-05 Ki67_neg^2 + -4.369e-05 Ki67_neg Ki67_pos + 1.775e-05 Ki67_pos^2
+
+
+Experimento 9: Grau = 2, Frequência = 1, alpha = 1.0
+
+---------- ITERATION 1 ----------
+SSE = 0.036792012542123685
+Coefficients before sensitivity analysis = [[ 6.61255961e-03 -4.47964259e-03  2.42379618e-03 -1.04972177e-06
+   3.89797271e-05 -1.83936783e-05]
+ [-2.23764648e-03  3.85768308e-03 -1.14292083e-03  1.29903676e-05
+  -4.15446636e-05  1.71467847e-05]]
+ST_sum = [array([0.00264502, 0.26752426, 0.27030175, 0.00935953, 0.64900996,
+       0.57189212, 0.00089506, 0.23038083, 0.12745853, 0.11582466,
+       0.69171599, 0.53312399])]
+Total points = [ 5.  3.  2.  4. -1.  1.  5.  2.  3.  4. -1.  1.]
+Less important parameter = [0 6]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -4.47964259e-03  2.42379618e-03 -1.04972177e-06
+   3.89797271e-05 -1.83936783e-05]
+ [ 0.00000000e+00  3.85768308e-03 -1.14292083e-03  1.29903676e-05
+  -4.15446636e-05  1.71467847e-05]]
+
+---------- ITERATION 2 ----------
+SSE = 0.03732043221838566
+Comparing 0.036792012542123685 + 9.0*0.0036792012542123686 with 0.03732043221838566: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -4.01824780e-03  2.30239372e-03 -8.82639349e-06
+   4.59574630e-05 -2.02930825e-05]
+ [ 0.00000000e+00  3.70155013e-03 -1.10183903e-03  1.56219419e-05
+  -4.39058833e-05  1.77895306e-05]] lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543676365999D+04   r2 =  0.2202083064940D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543676365999D+04   r2 =  0.2202083064940D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543676365999D+04   r2 =  0.1491155708447D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543676365999D+04   r2 =  0.1491155708447D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543676365999D+04   r2 =  0.1009746354366D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543676365999D+04   r2 =  0.1009746354366D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543676365999D+04   r2 =  0.6837566958165D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543676365999D+04   r2 =  0.6837566958165D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543676365999D+04   r2 =  0.4630105541380D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543676365999D+04   r2 =  0.4630105541380D-13
+ lsoda--  above warning has been issued i1 times.    
+       it will not be issued again for this problem  
+      in above message,  i1 =        10
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543672436507D+04   r2 =  0.2201755409266D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543672436507D+04   r2 =  0.2201755409266D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543672436507D+04   r2 =  0.1490933834152D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543672436507D+04   r2 =  0.1490933834152D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543672436507D+04   r2 =  0.1009596110660D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543672436507D+04   r2 =  0.1009596110660D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543672436507D+04   r2 =  0.6836549572561D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543672436507D+04   r2 =  0.6836549572561D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543672436507D+04   r2 =  0.4629416611714D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543672436507D+04   r2 =  0.4629416611714D-13
+ lsoda--  above warning has been issued i1 times.    
+       it will not be issued again for this problem  
+      in above message,  i1 =        10
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543633142676D+04   r2 =  0.2198491631325D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543633142676D+04   r2 =  0.2198491631325D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543633142676D+04   r2 =  0.1488723744449D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543633142676D+04   r2 =  0.1488723744449D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543633142676D+04   r2 =  0.1008099533201D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543633142676D+04   r2 =  0.1008099533201D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543633142676D+04   r2 =  0.6826415395262D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543633142676D+04   r2 =  0.6826415395262D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543633142676D+04   r2 =  0.4622554183783D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543633142676D+04   r2 =  0.4622554183783D-13
+ lsoda--  above warning has been issued i1 times.    
+       it will not be issued again for this problem  
+      in above message,  i1 =        10
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543253742421D+04   r2 =  0.2149997876334D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543253742421D+04   r2 =  0.2149997876334D-12
+
+ST_sum = [array([0.23996976, 0.25676295, 0.07869785, 0.76518882, 0.63094798,
+       0.22105657, 0.12287709, 0.1392883 , 0.73103015, 0.5531081 ])]
+Total points = [ 3.  2.  4. -1.  1.  2.  4.  3. -1.  1.]
+Less important parameter = [2 6]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -4.01824780e-03  2.30239372e-03  0.00000000e+00
+   4.59574630e-05 -2.02930825e-05]
+ [ 0.00000000e+00  3.70155013e-03  0.00000000e+00  1.56219419e-05
+  -4.39058833e-05  1.77895306e-05]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.03732043221838566
+Loss at the current iteration = 0.03979748884704985
+Number of bases at the previous iteration = 10
+Number of bases at the current iteration = 8
+Total number of bases = 12
+F-test = 0.06637266723411339
+SSE = 0.03979748884704985
+Comparing 0.037056222380254675 + 9.0*0.0002642098381309861 with 0.03979748884704985: error has increased
+Ki67_neg' = -4.028e-03 Ki67_neg + 2.307e-03 Ki67_pos + -8.514e-06 Ki67_neg^2 + 4.569e-05 Ki67_neg Ki67_pos + -2.024e-05 Ki67_pos^2
+Ki67_pos' = 3.709e-03 Ki67_neg + -1.106e-03 Ki67_pos + 1.537e-05 Ki67_neg^2 + -4.369e-05 Ki67_neg Ki67_pos + 1.775e-05 Ki67_pos^2
+
+
+Experimento 10: Grau = 2, Frequência = 1, alpha = 10.0
+
+---------- ITERATION 1 ----------
+SSE = 0.0369631880617762
+Coefficients before sensitivity analysis = [[ 3.27443183e-03 -4.15729473e-03  2.31628730e-03 -7.86209767e-06
+   4.49413076e-05 -1.98414550e-05]
+ [-1.02844344e-03  3.70211609e-03 -1.08395955e-03  1.67108917e-05
+  -4.47636697e-05  1.78840510e-05]]
+ST_sum = [array([1.30977273e-03, 2.48273641e-01, 2.58312360e-01, 7.01000038e-02,
+       7.48269896e-01, 6.16906073e-01, 4.11377375e-04, 2.21090373e-01,
+       1.20883169e-01, 1.48997586e-01, 7.45312236e-01, 5.56046909e-01])]
+Total points = [ 5.  3.  2.  4. -1.  1.  5.  2.  4.  3. -1.  1.]
+Less important parameter = [0 6]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -4.15729473e-03  2.31628730e-03 -7.86209767e-06
+   4.49413076e-05 -1.98414550e-05]
+ [ 0.00000000e+00  3.70211609e-03 -1.08395955e-03  1.67108917e-05
+  -4.47636697e-05  1.78840510e-05]]
+
+---------- ITERATION 2 ----------
+SSE = 0.037328436951959816
+Comparing 0.0369631880617762 + 9.0*0.0036963188061776204 with 0.037328436951959816: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -3.93307040e-03  2.25836536e-03 -1.15757105e-05
+   4.82805104e-05 -2.07587113e-05]
+ [ 0.00000000e+00  3.63169104e-03 -1.06576725e-03  1.78772744e-05
+  -4.58124566e-05  1.81721457e-05]]
+ST_sum = [array([0.23488296, 0.25185291, 0.1032113 , 0.80386741, 0.6454252 ,
+       0.21688459, 0.11885436, 0.15939728, 0.76277447, 0.56500428])]
+Total points = [ 3.  2.  4. -1.  1.  2.  4.  3. -1.  1.]
+Less important parameter = [2 6]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -3.93307040e-03  2.25836536e-03  0.00000000e+00
+   4.82805104e-05 -2.07587113e-05]
+ [ 0.00000000e+00  3.63169104e-03  0.00000000e+00  1.78772744e-05
+  -4.58124566e-05  1.81721457e-05]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.037328436951959816
+Loss at the current iteration = 0.03979819070577387
+Number of bases at the previous iteration = 10
+Number of bases at the current iteration = 8
+Total number of bases = 12
+F-test = 0.06616279585969602
+SSE = 0.03979819070577387
+Comparing 0.037145812506868006 + 9.0*0.00018262444509180645 with 0.03979819070577387: error has increased
+Ki67_neg' = -4.028e-03 Ki67_neg + 2.307e-03 Ki67_pos + -8.514e-06 Ki67_neg^2 + 4.569e-05 Ki67_neg Ki67_pos + -2.024e-05 Ki67_pos^2
+Ki67_pos' = 3.709e-03 Ki67_neg + -1.106e-03 Ki67_pos + 1.537e-05 Ki67_neg^2 + -4.369e-05 Ki67_neg Ki67_pos + 1.775e-05 Ki67_pos^2
+
+
+Modelo 1
+
+Ki67_neg' = -3.199e-03 Ki67_neg + 2.025e-03 Ki67_pos
+Ki67_pos' = 3.287e-03 Ki67_neg + -9.751e-04 Ki67_pos
+
+
+Modelo 2
+
+Ki67_neg' = 7.398e-03 1 + -4.539e-03 Ki67_neg + 2.441e-03 Ki67_pos + 3.805e-05 Ki67_neg Ki67_pos + -1.815e-05 Ki67_pos^2
+Ki67_pos' = 3.709e-03 Ki67_neg + -1.106e-03 Ki67_pos + 1.537e-05 Ki67_neg^2 + -4.369e-05 Ki67_neg Ki67_pos + 1.775e-05 Ki67_pos^2
+
+
+Modelo 3
+
+Ki67_neg' = -4.028e-03 Ki67_neg + 2.307e-03 Ki67_pos + -8.514e-06 Ki67_neg^2 + 4.569e-05 Ki67_neg Ki67_pos + -2.024e-05 Ki67_pos^2
+Ki67_pos' = 3.709e-03 Ki67_neg + -1.106e-03 Ki67_pos + 1.537e-05 Ki67_neg^2 + -4.369e-05 Ki67_neg Ki67_pos + 1.775e-05 Ki67_pos^2
+
+
+Melhor modelo AIC = 1
+
+Melhor modelo AICc = 1
+
+Melhor modelo BIC = 1
+
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543253742421D+04   r2 =  0.1455885864384D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543253742421D+04   r2 =  0.1455885864384D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543253742421D+04   r2 =  0.9858631366309D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543253742421D+04   r2 =  0.9858631366309D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543253742421D+04   r2 =  0.6675840104946D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543253742421D+04   r2 =  0.6675840104946D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543253742421D+04   r2 =  0.4520591089256D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3543253742421D+04   r2 =  0.4520591089256D-13
+ lsoda--  above warning has been issued i1 times.    
+       it will not be issued again for this problem  
+      in above message,  i1 =        10
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3539295113663D+04   r2 =  0.1607415899804D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3539295113663D+04   r2 =  0.1607415899804D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3539295113663D+04   r2 =  0.1088472743378D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3539295113663D+04   r2 =  0.1088472743378D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3539295113663D+04   r2 =  0.7370668121557D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3539295113663D+04   r2 =  0.7370668121557D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3539295113663D+04   r2 =  0.4991098664495D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3539295113663D+04   r2 =  0.4991098664495D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3539295113663D+04   r2 =  0.3379756823654D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3539295113663D+04   r2 =  0.3379756823654D-13
+ lsoda--  above warning has been issued i1 times.    
+       it will not be issued again for this problem  
+      in above message,  i1 =        10

@@ -7,6 +7,7 @@ Dr. Paul Macklin (macklinp@iu.edu)
 
 import sys
 import copy
+import logging
 import xml.etree.ElementTree as ET  # https://docs.python.org/2/library/xml.etree.elementtree.html
 # from ElementTree_pretty import prettify
 
@@ -42,9 +43,12 @@ class SubstrateDef(QWidget):
 
         #---------------
         # self.cell_defs = CellDefInstances()
-        self.microenv_hbox = QHBoxLayout()
+        # self.microenv_hbox = QHBoxLayout()
 
         splitter = QSplitter()
+        leftwidth = 150
+        # splitter.setSizes([split_leftwidth, self.width() - leftwidth])
+        # splitter.setSizes([leftwidth, self.width() - leftwidth])
 
         tree_widget_width = 240
         tree_widget_height = 400
@@ -82,14 +86,52 @@ class SubstrateDef(QWidget):
         #-------------------------
         # self.name_list = QListWidget() # tree is overkill; list would suffice; meh.
 
-        self.microenv_hbox.addWidget(self.tree)
+        # self.microenv_hbox.addWidget(self.tree)
         # self.microenv_hbox.addWidget(self.name_list)
 
 
         self.scroll_substrate_tree = QScrollArea()
-        self.scroll_substrate_tree.setWidget(self.tree)
+        # self.scroll_substrate_tree.setFixedWidth(tree_widget_width)
+
+        # self.tree_w = QWidget()
+        tree_w_vbox = QVBoxLayout()
+        tree_w_vbox.addWidget(self.tree)
+
+        # self.scroll_substrate_tree.setWidget(self.tree)
         # self.scroll_substrate_tree.setWidget(self.name_list)
 
+        #---------
+        tree_w_hbox = QHBoxLayout()
+        self.new_button = QPushButton("New")
+        self.new_button.clicked.connect(self.new_substrate)
+        self.new_button.setStyleSheet("background-color: lightgreen")
+        bwidth = 70
+        bheight = 32
+        # self.new_button.setFixedWidth(bwidth)
+        tree_w_hbox.addWidget(self.new_button)
+
+        self.copy_button = QPushButton("Copy")
+        self.copy_button.clicked.connect(self.copy_substrate)
+        self.copy_button.setStyleSheet("background-color: lightgreen")
+        # self.copy_button.setFixedWidth(bwidth)
+        tree_w_hbox.addWidget(self.copy_button)
+
+        self.delete_button = QPushButton("Delete")
+        self.delete_button.clicked.connect(self.delete_substrate)
+        self.delete_button.setStyleSheet("background-color: yellow")
+        # self.delete_button.setFixedWidth(bwidth)
+        tree_w_hbox.addWidget(self.delete_button)
+
+
+        #---------
+        self.tree_w = QWidget()
+        # self.tree_w.setFixedWidth(tree_widget_width)
+        # self.tree_w.setFixedHeight(tree_widget_height)
+        tree_w_vbox.addLayout(tree_w_hbox)
+        self.tree_w.setLayout(tree_w_vbox)
+        self.scroll_substrate_tree.setWidget(self.tree_w)
+        # self.scroll_substrate_tree.setWidget(self.tree)
+        #---------
         # splitter.addWidget(self.tree)
         splitter.addWidget(self.scroll_substrate_tree)
 
@@ -113,18 +155,6 @@ class SubstrateDef(QWidget):
         # self.microenv_hbox.addWidget(self.)
 
         #------------------
-        controls_hbox = QHBoxLayout()
-        self.new_button = QPushButton("New")
-        self.new_button.clicked.connect(self.new_substrate)
-        controls_hbox.addWidget(self.new_button)
-
-        self.copy_button = QPushButton("Copy")
-        self.copy_button.clicked.connect(self.copy_substrate)
-        controls_hbox.addWidget(self.copy_button)
-
-        self.delete_button = QPushButton("Delete")
-        self.delete_button.clicked.connect(self.delete_substrate)
-        controls_hbox.addWidget(self.delete_button)
 
         # self.vbox.addLayout(hbox)
         # self.vbox.addWidget(QHLine())
@@ -390,8 +420,8 @@ class SubstrateDef(QWidget):
 
         self.layout = QVBoxLayout(self)
 
-        self.layout.addLayout(controls_hbox)
-
+        # self.layout.addLayout(controls_hbox)
+ 
         # self.layout.addWidget(self.tabs)
         # self.layout.addWidget(QHLine())
         # self.layout.addWidget(self.params)
@@ -630,14 +660,14 @@ class SubstrateDef(QWidget):
         # msgBox.buttonClicked.connect(msgButtonClick)
 
         returnValue = msgBox.exec()
-        if returnValue == QMessageBox.Ok:
-            print('OK clicked')
+        # if returnValue == QMessageBox.Ok:
+            # print('OK clicked')
 
     #----------------------------------------------------------------------
     # @QtCore.Slot()
     def delete_substrate(self):
         num_items = self.tree.invisibleRootItem().childCount()
-        print('------ delete_substrate: num_items=',num_items)
+        logging.debug(f'------ delete_substrate: num_items= {num_items}')
         if num_items == 1:
             # print("Not allowed to delete all substrates.")
             # QMessageBox.information(self, "Not allowed to delete all substrates")
@@ -777,7 +807,7 @@ class SubstrateDef(QWidget):
 # -->
 #  		</variable>
     def populate_tree(self):
-        print("=======================  microenv populate_tree  ======================= ")
+        logging.debug(f'=======================  microenv populate_tree  ======================= ')
         uep = self.xml_root.find(".//microenvironment_setup")
         if uep:
             # self.substrate.clear()
@@ -834,7 +864,7 @@ class SubstrateDef(QWidget):
                         self.init_cond.setText(init_cond)
                     
                     dc_ic_units = var_path.find('.//initial_condition').attrib['units']  # omg
-                    print("dc_ic_units = ", dc_ic_units)
+                    logging.debug(f'dc_ic_units =  {dc_ic_units}')
                     self.param_d[substrate_name]["init_cond_units"] = dc_ic_units
                     # sys.exit(1)
 
@@ -847,7 +877,7 @@ class SubstrateDef(QWidget):
                     #     self.dirichlet_bc.setText(dirichlet_bc)
 
                     dc_bc_units = dirichlet_bc_path.attrib['units']  # omg
-                    print("dc_bc_units = ", dc_bc_units)
+                    logging.debug(f'dc_bc_units = {dc_bc_units}')
                     self.param_d[substrate_name]["dirichlet_bc_units"] = dc_bc_units
 
                     if dirichlet_bc_path.attrib['enabled'].lower() == "false":
@@ -882,10 +912,10 @@ class SubstrateDef(QWidget):
                     if options_path:
                         # self.dirichlet_options_exist = True
                         for bv in options_path:
-                            print("bv = ",bv)
+                            logging.debug(f'bv = {bv}')
                             if "xmin" in bv.attrib['ID'].lower():
                                 self.param_d[substrate_name]["dirichlet_xmin"] = bv.text
-                                print("   -------- ",substrate_name, ":  dirichlet_xmin = ",bv.text)
+                                logging.debug(f'   -------- {substrate_name}:  dirichlet_xmin = {bv.text}')
 
                                 # BEWARE: doing a 'setText' here will invoke the callback associated with
                                 # the widget (e.g., self.dirichlet_xmin.textChanged.connect(self.dirichlet_xmin_changed))
@@ -941,7 +971,7 @@ class SubstrateDef(QWidget):
                     # self.gradients.setChecked(False)
                     # self.track_in_agents.setChecked(False)
                     for opt in var:
-                        print("------- options: ",opt)
+                        logging.debug(f'------- options: {opt}')
                         if "calculate_gradients" in opt.tag:
                             if "true" in opt.text.lower():
                                 # self.gradients.setChecked(True)
@@ -950,8 +980,6 @@ class SubstrateDef(QWidget):
                             if "true" in opt.text.lower():
                                 # self.track_in_agents.setChecked(True)
                                 self.param_d["track_in_agents"] = True
-
-                    
 
             # options_path = uep.find(".//options")
             # print(" ---- options_path = ", options_path)
@@ -977,7 +1005,7 @@ class SubstrateDef(QWidget):
         self.tree.setCurrentItem(self.tree.topLevelItem(0))  # select the top (0th) item
         self.tree_item_clicked_cb(self.tree.topLevelItem(0), 0)  # and invoke its callback to fill widget values
 
-        print("\n\n=======================  leaving microenv populate_tree  ======================= ")
+        logging.debug(f'\n\n=======================  leaving microenv populate_tree  =====================')
         # for k in self.param_d.keys():
         #     print(" ===>>> ",k, " : ", self.param_d[k])
 
@@ -1079,7 +1107,7 @@ class SubstrateDef(QWidget):
                 self.iterate_tree(item, child_count)
                 
     def fill_xml(self):
-        print("----------- microenv_tab.py: fill_xml(): ----------")
+        logging.debug(f'----------- microenv_tab.py: fill_xml(): ----------')
         uep = self.xml_root.find('.//microenvironment_setup') # guaranteed to exist since we start with a valid model
         vp = []   # pointers to <variable> nodes
         if uep:
@@ -1092,9 +1120,9 @@ class SubstrateDef(QWidget):
         # Obtain a list of all substrates in self.tree (QTreeWidget()). Used below.
         substrates_in_tree = []
         num_subs = self.tree.invisibleRootItem().childCount()  # rwh: get number of items in tree
-        print('num subtrates = ',num_subs)
+        logging.debug(f'microenv_tab.py: fill_xml(): num subtrates = {num_subs}')
         self.iterate_tree(self.tree.invisibleRootItem(), num_subs, substrates_in_tree)
-        print("substrates_in_tree =",substrates_in_tree)
+        logging.debug(f'substrates_in_tree ={substrates_in_tree}')
 
         uep = self.xml_root.find('.//microenvironment_setup')
         indent1 = '\n'
@@ -1104,9 +1132,9 @@ class SubstrateDef(QWidget):
 
         idx = 0
         for substrate in self.param_d.keys():
-            print('key in param_d.keys() = ',substrate)
+            logging.debug(f'microrenv_tab.py: key in param_d.keys() = {substrate}')
             if substrate in substrates_in_tree:
-                print("matched! ",substrate)
+                logging.debug(f'matched! {substrate}')
 	# 	<variable name="glue" units="dimensionless" ID="1">
 	# 		<physical_parameter_set>
 	# 			<diffusion_coefficient units="micron^2/min">422.0</diffusion_coefficient>
