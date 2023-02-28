@@ -56,6 +56,10 @@ data = np.genfromtxt("data.csv", dtype = float, delimiter = ',', names = True)
 t = data["times"][::step]
 X = np.stack((data["live_mean"][::step],), axis = -1)
 
+X_plot = X
+t_plot = t
+X0_plot = X_plot[0, :]
+
 X = np.delete(X, slice(55), 0)
 t = np.delete(t, slice(55), None)
 
@@ -74,7 +78,7 @@ X0_test = X_test[0, :]
 
 # Solve true model
 b = 0.00072
-true_solution = odeint(true_model, X0_test, t_test, args=(b,))
+true_solution = odeint(true_model, X0_plot, t_plot, args=(b,))
 
 model_set = []
 for poly_degree in poly_degrees:
@@ -174,7 +178,7 @@ for model_id, model in enumerate(model_set):
 	# Generate figures
 	fig, ax = plt.subplots(1, 1, figsize = (15, 7.5), dpi = 300)
 	ax.plot(t_test, X_test[:,0], "ko", label = r"Data live$(t)$", alpha = 0.5, markersize = 3)
-	ax.plot(t_test, true_solution[:,0], "b:", label = r"True live$(t)$", alpha = 1.0, linewidth = 1)
+	ax.plot(t_plot, true_solution[:,0], "b:", label = r"True live$(t)$", alpha = 1.0, linewidth = 1)
 	ax.plot(t_test, simulation[:,0], "b", label = r"Model live$(t)$", alpha = 1.0, linewidth = 1)
 	if calibration_mode == "Bayes":
 		ax.fill_between(t, simulation_min[:,0], simulation_max[:,0], color = "b", alpha = 0.4)

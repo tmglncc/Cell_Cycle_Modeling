@@ -1,0 +1,4 @@
+Modelo 	 SSE 	 AIC 	 AICc 	 Delta_AIC 	 Delta_AICc 	 Likelihood 	 Likelihood_c 	 AIC_weights 	 AICc_weights 	 AIC_evid_ratio 	 AICc_evid_ratio 	 BIC 	 Delta_BIC 	 BIC_prob
+1	2339.55861484796	366.39316927837064	366.73799686457755	inf	inf	0.0	0.0	nan	nan	nan	nan	377.5763314607576	inf	nan
+2	0.0	-inf	-inf	nan	nan	nan	nan	nan	nan	nan	nan	-inf	nan	nan
+3	2239140.851548516	1204.9232830056612	1206.2089972913755	inf	inf	0.0	0.0	nan	nan	nan	nan	1227.289607370435	inf	nan

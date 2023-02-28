@@ -1,0 +1,280 @@
+Experimento 1: Grau = 1, Frequência = 1, alpha = 0.001
+
+---------- ITERATION 1 ----------
+SSE = 0.0020318247448338506
+Coefficients before sensitivity analysis = [[-0.00197489  0.00073191]]
+ST_sum = [array([0.00078996, 0.14222501])]
+Total points = [ 1. -1.]
+Less important parameter = [0]
+Coefficients after sensitivity analysis = [[0.         0.00073191]]
+
+---------- ITERATION 2 ----------
+SSE = 0.002191379460657027
+Comparing 0.0020318247448338506 + 450.0*0.00020318247448338508 with 0.002191379460657027: error has NOT increased
+Coefficients before sensitivity analysis = [[0.         0.00072439]]
+Coefficients after sensitivity analysis = [[0.         0.00072439]]
+
+live' = 7.244e-04 live
+
+
+Experimento 2: Grau = 1, Frequência = 1, alpha = 0.01
+
+---------- ITERATION 1 ----------
+SSE = 0.0020318247542952337
+Coefficients before sensitivity analysis = [[-0.00197446  0.00073191]]
+ST_sum = [array([0.00078978, 0.14222469])]
+Total points = [ 1. -1.]
+Less important parameter = [0]
+Coefficients after sensitivity analysis = [[0.         0.00073191]]
+
+---------- ITERATION 2 ----------
+SSE = 0.002191379460657037
+Comparing 0.0020318247542952337 + 450.0*0.00020318247542952338 with 0.002191379460657037: error has NOT increased
+Coefficients before sensitivity analysis = [[0.         0.00072439]]
+Coefficients after sensitivity analysis = [[0.         0.00072439]]
+
+live' = 7.244e-04 live
+
+
+Experimento 3: Grau = 1, Frequência = 1, alpha = 0.1
+
+---------- ITERATION 1 ----------
+SSE = 0.0020318256962472167
+Coefficients before sensitivity analysis = [[-0.00197012  0.00073189]]
+ST_sum = [array([0.00078805, 0.14222148])]
+Total points = [ 1. -1.]
+Less important parameter = [0]
+Coefficients after sensitivity analysis = [[0.         0.00073189]]
+
+---------- ITERATION 2 ----------
+SSE = 0.0021913794606579795
+Comparing 0.0020318256962472167 + 450.0*0.00020318256962472168 with 0.0021913794606579795: error has NOT increased
+Coefficients before sensitivity analysis = [[0.         0.00072439]]
+Coefficients after sensitivity analysis = [[0.         0.00072439]]
+
+live' = 7.244e-04 live
+
+
+Experimento 4: Grau = 1, Frequência = 1, alpha = 1.0
+
+---------- ITERATION 1 ----------
+SSE = 0.0020319158525502435
+Coefficients before sensitivity analysis = [[-0.00192775  0.00073173]]
+ST_sum = [array([0.0007711 , 0.14219011])]
+Total points = [ 1. -1.]
+Less important parameter = [0]
+Coefficients after sensitivity analysis = [[0.         0.00073173]]
+
+---------- ITERATION 2 ----------
+SSE = 0.002191379460751997
+Comparing 0.0020319158525502435 + 450.0*0.00020319158525502437 with 0.002191379460751997: error has NOT increased
+Coefficients before sensitivity analysis = [[0.         0.00072439]]
+Coefficients after sensitivity analysis = [[0.         0.00072439]]
+
+live' = 7.244e-04 live
+
+
+Experimento 5: Grau = 1, Frequência = 1, alpha = 10.0
+
+---------- ITERATION 1 ----------
+SSE = 0.0020379988326281874
+Coefficients before sensitivity analysis = [[-0.00158645  0.00073043]]
+ST_sum = [array([0.00063458, 0.14193738])]
+Total points = [ 1. -1.]
+Less important parameter = [0]
+Coefficients after sensitivity analysis = [[0.         0.00073043]]
+
+---------- ITERATION 2 ----------
+SSE = 0.0021913794701537963
+Comparing 0.0020379988326281874 + 450.0*0.00020379988326281874 with 0.0021913794701537963: error has NOT increased
+Coefficients before sensitivity analysis = [[0.         0.00072439]]
+Coefficients after sensitivity analysis = [[0.         0.00072439]]
+
+live' = 7.244e-04 live
+
+
+Experimento 6: Grau = 2, Frequência = 1, alpha = 0.001
+
+---------- ITERATION 1 ----------
+SSE = 0.0019121278788999533
+Coefficients before sensitivity analysis = [[3.49625274e-04 7.00418492e-04 6.89972046e-08]]
+ST_sum = [array([0.00013985, 0.13610532, 0.00651338])]
+Total points = [ 2. -1.  1.]
+Less important parameter = [0]
+Coefficients after sensitivity analysis = [[0.00000000e+00 7.00418492e-04 6.89972046e-08]]
+
+---------- ITERATION 2 ----------
+SSE = 0.0019138846454130095
+Comparing 0.0019121278788999533 + 450.0*0.00019121278788999534 with 0.0019138846454130095: error has NOT increased
+Coefficients before sensitivity analysis = [[0.00000000e+00 7.03958877e-04 6.22651081e-08]]
+ST_sum = [array([0.13679329, 0.00587787])]
+Total points = [-1.  1.]
+Less important parameter = [1]
+Coefficients after sensitivity analysis = [[0.         0.00070396 0.        ]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.0019138846454130095
+Loss at the current iteration = 0.002191379460657027
+Number of bases at the previous iteration = 2
+Number of bases at the current iteration = 1
+Total number of bases = 3
+F-test = 0.14499035556248752
+SSE = 0.002191379460657027
+Comparing 0.0019130062621564815 + 450.0*8.783832565281311e-07 with 0.002191379460657027: error has NOT increased
+Coefficients before sensitivity analysis = [[0.         0.00072439 0.        ]]
+Coefficients after sensitivity analysis = [[0.         0.00072439 0.        ]]
+
+live' = 7.244e-04 live
+
+
+Experimento 7: Grau = 2, Frequência = 1, alpha = 0.01
+
+---------- ITERATION 1 ----------
+SSE = 0.0019121278797073424
+Coefficients before sensitivity analysis = [[3.49410890e-04 7.00420652e-04 6.89931055e-08]]
+ST_sum = [array([0.00013976, 0.13610574, 0.00651299])]
+Total points = [ 2. -1.  1.]
+Less important parameter = [0]
+Coefficients after sensitivity analysis = [[0.00000000e+00 7.00420652e-04 6.89931055e-08]]
+
+---------- ITERATION 2 ----------
+SSE = 0.00191388464541309
+Comparing 0.0019121278797073424 + 450.0*0.00019121278797073425 with 0.00191388464541309: error has NOT increased
+Coefficients before sensitivity analysis = [[0.00000000e+00 7.03958867e-04 6.22651372e-08]]
+ST_sum = [array([0.13679329, 0.00587787])]
+Total points = [-1.  1.]
+Less important parameter = [1]
+Coefficients after sensitivity analysis = [[0.         0.00070396 0.        ]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.00191388464541309
+Loss at the current iteration = 0.002191379460657037
+Number of bases at the previous iteration = 2
+Number of bases at the current iteration = 1
+Total number of bases = 3
+F-test = 0.14499035556244458
+SSE = 0.002191379460657037
+Comparing 0.0019130062625602163 + 450.0*8.783828528738076e-07 with 0.002191379460657037: error has NOT increased
+Coefficients before sensitivity analysis = [[0.         0.00072439 0.        ]]
+Coefficients after sensitivity analysis = [[0.         0.00072439 0.        ]]
+
+live' = 7.244e-04 live
+
+
+Experimento 8: Grau = 2, Frequência = 1, alpha = 0.1
+
+---------- ITERATION 1 ----------
+SSE = 0.0019121279594362392
+Coefficients before sensitivity analysis = [[3.47281715e-04 7.00442107e-04 6.89523969e-08]]
+ST_sum = [array([0.00013891, 0.13610991, 0.00650915])]
+Total points = [ 2. -1.  1.]
+Less important parameter = [0]
+Coefficients after sensitivity analysis = [[0.00000000e+00 7.00442107e-04 6.89523969e-08]]
+
+---------- ITERATION 2 ----------
+SSE = 0.001913884645421359
+Comparing 0.0019121279594362392 + 450.0*0.00019121279594362393 with 0.001913884645421359: error has NOT increased
+Coefficients before sensitivity analysis = [[0.00000000e+00 7.03958760e-04 6.22654277e-08]]
+ST_sum = [array([0.13679327, 0.0058779 ])]
+Total points = [-1.  1.]
+Less important parameter = [1]
+Coefficients after sensitivity analysis = [[0.         0.00070396 0.        ]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.001913884645421359
+Loss at the current iteration = 0.0021913794606579795
+Number of bases at the previous iteration = 2
+Number of bases at the current iteration = 1
+Total number of bases = 3
+F-test = 0.14499035555799003
+SSE = 0.0021913794606579795
+Comparing 0.001913006302428799 + 450.0*8.783429925598649e-07 with 0.0021913794606579795: error has NOT increased
+Coefficients before sensitivity analysis = [[0.         0.00072439 0.        ]]
+Coefficients after sensitivity analysis = [[0.         0.00072439 0.        ]]
+
+live' = 7.244e-04 live
+
+
+Experimento 9: Grau = 2, Frequência = 1, alpha = 1.0
+
+---------- ITERATION 1 ----------
+SSE = 0.001912135017682899
+Coefficients before sensitivity analysis = [[3.27361549e-04 7.00642760e-04 6.85717218e-08]]
+ST_sum = [array([1.30944620e-04, 1.36148901e-01, 6.47321553e-03])]
+Total points = [ 2. -1.  1.]
+Less important parameter = [0]
+Coefficients after sensitivity analysis = [[0.00000000e+00 7.00642760e-04 6.85717218e-08]]
+
+---------- ITERATION 2 ----------
+SSE = 0.0019138846462483277
+Comparing 0.001912135017682899 + 450.0*0.0001912135017682899 with 0.0019138846462483277: error has NOT increased
+Coefficients before sensitivity analysis = [[0.00000000e+00 7.03957692e-04 6.22683325e-08]]
+ST_sum = [array([0.13679306, 0.00587817])]
+Total points = [-1.  1.]
+Less important parameter = [1]
+Coefficients after sensitivity analysis = [[0.         0.00070396 0.        ]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.0019138846462483277
+Loss at the current iteration = 0.002191379460751997
+Number of bases at the previous iteration = 2
+Number of bases at the current iteration = 1
+Total number of bases = 3
+F-test = 0.14499035511237615
+SSE = 0.002191379460751997
+Comparing 0.0019130098319656134 + 450.0*8.748142827143821e-07 with 0.002191379460751997: error has NOT increased
+Coefficients before sensitivity analysis = [[0.         0.00072439 0.        ]]
+Coefficients after sensitivity analysis = [[0.         0.00072439 0.        ]]
+
+live' = 7.244e-04 live
+
+
+Experimento 10: Grau = 2, Frequência = 1, alpha = 10.0
+
+---------- ITERATION 1 ----------
+SSE = 0.0019124118683933123
+Coefficients before sensitivity analysis = [[2.09088689e-04 7.01829769e-04 6.63233231e-08]]
+ST_sum = [array([8.36354756e-05, 1.36379561e-01, 6.26096521e-03])]
+Total points = [ 2. -1.  1.]
+Less important parameter = [0]
+Coefficients after sensitivity analysis = [[0.00000000e+00 7.01829769e-04 6.63233231e-08]]
+
+---------- ITERATION 2 ----------
+SSE = 0.0019138847289425207
+Comparing 0.0019124118683933123 + 450.0*0.00019124118683933123 with 0.0019138847289425207: error has NOT increased
+Coefficients before sensitivity analysis = [[0.00000000e+00 7.03947013e-04 6.22973805e-08]]
+ST_sum = [array([0.13679098, 0.00588091])]
+Total points = [-1.  1.]
+Less important parameter = [1]
+Coefficients after sensitivity analysis = [[0.         0.00070395 0.        ]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.0019138847289425207
+Loss at the current iteration = 0.0021913794701537963
+Number of bases at the previous iteration = 2
+Number of bases at the current iteration = 1
+Total number of bases = 3
+F-test = 0.14499031055261088
+SSE = 0.0021913794701537963
+Comparing 0.0019131482986679165 + 450.0*7.364302746042366e-07 with 0.0021913794701537963: error has NOT increased
+Coefficients before sensitivity analysis = [[0.         0.00072439 0.        ]]
+Coefficients after sensitivity analysis = [[0.         0.00072439 0.        ]]
+
+live' = 7.244e-04 live
+
+
+Modelo 1
+
+live' = 7.244e-04 live
+
+
+Melhor modelo AIC = 1
+
+Melhor modelo AICc = 1
+
+Melhor modelo BIC = 1
+
+SSE between data and true model = 2186.9675580946086
+
+Normalized SSE between data and true model = 4.425367145074582
+

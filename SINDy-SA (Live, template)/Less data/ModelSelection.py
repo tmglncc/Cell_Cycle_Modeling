@@ -37,6 +37,14 @@ class ModelSelection:
 		squared_errors = (target - predicted)**2.0
 		return np.sum(squared_errors)
 
+	def compute_CSSE(self, target, predicted):
+		squared_errors = (target - predicted)**2.0
+		return np.cumsum(squared_errors)
+
+	def compute_NCSSE(self, target, predicted):
+		csse = self.compute_CSSE(target, predicted)
+		return csse/np.amax(target)
+
 	def set_model_SSE(self, model_id, SSE):
 		self.SSE[model_id] = SSE
 

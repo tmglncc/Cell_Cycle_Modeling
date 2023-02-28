@@ -51,16 +51,16 @@ def run_model(num_replicates, output_folder, config_filename):
 num_replicates = 10
 
 # output_folder = "output_Live/"
-output_folder = "output_Ki67_Basic/"
+# output_folder = "output_Ki67_Basic/"
 # output_folder = "output_Ki67_Advanced/"
 # output_folder = "output_Flow_Cytometry/"
-# output_folder = "output_Separated_Flow_Cytometry/"
+output_folder = "output_Separated_Flow_Cytometry/"
 
 # config_filename = "PhysiCell_settings_Live_without_o2_apop_nec.xml"
-config_filename = "PhysiCell_settings_Ki67_Basic_without_o2_apop_nec.xml"
+# config_filename = "PhysiCell_settings_Ki67_Basic_without_o2_apop_nec.xml"
 # config_filename = "PhysiCell_settings_Ki67_Advanced_without_o2_apop_nec.xml"
 # config_filename = "PhysiCell_settings_Flow_Cytometry_without_o2_apop_nec.xml"
-# config_filename = "PhysiCell_settings_Separated_Flow_Cytometry_without_o2_apop_nec.xml"
+config_filename = "PhysiCell_settings_Separated_Flow_Cytometry_without_o2_apop_nec.xml"
 
 create_config_folders(num_replicates, output_folder, config_filename)
 run_model(num_replicates, output_folder, config_filename)

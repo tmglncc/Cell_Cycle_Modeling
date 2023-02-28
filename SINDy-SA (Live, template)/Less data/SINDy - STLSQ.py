@@ -56,6 +56,9 @@ data = np.genfromtxt("data.csv", dtype = float, delimiter = ',', names = True)
 t = data["times"][::step]
 X = np.stack((data["live_mean"][::step],), axis = -1)
 
+data_std = np.genfromtxt("data_std.csv", dtype = float, delimiter = ',', names = True)
+X_std = np.stack((data_std["live_std"][::step],), axis = -1)
+
 X0 = X[0, :]
 t_steps = len(t)
 
@@ -166,16 +169,20 @@ for model_id, model in enumerate(model_set):
 		continue
 
 	# Generate figures
-	fig, ax = plt.subplots(1, 1, figsize = (15, 7.5), dpi = 300)
-	ax.plot(t_test, X_test[:,0], "ko", label = r"Data live$(t)$", alpha = 0.5, markersize = 3)
-	ax.plot(t_test, true_solution[:,0], "b:", label = r"True live$(t)$", alpha = 1.0, linewidth = 1)
-	ax.plot(t_test, simulation[:,0], "b", label = r"Model live$(t)$", alpha = 1.0, linewidth = 1)
-	if calibration_mode == "Bayes":
-		ax.fill_between(t, simulation_min[:,0], simulation_max[:,0], color = "b", alpha = 0.4)
-	ax.set(xlabel = r"Time $t$", ylabel = r"$X(t)$")
-	ax.legend()
-	plt.savefig(os.path.join("output", "model" + str(model_id+1) + "_ic0.png"), bbox_inches = 'tight')
-	plt.close()
+	for std_factor in range(1, 4):
+		fig, ax = plt.subplots(1, 1, figsize = (15, 7.5), dpi = 300)
+		# ax.plot(t_test, X_test[:,0], "ko", label = r"Data live$(t)$", alpha = 0.5, markersize = 3)
+		ax.errorbar(t_test, X_test[:,0], yerr = std_factor*X_std[:,0], fmt = 'ko', label = r"Data live$(t)$", capsize = 2.0, alpha = 0.5, markersize = 3)
+		ax.plot(t_test, true_solution[:,0], "b:", label = r"True live$(t)$", alpha = 1.0, linewidth = 1)
+		ax.plot(t_test, simulation[:,0], "b", label = r"Model live$(t)$", alpha = 1.0, linewidth = 1)
+		if calibration_mode == "Bayes":
+			ax.fill_between(t, simulation_min[:,0], simulation_max[:,0], color = "b", alpha = 0.4)
+		ax.set(xlabel = r"Time $t$", ylabel = r"$X(t)$")
+		handles, labels = plt.gca().get_legend_handles_labels()
+		order = [2,0,1]
+		ax.legend([handles[idx] for idx in order],[labels[idx] for idx in order])
+		plt.savefig(os.path.join("output", "model" + str(model_id+1) + "_ic0_std" + str(std_factor) + ".png"), bbox_inches = 'tight')
+		plt.close()
 
 	# Compute SSE
 	sse = ms.compute_SSE(X_test.reshape(simulation.shape), simulation)
@@ -197,3 +204,27 @@ print("Melhor modelo BIC = " + str(best_BIC_model+1) + "\n")
 ms.write_output()
 ms.write_AICc_weights()
 ms.write_pareto_curve(optimizer_method)
+
+# Compute cumulative sum of squared errors between data and true model
+csse = ms.compute_CSSE(true_solution, X_test.reshape(true_solution.shape))
+print("SSE between data and true model = " + str(csse[-1]) + "\n")
+
+fig, ax = plt.subplots(1, 1, figsize = (15, 7.5), dpi = 300)
+ax.plot(t_test, csse, "b", alpha = 1.0, linewidth = 1)
+ax.set(xlabel = r"Time $t$", ylabel = "Cumulative SSE")
+plt.savefig(os.path.join("output", "csse.png"), bbox_inches = 'tight')
+plt.close()
+
+# Compute normalized cumulative sum of squared errors between data and true model
+ncsse = ms.compute_NCSSE(true_solution, X_test.reshape(true_solution.shape))
+print("Normalized SSE between data and true model = " + str(ncsse[-1]) + "\n")
+
+fig, ax = plt.subplots(1, 1, figsize = (15, 7.5), dpi = 300)
+ax.plot(t_test, ncsse, "b", alpha = 1.0, linewidth = 1)
+ax.set(xlabel = r"Time $t$", ylabel = "Normalized Cumulative SSE")
+plt.savefig(os.path.join("output", "ncsse.png"), bbox_inches = 'tight')
+plt.close()
+
+output_array = np.column_stack((t_test.flatten(), ncsse.flatten()))
+np.savetxt(os.path.join("output", "ncsse.csv"), output_array, delimiter=',', fmt='%.8f',
+	header="times, live_error", comments='')

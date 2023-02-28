@@ -23,7 +23,7 @@
 	</overall>
 	
 	<parallel>
-		<omp_num_threads>2</omp_num_threads>
+		<omp_num_threads>1</omp_num_threads>
 	</parallel> 
 	
 	<save>
@@ -86,7 +86,7 @@
         <phenotype>
           <cycle code="5" name="live">
             <phase_transition_rates units="1/min">
-              <rate start_index="0" end_index="0" fixed_duration="false">0.00072</rate>
+              <rate start_index="0" end_index="0" fixed_duration="false">0.0007198228</rate>
             </phase_transition_rates>
             </cycle>
 
@@ -208,7 +208,7 @@
 
           </phenotype>
         <custom_data>
-          <sample units="dimensionless" conserved="false" description="">1.0</sample>
+          <sample conserved="false" units="dimensionless" description="">1.0</sample>
         </custom_data>
       </cell_definition>
 

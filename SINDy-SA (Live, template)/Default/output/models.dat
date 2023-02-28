@@ -274,3 +274,7 @@ Melhor modelo AICc = 1
 
 Melhor modelo BIC = 1
 
+SSE between data and true model = 12545.562541732565
+
+Normalized SSE between data and true model = 25.38616546147225
+
