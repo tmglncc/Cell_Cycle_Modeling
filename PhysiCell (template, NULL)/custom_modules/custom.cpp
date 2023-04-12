@@ -202,3 +202,134 @@ void custom_function( Cell* pCell, Phenotype& phenotype , double dt )
 
 void contact_function( Cell* pMe, Phenotype& phenoMe , Cell* pOther, Phenotype& phenoOther , double dt )
 { return; } 
+
+void initialize_vectors(std::vector<int>& number_of_cells, std::vector<double>& tumor_volume) {
+	int vector_size;
+
+	if (cell_defaults.phenotype.cycle.model().code == PhysiCell_constants::live_cells_cycle_model)
+		vector_size = 2;
+	else if (cell_defaults.phenotype.cycle.model().code == PhysiCell_constants::basic_Ki67_cycle_model)
+		vector_size = 3;
+	else if (cell_defaults.phenotype.cycle.model().code == PhysiCell_constants::advanced_Ki67_cycle_model
+		|| cell_defaults.phenotype.cycle.model().code == PhysiCell_constants::flow_cytometry_cycle_model)
+		vector_size = 4;
+	else if (cell_defaults.phenotype.cycle.model().code == PhysiCell_constants::flow_cytometry_separated_cycle_model)
+		vector_size = 5;
+
+	number_of_cells.resize(vector_size, 0);
+	tumor_volume.resize(vector_size, 0);
+}
+
+std::string get_population_header(std::string sep) {
+	std::string header = "times";
+	if (cell_defaults.phenotype.cycle.model().code == PhysiCell_constants::live_cells_cycle_model) {
+		header += sep + "Live_num" + sep + "Dead_num";
+		header += sep + "Live_vol" + sep + "Dead_vol";
+	} else if (cell_defaults.phenotype.cycle.model().code == PhysiCell_constants::basic_Ki67_cycle_model) {
+		header += sep + "Ki67_negative_num" + sep + "Ki67_positive_num" + sep + "Dead_num";
+		header += sep + "Ki67_negative_vol" + sep + "Ki67_positive_vol" + sep + "Dead_vol";
+	} else if (cell_defaults.phenotype.cycle.model().code == PhysiCell_constants::advanced_Ki67_cycle_model) {
+		header += sep + "Ki67_negative_num" + sep + "Ki67_positive_premitotic_num" + sep + "Ki67_positive_postmitotic_num" + sep + "Dead_num";
+		header += sep + "Ki67_negative_vol" + sep + "Ki67_positive_premitotic_vol" + sep + "Ki67_positive_postmitotic_vol" + sep + "Dead_vol";
+	} else if (cell_defaults.phenotype.cycle.model().code == PhysiCell_constants::flow_cytometry_cycle_model) {
+		header += sep + "G0G1_phase_num" + sep + "S_phase_premitotic_num" + sep + "G2M_phase_postmitotic_num" + sep + "Dead_num";
+		header += sep + "G0G1_phase_vol" + sep + "S_phase_premitotic_vol" + sep + "G2M_phase_postmitotic_vol" + sep + "Dead_vol";
+	} else if (cell_defaults.phenotype.cycle.model().code == PhysiCell_constants::flow_cytometry_separated_cycle_model) {
+		header += sep + "G0G1_phase_num" + sep + "S_phase_premitotic_num" + sep + "G2_phase_postmitotic_num" + sep + "M_phase_postmitotic_num" + sep + "Dead_num";
+		header += sep + "G0G1_phase_vol" + sep + "S_phase_premitotic_vol" + sep + "G2_phase_postmitotic_vol" + sep + "M_phase_postmitotic_vol" + sep + "Dead_vol";
+	}
+
+	return header;
+}
+
+std::string get_population_info(std::vector<int> number_of_cells, std::vector<double> tumor_volume, std::string sep) {
+	std::string info = std::to_string(PhysiCell_globals.current_time);
+	if (cell_defaults.phenotype.cycle.model().code == PhysiCell_constants::live_cells_cycle_model) {
+		info += sep + std::to_string(number_of_cells[0]) + sep + std::to_string(number_of_cells[1]);
+		info += sep + std::to_string(tumor_volume[0]) + sep + std::to_string(tumor_volume[1]);
+	} else if (cell_defaults.phenotype.cycle.model().code == PhysiCell_constants::basic_Ki67_cycle_model) {
+		info += sep + std::to_string(number_of_cells[0]) + sep + std::to_string(number_of_cells[1]) + sep + std::to_string(number_of_cells[2]);
+		info += sep + std::to_string(tumor_volume[0]) + sep + std::to_string(tumor_volume[1]) + sep + std::to_string(tumor_volume[2]);
+	} else if (cell_defaults.phenotype.cycle.model().code == PhysiCell_constants::advanced_Ki67_cycle_model
+		|| cell_defaults.phenotype.cycle.model().code == PhysiCell_constants::flow_cytometry_cycle_model) {
+		info += sep + std::to_string(number_of_cells[0]) + sep + std::to_string(number_of_cells[1]) + sep + std::to_string(number_of_cells[2]) + sep + std::to_string(number_of_cells[3]);
+		info += sep + std::to_string(tumor_volume[0]) + sep + std::to_string(tumor_volume[1]) + sep + std::to_string(tumor_volume[2]) + sep + std::to_string(tumor_volume[3]);
+	} else if (cell_defaults.phenotype.cycle.model().code == PhysiCell_constants::flow_cytometry_separated_cycle_model) {
+		info += sep + std::to_string(number_of_cells[0]) + sep + std::to_string(number_of_cells[1]) + sep + std::to_string(number_of_cells[2]) + sep + std::to_string(number_of_cells[3]) + sep + std::to_string(number_of_cells[4]);
+		info += sep + std::to_string(tumor_volume[0]) + sep + std::to_string(tumor_volume[1]) + sep + std::to_string(tumor_volume[2]) + sep + std::to_string(tumor_volume[3]) + sep + std::to_string(tumor_volume[4]);
+	}
+
+	return info;
+}
+
+void count_cells(std::vector<int>& number_of_cells, std::vector<double>& tumor_volume) {
+	int idx;
+
+	if (cell_defaults.phenotype.cycle.model().code == PhysiCell_constants::live_cells_cycle_model) {
+		for (int i = 0; i < (*all_cells).size(); i++) {
+			if ((*all_cells)[i]->phenotype.cycle.current_phase().code == PhysiCell_constants::live)
+				idx = 0;
+			else if ((*all_cells)[i]->phenotype.death.dead == true)
+				idx = 1;
+
+			number_of_cells[idx]++;
+			tumor_volume[idx] += (*all_cells)[i]->phenotype.volume.total;
+		}
+	} else if (cell_defaults.phenotype.cycle.model().code == PhysiCell_constants::basic_Ki67_cycle_model) {
+		for (int i = 0; i < (*all_cells).size(); i++) {
+			if ((*all_cells)[i]->phenotype.cycle.current_phase().code == PhysiCell_constants::Ki67_negative)
+				idx = 0;
+			else if ((*all_cells)[i]->phenotype.cycle.current_phase().code == PhysiCell_constants::Ki67_positive)
+				idx = 1;
+			else if ((*all_cells)[i]->phenotype.death.dead == true)
+				idx = 2;
+
+			number_of_cells[idx]++;
+			tumor_volume[idx] += (*all_cells)[i]->phenotype.volume.total;
+		}
+	} else if (cell_defaults.phenotype.cycle.model().code == PhysiCell_constants::advanced_Ki67_cycle_model) {
+		for (int i = 0; i < (*all_cells).size(); i++) {
+			if ((*all_cells)[i]->phenotype.cycle.current_phase().code == PhysiCell_constants::Ki67_negative)
+				idx = 0;
+			else if ((*all_cells)[i]->phenotype.cycle.current_phase().code == PhysiCell_constants::Ki67_positive_premitotic)
+				idx = 1;
+			else if ((*all_cells)[i]->phenotype.cycle.current_phase().code == PhysiCell_constants::Ki67_positive_postmitotic)
+				idx = 2;
+			else if ((*all_cells)[i]->phenotype.death.dead == true)
+				idx = 3;
+
+			number_of_cells[idx]++;
+			tumor_volume[idx] += (*all_cells)[i]->phenotype.volume.total;
+		}
+	} else if (cell_defaults.phenotype.cycle.model().code == PhysiCell_constants::flow_cytometry_cycle_model) {
+		for (int i = 0; i < (*all_cells).size(); i++) {
+			if ((*all_cells)[i]->phenotype.cycle.current_phase().code == PhysiCell_constants::G0G1_phase)
+				idx = 0;
+			else if ((*all_cells)[i]->phenotype.cycle.current_phase().code == PhysiCell_constants::S_phase)
+				idx = 1;
+			else if ((*all_cells)[i]->phenotype.cycle.current_phase().code == PhysiCell_constants::G2M_phase)
+				idx = 2;
+			else if ((*all_cells)[i]->phenotype.death.dead == true)
+				idx = 3;
+
+			number_of_cells[idx]++;
+			tumor_volume[idx] += (*all_cells)[i]->phenotype.volume.total;
+		}
+	} else if (cell_defaults.phenotype.cycle.model().code == PhysiCell_constants::flow_cytometry_separated_cycle_model) {
+		for (int i = 0; i < (*all_cells).size(); i++) {
+			if ((*all_cells)[i]->phenotype.cycle.current_phase().code == PhysiCell_constants::G0G1_phase)
+				idx = 0;
+			else if ((*all_cells)[i]->phenotype.cycle.current_phase().code == PhysiCell_constants::S_phase)
+				idx = 1;
+			else if ((*all_cells)[i]->phenotype.cycle.current_phase().code == PhysiCell_constants::G2_phase)
+				idx = 2;
+			else if ((*all_cells)[i]->phenotype.cycle.current_phase().code == PhysiCell_constants::M_phase)
+				idx = 3;
+			else if ((*all_cells)[i]->phenotype.death.dead == true)
+				idx = 4;
+
+			number_of_cells[idx]++;
+			tumor_volume[idx] += (*all_cells)[i]->phenotype.volume.total;
+		}
+	}
+}

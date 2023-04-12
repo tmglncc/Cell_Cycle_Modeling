@@ -1,0 +1,416 @@
+DEBUG:root:QStyleFactory.keys() = ['Windows', 'Fusion']
+DEBUG:root:self.current_dir = /home/gtnaozuka/Downloads/PhysiCell_V.1.10.4/PhysiCell (template, NULL)
+DEBUG:root:self.pmb_root_dir = /home/gtnaozuka/Downloads/PhysiCell_V.1.10.4/PhysiCell-model-builder
+DEBUG:root:self.config_dir = /home/gtnaozuka/Downloads/PhysiCell_V.1.10.4/PhysiCell (template, NULL)/config
+DEBUG:root:=======================  microenv populate_tree  ======================= 
+DEBUG:root:dc_ic_units =  mmHg
+DEBUG:root:dc_bc_units = mmHg
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f978bde3720>
+DEBUG:root:   -------- substrate:  dirichlet_xmin = 0
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f978bde3770>
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f978bde37c0>
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f978bde3810>
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f978bde3860>
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f978bde38b0>
+DEBUG:root:------- options: <Element 'calculate_gradients' at 0x7f978bde39a0>
+DEBUG:root:------- options: <Element 'track_internalized_substrates_in_each_agent' at 0x7f978bde3a40>
+DEBUG:root:------- options: <Element 'initial_condition' at 0x7f978bde3a90>
+DEBUG:root:------- options: <Element 'dirichlet_nodes' at 0x7f978bde3b80>
+DEBUG:root:
+
+=======================  leaving microenv populate_tree  =====================
+DEBUG:root:
+====================== create_cycle_tab ===================
+DEBUG:root: new stacked widget: trate live -------------> 0
+DEBUG:root: new stacked widget: trate Ki67 -------------> 1
+DEBUG:root: new stacked widget: t02 -------------> 2
+DEBUG:root: new stacked widget: trate_flowcyto -------------> 3
+DEBUG:root: new stacked widget: flow cyto sep -------------> 4
+DEBUG:root: new stacked widget: trate_quiescent -------------> 5
+DEBUG:root: new stacked widget: duration live -------------> 6
+DEBUG:root: new stacked widget: duration Ki67 -------------> 7
+DEBUG:root: new stacked widget: t02 -------------> 8
+DEBUG:root: new stacked widget: duration_flowcyto -------------> 9
+DEBUG:root: new stacked widget: flow cyto sep -------------> 10
+DEBUG:root: new stacked widget: duration_quiescent -------------> 11
+DEBUG:root:intracellular is Unkown
+DEBUG:root:pmb.py: first_cell_def_name= default
+DEBUG:root:cell_def_tab.py: ------- fill_substrates_comboboxes
+DEBUG:root: --> substrate
+DEBUG:root:------ motility_substrate_changed_cb(): idx = 0
+DEBUG:root:       motility_substrate_changed_cb(): self.current_cell_def = None
+DEBUG:root:------ motility2_substrate_changed_cb(): idx = 0
+DEBUG:root:   text (subname) = substrate
+DEBUG:root:=======================  populate_tree_cell_defs(): ======================= 
+DEBUG:root:    cell_def_tab.param_d = {}
+DEBUG:root:
+
+=======================  validate_cell_defs(): ======================= 
+DEBUG:root:Checking default
+DEBUG:root:=======================  end validate_cell_defs(): =======================
+
+
+DEBUG:root:----- cell_def.tag= cell_definition
+DEBUG:root:
+--------new_interaction_params(): cdname_new= default
+DEBUG:root:
+--------new_intracellular_params(): cdname_new= default
+DEBUG:root:------- new_custom_data_params() -----
+DEBUG:root:
+===== populate_tree():  cycle
+DEBUG:root: >> cycle_path= .//cell_definition[1]//phenotype//cycle
+DEBUG:root:   cycle code= 6
+DEBUG:root: >> phase_transition_path 
+DEBUG:root: >> phase_durations_path =.//cell_definition[1]//phenotype//cycle//phase_durations
+DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x7f978bde3e00>
+DEBUG:root:phase_duration= <Element 'duration' at 0x7f978bde3e50>
+DEBUG:root:------------ sval for phase duration= 300.0
+DEBUG:root:phase_duration= <Element 'duration' at 0x7f978bde3ea0>
+DEBUG:root:------------ sval for phase duration= 480
+DEBUG:root:phase_duration= <Element 'duration' at 0x7f978bde3ef0>
+DEBUG:root:------------ sval for phase duration= 240
+DEBUG:root:phase_duration= <Element 'duration' at 0x7f978bde3f40>
+DEBUG:root:------------ sval for phase duration= 60
+DEBUG:root:
+===== populate_tree():  death
+DEBUG:root:death_uep=<Element 'death' at 0x7f978bde3f90>
+DEBUG:root:-------- parsing apoptosis!
+DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x7f978bde90e0>
+DEBUG:root:phase_duration= <Element 'duration' at 0x7f978bde9180>
+DEBUG:root:index= 0
+DEBUG:root:-------- parsing necrosis!
+DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x7f978bde9860>
+DEBUG:root:<Element 'duration' at 0x7f978bde9900>
+DEBUG:root:index= 0
+DEBUG:root:<Element 'duration' at 0x7f978bde9950>
+DEBUG:root:index= 1
+DEBUG:root:volume_path=.//cell_definition[1]//phenotype//volume//
+DEBUG:root:
+===== populate_tree():  mechanics
+DEBUG:root:mechanics_path=.//cell_definition[1]//phenotype//mechanics//
+DEBUG:root:---- cell_interactions_path= .//cell_definition[1]//phenotype//mechanics//cell_adhesion_affinities
+DEBUG:root:---- found cell_adhesion_affinities_path:
+DEBUG:root:--> {'default': '1.0'}
+DEBUG:root:
+===== populate_tree():  motility
+DEBUG:root:motility_path=.//cell_definition[1]//phenotype//motility//
+DEBUG:root:
+----------- populate_tree_cell_defs.py: cell_def_name= default,  cell_def_tab.param_d[cell_def_name]["motility_chemotaxis_substrate"] = substrate
+DEBUG:root:motility_advanced_chemotaxis_path= .//cell_definition[1]//phenotype//motility//options//advanced_chemotaxis//
+DEBUG:root:chemotactic_sensitivity= {'substrate': '0.0'}
+DEBUG:root:sensitivity_path= .//cell_definition[1]//phenotype//motility//options//advanced_chemotaxis//chemotactic_sensitivities
+DEBUG:root:---- found chemotactic_sensitivities: <Element 'chemotactic_sensitivities' at 0x7f978bdf51d0>
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f978bdf52c0>
+DEBUG:root: chemotactic_sensitivity--> substrate = 0.0
+DEBUG:root:{'substrate': '0.0'}
+DEBUG:root:------ motility2_substrate_changed_cb(): idx = 0
+DEBUG:root:   text (subname) = substrate
+DEBUG:root:    motility_advanced_chemotaxis_substrate= substrate
+DEBUG:root:   chemotactic_sensitivity = {'substrate': '0.0'}
+DEBUG:root:----- chemo_sensitivity_changed() = 0.0
+DEBUG:root:----- chemo_sensitivity_changed(): subname = substrate
+DEBUG:root:     chemotactic_sensitivity (dict)= {'substrate': '0.0'}
+DEBUG:root:
+===== populate_tree():  secretion
+DEBUG:root:secretion_path = .//cell_definition[1]//phenotype//secretion//
+DEBUG:root:uep_secretion = <Element 'secretion' at 0x7f978bdf53b0>
+DEBUG:root:0) -- secretion substrate = substrate
+DEBUG:root:------ done parsing secretion:
+DEBUG:root:
+===== populate_tree():  cell_interactions
+DEBUG:root:---- cell_interactions_path= .//cell_definition[1]//phenotype//cell_interactions
+DEBUG:root:---- found cell_interactions:
+DEBUG:root:uep2= <Element 'live_phagocytosis_rates' at 0x7f978bdf5810>
+DEBUG:root: live_phagocytosis_rate= {'default': '0.0'}
+DEBUG:root: attack_rate= {'default': '0.0'}
+DEBUG:root: fusion_rate= {'default': '0.0'}
+DEBUG:root:------ done parsing cell_interactions:
+DEBUG:root:---- transformation_rates_path = .//cell_definition[1]//phenotype//cell_transformations//transformation_rates
+DEBUG:root: transformation_rate= {'default': '0.0'}
+DEBUG:root:------ done parsing cell_transformations:
+DEBUG:root:
+===== populate_tree():  molecular
+DEBUG:root:
+===== populate_tree():  intracellular
+DEBUG:root:------ done parsing intracellular:
+DEBUG:root:
+===== populate_tree():  custom data
+DEBUG:root:uep_custom_data= <Element 'custom_data' at 0x7f978bdf5ef0>
+DEBUG:root:--------------- populate_tree: (empty)custom_data = {}
+DEBUG:root:var.attrib.keys() = dict_keys(['units', 'conserved', 'description'])
+DEBUG:root:populate: cell_def_name= default --> custom_data: {'sample': ['1.0', False]}
+DEBUG:root:
+  ---- apoptosis_phase_transition_cb: 
+DEBUG:root:apoptosis: ------>> duration
+DEBUG:root:apoptosis_phase_transition_cb: --> duration
+DEBUG:root:
+  ---- necrosis_phase_transition_cb: 
+DEBUG:root:necrosis: ------>>duration
+DEBUG:root:necrosis_phase_transition_cb: --> duration
+DEBUG:root:
+----- update_motility_params():  cdname= default
+DEBUG:root:     setting motility_substrate_dropdown (for cdname= default ) = substrate
+DEBUG:root:     setting motility2_substrate_dropdown (for cdname= default ) = substrate
+DEBUG:root:    chemotactic_sensitivity= {'substrate': '0.0'}
+DEBUG:root:new val = 0.0
+DEBUG:root:----- leave update_motility_params()
+
+DEBUG:root:update_secretion_params(): cdname = default
+DEBUG:root:update_secretion_params(): self.current_secretion_substrate = substrate
+DEBUG:root:{'substrate': {'secretion_rate': '0', 'secretion_target': '1', 'uptake_rate': '0', 'net_export_rate': '0'}}
+DEBUG:root:cell_def_tab.py: ------- fill_celltypes_comboboxes
+DEBUG:root:
+
+------------  user_params_tab: fill_gui --------------
+DEBUG:root:uep_user_params= <Element 'user_parameters' at 0x7f978bdf9180>
+DEBUG:root:pmb.py: self.current_dir = /home/gtnaozuka/Downloads/PhysiCell_V.1.10.4/PhysiCell (template, NULL)
+DEBUG:root:
+pmb.py: open_as_cb():  full_path_model_name =
+DEBUG:root:
+pmb.py: open_as_cb():  full_path_model_name =/home/gtnaozuka/Downloads/PhysiCell_V.1.10.4/PhysiCell (template, NULL)/config/PhysiCell_settings_Ki67_Basic_without_o2_apop_nec.xml
+DEBUG:root:     filePath is valid
+DEBUG:root:     len(full_path_model_name) = 132
+DEBUG:root:pmb: show_sample_model(): self.config_file = /home/gtnaozuka/Downloads/PhysiCell_V.1.10.4/PhysiCell (template, NULL)/config/PhysiCell_settings_Ki67_Basic_without_o2_apop_nec.xml
+DEBUG:root:=======================  microenv populate_tree  ======================= 
+DEBUG:root:dc_ic_units =  mmHg
+DEBUG:root:dc_bc_units = mmHg
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f978bb45b80>
+DEBUG:root:   -------- oxygen:  dirichlet_xmin = 38.0
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f978bb45bd0>
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f978bb45c20>
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f978bb45c70>
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f978bb45cc0>
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f978bb45d10>
+DEBUG:root:------- options: <Element 'calculate_gradients' at 0x7f978bb45e00>
+DEBUG:root:------- options: <Element 'track_internalized_substrates_in_each_agent' at 0x7f978bb45ea0>
+DEBUG:root:------- options: <Element 'initial_condition' at 0x7f978bb45ef0>
+DEBUG:root:------- options: <Element 'dirichlet_nodes' at 0x7f977c2be040>
+DEBUG:root:
+
+=======================  leaving microenv populate_tree  =====================
+DEBUG:root:cell_def_tab.py: ------- fill_substrates_comboboxes
+DEBUG:root:------ motility_substrate_changed_cb(): idx = -1
+DEBUG:root:       motility_substrate_changed_cb(): self.current_cell_def = None
+DEBUG:root:------ motility2_substrate_changed_cb(): idx = -1
+DEBUG:root:   text (subname) = 
+DEBUG:root:   subname is empty, return!
+DEBUG:root: --> oxygen
+DEBUG:root:------ motility_substrate_changed_cb(): idx = 0
+DEBUG:root:       motility_substrate_changed_cb(): self.current_cell_def = None
+DEBUG:root:------ motility2_substrate_changed_cb(): idx = 0
+DEBUG:root:   text (subname) = oxygen
+DEBUG:root:=======================  populate_tree_cell_defs(): ======================= 
+DEBUG:root:    cell_def_tab.param_d = {}
+DEBUG:root:
+
+=======================  validate_cell_defs(): ======================= 
+DEBUG:root:Checking cancer cell
+DEBUG:root:=======================  end validate_cell_defs(): =======================
+
+
+DEBUG:root:----- cell_def.tag= cell_definition
+DEBUG:root:
+--------new_interaction_params(): cdname_new= cancer cell
+DEBUG:root:
+--------new_intracellular_params(): cdname_new= cancer cell
+DEBUG:root:------- new_custom_data_params() -----
+DEBUG:root:
+===== populate_tree():  cycle
+DEBUG:root: >> cycle_path= .//cell_definition[1]//phenotype//cycle
+DEBUG:root:   cycle code= 1
+DEBUG:root: >> phase_transition_path 
+DEBUG:root: >> phase_durations_path =.//cell_definition[1]//phenotype//cycle//phase_durations
+DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x7f977c2be2c0>
+DEBUG:root:phase_duration= <Element 'duration' at 0x7f977c2be310>
+DEBUG:root:------------ sval for phase duration= 275.4
+DEBUG:root:phase_duration= <Element 'duration' at 0x7f977c2be360>
+DEBUG:root:------------ sval for phase duration= 930.0
+DEBUG:root:
+===== populate_tree():  death
+DEBUG:root:death_uep=<Element 'death' at 0x7f977c2be3b0>
+DEBUG:root:-------- parsing apoptosis!
+DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x7f977c2be4a0>
+DEBUG:root:phase_duration= <Element 'duration' at 0x7f977c2be540>
+DEBUG:root:index= 0
+DEBUG:root:-------- parsing necrosis!
+DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x7f977c2bec20>
+DEBUG:root:<Element 'duration' at 0x7f977c2becc0>
+DEBUG:root:index= 0
+DEBUG:root:<Element 'duration' at 0x7f977c2bed10>
+DEBUG:root:index= 1
+DEBUG:root:volume_path=.//cell_definition[1]//phenotype//volume//
+DEBUG:root:
+===== populate_tree():  mechanics
+DEBUG:root:mechanics_path=.//cell_definition[1]//phenotype//mechanics//
+DEBUG:root:---- cell_interactions_path= .//cell_definition[1]//phenotype//mechanics//cell_adhesion_affinities
+DEBUG:root:---- found cell_adhesion_affinities_path:
+DEBUG:root:--> {'cancer cell': '1.0'}
+DEBUG:root:
+===== populate_tree():  motility
+DEBUG:root:motility_path=.//cell_definition[1]//phenotype//motility//
+DEBUG:root:
+----------- populate_tree_cell_defs.py: cell_def_name= cancer cell,  cell_def_tab.param_d[cell_def_name]["motility_chemotaxis_substrate"] = oxygen
+DEBUG:root:motility_advanced_chemotaxis_path= .//cell_definition[1]//phenotype//motility//options//advanced_chemotaxis//
+DEBUG:root:chemotactic_sensitivity= {'oxygen': '0.0'}
+DEBUG:root:sensitivity_path= .//cell_definition[1]//phenotype//motility//options//advanced_chemotaxis//chemotactic_sensitivities
+DEBUG:root:---- found chemotactic_sensitivities: <Element 'chemotactic_sensitivities' at 0x7f977c2c9590>
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f977c2c9680>
+DEBUG:root: chemotactic_sensitivity--> oxygen = 0.0
+DEBUG:root:{'oxygen': '0.0'}
+DEBUG:root:------ motility2_substrate_changed_cb(): idx = 0
+DEBUG:root:   text (subname) = oxygen
+DEBUG:root:    motility_advanced_chemotaxis_substrate= oxygen
+DEBUG:root:   chemotactic_sensitivity = {'oxygen': '0.0'}
+DEBUG:root:
+===== populate_tree():  secretion
+DEBUG:root:secretion_path = .//cell_definition[1]//phenotype//secretion//
+DEBUG:root:uep_secretion = <Element 'secretion' at 0x7f977c2c9770>
+DEBUG:root:0) -- secretion substrate = oxygen
+DEBUG:root:------ done parsing secretion:
+DEBUG:root:
+===== populate_tree():  cell_interactions
+DEBUG:root:---- cell_interactions_path= .//cell_definition[1]//phenotype//cell_interactions
+DEBUG:root:---- found cell_interactions:
+DEBUG:root:uep2= <Element 'live_phagocytosis_rates' at 0x7f977c2c9bd0>
+DEBUG:root: live_phagocytosis_rate= {'cancer cell': '0.0'}
+DEBUG:root: attack_rate= {'cancer cell': '0.0'}
+DEBUG:root: fusion_rate= {'cancer cell': '0.0'}
+DEBUG:root:------ done parsing cell_interactions:
+DEBUG:root:---- transformation_rates_path = .//cell_definition[1]//phenotype//cell_transformations//transformation_rates
+DEBUG:root: transformation_rate= {'cancer cell': '0.0'}
+DEBUG:root:------ done parsing cell_transformations:
+DEBUG:root:
+===== populate_tree():  molecular
+DEBUG:root:
+===== populate_tree():  intracellular
+DEBUG:root:------ done parsing intracellular:
+DEBUG:root:
+===== populate_tree():  custom data
+DEBUG:root:uep_custom_data= <Element 'custom_data' at 0x7f977c2ce310>
+DEBUG:root:--------------- populate_tree: (empty)custom_data = {}
+DEBUG:root:var.attrib.keys() = dict_keys(['units', 'conserved', 'description'])
+DEBUG:root:populate: cell_def_name= cancer cell --> custom_data: {'sample': ['1.0', False]}
+DEBUG:root:
+----- update_motility_params():  cdname= cancer cell
+DEBUG:root:     setting motility_substrate_dropdown (for cdname= cancer cell ) = oxygen
+DEBUG:root:     setting motility2_substrate_dropdown (for cdname= cancer cell ) = oxygen
+DEBUG:root:    chemotactic_sensitivity= {'oxygen': '0.0'}
+DEBUG:root:new val = 0.0
+DEBUG:root:----- leave update_motility_params()
+
+DEBUG:root:update_secretion_params(): cdname = cancer cell
+DEBUG:root:update_secretion_params(): self.current_secretion_substrate = oxygen
+DEBUG:root:{'oxygen': {'secretion_rate': '0', 'secretion_target': '0', 'uptake_rate': '0', 'net_export_rate': '0'}}
+DEBUG:root:cell_def_tab.py: ------- fill_celltypes_comboboxes
+DEBUG:root:
+
+------------  user_params_tab: fill_gui --------------
+DEBUG:root:uep_user_params= <Element 'user_parameters' at 0x7f977c2ce540>
+DEBUG:root:------- config_tab.py: fill_xml(): setting folder = output
+DEBUG:root:------- config_tab.py: fill_xml(): setting csv folder = ./config
+DEBUG:root:------- config_tab.py: fill_xml(): setting csv filename = cells.csv
+DEBUG:root:----------- microenv_tab.py: fill_xml(): ----------
+DEBUG:root:microenv_tab.py: fill_xml(): num subtrates = 1
+DEBUG:root:substrates_in_tree =['oxygen']
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = substrate
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = gradients
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = track_in_agents
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = oxygen
+DEBUG:root:matched! oxygen
+DEBUG:root:
+
+----------- cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:num cell defs = 1
+DEBUG:root:cdefs_in_tree =['cancer cell']
+DEBUG:root:
+--- key in param_d.keys() = cancer cell
+DEBUG:root:matched! cancer cell
+DEBUG:root:--- cell_adhesion_affinity= {'cancer cell': '1.0'}
+DEBUG:root:cancer cell  --> 1.0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): oxygen = oxygen 
+
+
+DEBUG:root:fill_xml_motility(): {'oxygen': '0.0'}
+DEBUG:root:oxygen  --> 0.0
+DEBUG:root:self.substrate_list = ['oxygen']
+DEBUG:root:substrate = oxygen
+DEBUG:root:------------------- fill_xml_interactions():  cdef= cancer cell
+DEBUG:root:--- live_phagocytosis_rate= {'cancer cell': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= cancer cell
+DEBUG:root:cancer cell  --> 0.0
+DEBUG:root:--- attack_rate= {'cancer cell': '0.0'}
+DEBUG:root:cancer cell  --> 0.0
+DEBUG:root:--- fusion_rate= {'cancer cell': '0.0'}
+DEBUG:root:cancer cell  --> 0.0
+DEBUG:root:cancer cell  --> 0.0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for cancer cell
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for cancer cell
+DEBUG:root:
+
+DEBUG:root:----------- end cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:
+--------- user_params_tab.py:  fill_xml(): self.count = 125
+DEBUG:root:--------- found //user_parameters
+DEBUG:root:random_seed
+DEBUG:root:number_of_cells
+DEBUG:root:found 2
+DEBUG:root:------- config_tab.py: fill_xml(): setting folder = output
+DEBUG:root:------- config_tab.py: fill_xml(): setting csv folder = ./config
+DEBUG:root:------- config_tab.py: fill_xml(): setting csv filename = cells.csv
+DEBUG:root:----------- microenv_tab.py: fill_xml(): ----------
+DEBUG:root:microenv_tab.py: fill_xml(): num subtrates = 1
+DEBUG:root:substrates_in_tree =['oxygen']
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = substrate
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = gradients
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = track_in_agents
+DEBUG:root:microrenv_tab.py: key in param_d.keys() = oxygen
+DEBUG:root:matched! oxygen
+DEBUG:root:
+
+----------- cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:num cell defs = 1
+DEBUG:root:cdefs_in_tree =['cancer cell']
+DEBUG:root:
+--- key in param_d.keys() = cancer cell
+DEBUG:root:matched! cancer cell
+DEBUG:root:--- cell_adhesion_affinity= {'cancer cell': '1.0'}
+DEBUG:root:cancer cell  --> 1.0
+DEBUG:root:
+
+ ====================> fill_xml_motility(): oxygen = oxygen 
+
+
+DEBUG:root:fill_xml_motility(): {'oxygen': '0.0'}
+DEBUG:root:oxygen  --> 0.0
+DEBUG:root:self.substrate_list = ['oxygen']
+DEBUG:root:substrate = oxygen
+DEBUG:root:------------------- fill_xml_interactions():  cdef= cancer cell
+DEBUG:root:--- live_phagocytosis_rate= {'cancer cell': '0.0'}
+DEBUG:root:  key in live_phagocytosis_rate= cancer cell
+DEBUG:root:cancer cell  --> 0.0
+DEBUG:root:--- attack_rate= {'cancer cell': '0.0'}
+DEBUG:root:cancer cell  --> 0.0
+DEBUG:root:--- fusion_rate= {'cancer cell': '0.0'}
+DEBUG:root:cancer cell  --> 0.0
+DEBUG:root:cancer cell  --> 0.0
+DEBUG:root:------------------- fill_xml_intracellular()
+DEBUG:root:------ ["intracellular"]: for cancer cell
+DEBUG:root:None
+DEBUG:root:
+
+DEBUG:root:------ ["custom_data"]: for cancer cell
+DEBUG:root:
+
+DEBUG:root:----------- end cell_def_tab.py: fill_xml(): ----------
+DEBUG:root:
+--------- user_params_tab.py:  fill_xml(): self.count = 125
+DEBUG:root:--------- found //user_parameters
+DEBUG:root:random_seed
+DEBUG:root:number_of_cells
+DEBUG:root:found 2

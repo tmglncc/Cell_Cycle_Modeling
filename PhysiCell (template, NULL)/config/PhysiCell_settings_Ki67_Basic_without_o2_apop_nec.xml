@@ -13,13 +13,13 @@
 	</domain>
 	
 	<overall>
-		<max_time units="min">7200</max_time> 
+		<max_time units="min">3600</max_time> 
 		<time_units>min</time_units>
 		<space_units>micron</space_units>
 	
 		<dt_diffusion units="min">0.01</dt_diffusion>
 		<dt_mechanics units="min">0.1</dt_mechanics>
-		<dt_phenotype units="min">0.1</dt_phenotype>	
+		<dt_phenotype units="min">6</dt_phenotype>	
 	</overall>
 	
 	<parallel>
@@ -31,12 +31,12 @@
 
 		<full_data>
 			<interval units="min">30</interval>
-			<enable>true</enable>
+			<enable>false</enable>
 		</full_data>
 		
 		<SVG>
 			<interval units="min">30</interval>
-			<enable>true</enable>
+			<enable>false</enable>
 		</SVG>
 		
 		<legacy_data>
@@ -224,7 +224,8 @@
 	
 	<user_parameters>
 		<random_seed type="int" units="dimensionless" description="">0</random_seed>
-        <number_of_cells type="int" units="none" description="initial number of cells (for each cell type)">37</number_of_cells>
+        <number_of_cells type="int" units="none" description="initial number of cells (for each cell type)">100</number_of_cells>
+        <population_filename type="string" units="none" description="">PhysiCell_tumor_cell_population.csv</population_filename>
     </user_parameters>
 	
 </PhysiCell_settings>

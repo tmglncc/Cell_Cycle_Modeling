@@ -90,3 +90,7 @@ void custom_function( Cell* pCell, Phenotype& phenotype , double dt );
 
 void contact_function( Cell* pMe, Phenotype& phenoMe , Cell* pOther, Phenotype& phenoOther , double dt ); 
 
+void initialize_vectors( std::vector<int>& number_of_cells, std::vector<double>& tumor_volume );
+std::string get_population_header(std::string sep = ", ");
+std::string get_population_info(std::vector<int> number_of_cells, std::vector<double> tumor_volume, std::string sep = ", ");
+void count_cells( std::vector<int>& number_of_cells, std::vector<double>& tumor_volume );

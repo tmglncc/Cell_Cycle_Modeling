@@ -175,6 +175,19 @@ int main( int argc, char* argv[] )
 		report_file.open(filename); 	// create the data log file 
 		report_file<<"simulated time\tnum cells\tnum division\tnum death\twall time"<<std::endl;
 	}
+
+	std::vector<int> number_of_cells;
+	std::vector<double> tumor_volume;
+	initialize_vectors(number_of_cells, tumor_volume);
+
+	std::ofstream population_file;
+	if (!parameters.strings("population_filename").empty()) {
+		sprintf(filename , "%s/%s" , PhysiCell_settings.folder.c_str(), parameters.strings("population_filename").c_str());
+
+		population_file.open(filename);
+		std::string header = get_population_header();
+		population_file << header << std::endl;
+	}
 	
 	// main loop 
 	
@@ -196,6 +209,14 @@ int main( int argc, char* argv[] )
 					sprintf( filename , "%s/output%08u" , PhysiCell_settings.folder.c_str(),  PhysiCell_globals.full_output_index ); 
 					
 					save_PhysiCell_to_MultiCellDS_v2( filename , microenvironment , PhysiCell_globals.current_time ); 
+				}
+
+				if (!parameters.strings("population_filename").empty()) {
+					count_cells(number_of_cells, tumor_volume);
+					std::string info = get_population_info(number_of_cells, tumor_volume);
+					population_file << info << std::endl;
+					std::fill(number_of_cells.begin(), number_of_cells.end(), 0);
+					std::fill(tumor_volume.begin(), tumor_volume.end(), 0);
 				}
 				
 				PhysiCell_globals.full_output_index++; 
@@ -233,6 +254,9 @@ int main( int argc, char* argv[] )
 			log_output(PhysiCell_globals.current_time, PhysiCell_globals.full_output_index, microenvironment, report_file);
 			report_file.close();
 		}
+
+		if (!parameters.strings("population_filename").empty())
+			population_file.close();
 	}
 	catch( const std::exception& e )
 	{ // reference to the base of a polymorphic object
