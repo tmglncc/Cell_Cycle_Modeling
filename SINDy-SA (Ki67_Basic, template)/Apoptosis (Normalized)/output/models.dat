@@ -1,0 +1,775 @@
+Experimento 1: Grau = 1, Frequência = 1, alpha = 0.001
+
+---------- ITERATION 1 ----------
+SSE = 0.26374747314477853
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -3.49727884e-03  2.04274105e-03  0.00000000e+00]
+ [ 0.00000000e+00  3.40815315e-03 -1.00717282e-03  0.00000000e+00]
+ [ 0.00000000e+00  1.26984889e-04 -8.58436839e-05  1.50425308e-03]]
+ST_sum = [array([0.4412167 , 0.51795742, 0.4299726 , 0.25537874, 0.01602041,
+       0.02176652, 0.01456117])]
+Total points = [ 1. -1. -1.  1.  1. -1.  2.]
+Less important parameter = [6]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -3.49727884e-03  2.04274105e-03  0.00000000e+00]
+ [ 0.00000000e+00  3.40815315e-03 -1.00717282e-03  0.00000000e+00]
+ [ 0.00000000e+00  1.26984889e-04 -8.58436839e-05  0.00000000e+00]]
+
+---------- ITERATION 2 ----------
+SSE = 0.26390121435158237
+Comparing 0.26374747314477853 + 0.005*0.026374747314477854 with 0.26390121435158237: error has increased
+Ki67_neg' = -3.497e-03 Ki67_neg + 2.043e-03 Ki67_pos
+Ki67_pos' = 3.408e-03 Ki67_neg + -1.007e-03 Ki67_pos
+apoptotic' = 1.270e-04 Ki67_neg + -8.584e-05 Ki67_pos + 1.504e-03 apoptotic
+
+
+Experimento 2: Grau = 1, Frequência = 1, alpha = 0.01
+
+---------- ITERATION 1 ----------
+SSE = 0.26374747314817887
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -3.49727774e-03  2.04274050e-03  0.00000000e+00]
+ [ 0.00000000e+00  3.40815220e-03 -1.00717235e-03  0.00000000e+00]
+ [ 0.00000000e+00  1.26986108e-04 -8.58373892e-05  1.50405359e-03]]
+ST_sum = [array([0.44121656, 0.51795728, 0.42997248, 0.25537862, 0.01602057,
+       0.02176493, 0.01455924])]
+Total points = [ 1. -1. -1.  1.  1. -1.  2.]
+Less important parameter = [6]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -3.49727774e-03  2.04274050e-03  0.00000000e+00]
+ [ 0.00000000e+00  3.40815220e-03 -1.00717235e-03  0.00000000e+00]
+ [ 0.00000000e+00  1.26986108e-04 -8.58373892e-05  0.00000000e+00]]
+
+---------- ITERATION 2 ----------
+SSE = 0.26390121435167796
+Comparing 0.26374747314817887 + 0.005*0.026374747314817888 with 0.26390121435167796: error has increased
+Ki67_neg' = -3.497e-03 Ki67_neg + 2.043e-03 Ki67_pos
+Ki67_pos' = 3.408e-03 Ki67_neg + -1.007e-03 Ki67_pos
+apoptotic' = 1.270e-04 Ki67_neg + -8.584e-05 Ki67_pos + 1.504e-03 apoptotic
+
+
+Experimento 3: Grau = 1, Frequência = 1, alpha = 0.1
+
+---------- ITERATION 1 ----------
+SSE = 0.2637474734873274
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -3.49726672e-03  2.04273506e-03  0.00000000e+00]
+ [ 0.00000000e+00  3.40814265e-03 -1.00716763e-03  0.00000000e+00]
+ [ 0.00000000e+00  1.26998283e-04 -8.57745328e-05  1.50206164e-03]]
+ST_sum = [array([0.44121517, 0.5179559 , 0.42997128, 0.25537742, 0.0160221 ,
+       0.02174899, 0.01453996])]
+Total points = [ 1. -1. -1.  1.  1. -1.  2.]
+Less important parameter = [6]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -3.49726672e-03  2.04273506e-03  0.00000000e+00]
+ [ 0.00000000e+00  3.40814265e-03 -1.00716763e-03  0.00000000e+00]
+ [ 0.00000000e+00  1.26998283e-04 -8.57745328e-05  0.00000000e+00]]
+
+---------- ITERATION 2 ----------
+SSE = 0.263901214361247
+Comparing 0.2637474734873274 + 0.005*0.02637474734873274 with 0.263901214361247: error has increased
+Ki67_neg' = -3.497e-03 Ki67_neg + 2.043e-03 Ki67_pos
+Ki67_pos' = 3.408e-03 Ki67_neg + -1.007e-03 Ki67_pos
+apoptotic' = 1.270e-04 Ki67_neg + -8.584e-05 Ki67_pos + 1.504e-03 apoptotic
+
+
+Experimento 4: Grau = 1, Frequência = 1, alpha = 1.0
+
+---------- ITERATION 1 ----------
+SSE = 0.2637475065385914
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -3.49715659e-03  2.04268058e-03  0.00000000e+00]
+ [ 0.00000000e+00  3.40804719e-03 -1.00712047e-03  0.00000000e+00]
+ [ 0.00000000e+00  1.27118222e-04 -8.51549774e-05  1.48242848e-03]]
+ST_sum = [array([0.44120128, 0.51794209, 0.42995923, 0.25536547, 0.01603723,
+       0.0215919 , 0.01434991])]
+Total points = [ 1. -1. -1.  1.  1. -1.  2.]
+Less important parameter = [6]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -3.49715659e-03  2.04268058e-03  0.00000000e+00]
+ [ 0.00000000e+00  3.40804719e-03 -1.00712047e-03  0.00000000e+00]
+ [ 0.00000000e+00  1.27118222e-04 -8.51549774e-05  0.00000000e+00]]
+
+---------- ITERATION 2 ----------
+SSE = 0.2639012153180862
+Comparing 0.2637475065385914 + 0.005*0.026374750653859143 with 0.2639012153180862: error has increased
+Ki67_neg' = -3.497e-03 Ki67_neg + 2.043e-03 Ki67_pos
+Ki67_pos' = 3.408e-03 Ki67_neg + -1.007e-03 Ki67_pos
+apoptotic' = 1.270e-04 Ki67_neg + -8.584e-05 Ki67_pos + 1.504e-03 apoptotic
+
+
+Experimento 5: Grau = 1, Frequência = 1, alpha = 10.0
+
+---------- ITERATION 1 ----------
+SSE = 0.26375010622954803
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -3.49605569e-03  2.04213598e-03  0.00000000e+00]
+ [ 0.00000000e+00  3.40709285e-03 -1.00664905e-03  0.00000000e+00]
+ [ 0.00000000e+00  1.28160314e-04 -7.97446991e-05  1.31105702e-03]]
+ST_sum = [array([0.44106239, 0.517804  , 0.42983883, 0.25524593, 0.01616871,
+       0.02022007, 0.01269103])]
+Total points = [ 1. -1. -1.  1.  1. -1.  2.]
+Less important parameter = [6]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -3.49605569e-03  2.04213598e-03  0.00000000e+00]
+ [ 0.00000000e+00  3.40709285e-03 -1.00664905e-03  0.00000000e+00]
+ [ 0.00000000e+00  1.28160314e-04 -7.97446991e-05  0.00000000e+00]]
+
+---------- ITERATION 2 ----------
+SSE = 0.2639013109433161
+Comparing 0.26375010622954803 + 0.005*0.026375010622954803 with 0.2639013109433161: error has increased
+Ki67_neg' = -3.497e-03 Ki67_neg + 2.043e-03 Ki67_pos
+Ki67_pos' = 3.408e-03 Ki67_neg + -1.007e-03 Ki67_pos
+apoptotic' = 1.270e-04 Ki67_neg + -8.584e-05 Ki67_pos + 1.504e-03 apoptotic
+
+
+Experimento 6: Grau = 2, Frequência = 1, alpha = 0.001
+
+---------- ITERATION 1 ----------
+SSE = 0.2282188820494253
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -4.41981221e-03  2.48657572e-03  0.00000000e+00
+   7.80506315e-06  1.39627900e-06  0.00000000e+00 -2.56637875e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  4.09318985e-03 -1.33810239e-03  0.00000000e+00
+  -5.95482997e-06 -6.35700314e-07  0.00000000e+00  1.74971202e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  2.66080470e-04 -1.01385793e-04 -5.22595681e-04
+  -1.61605622e-06 -1.33699923e-06  6.39859754e-05  8.88164854e-07
+  -2.53636500e-05 -1.01175418e-05]]
+ST_sum = [array([0.55760351, 0.63049614, 0.31057021, 0.11166437, 0.41249838,
+       0.51639683, 0.33928924, 0.23694783, 0.05083875, 0.28123416,
+       0.03356871, 0.02570738, 0.00505873, 0.06430427, 0.1069236 ,
+       0.19535379, 0.14275623, 0.15563521, 0.00237009])]
+Total points = [ 1. -1.  3.  4.  2. -1.  1.  3.  4.  2.  5.  6.  7.  4.  3. -1.  2.  1.
+  8.]
+Less important parameter = [18]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -4.41981221e-03  2.48657572e-03  0.00000000e+00
+   7.80506315e-06  1.39627900e-06  0.00000000e+00 -2.56637875e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  4.09318985e-03 -1.33810239e-03  0.00000000e+00
+  -5.95482997e-06 -6.35700314e-07  0.00000000e+00  1.74971202e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  2.66080470e-04 -1.01385793e-04 -5.22595681e-04
+  -1.61605622e-06 -1.33699923e-06  6.39859754e-05  8.88164854e-07
+  -2.53636500e-05  0.00000000e+00]]
+
+---------- ITERATION 2 ----------
+SSE = 0.228218885738464
+Comparing 0.2282188820494253 + 0.005*0.022821888204942534 with 0.228218885738464: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -4.41981221e-03  2.48657572e-03  0.00000000e+00
+   7.80506315e-06  1.39627900e-06  0.00000000e+00 -2.56637875e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  4.09318985e-03 -1.33810239e-03  0.00000000e+00
+  -5.95482997e-06 -6.35700314e-07  0.00000000e+00  1.74971202e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  2.65452452e-04 -1.01191480e-04 -5.19094034e-04
+  -1.60972047e-06 -1.29610933e-06  6.27067449e-05  8.78988184e-07
+  -2.54463105e-05  0.00000000e+00]]
+ST_sum = [array([0.55760351, 0.63049614, 0.31057021, 0.11166437, 0.41249838,
+       0.51639683, 0.33928924, 0.23694783, 0.05083875, 0.28123416,
+       0.03348948, 0.02565811, 0.00502483, 0.06405217, 0.10365352,
+       0.19144821, 0.14128125, 0.15614243])]
+Total points = [ 1. -1.  3.  4.  2. -1.  1.  3.  4.  2.  5.  6.  7.  4.  3. -1.  2.  1.]
+Less important parameter = [12]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -4.41981221e-03  2.48657572e-03  0.00000000e+00
+   7.80506315e-06  1.39627900e-06  0.00000000e+00 -2.56637875e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  4.09318985e-03 -1.33810239e-03  0.00000000e+00
+  -5.95482997e-06 -6.35700314e-07  0.00000000e+00  1.74971202e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  2.65452452e-04 -1.01191480e-04  0.00000000e+00
+  -1.60972047e-06 -1.29610933e-06  6.27067449e-05  8.78988184e-07
+  -2.54463105e-05  0.00000000e+00]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.228218885738464
+Loss at the current iteration = 0.22822162546154562
+Number of bases at the previous iteration = 18
+Number of bases at the current iteration = 17
+Total number of bases = 19
+F-test = 1.2004804391007525e-05
+SSE = 0.22822162546154562
+Comparing 0.22821888389394465 + 0.005*1.844519342819595e-09 with 0.22822162546154562: error has increased
+Ki67_neg' = -4.420e-03 Ki67_neg + 2.487e-03 Ki67_pos + 7.805e-06 Ki67_neg^2 + 1.396e-06 Ki67_neg Ki67_pos + -2.566e-06 Ki67_pos^2
+Ki67_pos' = 4.093e-03 Ki67_neg + -1.338e-03 Ki67_pos + -5.955e-06 Ki67_neg^2 + -6.357e-07 Ki67_neg Ki67_pos + 1.750e-06 Ki67_pos^2
+apoptotic' = 2.655e-04 Ki67_neg + -1.012e-04 Ki67_pos + -5.191e-04 apoptotic + -1.610e-06 Ki67_neg^2 + -1.296e-06 Ki67_neg Ki67_pos + 6.271e-05 Ki67_neg apoptotic + 8.790e-07 Ki67_pos^2 + -2.545e-05 Ki67_pos apoptotic
+
+
+Experimento 7: Grau = 2, Frequência = 1, alpha = 0.01
+
+---------- ITERATION 1 ----------
+SSE = 0.22821888205426877
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -4.41979317e-03  2.48656616e-03  0.00000000e+00
+   7.80483681e-06  1.39644667e-06  0.00000000e+00 -2.56640589e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  4.09317383e-03 -1.33809436e-03  0.00000000e+00
+  -5.95463962e-06 -6.35841447e-07  0.00000000e+00  1.74973493e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  2.66068246e-04 -1.01396800e-04 -5.22112386e-04
+  -1.61591600e-06 -1.33659000e-06  6.39714487e-05  8.88033268e-07
+  -2.53613538e-05 -1.00632574e-05]]
+ST_sum = [array([0.55760111, 0.63049371, 0.3105612 , 0.11167778, 0.41250274,
+       0.51639481, 0.3392872 , 0.23694026, 0.05085004, 0.28123784,
+       0.03356717, 0.02571017, 0.00505405, 0.06429869, 0.10689088,
+       0.19530944, 0.14273508, 0.15562112, 0.00235738])]
+Total points = [ 1. -1.  3.  4.  2. -1.  1.  3.  4.  2.  5.  6.  7.  4.  3. -1.  2.  1.
+  8.]
+Less important parameter = [18]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -4.41979317e-03  2.48656616e-03  0.00000000e+00
+   7.80483681e-06  1.39644667e-06  0.00000000e+00 -2.56640589e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  4.09317383e-03 -1.33809436e-03  0.00000000e+00
+  -5.95463962e-06 -6.35841447e-07  0.00000000e+00  1.74973493e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  2.66068246e-04 -1.01396800e-04 -5.22112386e-04
+  -1.61591600e-06 -1.33659000e-06  6.39714487e-05  8.88033268e-07
+  -2.53613538e-05  0.00000000e+00]]
+
+---------- ITERATION 2 ----------
+SSE = 0.22821888574314203
+Comparing 0.22821888205426877 + 0.005*0.02282188820542688 with 0.22821888574314203: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -4.41979317e-03  2.48656616e-03  0.00000000e+00
+   7.80483681e-06  1.39644667e-06  0.00000000e+00 -2.56640589e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  4.09317383e-03 -1.33809436e-03  0.00000000e+00
+  -5.95463962e-06 -6.35841447e-07  0.00000000e+00  1.74973493e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  2.65443652e-04 -1.01203447e-04 -5.18632628e-04
+  -1.60961489e-06 -1.29592084e-06  6.26991342e-05  8.78906409e-07
+  -2.54435897e-05  0.00000000e+00]]
+ST_sum = [array([0.55760111, 0.63049371, 0.3105612 , 0.11167778, 0.41250274,
+       0.51639481, 0.3392872 , 0.23694026, 0.05085004, 0.28123784,
+       0.03348837, 0.02566115, 0.00502036, 0.06404797, 0.10363845,
+       0.19142497, 0.14126811, 0.15612573])]
+Total points = [ 1. -1.  3.  4.  2. -1.  1.  3.  4.  2.  5.  6.  7.  4.  3. -1.  2.  1.]
+Less important parameter = [12]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -4.41979317e-03  2.48656616e-03  0.00000000e+00
+   7.80483681e-06  1.39644667e-06  0.00000000e+00 -2.56640589e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  4.09317383e-03 -1.33809436e-03  0.00000000e+00
+  -5.95463962e-06 -6.35841447e-07  0.00000000e+00  1.74973493e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  2.65443652e-04 -1.01203447e-04  0.00000000e+00
+  -1.60961489e-06 -1.29592084e-06  6.26991342e-05  8.78906409e-07
+  -2.54435897e-05  0.00000000e+00]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.22821888574314203
+Loss at the current iteration = 0.22822162546357788
+Number of bases at the previous iteration = 18
+Number of bases at the current iteration = 17
+Total number of bases = 19
+F-test = 1.2004792797625845e-05
+SSE = 0.22822162546357788
+Comparing 0.2282188838987054 + 0.005*1.8444366312042604e-09 with 0.22822162546357788: error has increased
+Ki67_neg' = -4.420e-03 Ki67_neg + 2.487e-03 Ki67_pos + 7.805e-06 Ki67_neg^2 + 1.396e-06 Ki67_neg Ki67_pos + -2.566e-06 Ki67_pos^2
+Ki67_pos' = 4.093e-03 Ki67_neg + -1.338e-03 Ki67_pos + -5.955e-06 Ki67_neg^2 + -6.357e-07 Ki67_neg Ki67_pos + 1.750e-06 Ki67_pos^2
+apoptotic' = 2.655e-04 Ki67_neg + -1.012e-04 Ki67_pos + -5.191e-04 apoptotic + -1.610e-06 Ki67_neg^2 + -1.296e-06 Ki67_neg Ki67_pos + 6.271e-05 Ki67_neg apoptotic + 8.790e-07 Ki67_pos^2 + -2.545e-05 Ki67_pos apoptotic
+
+
+Experimento 8: Grau = 2, Frequência = 1, alpha = 0.1
+
+---------- ITERATION 1 ----------
+SSE = 0.22821888253340916
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -4.41960269e-03  2.48647051e-03  0.00000000e+00
+   7.80257355e-06  1.39812327e-06  0.00000000e+00 -2.56667734e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  4.09301368e-03 -1.33801400e-03  0.00000000e+00
+  -5.95273623e-06 -6.37252717e-07  0.00000000e+00  1.74996399e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  2.65947143e-04 -1.01505711e-04 -5.17328196e-04
+  -1.61452674e-06 -1.33254033e-06  6.38276607e-05  8.86730310e-07
+  -2.53385881e-05 -9.52650809e-06]]
+ST_sum = [array([0.55757708, 0.63046946, 0.31047114, 0.11181187, 0.41254637,
+       0.51637461, 0.33926683, 0.23686452, 0.0509629 , 0.28127466,
+       0.03355189, 0.02573779, 0.00500774, 0.06424341, 0.10656701,
+       0.19487044, 0.14252566, 0.15548143, 0.00223164])]
+Total points = [ 1. -1.  3.  4.  2. -1.  1.  3.  4.  2.  5.  6.  7.  4.  3. -1.  2.  1.
+  8.]
+Less important parameter = [18]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -4.41960269e-03  2.48647051e-03  0.00000000e+00
+   7.80257355e-06  1.39812327e-06  0.00000000e+00 -2.56667734e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  4.09301368e-03 -1.33801400e-03  0.00000000e+00
+  -5.95273623e-06 -6.37252717e-07  0.00000000e+00  1.74996399e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  2.65947143e-04 -1.01505711e-04 -5.17328196e-04
+  -1.61452674e-06 -1.33254033e-06  6.38276607e-05  8.86730310e-07
+  -2.53385881e-05  0.00000000e+00]]
+
+---------- ITERATION 2 ----------
+SSE = 0.22821888620626155
+Comparing 0.22821888253340916 + 0.005*0.022821888253340916 with 0.22821888620626155: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -4.41960269e-03  2.48647051e-03  0.00000000e+00
+   7.80257355e-06  1.39812327e-06  0.00000000e+00 -2.56667734e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  4.09301368e-03 -1.33801400e-03  0.00000000e+00
+  -5.95273623e-06 -6.37252717e-07  0.00000000e+00  1.74996399e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  2.65356373e-04 -1.01321895e-04 -5.14063115e-04
+  -1.60856785e-06 -1.29405299e-06  6.26236992e-05  8.78095659e-07
+  -2.54166150e-05  0.00000000e+00]]
+ST_sum = [array([0.55757708, 0.63046946, 0.31047114, 0.11181187, 0.41254637,
+       0.51637461, 0.33926683, 0.23686452, 0.0509629 , 0.28127466,
+       0.03347736, 0.02569118, 0.00497613, 0.0640063 , 0.10348907,
+       0.19119466, 0.14113779, 0.15596021])]
+Total points = [ 1. -1.  3.  4.  2. -1.  1.  3.  4.  2.  5.  6.  7.  4.  3. -1.  2.  1.]
+Less important parameter = [12]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -4.41960269e-03  2.48647051e-03  0.00000000e+00
+   7.80257355e-06  1.39812327e-06  0.00000000e+00 -2.56667734e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  4.09301368e-03 -1.33801400e-03  0.00000000e+00
+  -5.95273623e-06 -6.37252717e-07  0.00000000e+00  1.74996399e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  2.65356373e-04 -1.01321895e-04  0.00000000e+00
+  -1.60856785e-06 -1.29405299e-06  6.26236992e-05  8.78095659e-07
+  -2.54166150e-05  0.00000000e+00]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.22821888620626155
+Loss at the current iteration = 0.22822162566678658
+Number of bases at the previous iteration = 18
+Number of bases at the current iteration = 17
+Total number of bases = 19
+F-test = 1.2003653906892186e-05
+SSE = 0.22822162566678658
+Comparing 0.22821888436983534 + 0.005*1.8364261916703484e-09 with 0.22822162566678658: error has increased
+Ki67_neg' = -4.420e-03 Ki67_neg + 2.487e-03 Ki67_pos + 7.805e-06 Ki67_neg^2 + 1.396e-06 Ki67_neg Ki67_pos + -2.566e-06 Ki67_pos^2
+Ki67_pos' = 4.093e-03 Ki67_neg + -1.338e-03 Ki67_pos + -5.955e-06 Ki67_neg^2 + -6.357e-07 Ki67_neg Ki67_pos + 1.750e-06 Ki67_pos^2
+apoptotic' = 2.655e-04 Ki67_neg + -1.012e-04 Ki67_pos + -5.191e-04 apoptotic + -1.610e-06 Ki67_neg^2 + -1.296e-06 Ki67_neg Ki67_pos + 6.271e-05 Ki67_neg apoptotic + 8.790e-07 Ki67_pos^2 + -2.545e-05 Ki67_pos apoptotic
+
+
+Experimento 9: Grau = 2, Frequência = 1, alpha = 1.0
+
+---------- ITERATION 1 ----------
+SSE = 0.2282189259444567
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -4.41769885e-03  2.48551443e-03  0.00000000e+00
+   7.77995139e-06  1.41488149e-06  0.00000000e+00 -2.56939049e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  4.09141293e-03 -1.33721087e-03  0.00000000e+00
+  -5.93371115e-06 -6.51358893e-07  0.00000000e+00  1.75225350e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  2.64838957e-04 -1.02489694e-04 -4.73907720e-04
+  -1.60180937e-06 -1.29589859e-06  6.25236461e-05  8.74869880e-07
+  -2.51286912e-05 -4.71011929e-06]]
+ST_sum = [array([0.55733689, 0.63022704, 0.30957099, 0.11315207, 0.41298246,
+       0.51617265, 0.33906319, 0.23610749, 0.05209101, 0.28164266,
+       0.03341208, 0.02598729, 0.00458743, 0.06373738, 0.10363667,
+       0.19088919, 0.14061931, 0.15419347, 0.00110337])]
+Total points = [ 1. -1.  3.  4.  2. -1.  1.  3.  4.  2.  5.  6.  7.  4.  3. -1.  2.  1.
+  8.]
+Less important parameter = [18]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -4.41769885e-03  2.48551443e-03  0.00000000e+00
+   7.77995139e-06  1.41488149e-06  0.00000000e+00 -2.56939049e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  4.09141293e-03 -1.33721087e-03  0.00000000e+00
+  -5.93371115e-06 -6.51358893e-07  0.00000000e+00  1.75225350e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  2.64838957e-04 -1.02489694e-04 -4.73907720e-04
+  -1.60180937e-06 -1.29589859e-06  6.25236461e-05  8.74869880e-07
+  -2.51286912e-05  0.00000000e+00]]
+
+---------- ITERATION 2 ----------
+SSE = 0.2282189284386133
+Comparing 0.2282189259444567 + 0.005*0.02282189259444567 with 0.2282189284386133: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -4.41769885e-03  2.48551443e-03  0.00000000e+00
+   7.77995139e-06  1.41488149e-06  0.00000000e+00 -2.56939049e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  4.09141293e-03 -1.33721087e-03  0.00000000e+00
+  -5.93371115e-06 -6.51358893e-07  0.00000000e+00  1.75225350e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  2.64549185e-04 -1.02395323e-04 -4.72424383e-04
+  -1.59889095e-06 -1.27692715e-06  6.19306155e-05  8.70625427e-07
+  -2.51680794e-05  0.00000000e+00]]
+ST_sum = [array([0.55733689, 0.63022704, 0.30957099, 0.11315207, 0.41298246,
+       0.51617265, 0.33906319, 0.23610749, 0.05209101, 0.28164266,
+       0.03337553, 0.02596336, 0.00457307, 0.06362125, 0.10211947,
+       0.18907863, 0.13993709, 0.15443516])]
+Total points = [ 1. -1.  3.  4.  2. -1.  1.  3.  4.  2.  5.  6.  7.  4.  3. -1.  2.  1.]
+Less important parameter = [12]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -4.41769885e-03  2.48551443e-03  0.00000000e+00
+   7.77995139e-06  1.41488149e-06  0.00000000e+00 -2.56939049e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  4.09141293e-03 -1.33721087e-03  0.00000000e+00
+  -5.93371115e-06 -6.51358893e-07  0.00000000e+00  1.75225350e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  2.64549185e-04 -1.02395323e-04  0.00000000e+00
+  -1.59889095e-06 -1.27692715e-06  6.19306155e-05  8.70625427e-07
+  -2.51680794e-05  0.00000000e+00]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.2282189284386133
+Loss at the current iteration = 0.22822164597039263
+Number of bases at the previous iteration = 18
+Number of bases at the current iteration = 17
+Total number of bases = 19
+F-test = 1.1907565239748177e-05
+SSE = 0.22822164597039263
+Comparing 0.228218927191535 + 0.005*1.2470783017359821e-09 with 0.22822164597039263: error has increased
+Ki67_neg' = -4.420e-03 Ki67_neg + 2.487e-03 Ki67_pos + 7.805e-06 Ki67_neg^2 + 1.396e-06 Ki67_neg Ki67_pos + -2.566e-06 Ki67_pos^2
+Ki67_pos' = 4.093e-03 Ki67_neg + -1.338e-03 Ki67_pos + -5.955e-06 Ki67_neg^2 + -6.357e-07 Ki67_neg Ki67_pos + 1.750e-06 Ki67_pos^2
+apoptotic' = 2.655e-04 Ki67_neg + -1.012e-04 Ki67_pos + -5.191e-04 apoptotic + -1.610e-06 Ki67_neg^2 + -1.296e-06 Ki67_neg Ki67_pos + 6.271e-05 Ki67_neg apoptotic + 8.790e-07 Ki67_pos^2 + -2.545e-05 Ki67_pos apoptotic
+
+
+Experimento 10: Grau = 2, Frequência = 1, alpha = 10.0
+
+---------- ITERATION 1 ----------
+SSE = 0.22822160637916755
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -4.39874814e-03  2.47599776e-03  0.00000000e+00
+   7.55477230e-06  1.58169129e-06  0.00000000e+00 -2.59639685e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  4.07547910e-03 -1.32921651e-03  0.00000000e+00
+  -5.74433670e-06 -7.91771289e-07  0.00000000e+00  1.77504347e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  2.58795196e-04 -1.07130893e-04 -2.57662366e-04
+  -1.53225685e-06 -1.11712075e-06  5.60088853e-05  8.13391628e-07
+  -2.39120804e-05  1.69058456e-05]]
+ST_sum = [array([0.55494607, 0.62781399, 0.30061092, 0.12649232, 0.41732324,
+       0.51416244, 0.33703614, 0.22857212, 0.06332019, 0.28530573,
+       0.0326496 , 0.02716411, 0.00249417, 0.06096982, 0.0893393 ,
+       0.17099916, 0.13073781, 0.14672816, 0.0039603 ])]
+Total points = [ 1. -1.  3.  4.  2. -1.  1.  3.  4.  2.  5.  6.  8.  4.  3. -1.  2.  1.
+  7.]
+Less important parameter = [12]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -4.39874814e-03  2.47599776e-03  0.00000000e+00
+   7.55477230e-06  1.58169129e-06  0.00000000e+00 -2.59639685e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  4.07547910e-03 -1.32921651e-03  0.00000000e+00
+  -5.74433670e-06 -7.91771289e-07  0.00000000e+00  1.77504347e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  2.58795196e-04 -1.07130893e-04  0.00000000e+00
+  -1.53225685e-06 -1.11712075e-06  5.60088853e-05  8.13391628e-07
+  -2.39120804e-05  1.69058456e-05]]
+
+---------- ITERATION 2 ----------
+SSE = 0.22822360201437414
+Comparing 0.22822160637916755 + 0.005*0.022822160637916755 with 0.22822360201437414: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -4.39874814e-03  2.47599776e-03  0.00000000e+00
+   7.55477230e-06  1.58169129e-06  0.00000000e+00 -2.59639685e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  4.07547910e-03 -1.32921651e-03  0.00000000e+00
+  -5.74433670e-06 -7.91771289e-07  0.00000000e+00  1.77504347e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  2.53586362e-04 -1.13654785e-04  0.00000000e+00
+  -1.47156779e-06 -9.45870284e-07  4.98682773e-05  7.57621630e-07
+  -2.27824018e-05  3.59301694e-05]]
+ST_sum = [array([0.55494607, 0.62781399, 0.30061092, 0.12649232, 0.41732324,
+       0.51416244, 0.33703614, 0.22857212, 0.06332019, 0.28530573,
+       0.03199246, 0.02881831, 0.05855495, 0.07564392, 0.15225144,
+       0.1217738 , 0.13979628, 0.00841686])] intdy--  t (=r1) illegal        
+      in above message,  r1 =  0.1230000000000D+04
+      t not in interval tcur - hu (= r1) to tcur (=r2)       
+      in above,  r1 =  0.1201894554570D+04   r2 =  0.1201894554570D+04
+ intdy--  t (=r1) illegal        
+      in above message,  r1 =  0.1260000000000D+04
+      t not in interval tcur - hu (= r1) to tcur (=r2)       
+      in above,  r1 =  0.1201894554570D+04   r2 =  0.1201894554570D+04
+ lsoda--  trouble from intdy. itask = i1, tout = r1  
+      in above message,  i1 =         1
+      in above message,  r1 =  0.1260000000000D+04
+ intdy--  t (=r1) illegal        
+      in above message,  r1 =  0.5400000000000D+03
+      t not in interval tcur - hu (= r1) to tcur (=r2)       
+      in above,  r1 =  0.5138264744810D+03   r2 =  0.5138264744810D+03
+ intdy--  t (=r1) illegal        
+      in above message,  r1 =  0.5700000000000D+03
+      t not in interval tcur - hu (= r1) to tcur (=r2)       
+      in above,  r1 =  0.5138264744810D+03   r2 =  0.5138264744810D+03
+ lsoda--  trouble from intdy. itask = i1, tout = r1  
+      in above message,  i1 =         1
+      in above message,  r1 =  0.5700000000000D+03
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1530032330855D+04   r2 =  0.9810860888364D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1530032330855D+04   r2 =  0.9810860888364D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1530032330855D+04   r2 =  0.9810860888364D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1530032330855D+04   r2 =  0.9810860888364D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1530032330855D+04   r2 =  0.7965392472939D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1530032330855D+04   r2 =  0.7965392472939D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1530032330855D+04   r2 =  0.7965392472939D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1530032330855D+04   r2 =  0.7965392472939D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1530032330855D+04   r2 =  0.6467065220947D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1530032330855D+04   r2 =  0.6467065220947D-13
+ lsoda--  above warning has been issued i1 times.    
+       it will not be issued again for this problem  
+      in above message,  i1 =        10
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1111217887322D+04   r2 =  0.1073334395828D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1111217887322D+04   r2 =  0.1073334395828D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1111217887322D+04   r2 =  0.1073334395828D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1111217887322D+04   r2 =  0.1073334395828D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1111217887322D+04   r2 =  0.1073334395828D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1111217887322D+04   r2 =  0.8589449560133D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1111217887322D+04   r2 =  0.8589449560133D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1111217887322D+04   r2 =  0.7111914687446D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1111217887322D+04   r2 =  0.7111914687446D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1111217887322D+04   r2 =  0.7111914687446D-13
+ lsoda--  above warning has been issued i1 times.    
+       it will not be issued again for this problem  
+      in above message,  i1 =        10
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1170597216843D+04   r2 =  0.9926173891067D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1170597216843D+04   r2 =  0.9926173891067D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1170597216843D+04   r2 =  0.8218699158754D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1170597216843D+04   r2 =  0.8218699158754D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1170597216843D+04   r2 =  0.8218699158754D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1170597216843D+04   r2 =  0.8218699158754D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1170597216843D+04   r2 =  0.8218699158754D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+
+Total points = [ 1. -1.  3.  4.  2. -1.  1.  3.  4.  2.  5.  6.  4.  3. -1.  2.  1.  7.]
+Less important parameter = [17]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -4.39874814e-03  2.47599776e-03  0.00000000e+00
+   7.55477230e-06  1.58169129e-06  0.00000000e+00 -2.59639685e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  4.07547910e-03 -1.32921651e-03  0.00000000e+00
+  -5.74433670e-06 -7.91771289e-07  0.00000000e+00  1.77504347e-06
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  2.53586362e-04 -1.13654785e-04  0.00000000e+00
+  -1.47156779e-06 -9.45870284e-07  4.98682773e-05  7.57621630e-07
+  -2.27824018e-05  0.00000000e+00]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.22822360201437414
+Loss at the current iteration = 0.22822365918479626
+Number of bases at the previous iteration = 18
+Number of bases at the current iteration = 17
+Total number of bases = 19
+F-test = 2.5050179566884747e-07
+SSE = 0.22822365918479626
+Comparing 0.22822260419677085 + 0.005*9.978176032932051e-07 with 0.22822365918479626: error has increased
+Ki67_neg' = -4.420e-03 Ki67_neg + 2.487e-03 Ki67_pos + 7.805e-06 Ki67_neg^2 + 1.396e-06 Ki67_neg Ki67_pos + -2.566e-06 Ki67_pos^2
+Ki67_pos' = 4.093e-03 Ki67_neg + -1.338e-03 Ki67_pos + -5.955e-06 Ki67_neg^2 + -6.357e-07 Ki67_neg Ki67_pos + 1.750e-06 Ki67_pos^2
+apoptotic' = 2.549e-04 Ki67_neg + -1.143e-04 Ki67_pos + -1.487e-06 Ki67_neg^2 + -9.453e-07 Ki67_neg Ki67_pos + 5.015e-05 Ki67_neg apoptotic + 7.647e-07 Ki67_pos^2 + -2.315e-05 Ki67_pos apoptotic + 3.929e-05 apoptotic^2
+
+
+Modelo 1
+
+Ki67_neg' = -3.497e-03 Ki67_neg + 2.043e-03 Ki67_pos
+Ki67_pos' = 3.408e-03 Ki67_neg + -1.007e-03 Ki67_pos
+apoptotic' = 1.270e-04 Ki67_neg + -8.584e-05 Ki67_pos + 1.504e-03 apoptotic
+
+
+*** Using Levenberg-Marquardt algorithm ***
+
+Param expression = c1, c2, c5, c6, c9, c10, c11,
+Var expression = Ki67_neg, Ki67_pos, apoptotic
+Model expression = c1*Ki67_neg + c2*Ki67_pos, c5*Ki67_neg + c6*Ki67_pos, c9*Ki67_neg + c10*Ki67_pos + c11*apoptotic
+Signs = [-1.  1.  1. -1.  1.  1. -1.]
+Bounds = [[-0.005245918438165577, -0.0017486394793885256], [0.0010213705549596247, 0.0030641116648788738], [0.0017040766291974447, 0.005112229887592334], [-0.0015107593048439023, -0.0005035864349479674], [6.349237681776859e-05, 0.00019047713045330578], [4.2922191725587216e-05, 0.00012876657517676165], [-0.002256412866355273, -0.0007521376221184243]]
+Ki67_neg' = -3.759e-03 Ki67_neg + 2.177e-03 Ki67_pos
+Ki67_pos' = 3.458e-03 Ki67_neg + -1.023e-03 Ki67_pos
+apoptotic' = 1.658e-04 Ki67_neg + 5.426e-07 Ki67_pos + -1.705e-03 apoptotic
+
+
+Modelo 2
+
+Ki67_neg' = -4.420e-03 Ki67_neg + 2.487e-03 Ki67_pos + 7.805e-06 Ki67_neg^2 + 1.396e-06 Ki67_neg Ki67_pos + -2.566e-06 Ki67_pos^2
+Ki67_pos' = 4.093e-03 Ki67_neg + -1.338e-03 Ki67_pos + -5.955e-06 Ki67_neg^2 + -6.357e-07 Ki67_neg Ki67_pos + 1.750e-06 Ki67_pos^2
+apoptotic' = 2.655e-04 Ki67_neg + -1.012e-04 Ki67_pos + -5.191e-04 apoptotic + -1.610e-06 Ki67_neg^2 + -1.296e-06 Ki67_neg Ki67_pos + 6.271e-05 Ki67_neg apoptotic + 8.790e-07 Ki67_pos^2 + -2.545e-05 Ki67_pos apoptotic
+
+
+*** Using Levenberg-Marquardt algorithm ***
+
+Param expression = c1, c2, c4, c5, c7, c11, c12, c14, c15, c17, c21, c22, c23, c24, c25, c26, c27, c28,
+Var expression = Ki67_neg, Ki67_pos, apoptotic
+Model expression = c1*Ki67_neg + c2*Ki67_pos + c4*Ki67_neg**2 + c5*Ki67_neg*Ki67_pos + c7*Ki67_pos**2, c11*Ki67_neg + c12*Ki67_pos + c14*Ki67_neg**2 + c15*Ki67_neg*Ki67_pos + c17*Ki67_pos**2, c21*Ki67_neg + c22*Ki67_pos + c23*apoptotic + c24*Ki67_neg**2 + c25*Ki67_neg*Ki67_pos + c26*Ki67_neg*apoptotic + c27*Ki67_pos**2 + c28*Ki67_pos*apoptotic
+Signs = [-1.  1. -1. -1.  1.  1. -1.  1. -1. -1.  1.  1. -1.  1.  1. -1.  1. -1.]
+Bounds = [[-0.006629721496845565, -0.0022099071656151883], [0.00124328839248672, 0.00372986517746016], [-1.170763244251569e-05, -3.90254414750523e-06], [-2.0943905571440364e-06, -6.981301857146788e-07], [1.2831878665666308e-06, 3.8495635996998925e-06], [0.002046595814596987, 0.006139787443790961], [-0.002007154925835888, -0.000669051641945296], [2.977425560569513e-06, 8.932276681708538e-06], [-9.535269479015894e-07, -3.1784231596719646e-07], [-2.6245642134177473e-06, -8.748547378059158e-07], [0.0001327267151695307, 0.0003981801455085921], [5.0595074708928394e-05, 0.00015178522412678518], [-0.0007787180285351383, -0.0002595726761783794], [8.048661046052486e-07, 2.414598313815746e-06], [6.480651448613965e-07, 1.9441954345841894e-06], [-9.406138703150533e-05, -3.135379567716844e-05], [4.394986392032858e-07, 1.3184959176098574e-06], [-3.8169919555214966e-05, -1.2723306518404988e-05]]
+Ki67_neg' = -4.420e-03 Ki67_neg + 2.487e-03 Ki67_pos + 7.805e-06 Ki67_neg^2 + 1.396e-06 Ki67_neg Ki67_pos + -2.566e-06 Ki67_pos^2
+Ki67_pos' = 4.093e-03 Ki67_neg + -1.338e-03 Ki67_pos + -5.955e-06 Ki67_neg^2 + -6.357e-07 Ki67_neg Ki67_pos + 1.750e-06 Ki67_pos^2
+apoptotic' = 2.655e-04 Ki67_neg + -1.012e-04 Ki67_pos + -5.191e-04 apoptotic + -1.610e-06 Ki67_neg^2 + -1.296e-06 Ki67_neg Ki67_pos + 6.271e-05 Ki67_neg apoptotic + 8.790e-07 Ki67_pos^2 + -2.545e-05 Ki67_pos apoptotic
+
+
+Modelo 3
+
+Ki67_neg' = -4.420e-03 Ki67_neg + 2.487e-03 Ki67_pos + 7.805e-06 Ki67_neg^2 + 1.396e-06 Ki67_neg Ki67_pos + -2.566e-06 Ki67_pos^2
+Ki67_pos' = 4.093e-03 Ki67_neg + -1.338e-03 Ki67_pos + -5.955e-06 Ki67_neg^2 + -6.357e-07 Ki67_neg Ki67_pos + 1.750e-06 Ki67_pos^2
+apoptotic' = 2.549e-04 Ki67_neg + -1.143e-04 Ki67_pos + -1.487e-06 Ki67_neg^2 + -9.453e-07 Ki67_neg Ki67_pos + 5.015e-05 Ki67_neg apoptotic + 7.647e-07 Ki67_pos^2 + -2.315e-05 Ki67_pos apoptotic + 3.929e-05 apoptotic^2
+
+
+*** Using Levenberg-Marquardt algorithm ***
+
+Param expression = c1, c2, c4, c5, c7, c11, c12, c14, c15, c17, c21, c22, c24, c25, c26, c27, c28, c29,
+Var expression = Ki67_neg, Ki67_pos, apoptotic
+Model expression = c1*Ki67_neg + c2*Ki67_pos + c4*Ki67_neg**2 + c5*Ki67_neg*Ki67_pos + c7*Ki67_pos**2, c11*Ki67_neg + c12*Ki67_pos + c14*Ki67_neg**2 + c15*Ki67_neg*Ki67_pos + c17*Ki67_pos**2, c21*Ki67_neg + c22*Ki67_pos + c24*Ki67_neg**2 + c25*Ki67_neg*Ki67_pos + c26*Ki67_neg*apoptotic + c27*Ki67_pos**2 + c28*Ki67_pos*apoptotic + c29*apoptotic**2
+Signs = [-1.  1. -1. -1.  1.  1. -1.  1. -1. -1.  1.  1.  1.  1. -1.  1. -1. -1.]
+Bounds = [[-0.006629721496845565, -0.0022099071656151883], [0.00124328839248672, 0.00372986517746016], [-1.170763244251569e-05, -3.90254414750523e-06], [-2.0943905571440364e-06, -6.981301857146788e-07], [1.2831878665666308e-06, 3.8495635996998925e-06], [0.002046595814596987, 0.006139787443790961], [-0.002007154925835888, -0.000669051641945296], [2.977425560569513e-06, 8.932276681708538e-06], [-9.535269479015894e-07, -3.1784231596719646e-07], [-2.6245642134177473e-06, -8.748547378059158e-07], [0.00012743392929621627, 0.0003823017878886488], [5.714476131916092e-05, 0.00017143428395748276], [7.432667817904247e-07, 2.229800345371274e-06], [4.726585403565929e-07, 1.4179756210697788e-06], [-7.522976171279412e-05, -2.507658723759804e-05], [3.82369652364305e-07, 1.147108957092915e-06], [-3.4722293149373724e-05, -1.1574097716457909e-05], [-5.894130669193663e-05, -1.9647102230645543e-05]]
+Ki67_neg' = -4.420e-03 Ki67_neg + 2.487e-03 Ki67_pos + 7.805e-06 Ki67_neg^2 + 1.396e-06 Ki67_neg Ki67_pos + -2.566e-06 Ki67_pos^2
+Ki67_pos' = 4.093e-03 Ki67_neg + -1.338e-03 Ki67_pos + -5.955e-06 Ki67_neg^2 + -6.357e-07 Ki67_neg Ki67_pos + 1.750e-06 Ki67_pos^2
+apoptotic' = 2.549e-04 Ki67_neg + -1.143e-04 Ki67_pos + -1.487e-06 Ki67_neg^2 + -9.453e-07 Ki67_neg Ki67_pos + 5.015e-05 Ki67_neg apoptotic + 7.647e-07 Ki67_pos^2 + -2.315e-05 Ki67_pos apoptotic + 3.929e-05 apoptotic^2
+
+
+Melhor modelo AIC = 1
+
+Melhor modelo AICc = 1
+
+Melhor modelo BIC = 1
+
+      in above,  r1 =  0.1170597216843D+04   r2 =  0.6577083725796D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1170597216843D+04   r2 =  0.6577083725796D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1170597216843D+04   r2 =  0.5445710813234D-13
+ lsoda--  above warning has been issued i1 times.    
+       it will not be issued again for this problem  
+      in above message,  i1 =        10
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1170103316258D+04   r2 =  0.1086261502409D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1170103316258D+04   r2 =  0.1086261502409D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1170103316258D+04   r2 =  0.1086261502409D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1170103316258D+04   r2 =  0.1086261502409D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1170103316258D+04   r2 =  0.8819306777316D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1170103316258D+04   r2 =  0.8819306777316D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1170103316258D+04   r2 =  0.8819306777316D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1170103316258D+04   r2 =  0.8819306777316D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1170103316258D+04   r2 =  0.7160354285388D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1170103316258D+04   r2 =  0.7160354285388D-13
+ lsoda--  above warning has been issued i1 times.    
+       it will not be issued again for this problem  
+      in above message,  i1 =        10
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.5717584823017D+03   r2 =  0.5111954372303D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.5717584823017D+03   r2 =  0.5111954372303D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.5717584823017D+03   r2 =  0.4232609217583D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.5717584823017D+03   r2 =  0.4232609217583D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.5717584823017D+03   r2 =  0.4232609217583D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.5717584823017D+03   r2 =  0.4232609217583D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.5717584823017D+03   r2 =  0.4232609217583D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.5717584823017D+03   r2 =  0.3387181434081D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.5717584823017D+03   r2 =  0.3387181434081D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.5717584823017D+03   r2 =  0.2804527254156D-13
+ lsoda--  above warning has been issued i1 times.    
+       it will not be issued again for this problem  
+      in above message,  i1 =        10

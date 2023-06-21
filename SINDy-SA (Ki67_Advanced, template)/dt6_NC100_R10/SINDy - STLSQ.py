@@ -102,9 +102,9 @@ for poly_degree in poly_degrees:
 				epsilon = 10.0,
 				time = t,
 				sa_times = np.array([3600.0]),
-				non_physical_features = [['Ki67_pos_pre', 'Ki67_neg Ki67_pos_pre', 'Ki67_neg Ki67_pos_post', 'Ki67_pos_pre^2', 'Ki67_pos_pre Ki67_pos_post'],
-					['Ki67_pos_post', 'Ki67_neg Ki67_pos_pre', 'Ki67_neg Ki67_pos_post', 'Ki67_pos_pre Ki67_pos_post', 'Ki67_pos_post^2'],
-					['Ki67_neg', 'Ki67_neg^2', 'Ki67_neg Ki67_pos_pre', 'Ki67_neg Ki67_pos_post', 'Ki67_pos_pre Ki67_pos_post']
+				non_physical_features = [['Ki67_pos_pre', 'Ki67_neg Ki67_pos_pre', 'Ki67_pos_pre^2', 'Ki67_pos_pre Ki67_pos_post'],
+					['Ki67_pos_post', 'Ki67_neg Ki67_pos_post', 'Ki67_pos_pre Ki67_pos_post', 'Ki67_pos_post^2'],
+					['Ki67_neg', 'Ki67_neg^2', 'Ki67_neg Ki67_pos_pre', 'Ki67_neg Ki67_pos_post']
 				]
 			)
 			# Feature names = ['1', 'Ki67_neg', 'Ki67_pos_pre', 'Ki67_pos_post', 
@@ -192,9 +192,9 @@ for model_id, model in enumerate(model_set):
 		ax.plot(t_test, true_solution[:,0], "b:", label = r"True Ki67$^{-}(t)$", alpha = 1.0, linewidth = 1)
 		ax.plot(t_test, true_solution[:,1], "g:", label = r"True Ki67$^{+}(t)$ (pre)", alpha = 1.0, linewidth = 1)
 		ax.plot(t_test, true_solution[:,2], "g:", label = r"True Ki67$^{+}(t)$ (post)", alpha = 1.0, linewidth = 1)
-		ax.plot(t_test, simulation[:,0], "b", label = r"Model Ki67$^{-}(t)$", alpha = 1.0, linewidth = 1)
-		ax.plot(t_test, simulation[:,1], "g", label = r"Model Ki67$^{+}(t)$ (pre)", alpha = 1.0, linewidth = 1)
-		ax.plot(t_test, simulation[:,2], "r", label = r"Model Ki67$^{+}(t)$ (post)", alpha = 1.0, linewidth = 1)
+		ax.plot(t_test, simulation[:,0], "b", label = r"SINDy-SA Ki67$^{-}(t)$", alpha = 1.0, linewidth = 1)
+		ax.plot(t_test, simulation[:,1], "g", label = r"SINDy-SA Ki67$^{+}(t)$ (pre)", alpha = 1.0, linewidth = 1)
+		ax.plot(t_test, simulation[:,2], "r", label = r"SINDy-SA Ki67$^{+}(t)$ (post)", alpha = 1.0, linewidth = 1)
 		if calibration_mode == "Bayes":
 			ax.fill_between(t, simulation_min[:,0], simulation_max[:,0], color = "b", alpha = 0.4)
 			ax.fill_between(t, simulation_min[:,1], simulation_max[:,1], color = "g", alpha = 0.4)

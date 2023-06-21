@@ -1,9 +1,9 @@
 <PhysiCell_settings version="devel-version">
 	<domain>
-		<x_min>-500</x_min>
-		<x_max>500</x_max>
-		<y_min>-500</y_min>
-		<y_max>500</y_max>
+		<x_min>-1000</x_min>
+		<x_max>1000</x_max>
+		<y_min>-1000</y_min>
+		<y_max>1000</y_max>
 		<z_min>-10</z_min>
 		<z_max>10</z_max>
 		<dx>20</dx>
@@ -223,7 +223,7 @@
 	
 	<user_parameters>
 		<random_seed type="int" units="dimensionless" description="">0</random_seed>
-        <number_of_cells type="int" units="none" description="initial number of cells (for each cell type)">100</number_of_cells>
+        <number_of_cells type="int" units="none" description="initial number of cells (for each cell type)">1000</number_of_cells>
         <population_filename type="string" units="none" description="">PhysiCell_tumor_cell_population.csv</population_filename>
     </user_parameters>
 	

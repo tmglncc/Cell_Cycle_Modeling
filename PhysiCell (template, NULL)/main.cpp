@@ -151,8 +151,8 @@ int main( int argc, char* argv[] )
 	
 	// std::vector<std::string> (*cell_coloring_function)(Cell*) = heterogeneity_coloring_function;
 	// std::vector<std::string> (*cell_coloring_function)(Cell*) = false_cell_coloring_live_dead;
-	std::vector<std::string> (*cell_coloring_function)(Cell*) = false_cell_coloring_Ki67;
-	// std::vector<std::string> (*cell_coloring_function)(Cell*) = false_cell_coloring_cytometry; 
+	// std::vector<std::string> (*cell_coloring_function)(Cell*) = false_cell_coloring_Ki67;
+	std::vector<std::string> (*cell_coloring_function)(Cell*) = false_cell_coloring_cytometry; 
 	
 	sprintf( filename , "%s/initial.svg" , PhysiCell_settings.folder.c_str() ); 
 	SVG_plot( filename , microenvironment, 0.0 , PhysiCell_globals.current_time, cell_coloring_function );

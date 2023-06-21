@@ -30,14 +30,14 @@ def create_xml_file(xml_file_in, xml_file_out, parameters):
 			xml_root.find('.//' + key).text = val
 	tree.write(xml_file_out)
 
-def create_config_folders(num_replicates, output_folder, config_filename):
-	for id_replicate in range(num_replicates):
+def create_config_folders(first_replicate, last_replicate, output_folder, config_filename):
+	for id_replicate in range(first_replicate, last_replicate+1):
 		folder_name = output_folder+"output_R"+str("%02d"%id_replicate)+'/'
 		parameters = {'folder': folder_name, 'random_seed': str(id_replicate)}
 		create_xml_file('config/'+config_filename, folder_name+config_filename, parameters)
 
-def run_model(num_replicates, output_folder, config_filename):
-	for id_replicate in range(num_replicates):
+def run_model(first_replicate, last_replicate, output_folder, config_filename):
+	for id_replicate in range(first_replicate, last_replicate+1):
 		print('Running replicate=' + str(id_replicate))
 		folder_name = output_folder+"output_R"+str("%02d"%id_replicate)+'/'
 
@@ -48,19 +48,20 @@ def run_model(num_replicates, output_folder, config_filename):
 			print("Model output error! Returned: "+ str(cache.returncode))
 			os._exit(1)
 
-num_replicates = 200
+first_replicate = 0
+last_replicate = 299
 
 # output_folder = "output_Live/"
 # output_folder = "output_Ki67_Basic/"
-output_folder = "output_Ki67_Advanced/"
-# output_folder = "output_Flow_Cytometry/"
+# output_folder = "output_Ki67_Advanced/"
+output_folder = "output_Flow_Cytometry/"
 # output_folder = "output_Separated_Flow_Cytometry/"
 
 # config_filename = "PhysiCell_settings_Live_without_o2_apop_nec.xml"
 # config_filename = "PhysiCell_settings_Ki67_Basic_without_o2_apop_nec.xml"
-config_filename = "PhysiCell_settings_Ki67_Advanced_without_o2_apop_nec.xml"
-# config_filename = "PhysiCell_settings_Flow_Cytometry_without_o2_apop_nec.xml"
+# config_filename = "PhysiCell_settings_Ki67_Advanced_without_o2_apop_nec.xml"
+config_filename = "PhysiCell_settings_Flow_Cytometry_without_o2_apop_nec.xml"
 # config_filename = "PhysiCell_settings_Separated_Flow_Cytometry_without_o2_apop_nec.xml"
 
-create_config_folders(num_replicates, output_folder, config_filename)
-run_model(num_replicates, output_folder, config_filename)
+create_config_folders(first_replicate, last_replicate, output_folder, config_filename)
+run_model(first_replicate, last_replicate, output_folder, config_filename)

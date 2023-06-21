@@ -179,7 +179,7 @@ for model_id, model in enumerate(model_set):
 	fig, ax = plt.subplots(1, 1, figsize = (15, 7.5), dpi = 300)
 	ax.plot(t_test, X_test[:,0], "ko", label = r"Data live$(t)$", alpha = 0.5, markersize = 3)
 	ax.plot(t_plot, true_solution[:,0], "b:", label = r"True live$(t)$", alpha = 1.0, linewidth = 1)
-	ax.plot(t_test, simulation[:,0], "b", label = r"Model live$(t)$", alpha = 1.0, linewidth = 1)
+	ax.plot(t_test, simulation[:,0], "b", label = r"SINDy-SA live$(t)$", alpha = 1.0, linewidth = 1)
 	if calibration_mode == "Bayes":
 		ax.fill_between(t, simulation_min[:,0], simulation_max[:,0], color = "b", alpha = 0.4)
 	ax.set(xlabel = r"Time $t$", ylabel = r"$X(t)$")

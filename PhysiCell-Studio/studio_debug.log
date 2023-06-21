@@ -1,0 +1,1484 @@
+DEBUG:root:self.current_dir = /home/gtnaozuka/Downloads/PhysiCell_V.1.10.4/PhysiCell-Studio
+DEBUG:root:self.studio_root_dir = /home/gtnaozuka/Downloads/PhysiCell_V.1.10.4/PhysiCell-Studio
+DEBUG:root:self.config_dir = /home/gtnaozuka/Downloads/PhysiCell_V.1.10.4/PhysiCell-Studio/config
+DEBUG:root:=======================  microenv populate_tree  ======================= 
+DEBUG:root:dc_ic_units =  mmHg
+DEBUG:root:dc_bc_units = mmHg
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e47f90>
+DEBUG:root:   -------- resource:  dirichlet_xmin = 1
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e4b090>
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e4b130>
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e4b1d0>
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e4b270>
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e4b310>
+DEBUG:root:dc_ic_units =  mmHg
+DEBUG:root:dc_bc_units = mmHg
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e4b680>
+DEBUG:root:   -------- toxin:  dirichlet_xmin = 0
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e4b720>
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e4b7c0>
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e4b860>
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e4b900>
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e4b9a0>
+DEBUG:root:dc_ic_units =  mmHg
+DEBUG:root:dc_bc_units = mmHg
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e4bd10>
+DEBUG:root:   -------- quorum:  dirichlet_xmin = None
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e4bdb0>
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e4be50>
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e4bef0>
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e4bf90>
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e4e090>
+DEBUG:root:dc_ic_units =  mmHg
+DEBUG:root:dc_bc_units = mmHg
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e4e450>
+DEBUG:root:   -------- pro-inflammatory:  dirichlet_xmin = 0
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e4e4f0>
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e4e590>
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e4e630>
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e4e6d0>
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e4e770>
+DEBUG:root:dc_ic_units =  mmHg
+DEBUG:root:dc_bc_units = mmHg
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e4eae0>
+DEBUG:root:   -------- debris:  dirichlet_xmin = None
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e4eb80>
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e4ec20>
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e4ecc0>
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e4ed60>
+DEBUG:root:bv = <Element 'boundary_value' at 0x7f0559e4ee00>
+DEBUG:root:------- options: <Element 'calculate_gradients' at 0x7f0559e4eef0>
+DEBUG:root:------- options: <Element 'track_internalized_substrates_in_each_agent' at 0x7f0559e4ef90>
+DEBUG:root:------- options: <Element 'initial_condition' at 0x7f0559e54040>
+DEBUG:root:------- options: <Element 'dirichlet_nodes' at 0x7f0559e54180>
+DEBUG:root:
+
+=======================  leaving microenv populate_tree  =====================
+DEBUG:root:
+====================== create_cycle_tab ===================
+DEBUG:root: new stacked widget: trate live -------------> 0
+DEBUG:root: new stacked widget: trate Ki67 -------------> 1
+DEBUG:root: new stacked widget: t02 -------------> 2
+DEBUG:root: new stacked widget: trate_flowcyto -------------> 3
+DEBUG:root: new stacked widget: flow cyto sep -------------> 4
+DEBUG:root: new stacked widget: trate_quiescent -------------> 5
+DEBUG:root: new stacked widget: duration live -------------> 6
+DEBUG:root: new stacked widget: duration Ki67 -------------> 7
+DEBUG:root: new stacked widget: t02 -------------> 8
+DEBUG:root: new stacked widget: duration_flowcyto -------------> 9
+DEBUG:root: new stacked widget: flow cyto sep -------------> 10
+DEBUG:root: new stacked widget: duration_quiescent -------------> 11
+DEBUG:root:intracellular is Unkown
+DEBUG:root:studio.py: first_cell_def_name= bacteria
+DEBUG:root:cell_def_tab.py: ------- fill_substrates_comboboxes
+DEBUG:root: --> resource
+DEBUG:root:------ motility_substrate_changed_cb(): idx = 0
+DEBUG:root:       motility_substrate_changed_cb(): self.current_cell_def = None
+DEBUG:root:------ motility2_substrate_changed_cb(): idx = 0
+DEBUG:root:   text (subname) = resource
+DEBUG:root: --> toxin
+DEBUG:root: --> quorum
+DEBUG:root: --> pro-inflammatory
+DEBUG:root: --> debris
+DEBUG:root:=======================  populate_tree_cell_defs(): ======================= 
+DEBUG:root:    cell_def_tab.param_d = {}
+DEBUG:root:
+
+=======================  validate_cell_defs(): ======================= 
+DEBUG:root:Checking bacteria
+DEBUG:root:Checking blood vessel
+DEBUG:root:Checking stem
+DEBUG:root:Checking differentiated
+DEBUG:root:Checking macrophage
+DEBUG:root:Checking CD8+ T cell
+DEBUG:root:Checking neutrophil
+DEBUG:root:=======================  end validate_cell_defs(): =======================
+
+
+DEBUG:root:----- cell_def.tag= cell_definition
+DEBUG:root:
+--------new_interaction_params(): cdname_new= bacteria
+DEBUG:root:
+--------new_intracellular_params(): cdname_new= bacteria
+DEBUG:root:------- new_custom_data_params() -----
+DEBUG:root:
+===== populate_tree():  cycle
+DEBUG:root: >> cycle_path= .//cell_definition[1]//phenotype//cycle
+DEBUG:root:   cycle code= 5
+DEBUG:root: >> phase_transition_path 
+DEBUG:root:<Element 'rate' at 0x7f0559e545e0>
+DEBUG:root:--  cycle_live_trate00 0.00028
+DEBUG:root: >> phase_durations_path =.//cell_definition[1]//phenotype//cycle//phase_durations
+DEBUG:root: >> pd_uep =None
+DEBUG:root:
+===== populate_tree():  death
+DEBUG:root:death_uep=<Element 'death' at 0x7f0559e54720>
+DEBUG:root:-------- parsing apoptosis!
+DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x7f0559e54900>
+DEBUG:root:phase_duration= <Element 'duration' at 0x7f0559e549a0>
+DEBUG:root:index= 0
+DEBUG:root:-------- parsing necrosis!
+DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x7f0559e59310>
+DEBUG:root:<Element 'duration' at 0x7f0559e593b0>
+DEBUG:root:index= 0
+DEBUG:root:<Element 'duration' at 0x7f0559e59450>
+DEBUG:root:index= 1
+DEBUG:root:volume_path=.//cell_definition[1]//phenotype//volume//
+DEBUG:root:
+===== populate_tree():  mechanics
+DEBUG:root:mechanics_path=.//cell_definition[1]//phenotype//mechanics//
+DEBUG:root:---- cell_interactions_path= .//cell_definition[1]//phenotype//mechanics//cell_adhesion_affinities
+DEBUG:root:---- found cell_adhesion_affinities_path:
+DEBUG:root:--> {'bacteria': '1'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1.0'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1.0', 'stem': '1.0'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1.0', 'stem': '1.0', 'differentiated': '1.0'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1.0', 'stem': '1.0', 'differentiated': '1.0', 'macrophage': '1.0'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1.0', 'stem': '1.0', 'differentiated': '1.0', 'macrophage': '1.0', 'CD8+ T cell': '1.0'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1.0', 'stem': '1.0', 'differentiated': '1.0', 'macrophage': '1.0', 'CD8+ T cell': '1.0', 'neutrophil': '1.0'}
+DEBUG:root:
+===== populate_tree():  motility
+DEBUG:root:motility_path=.//cell_definition[1]//phenotype//motility//
+DEBUG:root:
+----------- populate_tree_cell_defs.py: cell_def_name= bacteria,  cell_def_tab.param_d[cell_def_name]["motility_chemotaxis_substrate"] = resource
+DEBUG:root:motility_advanced_chemotaxis_path= .//cell_definition[1]//phenotype//motility//options//advanced_chemotaxis//
+DEBUG:root:chemotactic_sensitivity= {'resource': '0.0', 'toxin': '0.0', 'quorum': '0.0', 'pro-inflammatory': '0.0', 'debris': '0.0'}
+DEBUG:root:sensitivity_path= .//cell_definition[1]//phenotype//motility//options//advanced_chemotaxis//chemotactic_sensitivities
+DEBUG:root:---- found chemotactic_sensitivities: <Element 'chemotactic_sensitivities' at 0x7f0559e61d60>
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559e61e00>
+DEBUG:root: chemotactic_sensitivity--> resource = 1
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559e61e50>
+DEBUG:root: chemotactic_sensitivity--> toxin = 0
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559e61ea0>
+DEBUG:root: chemotactic_sensitivity--> quorum = 0.1
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559e61f40>
+DEBUG:root: chemotactic_sensitivity--> pro-inflammatory = 0
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559e61f90>
+DEBUG:root: chemotactic_sensitivity--> debris = 0
+DEBUG:root:{'resource': '1', 'toxin': '0', 'quorum': '0.1', 'pro-inflammatory': '0', 'debris': '0'}
+DEBUG:root:------ motility2_substrate_changed_cb(): idx = 0
+DEBUG:root:   text (subname) = resource
+DEBUG:root:    motility_advanced_chemotaxis_substrate= resource
+DEBUG:root:   chemotactic_sensitivity = {'resource': '1', 'toxin': '0', 'quorum': '0.1', 'pro-inflammatory': '0', 'debris': '0'}
+DEBUG:root:----- chemo_sensitivity_changed() = 1
+DEBUG:root:----- chemo_sensitivity_changed(): subname = resource
+DEBUG:root:     chemotactic_sensitivity (dict)= {'resource': '1', 'toxin': '0', 'quorum': '0.1', 'pro-inflammatory': '0', 'debris': '0'}
+DEBUG:root:
+===== populate_tree():  secretion
+DEBUG:root:secretion_path = .//cell_definition[1]//phenotype//secretion//
+DEBUG:root:uep_secretion = <Element 'secretion' at 0x7f0559e651d0>
+DEBUG:root:0) -- secretion substrate = resource
+DEBUG:root:1) -- secretion substrate = toxin
+DEBUG:root:2) -- secretion substrate = quorum
+DEBUG:root:3) -- secretion substrate = pro-inflammatory
+DEBUG:root:4) -- secretion substrate = debris
+DEBUG:root:------ done parsing secretion:
+DEBUG:root:
+===== populate_tree():  cell_interactions
+DEBUG:root:---- cell_interactions_path= .//cell_definition[1]//phenotype//cell_interactions
+DEBUG:root:---- found cell_interactions:
+DEBUG:root:uep2= <Element 'live_phagocytosis_rates' at 0x7f0559e67a40>
+DEBUG:root: live_phagocytosis_rate= {'bacteria': '0', 'blood vessel': '0.0', 'stem': '0.0', 'differentiated': '0.0', 'macrophage': '0.0', 'CD8+ T cell': '0.0', 'neutrophil': '0.0', 'worm': '0', 'farmer': '0', 'ctype1': '0'}
+DEBUG:root: attack_rate= {'bacteria': '0', 'blood vessel': '0.0', 'stem': '0.0', 'differentiated': '0.0', 'macrophage': '0.0', 'CD8+ T cell': '0.0', 'neutrophil': '0.0', 'worm': '0', 'farmer': '0', 'ctype1': '0'}
+DEBUG:root: fusion_rate= {'bacteria': '0', 'blood vessel': '0.0', 'stem': '0.0', 'differentiated': '0.0', 'macrophage': '0.0', 'CD8+ T cell': '0.0', 'neutrophil': '0.0', 'worm': '0', 'farmer': '0', 'ctype1': '0'}
+DEBUG:root:------ done parsing cell_interactions:
+DEBUG:root:---- transformation_rates_path = .//cell_definition[1]//phenotype//cell_transformations//transformation_rates
+DEBUG:root: transformation_rate= {'bacteria': '0', 'blood vessel': '0.0', 'stem': '0.0', 'differentiated': '0.0', 'macrophage': '0.0', 'CD8+ T cell': '0.0', 'neutrophil': '0.0', 'worm': '0', 'farmer': '0', 'ctype1': '0'}
+DEBUG:root:------ done parsing cell_transformations:
+DEBUG:root:
+===== populate_tree():  molecular
+DEBUG:root:
+===== populate_tree():  intracellular
+DEBUG:root:------ done parsing intracellular:
+DEBUG:root:
+===== populate_tree():  custom data
+DEBUG:root:uep_custom_data= <Element 'custom_data' at 0x7f0559e72a90>
+DEBUG:root:--------------- populate_tree: (empty)custom_data = {}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= bacteria --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= bacteria --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= bacteria --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= bacteria --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.25', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= bacteria --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.25', False], 'migration_bias_halfmax': ['0.5', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= bacteria --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.25', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= bacteria --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.25', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= bacteria --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.25', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= bacteria --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.25', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= bacteria --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.25', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['36', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= bacteria --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.25', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['36', False], 'relative_max_damage_death': ['100', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= bacteria --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.25', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['36', False], 'relative_max_damage_death': ['100', False], 'cycling_pressure_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= bacteria --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.25', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['36', False], 'relative_max_damage_death': ['100', False], 'cycling_pressure_halfmax': ['0.0', False], 'secretion_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= bacteria --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.25', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['36', False], 'relative_max_damage_death': ['100', False], 'cycling_pressure_halfmax': ['0.0', False], 'secretion_halfmax': ['0.0', False], 'debris_sensitivity': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= bacteria --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.25', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['36', False], 'relative_max_damage_death': ['100', False], 'cycling_pressure_halfmax': ['0.0', False], 'secretion_halfmax': ['0.0', False], 'debris_sensitivity': ['0.0', False], 'quorum_sensitivity': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= bacteria --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.25', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['36', False], 'relative_max_damage_death': ['100', False], 'cycling_pressure_halfmax': ['0.0', False], 'secretion_halfmax': ['0.0', False], 'debris_sensitivity': ['0.0', False], 'quorum_sensitivity': ['0.0', False], 'inflammation_sensitivity': ['0.0', False]}
+DEBUG:root:----- cell_def.tag= cell_definition
+DEBUG:root:
+--------new_interaction_params(): cdname_new= blood vessel
+DEBUG:root:
+--------new_intracellular_params(): cdname_new= blood vessel
+DEBUG:root:------- new_custom_data_params() -----
+DEBUG:root:
+===== populate_tree():  cycle
+DEBUG:root: >> cycle_path= .//cell_definition[2]//phenotype//cycle
+DEBUG:root:   cycle code= 5
+DEBUG:root: >> phase_transition_path 
+DEBUG:root:<Element 'rate' at 0x7f0559e71c20>
+DEBUG:root:--  cycle_live_trate00 0
+DEBUG:root: >> phase_durations_path =.//cell_definition[2]//phenotype//cycle//phase_durations
+DEBUG:root: >> pd_uep =None
+DEBUG:root:
+===== populate_tree():  death
+DEBUG:root:death_uep=<Element 'death' at 0x7f0559e71d60>
+DEBUG:root:-------- parsing apoptosis!
+DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x7f0559e71f40>
+DEBUG:root:phase_duration= <Element 'duration' at 0x7f0559e75040>
+DEBUG:root:index= 0
+DEBUG:root:-------- parsing necrosis!
+DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x7f0559e75770>
+DEBUG:root:<Element 'duration' at 0x7f0559e75810>
+DEBUG:root:index= 0
+DEBUG:root:<Element 'duration' at 0x7f0559e758b0>
+DEBUG:root:index= 1
+DEBUG:root:volume_path=.//cell_definition[2]//phenotype//volume//
+DEBUG:root:
+===== populate_tree():  mechanics
+DEBUG:root:mechanics_path=.//cell_definition[2]//phenotype//mechanics//
+DEBUG:root:---- cell_interactions_path= .//cell_definition[2]//phenotype//mechanics//cell_adhesion_affinities
+DEBUG:root:---- found cell_adhesion_affinities_path:
+DEBUG:root:--> {'bacteria': '1'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1.0'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1.0', 'differentiated': '1.0'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1.0', 'differentiated': '1.0', 'macrophage': '1.0'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1.0', 'differentiated': '1.0', 'macrophage': '1.0', 'CD8+ T cell': '1.0'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1.0', 'differentiated': '1.0', 'macrophage': '1.0', 'CD8+ T cell': '1.0', 'neutrophil': '1.0'}
+DEBUG:root:
+===== populate_tree():  motility
+DEBUG:root:motility_path=.//cell_definition[2]//phenotype//motility//
+DEBUG:root:
+----------- populate_tree_cell_defs.py: cell_def_name= blood vessel,  cell_def_tab.param_d[cell_def_name]["motility_chemotaxis_substrate"] = debris
+DEBUG:root:motility_advanced_chemotaxis_path= .//cell_definition[2]//phenotype//motility//options//advanced_chemotaxis//
+DEBUG:root:chemotactic_sensitivity= {'resource': '0.0', 'toxin': '0.0', 'quorum': '0.0', 'pro-inflammatory': '0.0', 'debris': '0.0'}
+DEBUG:root:sensitivity_path= .//cell_definition[2]//phenotype//motility//options//advanced_chemotaxis//chemotactic_sensitivities
+DEBUG:root:---- found chemotactic_sensitivities: <Element 'chemotactic_sensitivities' at 0x7f0559fc6cc0>
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559fc6d10>
+DEBUG:root: chemotactic_sensitivity--> resource = 0
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559fc6d60>
+DEBUG:root: chemotactic_sensitivity--> toxin = 0
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559fc6db0>
+DEBUG:root: chemotactic_sensitivity--> quorum = 0
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559fc6e50>
+DEBUG:root: chemotactic_sensitivity--> pro-inflammatory = 0
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559fc6ea0>
+DEBUG:root: chemotactic_sensitivity--> debris = 0
+DEBUG:root:{'resource': '0', 'toxin': '0', 'quorum': '0', 'pro-inflammatory': '0', 'debris': '0'}
+DEBUG:root:------ motility2_substrate_changed_cb(): idx = 0
+DEBUG:root:   text (subname) = resource
+DEBUG:root:    motility_advanced_chemotaxis_substrate= resource
+DEBUG:root:   chemotactic_sensitivity = {'resource': '0', 'toxin': '0', 'quorum': '0', 'pro-inflammatory': '0', 'debris': '0'}
+DEBUG:root:----- chemo_sensitivity_changed() = 0
+DEBUG:root:----- chemo_sensitivity_changed(): subname = resource
+DEBUG:root:     chemotactic_sensitivity (dict)= {'resource': '0', 'toxin': '0', 'quorum': '0', 'pro-inflammatory': '0', 'debris': '0'}
+DEBUG:root:
+===== populate_tree():  secretion
+DEBUG:root:secretion_path = .//cell_definition[2]//phenotype//secretion//
+DEBUG:root:uep_secretion = <Element 'secretion' at 0x7f0559fc90e0>
+DEBUG:root:0) -- secretion substrate = resource
+DEBUG:root:1) -- secretion substrate = toxin
+DEBUG:root:2) -- secretion substrate = quorum
+DEBUG:root:3) -- secretion substrate = pro-inflammatory
+DEBUG:root:4) -- secretion substrate = debris
+DEBUG:root:------ done parsing secretion:
+DEBUG:root:
+===== populate_tree():  cell_interactions
+DEBUG:root:---- cell_interactions_path= .//cell_definition[2]//phenotype//cell_interactions
+DEBUG:root:---- found cell_interactions:
+DEBUG:root:uep2= <Element 'live_phagocytosis_rates' at 0x7f0559fcc810>
+DEBUG:root: live_phagocytosis_rate= {'bacteria': '0', 'blood vessel': '0', 'stem': '0.0', 'differentiated': '0.0', 'macrophage': '0.0', 'CD8+ T cell': '0.0', 'neutrophil': '0.0'}
+DEBUG:root: attack_rate= {'bacteria': '0', 'blood vessel': '0', 'stem': '0.0', 'differentiated': '0.0', 'macrophage': '0.0', 'CD8+ T cell': '0.0', 'neutrophil': '0.0'}
+DEBUG:root: fusion_rate= {'bacteria': '0', 'blood vessel': '0', 'stem': '0.0', 'differentiated': '0.0', 'macrophage': '0.0', 'CD8+ T cell': '0.0', 'neutrophil': '0.0'}
+DEBUG:root:------ done parsing cell_interactions:
+DEBUG:root:---- transformation_rates_path = .//cell_definition[2]//phenotype//cell_transformations//transformation_rates
+DEBUG:root: transformation_rate= {'bacteria': '0', 'blood vessel': '0', 'stem': '0.0', 'differentiated': '0.0', 'macrophage': '0.0', 'CD8+ T cell': '0.0', 'neutrophil': '0.0'}
+DEBUG:root:------ done parsing cell_transformations:
+DEBUG:root:
+===== populate_tree():  molecular
+DEBUG:root:
+===== populate_tree():  intracellular
+DEBUG:root:------ done parsing intracellular:
+DEBUG:root:
+===== populate_tree():  custom data
+DEBUG:root:uep_custom_data= <Element 'custom_data' at 0x7f0559fd1f40>
+DEBUG:root:--------------- populate_tree: (empty)custom_data = {}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= blood vessel --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= blood vessel --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= blood vessel --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= blood vessel --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= blood vessel --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= blood vessel --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= blood vessel --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= blood vessel --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= blood vessel --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= blood vessel --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= blood vessel --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= blood vessel --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= blood vessel --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.0', False], 'secretion_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= blood vessel --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.0', False], 'secretion_halfmax': ['0.0', False], 'debris_sensitivity': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= blood vessel --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.0', False], 'secretion_halfmax': ['0.0', False], 'debris_sensitivity': ['0.0', False], 'quorum_sensitivity': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= blood vessel --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.0', False], 'secretion_halfmax': ['0.0', False], 'debris_sensitivity': ['0.0', False], 'quorum_sensitivity': ['0.0', False], 'inflammation_sensitivity': ['0.0', False]}
+DEBUG:root:----- cell_def.tag= cell_definition
+DEBUG:root:
+--------new_interaction_params(): cdname_new= stem
+DEBUG:root:
+--------new_intracellular_params(): cdname_new= stem
+DEBUG:root:------- new_custom_data_params() -----
+DEBUG:root:
+===== populate_tree():  cycle
+DEBUG:root: >> cycle_path= .//cell_definition[3]//phenotype//cycle
+DEBUG:root:   cycle code= 5
+DEBUG:root: >> phase_transition_path 
+DEBUG:root:<Element 'rate' at 0x7f0559fd6c20>
+DEBUG:root:--  cycle_live_trate00 0.002
+DEBUG:root: >> phase_durations_path =.//cell_definition[3]//phenotype//cycle//phase_durations
+DEBUG:root: >> pd_uep =None
+DEBUG:root:
+===== populate_tree():  death
+DEBUG:root:death_uep=<Element 'death' at 0x7f0559fd6d60>
+DEBUG:root:-------- parsing apoptosis!
+DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x7f0559fd6f40>
+DEBUG:root:phase_duration= <Element 'duration' at 0x7f0559fd9040>
+DEBUG:root:index= 0
+DEBUG:root:-------- parsing necrosis!
+DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x7f0559fd9770>
+DEBUG:root:<Element 'duration' at 0x7f0559fd9810>
+DEBUG:root:index= 0
+DEBUG:root:<Element 'duration' at 0x7f0559fd98b0>
+DEBUG:root:index= 1
+DEBUG:root:volume_path=.//cell_definition[3]//phenotype//volume//
+DEBUG:root:
+===== populate_tree():  mechanics
+DEBUG:root:mechanics_path=.//cell_definition[3]//phenotype//mechanics//
+DEBUG:root:---- cell_interactions_path= .//cell_definition[3]//phenotype//mechanics//cell_adhesion_affinities
+DEBUG:root:---- found cell_adhesion_affinities_path:
+DEBUG:root:--> {'bacteria': '1'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1', 'differentiated': '1.0'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1', 'differentiated': '1.0', 'macrophage': '1.0'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1', 'differentiated': '1.0', 'macrophage': '1.0', 'CD8+ T cell': '1.0'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1', 'differentiated': '1.0', 'macrophage': '1.0', 'CD8+ T cell': '1.0', 'neutrophil': '1.0'}
+DEBUG:root:
+===== populate_tree():  motility
+DEBUG:root:motility_path=.//cell_definition[3]//phenotype//motility//
+DEBUG:root:
+----------- populate_tree_cell_defs.py: cell_def_name= stem,  cell_def_tab.param_d[cell_def_name]["motility_chemotaxis_substrate"] = debris
+DEBUG:root:motility_advanced_chemotaxis_path= .//cell_definition[3]//phenotype//motility//options//advanced_chemotaxis//
+DEBUG:root:chemotactic_sensitivity= {'resource': '0.0', 'toxin': '0.0', 'quorum': '0.0', 'pro-inflammatory': '0.0', 'debris': '0.0'}
+DEBUG:root:sensitivity_path= .//cell_definition[3]//phenotype//motility//options//advanced_chemotaxis//chemotactic_sensitivities
+DEBUG:root:---- found chemotactic_sensitivities: <Element 'chemotactic_sensitivities' at 0x7f0559fdecc0>
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559fded10>
+DEBUG:root: chemotactic_sensitivity--> resource = 0
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559fded60>
+DEBUG:root: chemotactic_sensitivity--> toxin = 0
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559fdedb0>
+DEBUG:root: chemotactic_sensitivity--> quorum = 0
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559fdee50>
+DEBUG:root: chemotactic_sensitivity--> pro-inflammatory = 0
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559fdeea0>
+DEBUG:root: chemotactic_sensitivity--> debris = 0
+DEBUG:root:{'resource': '0', 'toxin': '0', 'quorum': '0', 'pro-inflammatory': '0', 'debris': '0'}
+DEBUG:root:------ motility2_substrate_changed_cb(): idx = 0
+DEBUG:root:   text (subname) = resource
+DEBUG:root:    motility_advanced_chemotaxis_substrate= resource
+DEBUG:root:   chemotactic_sensitivity = {'resource': '0', 'toxin': '0', 'quorum': '0', 'pro-inflammatory': '0', 'debris': '0'}
+DEBUG:root:
+===== populate_tree():  secretion
+DEBUG:root:secretion_path = .//cell_definition[3]//phenotype//secretion//
+DEBUG:root:uep_secretion = <Element 'secretion' at 0x7f0559fe40e0>
+DEBUG:root:0) -- secretion substrate = resource
+DEBUG:root:1) -- secretion substrate = toxin
+DEBUG:root:2) -- secretion substrate = quorum
+DEBUG:root:3) -- secretion substrate = pro-inflammatory
+DEBUG:root:4) -- secretion substrate = debris
+DEBUG:root:------ done parsing secretion:
+DEBUG:root:
+===== populate_tree():  cell_interactions
+DEBUG:root:---- cell_interactions_path= .//cell_definition[3]//phenotype//cell_interactions
+DEBUG:root:---- found cell_interactions:
+DEBUG:root:uep2= <Element 'live_phagocytosis_rates' at 0x7f0559fe8810>
+DEBUG:root: live_phagocytosis_rate= {'bacteria': '0', 'blood vessel': '0', 'stem': '0', 'differentiated': '0.0', 'macrophage': '0.0', 'CD8+ T cell': '0.0', 'neutrophil': '0.0'}
+DEBUG:root: attack_rate= {'bacteria': '0', 'blood vessel': '0', 'stem': '0', 'differentiated': '0.0', 'macrophage': '0.0', 'CD8+ T cell': '0.0', 'neutrophil': '0.0'}
+DEBUG:root: fusion_rate= {'bacteria': '0', 'blood vessel': '0', 'stem': '0', 'differentiated': '0.0', 'macrophage': '0.0', 'CD8+ T cell': '0.0', 'neutrophil': '0.0'}
+DEBUG:root:------ done parsing cell_interactions:
+DEBUG:root:---- transformation_rates_path = .//cell_definition[3]//phenotype//cell_transformations//transformation_rates
+DEBUG:root: transformation_rate= {'bacteria': '0', 'blood vessel': '0', 'stem': '0', 'differentiated': '0.0', 'macrophage': '0.0', 'CD8+ T cell': '0.0', 'neutrophil': '0.0'}
+DEBUG:root:------ done parsing cell_transformations:
+DEBUG:root:
+===== populate_tree():  molecular
+DEBUG:root:
+===== populate_tree():  intracellular
+DEBUG:root:------ done parsing intracellular:
+DEBUG:root:
+===== populate_tree():  custom data
+DEBUG:root:uep_custom_data= <Element 'custom_data' at 0x7f0559feaf40>
+DEBUG:root:--------------- populate_tree: (empty)custom_data = {}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= stem --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= stem --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= stem --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= stem --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= stem --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= stem --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.4', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= stem --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.4', False], 'relative_max_toxicity': ['100', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= stem --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.4', False], 'relative_max_toxicity': ['100', False], 'cycling_contact_halfmax': ['0.1', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= stem --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.4', False], 'relative_max_toxicity': ['100', False], 'cycling_contact_halfmax': ['0.1', False], 'differentiation_contact_halfmax': ['0.1', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= stem --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.4', False], 'relative_max_toxicity': ['100', False], 'cycling_contact_halfmax': ['0.1', False], 'differentiation_contact_halfmax': ['0.1', False], 'damage_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= stem --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.4', False], 'relative_max_toxicity': ['100', False], 'cycling_contact_halfmax': ['0.1', False], 'differentiation_contact_halfmax': ['0.1', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= stem --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.4', False], 'relative_max_toxicity': ['100', False], 'cycling_contact_halfmax': ['0.1', False], 'differentiation_contact_halfmax': ['0.1', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= stem --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.4', False], 'relative_max_toxicity': ['100', False], 'cycling_contact_halfmax': ['0.1', False], 'differentiation_contact_halfmax': ['0.1', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.0', False], 'secretion_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= stem --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.4', False], 'relative_max_toxicity': ['100', False], 'cycling_contact_halfmax': ['0.1', False], 'differentiation_contact_halfmax': ['0.1', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.0', False], 'secretion_halfmax': ['0.0', False], 'debris_sensitivity': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= stem --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.4', False], 'relative_max_toxicity': ['100', False], 'cycling_contact_halfmax': ['0.1', False], 'differentiation_contact_halfmax': ['0.1', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.0', False], 'secretion_halfmax': ['0.0', False], 'debris_sensitivity': ['0.0', False], 'quorum_sensitivity': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= stem --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.4', False], 'relative_max_toxicity': ['100', False], 'cycling_contact_halfmax': ['0.1', False], 'differentiation_contact_halfmax': ['0.1', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.0', False], 'secretion_halfmax': ['0.0', False], 'debris_sensitivity': ['0.0', False], 'quorum_sensitivity': ['0.0', False], 'inflammation_sensitivity': ['0.0', False]}
+DEBUG:root:----- cell_def.tag= cell_definition
+DEBUG:root:
+--------new_interaction_params(): cdname_new= differentiated
+DEBUG:root:
+--------new_intracellular_params(): cdname_new= differentiated
+DEBUG:root:------- new_custom_data_params() -----
+DEBUG:root:
+===== populate_tree():  cycle
+DEBUG:root: >> cycle_path= .//cell_definition[4]//phenotype//cycle
+DEBUG:root:   cycle code= 5
+DEBUG:root: >> phase_transition_path 
+DEBUG:root:<Element 'rate' at 0x7f0559fefc20>
+DEBUG:root:--  cycle_live_trate00 5.3e-4
+DEBUG:root: >> phase_durations_path =.//cell_definition[4]//phenotype//cycle//phase_durations
+DEBUG:root: >> pd_uep =None
+DEBUG:root:
+===== populate_tree():  death
+DEBUG:root:death_uep=<Element 'death' at 0x7f0559fefd60>
+DEBUG:root:-------- parsing apoptosis!
+DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x7f0559feff40>
+DEBUG:root:phase_duration= <Element 'duration' at 0x7f0559ff3040>
+DEBUG:root:index= 0
+DEBUG:root:-------- parsing necrosis!
+DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x7f0559ff3770>
+DEBUG:root:<Element 'duration' at 0x7f0559ff3810>
+DEBUG:root:index= 0
+DEBUG:root:<Element 'duration' at 0x7f0559ff38b0>
+DEBUG:root:index= 1
+DEBUG:root:volume_path=.//cell_definition[4]//phenotype//volume//
+DEBUG:root:
+===== populate_tree():  mechanics
+DEBUG:root:mechanics_path=.//cell_definition[4]//phenotype//mechanics//
+DEBUG:root:---- cell_interactions_path= .//cell_definition[4]//phenotype//mechanics//cell_adhesion_affinities
+DEBUG:root:---- found cell_adhesion_affinities_path:
+DEBUG:root:--> {'bacteria': '1'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1', 'differentiated': '1'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1', 'differentiated': '1', 'macrophage': '1.0'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1', 'differentiated': '1', 'macrophage': '1.0', 'CD8+ T cell': '1.0'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1', 'differentiated': '1', 'macrophage': '1.0', 'CD8+ T cell': '1.0', 'neutrophil': '1.0'}
+DEBUG:root:
+===== populate_tree():  motility
+DEBUG:root:motility_path=.//cell_definition[4]//phenotype//motility//
+DEBUG:root:
+----------- populate_tree_cell_defs.py: cell_def_name= differentiated,  cell_def_tab.param_d[cell_def_name]["motility_chemotaxis_substrate"] = debris
+DEBUG:root:motility_advanced_chemotaxis_path= .//cell_definition[4]//phenotype//motility//options//advanced_chemotaxis//
+DEBUG:root:chemotactic_sensitivity= {'resource': '0.0', 'toxin': '0.0', 'quorum': '0.0', 'pro-inflammatory': '0.0', 'debris': '0.0'}
+DEBUG:root:sensitivity_path= .//cell_definition[4]//phenotype//motility//options//advanced_chemotaxis//chemotactic_sensitivities
+DEBUG:root:---- found chemotactic_sensitivities: <Element 'chemotactic_sensitivities' at 0x7f0559ffccc0>
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559ffcd10>
+DEBUG:root: chemotactic_sensitivity--> resource = 0
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559ffcd60>
+DEBUG:root: chemotactic_sensitivity--> toxin = 0
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559ffcdb0>
+DEBUG:root: chemotactic_sensitivity--> quorum = 0
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559ffce50>
+DEBUG:root: chemotactic_sensitivity--> pro-inflammatory = 0
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559ffcea0>
+DEBUG:root: chemotactic_sensitivity--> debris = 0
+DEBUG:root:{'resource': '0', 'toxin': '0', 'quorum': '0', 'pro-inflammatory': '0', 'debris': '0'}
+DEBUG:root:------ motility2_substrate_changed_cb(): idx = 0
+DEBUG:root:   text (subname) = resource
+DEBUG:root:    motility_advanced_chemotaxis_substrate= resource
+DEBUG:root:   chemotactic_sensitivity = {'resource': '0', 'toxin': '0', 'quorum': '0', 'pro-inflammatory': '0', 'debris': '0'}
+DEBUG:root:
+===== populate_tree():  secretion
+DEBUG:root:secretion_path = .//cell_definition[4]//phenotype//secretion//
+DEBUG:root:uep_secretion = <Element 'secretion' at 0x7f0559fff0e0>
+DEBUG:root:0) -- secretion substrate = resource
+DEBUG:root:1) -- secretion substrate = toxin
+DEBUG:root:2) -- secretion substrate = quorum
+DEBUG:root:3) -- secretion substrate = pro-inflammatory
+DEBUG:root:4) -- secretion substrate = debris
+DEBUG:root:------ done parsing secretion:
+DEBUG:root:
+===== populate_tree():  cell_interactions
+DEBUG:root:---- cell_interactions_path= .//cell_definition[4]//phenotype//cell_interactions
+DEBUG:root:---- found cell_interactions:
+DEBUG:root:uep2= <Element 'live_phagocytosis_rates' at 0x7f0559f80810>
+DEBUG:root: live_phagocytosis_rate= {'bacteria': '0', 'blood vessel': '0', 'stem': '0', 'differentiated': '0', 'macrophage': '0.0', 'CD8+ T cell': '0.0', 'neutrophil': '0.0'}
+DEBUG:root: attack_rate= {'bacteria': '0', 'blood vessel': '0', 'stem': '0', 'differentiated': '0', 'macrophage': '0.0', 'CD8+ T cell': '0.0', 'neutrophil': '0.0'}
+DEBUG:root: fusion_rate= {'bacteria': '0', 'blood vessel': '0', 'stem': '0', 'differentiated': '0', 'macrophage': '0.0', 'CD8+ T cell': '0.0', 'neutrophil': '0.0'}
+DEBUG:root:------ done parsing cell_interactions:
+DEBUG:root:---- transformation_rates_path = .//cell_definition[4]//phenotype//cell_transformations//transformation_rates
+DEBUG:root: transformation_rate= {'bacteria': '0', 'blood vessel': '0', 'stem': '0', 'differentiated': '0', 'macrophage': '0.0', 'CD8+ T cell': '0.0', 'neutrophil': '0.0'}
+DEBUG:root:------ done parsing cell_transformations:
+DEBUG:root:
+===== populate_tree():  molecular
+DEBUG:root:
+===== populate_tree():  intracellular
+DEBUG:root:------ done parsing intracellular:
+DEBUG:root:
+===== populate_tree():  custom data
+DEBUG:root:uep_custom_data= <Element 'custom_data' at 0x7f0559f84f40>
+DEBUG:root:--------------- populate_tree: (empty)custom_data = {}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= differentiated --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= differentiated --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= differentiated --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= differentiated --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= differentiated --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= differentiated --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.2', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= differentiated --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.2', False], 'relative_max_toxicity': ['100', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= differentiated --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.2', False], 'relative_max_toxicity': ['100', False], 'cycling_contact_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= differentiated --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.2', False], 'relative_max_toxicity': ['100', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= differentiated --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.2', False], 'relative_max_toxicity': ['100', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= differentiated --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.2', False], 'relative_max_toxicity': ['100', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= differentiated --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.2', False], 'relative_max_toxicity': ['100', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.5', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= differentiated --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.2', False], 'relative_max_toxicity': ['100', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.5', False], 'secretion_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= differentiated --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.2', False], 'relative_max_toxicity': ['100', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.5', False], 'secretion_halfmax': ['0.0', False], 'debris_sensitivity': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= differentiated --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.2', False], 'relative_max_toxicity': ['100', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.5', False], 'secretion_halfmax': ['0.0', False], 'debris_sensitivity': ['0.0', False], 'quorum_sensitivity': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= differentiated --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.0', False], 'toxicity_halfmax': ['0.2', False], 'relative_max_toxicity': ['100', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.5', False], 'secretion_halfmax': ['0.0', False], 'debris_sensitivity': ['0.0', False], 'quorum_sensitivity': ['0.0', False], 'inflammation_sensitivity': ['0.0', False]}
+DEBUG:root:----- cell_def.tag= cell_definition
+DEBUG:root:
+--------new_interaction_params(): cdname_new= macrophage
+DEBUG:root:
+--------new_intracellular_params(): cdname_new= macrophage
+DEBUG:root:------- new_custom_data_params() -----
+DEBUG:root:
+===== populate_tree():  cycle
+DEBUG:root: >> cycle_path= .//cell_definition[5]//phenotype//cycle
+DEBUG:root:   cycle code= 5
+DEBUG:root: >> phase_transition_path 
+DEBUG:root:<Element 'rate' at 0x7f0559f88c20>
+DEBUG:root:--  cycle_live_trate00 0
+DEBUG:root: >> phase_durations_path =.//cell_definition[5]//phenotype//cycle//phase_durations
+DEBUG:root: >> pd_uep =None
+DEBUG:root:
+===== populate_tree():  death
+DEBUG:root:death_uep=<Element 'death' at 0x7f0559f88d60>
+DEBUG:root:-------- parsing apoptosis!
+DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x7f0559f88f40>
+DEBUG:root:phase_duration= <Element 'duration' at 0x7f0559f8d040>
+DEBUG:root:index= 0
+DEBUG:root:-------- parsing necrosis!
+DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x7f0559f8d770>
+DEBUG:root:<Element 'duration' at 0x7f0559f8d810>
+DEBUG:root:index= 0
+DEBUG:root:<Element 'duration' at 0x7f0559f8d8b0>
+DEBUG:root:index= 1
+DEBUG:root:volume_path=.//cell_definition[5]//phenotype//volume//
+DEBUG:root:
+===== populate_tree():  mechanics
+DEBUG:root:mechanics_path=.//cell_definition[5]//phenotype//mechanics//
+DEBUG:root:---- cell_interactions_path= .//cell_definition[5]//phenotype//mechanics//cell_adhesion_affinities
+DEBUG:root:---- found cell_adhesion_affinities_path:
+DEBUG:root:--> {'bacteria': '1'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1', 'differentiated': '1'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1', 'differentiated': '1', 'macrophage': '1'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1', 'differentiated': '1', 'macrophage': '1', 'CD8+ T cell': '1.0'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1', 'differentiated': '1', 'macrophage': '1', 'CD8+ T cell': '1.0', 'neutrophil': '1.0'}
+DEBUG:root:
+===== populate_tree():  motility
+DEBUG:root:motility_path=.//cell_definition[5]//phenotype//motility//
+DEBUG:root:
+----------- populate_tree_cell_defs.py: cell_def_name= macrophage,  cell_def_tab.param_d[cell_def_name]["motility_chemotaxis_substrate"] = debris
+DEBUG:root:motility_advanced_chemotaxis_path= .//cell_definition[5]//phenotype//motility//options//advanced_chemotaxis//
+DEBUG:root:chemotactic_sensitivity= {'resource': '0.0', 'toxin': '0.0', 'quorum': '0.0', 'pro-inflammatory': '0.0', 'debris': '0.0'}
+DEBUG:root:sensitivity_path= .//cell_definition[5]//phenotype//motility//options//advanced_chemotaxis//chemotactic_sensitivities
+DEBUG:root:---- found chemotactic_sensitivities: <Element 'chemotactic_sensitivities' at 0x7f0559f95cc0>
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559f95d10>
+DEBUG:root: chemotactic_sensitivity--> resource = 0
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559f95d60>
+DEBUG:root: chemotactic_sensitivity--> toxin = 0
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559f95db0>
+DEBUG:root: chemotactic_sensitivity--> quorum = 1
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559f95e50>
+DEBUG:root: chemotactic_sensitivity--> pro-inflammatory = 0
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559f95ea0>
+DEBUG:root: chemotactic_sensitivity--> debris = 0.1
+DEBUG:root:{'resource': '0', 'toxin': '0', 'quorum': '1', 'pro-inflammatory': '0', 'debris': '0.1'}
+DEBUG:root:------ motility2_substrate_changed_cb(): idx = 0
+DEBUG:root:   text (subname) = resource
+DEBUG:root:    motility_advanced_chemotaxis_substrate= resource
+DEBUG:root:   chemotactic_sensitivity = {'resource': '0', 'toxin': '0', 'quorum': '1', 'pro-inflammatory': '0', 'debris': '0.1'}
+DEBUG:root:
+===== populate_tree():  secretion
+DEBUG:root:secretion_path = .//cell_definition[5]//phenotype//secretion//
+DEBUG:root:uep_secretion = <Element 'secretion' at 0x7f0559f970e0>
+DEBUG:root:0) -- secretion substrate = resource
+DEBUG:root:1) -- secretion substrate = toxin
+DEBUG:root:2) -- secretion substrate = quorum
+DEBUG:root:3) -- secretion substrate = pro-inflammatory
+DEBUG:root:4) -- secretion substrate = debris
+DEBUG:root:------ done parsing secretion:
+DEBUG:root:
+===== populate_tree():  cell_interactions
+DEBUG:root:---- cell_interactions_path= .//cell_definition[5]//phenotype//cell_interactions
+DEBUG:root:---- found cell_interactions:
+DEBUG:root:uep2= <Element 'live_phagocytosis_rates' at 0x7f0559f9b810>
+DEBUG:root: live_phagocytosis_rate= {'bacteria': '0', 'blood vessel': '0', 'stem': '0', 'differentiated': '0', 'macrophage': '0', 'CD8+ T cell': '0.0', 'neutrophil': '0.0'}
+DEBUG:root: attack_rate= {'bacteria': '0', 'blood vessel': '0', 'stem': '0', 'differentiated': '0', 'macrophage': '0', 'CD8+ T cell': '0.0', 'neutrophil': '0.0'}
+DEBUG:root: fusion_rate= {'bacteria': '0', 'blood vessel': '0', 'stem': '0', 'differentiated': '0', 'macrophage': '0', 'CD8+ T cell': '0.0', 'neutrophil': '0.0'}
+DEBUG:root:------ done parsing cell_interactions:
+DEBUG:root:---- transformation_rates_path = .//cell_definition[5]//phenotype//cell_transformations//transformation_rates
+DEBUG:root: transformation_rate= {'bacteria': '0', 'blood vessel': '0', 'stem': '0', 'differentiated': '0', 'macrophage': '0', 'CD8+ T cell': '0.0', 'neutrophil': '0.0'}
+DEBUG:root:------ done parsing cell_transformations:
+DEBUG:root:
+===== populate_tree():  molecular
+DEBUG:root:
+===== populate_tree():  intracellular
+DEBUG:root:------ done parsing intracellular:
+DEBUG:root:
+===== populate_tree():  custom data
+DEBUG:root:uep_custom_data= <Element 'custom_data' at 0x7f0559f9ef40>
+DEBUG:root:--------------- populate_tree: (empty)custom_data = {}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= macrophage --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= macrophage --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= macrophage --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= macrophage --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.05', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= macrophage --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.05', False], 'migration_bias_halfmax': ['0.01', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= macrophage --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.05', False], 'migration_bias_halfmax': ['0.01', False], 'toxicity_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= macrophage --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.05', False], 'migration_bias_halfmax': ['0.01', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= macrophage --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.05', False], 'migration_bias_halfmax': ['0.01', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= macrophage --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.05', False], 'migration_bias_halfmax': ['0.01', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= macrophage --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.05', False], 'migration_bias_halfmax': ['0.01', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= macrophage --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.05', False], 'migration_bias_halfmax': ['0.01', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= macrophage --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.05', False], 'migration_bias_halfmax': ['0.01', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= macrophage --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.05', False], 'migration_bias_halfmax': ['0.01', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.0', False], 'secretion_halfmax': ['0.005', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= macrophage --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.05', False], 'migration_bias_halfmax': ['0.01', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.0', False], 'secretion_halfmax': ['0.005', False], 'debris_sensitivity': ['0.1', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= macrophage --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.05', False], 'migration_bias_halfmax': ['0.01', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.0', False], 'secretion_halfmax': ['0.005', False], 'debris_sensitivity': ['0.1', False], 'quorum_sensitivity': ['1', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= macrophage --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.05', False], 'migration_bias_halfmax': ['0.01', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.0', False], 'secretion_halfmax': ['0.005', False], 'debris_sensitivity': ['0.1', False], 'quorum_sensitivity': ['1', False], 'inflammation_sensitivity': ['0', False]}
+DEBUG:root:----- cell_def.tag= cell_definition
+DEBUG:root:
+--------new_interaction_params(): cdname_new= CD8+ T cell
+DEBUG:root:
+--------new_intracellular_params(): cdname_new= CD8+ T cell
+DEBUG:root:------- new_custom_data_params() -----
+DEBUG:root:
+===== populate_tree():  cycle
+DEBUG:root: >> cycle_path= .//cell_definition[6]//phenotype//cycle
+DEBUG:root:   cycle code= 5
+DEBUG:root: >> phase_transition_path 
+DEBUG:root:<Element 'rate' at 0x7f0559fa2c20>
+DEBUG:root:--  cycle_live_trate00 0
+DEBUG:root: >> phase_durations_path =.//cell_definition[6]//phenotype//cycle//phase_durations
+DEBUG:root: >> pd_uep =None
+DEBUG:root:
+===== populate_tree():  death
+DEBUG:root:death_uep=<Element 'death' at 0x7f0559fa2d60>
+DEBUG:root:-------- parsing apoptosis!
+DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x7f0559fa2f40>
+DEBUG:root:phase_duration= <Element 'duration' at 0x7f0559fa6040>
+DEBUG:root:index= 0
+DEBUG:root:-------- parsing necrosis!
+DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x7f0559fa6770>
+DEBUG:root:<Element 'duration' at 0x7f0559fa6810>
+DEBUG:root:index= 0
+DEBUG:root:<Element 'duration' at 0x7f0559fa68b0>
+DEBUG:root:index= 1
+DEBUG:root:volume_path=.//cell_definition[6]//phenotype//volume//
+DEBUG:root:
+===== populate_tree():  mechanics
+DEBUG:root:mechanics_path=.//cell_definition[6]//phenotype//mechanics//
+DEBUG:root:---- cell_interactions_path= .//cell_definition[6]//phenotype//mechanics//cell_adhesion_affinities
+DEBUG:root:---- found cell_adhesion_affinities_path:
+DEBUG:root:--> {'bacteria': '1'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1', 'differentiated': '1'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1', 'differentiated': '1', 'macrophage': '1'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1', 'differentiated': '1', 'macrophage': '1', 'CD8+ T cell': '1'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1', 'differentiated': '1', 'macrophage': '1', 'CD8+ T cell': '1', 'neutrophil': '1.0'}
+DEBUG:root:
+===== populate_tree():  motility
+DEBUG:root:motility_path=.//cell_definition[6]//phenotype//motility//
+DEBUG:root:
+----------- populate_tree_cell_defs.py: cell_def_name= CD8+ T cell,  cell_def_tab.param_d[cell_def_name]["motility_chemotaxis_substrate"] = pro-inflammatory
+DEBUG:root:motility_advanced_chemotaxis_path= .//cell_definition[6]//phenotype//motility//options//advanced_chemotaxis//
+DEBUG:root:chemotactic_sensitivity= {'resource': '0.0', 'toxin': '0.0', 'quorum': '0.0', 'pro-inflammatory': '0.0', 'debris': '0.0'}
+DEBUG:root:sensitivity_path= .//cell_definition[6]//phenotype//motility//options//advanced_chemotaxis//chemotactic_sensitivities
+DEBUG:root:---- found chemotactic_sensitivities: <Element 'chemotactic_sensitivities' at 0x7f0559fadd10>
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559fadd60>
+DEBUG:root: chemotactic_sensitivity--> resource = 0
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559faddb0>
+DEBUG:root: chemotactic_sensitivity--> toxin = 0
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559fade00>
+DEBUG:root: chemotactic_sensitivity--> quorum = 0
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559fadea0>
+DEBUG:root: chemotactic_sensitivity--> pro-inflammatory = 0
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559fadef0>
+DEBUG:root: chemotactic_sensitivity--> debris = 0
+DEBUG:root:{'resource': '0', 'toxin': '0', 'quorum': '0', 'pro-inflammatory': '0', 'debris': '0'}
+DEBUG:root:------ motility2_substrate_changed_cb(): idx = 0
+DEBUG:root:   text (subname) = resource
+DEBUG:root:    motility_advanced_chemotaxis_substrate= resource
+DEBUG:root:   chemotactic_sensitivity = {'resource': '0', 'toxin': '0', 'quorum': '0', 'pro-inflammatory': '0', 'debris': '0'}
+DEBUG:root:
+===== populate_tree():  secretion
+DEBUG:root:secretion_path = .//cell_definition[6]//phenotype//secretion//
+DEBUG:root:uep_secretion = <Element 'secretion' at 0x7f0559fb1130>
+DEBUG:root:0) -- secretion substrate = resource
+DEBUG:root:1) -- secretion substrate = toxin
+DEBUG:root:2) -- secretion substrate = quorum
+DEBUG:root:3) -- secretion substrate = pro-inflammatory
+DEBUG:root:4) -- secretion substrate = debris
+DEBUG:root:------ done parsing secretion:
+DEBUG:root:
+===== populate_tree():  cell_interactions
+DEBUG:root:---- cell_interactions_path= .//cell_definition[6]//phenotype//cell_interactions
+DEBUG:root:---- found cell_interactions:
+DEBUG:root:uep2= <Element 'live_phagocytosis_rates' at 0x7f0559fb4860>
+DEBUG:root: live_phagocytosis_rate= {'bacteria': '0', 'blood vessel': '0', 'stem': '0', 'differentiated': '0', 'macrophage': '0', 'CD8+ T cell': '0', 'neutrophil': '0.0'}
+DEBUG:root: attack_rate= {'bacteria': '10', 'blood vessel': '0', 'stem': '0', 'differentiated': '0', 'macrophage': '0', 'CD8+ T cell': '0', 'neutrophil': '0.0'}
+DEBUG:root: fusion_rate= {'bacteria': '0', 'blood vessel': '0', 'stem': '0', 'differentiated': '0', 'macrophage': '0', 'CD8+ T cell': '0', 'neutrophil': '0.0'}
+DEBUG:root:------ done parsing cell_interactions:
+DEBUG:root:---- transformation_rates_path = .//cell_definition[6]//phenotype//cell_transformations//transformation_rates
+DEBUG:root: transformation_rate= {'bacteria': '0', 'blood vessel': '0', 'stem': '0', 'differentiated': '0', 'macrophage': '0', 'CD8+ T cell': '0', 'neutrophil': '0.0'}
+DEBUG:root:------ done parsing cell_transformations:
+DEBUG:root:
+===== populate_tree():  molecular
+DEBUG:root:
+===== populate_tree():  intracellular
+DEBUG:root:------ done parsing intracellular:
+DEBUG:root:
+===== populate_tree():  custom data
+DEBUG:root:uep_custom_data= <Element 'custom_data' at 0x7f0559fb6f90>
+DEBUG:root:--------------- populate_tree: (empty)custom_data = {}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= CD8+ T cell --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= CD8+ T cell --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= CD8+ T cell --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= CD8+ T cell --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= CD8+ T cell --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.5', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= CD8+ T cell --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= CD8+ T cell --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= CD8+ T cell --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= CD8+ T cell --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= CD8+ T cell --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= CD8+ T cell --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= CD8+ T cell --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= CD8+ T cell --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.0', False], 'secretion_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= CD8+ T cell --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.0', False], 'secretion_halfmax': ['0.0', False], 'debris_sensitivity': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= CD8+ T cell --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.0', False], 'secretion_halfmax': ['0.0', False], 'debris_sensitivity': ['0.0', False], 'quorum_sensitivity': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= CD8+ T cell --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.0', False], 'secretion_halfmax': ['0.0', False], 'debris_sensitivity': ['0.0', False], 'quorum_sensitivity': ['0.0', False], 'inflammation_sensitivity': ['0.0', False]}
+DEBUG:root:----- cell_def.tag= cell_definition
+DEBUG:root:
+--------new_interaction_params(): cdname_new= neutrophil
+DEBUG:root:
+--------new_intracellular_params(): cdname_new= neutrophil
+DEBUG:root:------- new_custom_data_params() -----
+DEBUG:root:
+===== populate_tree():  cycle
+DEBUG:root: >> cycle_path= .//cell_definition[7]//phenotype//cycle
+DEBUG:root:   cycle code= 5
+DEBUG:root: >> phase_transition_path 
+DEBUG:root:<Element 'rate' at 0x7f0559fbac70>
+DEBUG:root:--  cycle_live_trate00 0
+DEBUG:root: >> phase_durations_path =.//cell_definition[7]//phenotype//cycle//phase_durations
+DEBUG:root: >> pd_uep =None
+DEBUG:root:
+===== populate_tree():  death
+DEBUG:root:death_uep=<Element 'death' at 0x7f0559fbadb0>
+DEBUG:root:-------- parsing apoptosis!
+DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x7f0559fbaf90>
+DEBUG:root:phase_duration= <Element 'duration' at 0x7f0559fbe090>
+DEBUG:root:index= 0
+DEBUG:root:-------- parsing necrosis!
+DEBUG:root: >> pd_uep =<Element 'phase_durations' at 0x7f0559fbe7c0>
+DEBUG:root:<Element 'duration' at 0x7f0559fbe860>
+DEBUG:root:index= 0
+DEBUG:root:<Element 'duration' at 0x7f0559fbe900>
+DEBUG:root:index= 1
+DEBUG:root:volume_path=.//cell_definition[7]//phenotype//volume//
+DEBUG:root:
+===== populate_tree():  mechanics
+DEBUG:root:mechanics_path=.//cell_definition[7]//phenotype//mechanics//
+DEBUG:root:---- cell_interactions_path= .//cell_definition[7]//phenotype//mechanics//cell_adhesion_affinities
+DEBUG:root:---- found cell_adhesion_affinities_path:
+DEBUG:root:--> {'bacteria': '1'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1', 'differentiated': '1'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1', 'differentiated': '1', 'macrophage': '1'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1', 'differentiated': '1', 'macrophage': '1', 'CD8+ T cell': '1'}
+DEBUG:root:--> {'bacteria': '1', 'blood vessel': '1', 'stem': '1', 'differentiated': '1', 'macrophage': '1', 'CD8+ T cell': '1', 'neutrophil': '1'}
+DEBUG:root:
+===== populate_tree():  motility
+DEBUG:root:motility_path=.//cell_definition[7]//phenotype//motility//
+DEBUG:root:
+----------- populate_tree_cell_defs.py: cell_def_name= neutrophil,  cell_def_tab.param_d[cell_def_name]["motility_chemotaxis_substrate"] = pro-inflammatory
+DEBUG:root:motility_advanced_chemotaxis_path= .//cell_definition[7]//phenotype//motility//options//advanced_chemotaxis//
+DEBUG:root:chemotactic_sensitivity= {'resource': '0.0', 'toxin': '0.0', 'quorum': '0.0', 'pro-inflammatory': '0.0', 'debris': '0.0'}
+DEBUG:root:sensitivity_path= .//cell_definition[7]//phenotype//motility//options//advanced_chemotaxis//chemotactic_sensitivities
+DEBUG:root:---- found chemotactic_sensitivities: <Element 'chemotactic_sensitivities' at 0x7f0559da4d60>
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559da4db0>
+DEBUG:root: chemotactic_sensitivity--> resource = 0
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559da4e00>
+DEBUG:root: chemotactic_sensitivity--> toxin = 0
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559da4e50>
+DEBUG:root: chemotactic_sensitivity--> quorum = 0
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559da4ef0>
+DEBUG:root: chemotactic_sensitivity--> pro-inflammatory = 0
+DEBUG:root:subelm=<Element 'chemotactic_sensitivity' at 0x7f0559da4f40>
+DEBUG:root: chemotactic_sensitivity--> debris = 0
+DEBUG:root:{'resource': '0', 'toxin': '0', 'quorum': '0', 'pro-inflammatory': '0', 'debris': '0'}
+DEBUG:root:------ motility2_substrate_changed_cb(): idx = 0
+DEBUG:root:   text (subname) = resource
+DEBUG:root:    motility_advanced_chemotaxis_substrate= resource
+DEBUG:root:   chemotactic_sensitivity = {'resource': '0', 'toxin': '0', 'quorum': '0', 'pro-inflammatory': '0', 'debris': '0'}
+DEBUG:root:
+===== populate_tree():  secretion
+DEBUG:root:secretion_path = .//cell_definition[7]//phenotype//secretion//
+DEBUG:root:uep_secretion = <Element 'secretion' at 0x7f0559da7180>
+DEBUG:root:0) -- secretion substrate = resource
+DEBUG:root:1) -- secretion substrate = toxin
+DEBUG:root:2) -- secretion substrate = quorum
+DEBUG:root:3) -- secretion substrate = pro-inflammatory
+DEBUG:root:4) -- secretion substrate = debris
+DEBUG:root:------ done parsing secretion:
+DEBUG:root:
+===== populate_tree():  cell_interactions
+DEBUG:root:---- cell_interactions_path= .//cell_definition[7]//phenotype//cell_interactions
+DEBUG:root:---- found cell_interactions:
+DEBUG:root:uep2= <Element 'live_phagocytosis_rates' at 0x7f0559daa8b0>
+DEBUG:root: live_phagocytosis_rate= {'bacteria': '0.05', 'blood vessel': '0', 'stem': '0', 'differentiated': '0', 'macrophage': '0', 'CD8+ T cell': '0', 'neutrophil': '0'}
+DEBUG:root: attack_rate= {'bacteria': '0', 'blood vessel': '0', 'stem': '0', 'differentiated': '0', 'macrophage': '0', 'CD8+ T cell': '0', 'neutrophil': '0'}
+DEBUG:root: fusion_rate= {'bacteria': '0', 'blood vessel': '0', 'stem': '0', 'differentiated': '0', 'macrophage': '0', 'CD8+ T cell': '0', 'neutrophil': '0'}
+DEBUG:root:------ done parsing cell_interactions:
+DEBUG:root:---- transformation_rates_path = .//cell_definition[7]//phenotype//cell_transformations//transformation_rates
+DEBUG:root: transformation_rate= {'bacteria': '0', 'blood vessel': '0', 'stem': '0', 'differentiated': '0', 'macrophage': '0', 'CD8+ T cell': '0', 'neutrophil': '0'}
+DEBUG:root:------ done parsing cell_transformations:
+DEBUG:root:
+===== populate_tree():  molecular
+DEBUG:root:
+===== populate_tree():  intracellular
+DEBUG:root:------ done parsing intracellular:
+DEBUG:root:
+===== populate_tree():  custom data
+DEBUG:root:uep_custom_data= <Element 'custom_data' at 0x7f0559db1040>
+DEBUG:root:--------------- populate_tree: (empty)custom_data = {}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= neutrophil --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= neutrophil --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= neutrophil --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= neutrophil --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= neutrophil --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.5', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= neutrophil --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= neutrophil --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= neutrophil --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= neutrophil --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= neutrophil --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= neutrophil --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= neutrophil --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= neutrophil --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.0', False], 'secretion_halfmax': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= neutrophil --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.0', False], 'secretion_halfmax': ['0.0', False], 'debris_sensitivity': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= neutrophil --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.0', False], 'secretion_halfmax': ['0.0', False], 'debris_sensitivity': ['0.0', False], 'quorum_sensitivity': ['0.0', False]}
+DEBUG:root:var.attrib.keys() = dict_keys(['conserved', 'units', 'description'])
+DEBUG:root:populate: cell_def_name= neutrophil --> custom_data: {'cycling_entry_threshold_resource': ['0.15', False], 'necrosis_saturation_resource': ['0.075', False], 'necrosis_threshold_resource': ['0.15', False], 'migration_speed_halfmax': ['0.0', False], 'migration_bias_halfmax': ['0.5', False], 'toxicity_halfmax': ['0.0', False], 'relative_max_toxicity': ['0.0', False], 'cycling_contact_halfmax': ['0.0', False], 'differentiation_contact_halfmax': ['0.0', False], 'damage_halfmax': ['0.0', False], 'relative_max_damage_death': ['0.0', False], 'cycling_pressure_halfmax': ['0.0', False], 'secretion_halfmax': ['0.0', False], 'debris_sensitivity': ['0.0', False], 'quorum_sensitivity': ['0.0', False], 'inflammation_sensitivity': ['0.0', False]}
+DEBUG:root:
+  ---- apoptosis_phase_transition_cb: 
+DEBUG:root:apoptosis: ------>> duration
+DEBUG:root:apoptosis_phase_transition_cb: --> duration
+DEBUG:root:
+  ---- necrosis_phase_transition_cb: 
+DEBUG:root:necrosis: ------>>duration
+DEBUG:root:necrosis_phase_transition_cb: --> duration
+DEBUG:root:
+----- update_motility_params():  cdname= bacteria
+DEBUG:root:     setting motility_substrate_dropdown (for cdname= bacteria ) = resource
+DEBUG:root:     setting motility2_substrate_dropdown (for cdname= bacteria ) = resource
+DEBUG:root:    chemotactic_sensitivity= {'resource': '1', 'toxin': '0', 'quorum': '0.1', 'pro-inflammatory': '0', 'debris': '0'}
+DEBUG:root:new val = 1
+DEBUG:root:----- chemo_sensitivity_changed() = 1
+DEBUG:root:----- chemo_sensitivity_changed(): subname = resource
+DEBUG:root:     chemotactic_sensitivity (dict)= {'resource': '1', 'toxin': '0', 'quorum': '0.1', 'pro-inflammatory': '0', 'debris': '0'}
+DEBUG:root:----- leave update_motility_params()
+
+DEBUG:root:update_secretion_params(): cdname = bacteria
+DEBUG:root:update_secretion_params(): self.current_secretion_substrate = resource
+DEBUG:root:{'resource': {'secretion_rate': '0', 'secretion_target': '1', 'uptake_rate': '30', 'net_export_rate': '0'}, 'toxin': {'secretion_rate': '0.0', 'secretion_target': '0.0', 'uptake_rate': '0.0', 'net_export_rate': '100'}, 'quorum': {'secretion_rate': '0', 'secretion_target': '0.0', 'uptake_rate': '0.0', 'net_export_rate': '1'}, 'pro-inflammatory': {'secretion_rate': '0.0', 'secretion_target': '0.0', 'uptake_rate': '0.0', 'net_export_rate': '0.0'}, 'debris': {'secretion_rate': '0.0', 'secretion_target': '0.0', 'uptake_rate': '0.0', 'net_export_rate': '0.0'}}
+DEBUG:root:cell_def_tab.py: ------- fill_celltypes_comboboxes
+DEBUG:root:
+
+------------  user_params_tab: fill_gui --------------
+DEBUG:root:studio.py: self.current_dir = /home/gtnaozuka/Downloads/PhysiCell_V.1.10.4/PhysiCell-Studio
+DEBUG:root:studio.py: creating ICs, Run, and Plot tabs
+DEBUG:matplotlib.font_manager:findfont: Matching sans\-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0.
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXSizeTwoSym' (STIXSizTwoSymBol.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXNonUnicode' (STIXNonUniIta.ttf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXSizeThreeSym' (STIXSizThreeSymReg.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXSizeTwoSym' (STIXSizTwoSymReg.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'cmb10' (cmb10.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'DejaVu Sans' (DejaVuSans.ttf) normal normal 400 normal>) = 0.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXSizeFiveSym' (STIXSizFiveSymReg.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'DejaVu Sans Mono' (DejaVuSansMono-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXGeneral' (STIXGeneral.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXSizeFourSym' (STIXSizFourSymBol.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'DejaVu Sans' (DejaVuSans-BoldOblique.ttf) oblique normal 700 normal>) = 1.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXSizeThreeSym' (STIXSizThreeSymBol.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'DejaVu Sans' (DejaVuSans-Bold.ttf) normal normal 700 normal>) = 0.33499999999999996
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'cmr10' (cmr10.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXNonUnicode' (STIXNonUniBol.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'cmtt10' (cmtt10.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'cmss10' (cmss10.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXGeneral' (STIXGeneralItalic.ttf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'DejaVu Sans Mono' (DejaVuSansMono.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'DejaVu Serif Display' (DejaVuSerifDisplay.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXSizeFourSym' (STIXSizFourSymReg.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXSizeOneSym' (STIXSizOneSymReg.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'DejaVu Serif' (DejaVuSerif-BoldItalic.ttf) italic normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXNonUnicode' (STIXNonUni.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'DejaVu Serif' (DejaVuSerif-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXNonUnicode' (STIXNonUniBolIta.ttf) italic normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'DejaVu Sans Mono' (DejaVuSansMono-BoldOblique.ttf) oblique normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'DejaVu Serif' (DejaVuSerif-Italic.ttf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'DejaVu Sans Mono' (DejaVuSansMono-Oblique.ttf) oblique normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXGeneral' (STIXGeneralBol.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'DejaVu Sans Display' (DejaVuSansDisplay.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'DejaVu Serif' (DejaVuSerif.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXGeneral' (STIXGeneralBolIta.ttf) italic normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'DejaVu Sans' (DejaVuSans-Oblique.ttf) oblique normal 400 normal>) = 1.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'cmex10' (cmex10.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXSizeOneSym' (STIXSizOneSymBol.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'cmmi10' (cmmi10.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'cmsy10' (cmsy10.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Gayathri' (Gayathri-Thin.otf) normal normal 100 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Nimbus Roman' (NimbusRoman-Bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Nimbus Sans' (NimbusSans-Bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Umpush' (Umpush-BoldOblique.ttf) oblique normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Samanata' (samanata.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Liberation Mono' (LiberationMono-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXSizeFourSym' (STIXSizeFourSym-Regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Sans' (lmsans10-boldoblique.otf) oblique normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Garuda' (Garuda-Oblique.ttf) oblique normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Bitstream Vera Serif' (VeraSeBd.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Noto Serif CJK JP' (NotoSerifCJK-Bold.ttc) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Samyak Tamil' (Samyak-Tamil.ttf) normal normal 500 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Lato' (Lato-Black.ttf) normal normal 900 normal>) = 10.525
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman' (lmroman6-bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Rachana' (Rachana-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Liberation Serif' (LiberationSerif-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman' (lmroman8-bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Manjari' (Manjari-Thin.otf) normal normal 100 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'TakaoPGothic' (TakaoPGothic.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'P052' (P052-Roman.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Ubuntu' (Ubuntu-M.ttf) normal normal 500 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Tlwg Mono' (TlwgMono-BoldOblique.ttf) oblique normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'KacstTitle' (KacstTitle.ttf) normal normal 500 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman' (lmroman5-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman' (lmroman12-bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'padmaa-Bold.1.1' (padmaa-Bold.1.1.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Mono Light Cond' (lmmonoltcond10-oblique.otf) oblique normal 400 condensed>) = 11.25
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Lato' (Lato-Heavy.ttf) normal normal 800 normal>) = 10.43
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Liberation Serif' (LiberationSerif-BoldItalic.ttf) italic normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'NanumGothic' (NanumGothic.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXGeneral' (STIXGeneral-Italic.otf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'KacstScreen' (KacstScreen.ttf) normal normal 500 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman' (lmroman10-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman Slanted' (lmromanslant8-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Norasi' (Norasi.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Nakula' (nakula.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Norasi' (Norasi-BoldItalic.ttf) italic normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Lohit Odia' (Lohit-Odia.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Mono Light' (lmmonolt10-oblique.otf) oblique normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Lohit Gurmukhi' (Lohit-Gurmukhi.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXIntegralsUpD' (STIXIntegralsUpD-Regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Jamrul' (JamrulNormal.ttf) normal normal 500 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'DejaVu Sans' (DejaVuSans-Bold.ttf) normal normal 700 normal>) = 0.33499999999999996
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman' (lmroman10-italic.otf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXIntegralsUp' (STIXIntegralsUp-Bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'C059' (C059-Italic.otf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Ubuntu' (Ubuntu-BI.ttf) italic normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Sans' (lmsans17-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Mukti Narrow' (MuktiNarrow.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'P052' (P052-BoldItalic.otf) italic normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Liberation Mono' (LiberationMono-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'DejaVu Sans Mono' (DejaVuSansMono-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Lohit Tamil' (Lohit-Tamil.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman' (lmroman12-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Liberation Mono' (LiberationMono-Regular.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Sans' (lmsans9-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Nimbus Sans Narrow' (NimbusSansNarrow-BoldOblique.otf) oblique normal 700 condensed>) = 11.535
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Umpush' (Umpush-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Tlwg Typewriter' (TlwgTypewriter-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman Slanted' (lmromanslant9-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Kinnari' (Kinnari-Italic.ttf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Tlwg Typist' (TlwgTypist.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'NanumMyeongjo' (NanumMyeongjo.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'mry_KacstQurn' (mry_KacstQurn.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXSizeOneSym' (STIXSizeOneSym-Bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Bitstream Vera Sans Mono' (VeraMono.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Liberation Sans' (LiberationSans-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Lohit Bengali' (Lohit-Bengali.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'NanumGothic' (NanumGothicBold.ttf) normal normal 600 normal>) = 10.24
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Norasi' (Norasi-Oblique.ttf) oblique normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Ubuntu' (Ubuntu-LI.ttf) italic normal 300 normal>) = 11.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'FreeSerif' (FreeSerifBold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Mono Light Cond' (lmmonoltcond10-regular.otf) normal normal 400 condensed>) = 10.25
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Lato' (Lato-MediumItalic.ttf) italic normal 500 normal>) = 11.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Mitra Mono' (mitra.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Liberation Sans' (LiberationSans-Regular.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Sawasdee' (Sawasdee-BoldOblique.ttf) oblique normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Padauk' (Padauk-Regular.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXSizeOneSym' (STIXSizeOneSym-Regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'NanumMyeongjo' (NanumMyeongjoBold.ttf) normal normal 600 normal>) = 10.24
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Laksaman' (Laksaman.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'padmaa' (padmaa.ttf) normal normal 500 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'FreeSerif' (FreeSerifItalic.ttf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Waree' (Waree-Oblique.ttf) oblique normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'KacstTitleL' (KacstTitleL.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'msbm10' (msbm10.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Ubuntu Mono' (UbuntuMono-R.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Lohit Malayalam' (Lohit-Malayalam.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXIntegralsUpSm' (STIXIntegralsUpSm-Bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Liberation Serif' (LiberationSerif-Regular.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Abyssinica SIL' (AbyssinicaSIL-Regular.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXVariants' (STIXVariants-Bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Ubuntu Mono' (UbuntuMono-B.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Samyak Gujarati' (Samyak-Gujarati.ttf) normal normal 500 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Lohit Devanagari' (Lohit-Devanagari.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Ani' (ani.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'FreeSans' (FreeSans.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Mono Light' (lmmonolt10-boldoblique.otf) oblique normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Ubuntu Mono' (UbuntuMono-BI.ttf) italic normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Bitstream Vera Sans Mono' (VeraMoIt.ttf) oblique normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Keraleeyam' (Keraleeyam-Regular.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Standard Symbols PS' (StandardSymbolsPS.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'FreeSans' (FreeSansOblique.ttf) oblique normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Tlwg Typo' (TlwgTypo-Oblique.ttf) oblique normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Mono' (lmmono10-italic.otf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Sawasdee' (Sawasdee.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Suruma' (Suruma.ttf) normal normal 500 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Liberation Serif' (LiberationSerif-BoldItalic.ttf) italic normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'URW Bookman' (URWBookman-LightItalic.otf) italic normal 300 normal>) = 11.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Bitstream Vera Sans' (VeraIt.ttf) oblique normal 400 normal>) = 1.9590909090909092
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Rekha' (Rekha.ttf) normal normal 500 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'KacstDigital' (KacstDigital.ttf) normal normal 500 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Dyuthi' (Dyuthi-Regular.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Mukti Narrow' (MuktiNarrowBold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXIntegralsD' (STIXIntegralsD-Regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Lato' (Lato-ThinItalic.ttf) italic normal 200 normal>) = 11.24
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Liberation Serif' (LiberationSerif-Regular.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Bitstream Vera Sans' (Vera.ttf) normal normal 400 normal>) = 0.9590909090909092
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXNonUnicode' (STIXNonUnicode-Regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Nimbus Roman' (NimbusRoman-BoldItalic.otf) italic normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Laksaman' (Laksaman-Italic.ttf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Noto Sans CJK JP' (NotoSansCJK-Regular.ttc) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'URW Bookman' (URWBookman-DemiItalic.otf) italic normal 600 normal>) = 11.24
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXNonUnicode' (STIXNonUnicode-Bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Nimbus Roman' (NimbusRoman-Italic.otf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Mono Prop Light' (lmmonoproplt10-bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'DejaVu Sans Mono' (DejaVuSansMono.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Liberation Sans Narrow' (LiberationSansNarrow-Bold.ttf) normal normal 700 condensed>) = 10.535
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Liberation Mono' (LiberationMono-Regular.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'ori1Uni' (utkal.ttf) normal normal 500 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'URW Gothic' (URWGothic-BookOblique.otf) oblique normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Sans' (lmsans10-oblique.otf) oblique normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Nimbus Sans Narrow' (NimbusSansNarrow-Bold.otf) normal normal 700 condensed>) = 10.535
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Gubbi' (Gubbi.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Mono' (lmmono8-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'cmex10' (cmex10.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Rasa' (Rasa-SemiBold.ttf) normal normal 600 normal>) = 10.24
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman' (lmroman17-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Lohit Tamil Classical' (Lohit-Tamil-Classical.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'KacstArt' (KacstArt.ttf) normal normal 500 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Tlwg Mono' (TlwgMono-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman Dunhill' (lmromandunh10-oblique.otf) oblique normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Umpush' (Umpush-Oblique.ttf) oblique normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Mono' (lmmono12-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Bitstream Vera Sans Mono' (VeraMoBd.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'cmmi10' (cmmi10.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Liberation Mono' (LiberationMono-BoldItalic.ttf) italic normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Sans' (lmsans10-bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'URW Bookman' (URWBookman-Demi.otf) normal normal 600 normal>) = 10.24
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'TakaoPGothic' (fonts-japanese-gothic.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Liberation Mono' (LiberationMono-Italic.ttf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Ubuntu Mono' (UbuntuMono-RI.ttf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman Dunhill' (lmromandunh10-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Laksaman' (Laksaman-BoldItalic.ttf) italic normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'C059' (C059-BdIta.otf) italic normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'padmaa' (padmaa-Medium-0.5.ttf) normal normal 500 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Norasi' (Norasi-Italic.ttf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Loma' (Loma.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Umpush' (Umpush-LightOblique.ttf) oblique normal 300 normal>) = 11.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Ubuntu' (Ubuntu-L.ttf) normal normal 300 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Liberation Sans' (LiberationSans-Italic.ttf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Mono Light' (lmmonolt10-bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Liberation Mono' (LiberationMono-BoldItalic.ttf) italic normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Sans Demi Cond' (lmsansdemicond10-regular.otf) normal normal 600 condensed>) = 10.44
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Norasi' (Norasi-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Samyak Malayalam' (Samyak-Malayalam.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Nimbus Sans' (NimbusSans-BoldItalic.otf) italic normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Lato' (Lato-Medium.ttf) normal normal 500 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Manjari' (Manjari-Bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIX Math' (STIXMath-Regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'DejaVu Sans' (DejaVuSans.ttf) normal normal 400 normal>) = 0.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Sans Quotation' (lmsansquot8-bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman Demi' (lmromandemi10-oblique.otf) oblique normal 600 normal>) = 11.24
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'FreeSans' (FreeSansBoldOblique.ttf) oblique normal 600 normal>) = 11.24
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Waree' (Waree.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'FreeSans' (FreeSansBold.ttf) normal normal 600 normal>) = 10.24
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Z003' (Z003-MediumItalic.otf) italic normal 500 normal>) = 11.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Mono' (lmmono10-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXVariants' (STIXVariants-Regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Loma' (Loma-Oblique.ttf) oblique normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Mono Light' (lmmonolt10-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Liberation Sans' (LiberationSans-BoldItalic.ttf) italic normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Pothana2000' (Pothana2000.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Purisa' (Purisa-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Symbola' (Symbola_hint.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Nimbus Sans' (NimbusSans-Regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Bitstream Vera Serif' (VeraSe.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'KacstLetter' (KacstLetter.ttf) normal normal 500 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Tlwg Typo' (TlwgTypo-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Mono Prop Light' (lmmonoproplt10-oblique.otf) oblique normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXGeneral' (STIXGeneral-Bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Tlwg Typist' (TlwgTypist-BoldOblique.ttf) oblique normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'URW Gothic' (URWGothic-Demi.otf) normal normal 600 normal>) = 10.24
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman' (lmroman6-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Noto Serif CJK JP' (NotoSerifCJK-Regular.ttc) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Math' (latinmodern-math.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'NanumBarunGothic' (NanumBarunGothic.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman Slanted' (lmromanslant10-bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman' (lmroman7-bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Nimbus Sans Narrow' (NimbusSansNarrow-Regular.otf) normal normal 400 condensed>) = 10.25
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Yrsa' (Yrsa-Light.ttf) normal normal 300 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Yrsa' (Yrsa-Regular.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXIntegralsUpSm' (STIXIntegralsUpSm-Regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'NanumSquareRound' (NanumSquareRoundB.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIX' (STIX-Bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'FreeSerif' (FreeSerif.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Sans' (lmsans12-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXSizeThreeSym' (STIXSizeThreeSym-Bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Chilanka' (Chilanka-Regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'URW Bookman' (URWBookman-Light.otf) normal normal 300 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXIntegralsSm' (STIXIntegralsSm-Bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'KacstPen' (KacstPen.ttf) normal normal 500 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman' (lmroman10-bolditalic.otf) italic normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Rachana' (Rachana-Regular.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'KacstOne' (KacstOne.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXIntegralsD' (STIXIntegralsD-Bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXIntegralsSm' (STIXIntegralsSm-Regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Tlwg Typo' (TlwgTypo-BoldOblique.ttf) oblique normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Sawasdee' (Sawasdee-Oblique.ttf) oblique normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Samyak Devanagari' (Samyak-Devanagari.ttf) normal normal 500 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman' (lmroman7-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXNonUnicode' (STIXNonUnicode-Italic.otf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Noto Sans CJK JP' (NotoSansCJK-Bold.ttc) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Liberation Sans' (LiberationSans-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'FreeMono' (FreeMono.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXIntegralsUp' (STIXIntegralsUp-Regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'NanumBarunGothic' (NanumBarunGothicBold.ttf) normal normal 600 normal>) = 10.24
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman' (lmroman10-bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'KacstPoster' (KacstPoster.ttf) normal normal 500 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Mono' (lmmono9-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Sans' (lmsans12-oblique.otf) oblique normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Likhan' (LikhanNormal.ttf) normal normal 500 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'P052' (P052-Bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'cmr10' (cmr10.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Tlwg Typist' (TlwgTypist-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Waree' (Waree-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Sans Quotation' (lmsansquot8-boldoblique.otf) oblique normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'C059' (C059-Bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'rsfs10' (rsfs10.ttf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Sans' (lmsans17-oblique.otf) oblique normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Kalimati' (kalimati.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Manjari' (Manjari-Regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Tlwg Typo' (TlwgTypo.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Droid Sans Fallback' (DroidSansFallbackFull.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Sans' (lmsans9-oblique.otf) oblique normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Padauk' (Padauk-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'FreeMono' (FreeMonoBold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Uroob' (Uroob-Regular.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Ubuntu Condensed' (Ubuntu-C.ttf) normal normal 400 condensed>) = 10.25
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'DejaVu Serif' (DejaVuSerif-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'KacstNaskh' (KacstNaskh.ttf) normal normal 500 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Sawasdee' (Sawasdee-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Umpush' (Umpush-Light.ttf) normal normal 300 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'FreeMono' (FreeMonoBoldOblique.ttf) oblique normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Liberation Sans' (LiberationSans-BoldItalic.ttf) italic normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Liberation Serif' (LiberationSerif-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman Slanted' (lmromanslant12-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman' (lmroman9-bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIX' (STIX-Regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Tlwg Mono' (TlwgMono.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'AnjaliOldLipi' (AnjaliOldLipi-Regular.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman' (lmroman8-italic.otf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Gargi' (Gargi.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIX' (STIX-Italic.otf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Lato' (Lato-HairlineItalic.ttf) italic normal 100 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Nimbus Sans Narrow' (NimbusSansNarrow-Oblique.otf) oblique normal 400 condensed>) = 11.25
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Garuda' (Garuda.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Laksaman' (Laksaman-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'RaghuMalayalamSans' (RaghuMalayalamSans-Regular.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Garuda' (Garuda-BoldOblique.ttf) oblique normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'P052' (P052-Italic.otf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Rasa' (Rasa-Medium.ttf) normal normal 500 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'NanumSquare' (NanumSquareB.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'KacstOne' (KacstOne-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Bitstream Vera Sans Mono' (VeraMoBI.ttf) oblique normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'KacstBook' (KacstBook.ttf) normal normal 500 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Lato' (Lato-Light.ttf) normal normal 300 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Loma' (Loma-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Rasa' (Rasa-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Mono Caps' (lmmonocaps10-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'KacstQurn' (KacstQurn.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXIntegralsUpD' (STIXIntegralsUpD-Bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Liberation Sans' (LiberationSans-Italic.ttf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'wasy10' (wasy10.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman' (lmroman5-bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Yrsa' (Yrsa-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Norasi' (Norasi-BoldOblique.ttf) oblique normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'URW Gothic' (URWGothic-Book.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'esint10' (esint10.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Lato' (Lato-LightItalic.ttf) italic normal 300 normal>) = 11.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'C059' (C059-Roman.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Meera' (Meera-Regular.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Lohit Assamese' (Lohit-Assamese.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman Unslanted' (lmromanunsl10-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Khmer OS' (KhmerOS.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Lato' (Lato-SemiboldItalic.ttf) italic normal 600 normal>) = 11.24
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Lato' (Lato-BoldItalic.ttf) italic normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Waree' (Waree-BoldOblique.ttf) oblique normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Yrsa' (Yrsa-SemiBold.ttf) normal normal 600 normal>) = 10.24
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'aakar' (aakar-medium.ttf) normal normal 500 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Sans' (lmsans10-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Khmer OS System' (KhmerOSsys.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Garuda' (Garuda-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman' (lmroman9-italic.otf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'NanumSquareRound' (NanumSquareRoundR.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Mono Caps' (lmmonocaps10-oblique.otf) oblique normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Mono Prop' (lmmonoprop10-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Lato' (Lato-Semibold.ttf) normal normal 600 normal>) = 10.24
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Nimbus Roman' (NimbusRoman-Regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXGeneral' (STIXGeneral-BoldItalic.otf) italic normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman' (lmroman9-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXSizeFiveSym' (STIXSizeFiveSym-Regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'NanumSquare' (NanumSquareR.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Navilu' (Navilu.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Nimbus Mono PS' (NimbusMonoPS-BoldItalic.otf) italic normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Liberation Serif' (LiberationSerif-Italic.ttf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Lato' (Lato-BlackItalic.ttf) italic normal 900 normal>) = 11.525
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman' (lmroman7-italic.otf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Ubuntu' (Ubuntu-MI.ttf) italic normal 500 normal>) = 11.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Loma' (Loma-BoldOblique.ttf) oblique normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'KacstOffice' (KacstOffice.ttf) normal normal 500 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Kinnari' (Kinnari.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Lohit Telugu' (Lohit-Telugu.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'msam10' (msam10.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'FreeMono' (FreeMonoOblique.ttf) oblique normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Nimbus Mono PS' (NimbusMonoPS-Bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Nimbus Sans' (NimbusSans-Italic.otf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'KacstFarsi' (KacstFarsi.ttf) normal normal 500 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Sahadeva' (sahadeva.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'cmsy10' (cmsy10.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Ubuntu' (Ubuntu-B.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Purisa' (Purisa-BoldOblique.ttf) oblique normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Ubuntu' (Ubuntu-R.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman' (lmroman8-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'D050000L' (D050000L.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Tibetan Machine Uni' (TibetanMachineUni.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'DejaVu Serif' (DejaVuSerif.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman Caps' (lmromancaps10-oblique.otf) oblique normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXGeneral' (STIXGeneral-Regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Sans' (lmsans8-oblique.otf) oblique normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'KacstDecorative' (KacstDecorative.ttf) normal normal 500 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Kinnari' (Kinnari-Oblique.ttf) oblique normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman Demi' (lmromandemi10-regular.otf) normal normal 600 normal>) = 10.24
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Saab' (Saab.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Tlwg Typist' (TlwgTypist-Oblique.ttf) oblique normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Nimbus Mono PS' (NimbusMonoPS-Italic.otf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'LKLUG' (lklug.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Liberation Sans Narrow' (LiberationSansNarrow-Regular.ttf) normal normal 400 condensed>) = 10.25
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Mono Prop Light' (lmmonoproplt10-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Ubuntu' (Ubuntu-RI.ttf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'OpenSymbol' (opens___.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Gayathri' (Gayathri-Regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Sans' (lmsans8-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Bitstream Vera Sans' (VeraBI.ttf) oblique normal 700 normal>) = 2.244090909090909
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Lato' (Lato-Italic.ttf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman Slanted' (lmromanslant17-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Kalapi' (Kalapi.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXSizeTwoSym' (STIXSizeTwoSym-Regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Tlwg Typewriter' (TlwgTypewriter.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Liberation Sans' (LiberationSans-Regular.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Lato' (Lato-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Noto Mono' (NotoMono-Regular.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Lato' (Lato-Regular.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXSizeTwoSym' (STIXSizeTwoSym-Bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'URW Gothic' (URWGothic-DemiOblique.otf) oblique normal 600 normal>) = 11.24
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'FreeSerif' (FreeSerifBoldItalic.ttf) italic normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Lohit Gujarati' (Lohit-Gujarati.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Vemana2000' (vemana2000.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Karumbi' (Karumbi-Regular.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Lato' (Lato-Hairline.ttf) normal normal 100 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Liberation Sans Narrow' (LiberationSansNarrow-Italic.ttf) italic normal 400 condensed>) = 11.25
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Phetsarath OT' (Phetsarath_OT.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Liberation Serif' (LiberationSerif-Italic.ttf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Lohit Kannada' (Lohit-Kannada.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Mono Prop Light' (lmmonoproplt10-boldoblique.otf) oblique normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Purisa' (Purisa.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Umpush' (Umpush.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Tlwg Typewriter' (TlwgTypewriter-BoldOblique.ttf) oblique normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Liberation Mono' (LiberationMono-Italic.ttf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXSizeFourSym' (STIXSizeFourSym-Bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Kinnari' (Kinnari-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Mono Slanted' (lmmonoslant10-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Gayathri' (Gayathri-Bold.otf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Sans Quotation' (lmsansquot8-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Sarai' (Sarai.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Sans Quotation' (lmsansquot8-oblique.otf) oblique normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIX' (STIX-BoldItalic.otf) italic normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXNonUnicode' (STIXNonUnicode-BoldItalic.otf) italic normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Sans Demi Cond' (lmsansdemicond10-oblique.otf) oblique normal 600 condensed>) = 11.44
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Mono Prop' (lmmonoprop10-oblique.otf) oblique normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'STIXSizeThreeSym' (STIXSizeThreeSym-Regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Purisa' (Purisa-Oblique.ttf) oblique normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Lato' (Lato-Thin.ttf) normal normal 200 normal>) = 10.24
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Padauk Book' (PadaukBook-Regular.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Kinnari' (Kinnari-BoldItalic.ttf) italic normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Ubuntu' (Ubuntu-Th.ttf) normal normal 250 normal>) = 10.1925
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Rasa' (Rasa-Regular.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Padauk Book' (PadaukBook-Bold.ttf) normal normal 700 normal>) = 10.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Yrsa' (Yrsa-Medium.ttf) normal normal 500 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman Slanted' (lmromanslant10-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Pagul' (Pagul.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Kinnari' (Kinnari-BoldOblique.ttf) oblique normal 700 normal>) = 11.335
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'eufm10' (eufm10.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman Caps' (lmromancaps10-regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Latin Modern Roman' (lmroman12-italic.otf) italic normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Rasa' (Rasa-Light.ttf) normal normal 300 normal>) = 10.145
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Nimbus Mono PS' (NimbusMonoPS-Regular.otf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Tlwg Typewriter' (TlwgTypewriter-Oblique.ttf) oblique normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Chandas' (chandas1-2.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Lato' (Lato-HeavyItalic.ttf) italic normal 800 normal>) = 11.43
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'stmary10' (stmary10.ttf) normal normal 400 normal>) = 10.05
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Liberation Sans Narrow' (LiberationSansNarrow-BoldItalic.ttf) italic normal 700 condensed>) = 11.535
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Bitstream Vera Sans' (VeraBd.ttf) normal normal 700 normal>) = 1.2440909090909091
+DEBUG:matplotlib.font_manager:findfont: score(<Font 'Tlwg Mono' (TlwgMono-Oblique.ttf) oblique normal 400 normal>) = 11.05
+DEBUG:matplotlib.font_manager:findfont: Matching sans\-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('/usr/local/lib/python3.8/dist-packages/matplotlib/mpl-data/fonts/ttf/DejaVuSans.ttf') with score of 0.050000.
+DEBUG:root:ics_tab.py: fill_celltype_combobox(): ['bacteria', 'blood vessel', 'stem', 'differentiated', 'macrophage', 'CD8+ T cell', 'neutrophil']
+DEBUG:root:ics_tab.py: fill_celltype_combobox(): ['bacteria', 'blood vessel', 'stem', 'differentiated', 'macrophage', 'CD8+ T cell', 'neutrophil']
+DEBUG:root:studio.py: calling vis_tab.substrates_cbox_changed_cb(2)

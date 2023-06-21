@@ -180,8 +180,8 @@ for model_id, model in enumerate(model_set):
 		ax.errorbar(t_test, X_test[:,1], yerr = std_factor*X_std[:,1], fmt = 'k^', label = r"Data Ki67$^{+}(t)$", capsize = 2.0, alpha = 0.5, markersize = 3)
 		ax.plot(t_test, true_solution[:,0], "b:", label = r"True Ki67$^{-}(t)$", alpha = 1.0, linewidth = 1)
 		ax.plot(t_test, true_solution[:,1], "g:", label = r"True Ki67$^{+}(t)$", alpha = 1.0, linewidth = 1)
-		ax.plot(t_test, simulation[:,0], "b", label = r"Model Ki67$^{-}(t)$", alpha = 1.0, linewidth = 1)
-		ax.plot(t_test, simulation[:,1], "g", label = r"Model Ki67$^{+}(t)$", alpha = 1.0, linewidth = 1)
+		ax.plot(t_test, simulation[:,0], "b", label = r"SINDy-SA Ki67$^{-}(t)$", alpha = 1.0, linewidth = 1)
+		ax.plot(t_test, simulation[:,1], "g", label = r"SINDy-SA Ki67$^{+}(t)$", alpha = 1.0, linewidth = 1)
 		if calibration_mode == "Bayes":
 			ax.fill_between(t, simulation_min[:,0], simulation_max[:,0], color = "b", alpha = 0.4)
 			ax.fill_between(t, simulation_min[:,1], simulation_max[:,1], color = "g", alpha = 0.4)
