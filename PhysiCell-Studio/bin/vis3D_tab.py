@@ -37,8 +37,9 @@ from pyMCDS import pyMCDS
 #----------------------------------------------------------------------
 class Vis(VisBase, QWidget):
 
-    def __init__(self, nanohub_flag, config_tab, run_tab, model3D_flag, tensor_flag):
-        super(Vis,self).__init__(nanohub_flag=nanohub_flag, run_tab=run_tab,  config_tab=config_tab, model3D_flag=model3D_flag, tensor_flag=tensor_flag)
+    def __init__(self, studio_flag, rules_flag, nanohub_flag, config_tab, microenv_tab, celldef_tab, user_params_tab, rules_tab, ics_tab, run_tab, model3D_flag, tensor_flag, ecm_flag):
+
+        super(Vis,self).__init__(studio_flag=studio_flag, rules_flag=rules_flag,  nanohub_flag=nanohub_flag, config_tab=config_tab, microenv_tab=microenv_tab, celldef_tab=celldef_tab, user_params_tab=user_params_tab, rules_tab=rules_tab, ics_tab=ics_tab, run_tab=run_tab, model3D_flag=model3D_flag,tensor_flag=tensor_flag, ecm_flag=ecm_flag)
 
         self.figure = None
 
@@ -116,12 +117,13 @@ class Vis(VisBase, QWidget):
         self.lut_substrate_ylorrd_r = self.get_ylorrd_map(True)
 
         # default
-        self.lut_substrate = self.lut_substrate_jet
+        # self.lut_substrate = self.lut_substrate_jet
+        self.lut_substrate = self.lut_substrate_ylorrd
 
         #------------
-        self.lut_cells = self.get_jet_map(False)
+        # self.lut_cells = self.get_jet_map(False)
         self.lut_cells_jet = self.get_jet_map(False)
-        self.lut_cells = self.lut_substrate_jet
+        # self.lut_cells = self.lut_substrate_jet
         self.lut_cells_jet_r = self.get_jet_map(True)
 
         self.lut_cells_viridis = self.get_viridis_map(False)
@@ -131,7 +133,8 @@ class Vis(VisBase, QWidget):
         self.lut_cells_ylorrd_r = self.get_ylorrd_map(True)
 
         # default
-        self.lut_cells = self.lut_cells_jet
+        # self.lut_cells = self.lut_cells_jet
+        self.lut_cells = self.lut_cells_viridis
 
         # -------------  VTK pipeline  --------------
         #------  Setup for the cells (rendered as 3D glyphs (spheres))
@@ -526,22 +529,6 @@ class Vis(VisBase, QWidget):
     #     self.domain_boundary_actor = vtkActor()
     #     self.domain_boundary_actor.SetMapper(self.domain_boundary_mapper)
     #     self.domain_boundary_actor.GetProperty().SetColor(0, 0, 0)
-
-    #-------------------------------
-    def disable_physiboss_info(self):
-        print("vis3D_tab: ------- disable_physiboss_info()")
-        if self.physiboss_vis_checkbox is not None:
-            print("vis3D_tab: ------- self.physiboss_vis_checkbox is not None; try disabling")
-            try:
-                self.physiboss_vis_checkbox.setChecked(False)
-                self.physiboss_vis_checkbox.setEnabled(False)
-                self.physiboss_cell_type_combobox.setEnabled(False)
-                self.physiboss_node_combobox.setEnabled(False)
-            except:
-                print("ERROR: Exception disabling physiboss widgets")
-                pass
-        else:
-            print("vis3D_tab: ------- self.physiboss_vis_checkbox is None")
 
     #---------------------------------------
     # Dependent on 2D/3D

@@ -47,7 +47,7 @@ plot_qoi = True
 plot_musig = False
 plot_simulation = False
 plot_derivative = False
-calibration_mode = "Bayes"
+calibration_mode = "DE"
 
 stlsq_alphas = [0.001, 0.01, 0.1, 1.0, 10.0]
 
@@ -85,8 +85,8 @@ for poly_degree in poly_degrees:
 			)
 
 			# Define method properties
-			# differentiation_method = ps.FiniteDifference(order = fd_order)
-			differentiation_method = ps.SmoothedFiniteDifference()
+			differentiation_method = ps.FiniteDifference(order = fd_order)
+			# differentiation_method = ps.SmoothedFiniteDifference()
 			feature_library = ps.PolynomialLibrary(degree = poly_degree) # + ps.FourierLibrary(n_frequencies = fourier_nfreq)
 			optimizer = ps.STLSQ(
 				alpha = stlsq_alpha,
@@ -147,7 +147,14 @@ for model_id, model in enumerate(model_set):
 			simulation = model.simulate(X0_test, t = t_test)
 		elif calibration_mode == "LM":
 			mc = ModelCalibration(model, model_id, X_test, t, X0_test, 0)
-			mc.levenberg_marquardt()
+			mc.levenberg_marquardt(X_std, normalize = True)
+			model.print(precision = precision)
+			print("\n")
+
+			simulation = model.simulate(X0_test, t = t_test)
+		elif calibration_mode == "DE":
+			mc = ModelCalibration(model, model_id, X_test, t, X0_test, 0)
+			mc.differential_evolution(normalize = True)
 			model.print(precision = precision)
 			print("\n")
 
@@ -170,22 +177,23 @@ for model_id, model in enumerate(model_set):
 
 	# Generate figures
 	for std_factor in range(1, 4):
-		fig, ax = plt.subplots(1, 1, figsize = (15, 7.5), dpi = 300)
-		# ax.plot(t_test, X_test[:,0], "ko", label = r"Data live$(t)$", alpha = 0.5, markersize = 3)
-		ax.errorbar(t_test, X_test[:,0], yerr = std_factor*X_std[:,0], fmt = 'ko', label = r"Data live$(t)$", capsize = 2.0, alpha = 0.5, markersize = 3)
-		ax.plot(t_test, true_solution[:,0], "b:", label = r"True live$(t)$", alpha = 1.0, linewidth = 1)
-		ax.plot(t_test, simulation[:,0], "b", label = r"SINDy-SA live$(t)$", alpha = 1.0, linewidth = 1)
+		fig, ax = plt.subplots(1, 1, figsize = (10.54, 5.92), dpi = 300)
+		# ax.plot(t_test, X_test[:,0], "ko", label = r"Data $L(t)$", alpha = 0.5, markersize = 3)
+		ax.errorbar(t_test, X_test[:,0], yerr = std_factor*X_std[:,0], fmt = 'ko', label = r"Data $L(t)$", capsize = 2.0, alpha = 0.3, markersize = 3)
+		ax.plot(t_test, true_solution[:,0], "b:", label = r"True $L(t)$", alpha = 1.0, linewidth = 1)
+		ax.plot(t_test, simulation[:,0], "b", label = r"SINDy-SA $L(t)$", alpha = 1.0, linewidth = 1)
 		if calibration_mode == "Bayes":
 			ax.fill_between(t, simulation_min[:,0], simulation_max[:,0], color = "b", alpha = 0.4)
-		ax.set(xlabel = r"Time $t$", ylabel = r"$X(t)$")
 		handles, labels = plt.gca().get_legend_handles_labels()
 		order = [2,0,1]
-		ax.legend([handles[idx] for idx in order],[labels[idx] for idx in order])
-		plt.savefig(os.path.join("output", "model" + str(model_id+1) + "_ic0_std" + str(std_factor) + ".png"), bbox_inches = 'tight')
+		plt.legend([handles[idx] for idx in order],[labels[idx] for idx in order])
+		plt.xlabel(r"Time $t$", size=15)
+		plt.ylabel(r"$X(t)$", size=15)
+		plt.savefig(os.path.join("output", "model" + str(model_id+1) + "_ic0_std" + str(std_factor) + ".pdf"), bbox_inches = 'tight')
 		plt.close()
 
 	# Compute SSE
-	sse = ms.compute_SSE(X_test.reshape(simulation.shape), simulation)
+	sse = ms.compute_SSE(np.copy(X_test.reshape(simulation.shape)), np.copy(simulation), normalize = True)
 
 	# Set mean SSE to the model
 	ms.set_model_SSE(model_id, sse)

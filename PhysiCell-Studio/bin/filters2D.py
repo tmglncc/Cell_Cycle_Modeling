@@ -69,16 +69,24 @@ class FilterUI2DWindow(QWidget):
 
         #------------
         idx_row = 0
-        self.cell_edge_checkbox = QCheckBox_custom('cell edge')
+        glayout.addWidget(QLabel("Cells:"), idx_row,0,1,2) # w, row, column, rowspan, colspan
+
+        idx_row += 1
+        self.cell_edge_checkbox = QCheckBox_custom('edge')
         self.cell_edge_checkbox.setChecked(True)
         self.cell_edge_checkbox.clicked.connect(self.cell_edge_cb)
         idx_row += 1
         glayout.addWidget(self.cell_edge_checkbox, idx_row,0,1,1) # w, row, column, rowspan, colspan
 
-        self.cell_fill_checkbox = QCheckBox_custom('cell fill')
+        self.cell_fill_checkbox = QCheckBox_custom('fill')
         self.cell_fill_checkbox.setChecked(True)
         self.cell_fill_checkbox.clicked.connect(self.cell_fill_cb)
-        glayout.addWidget(self.cell_fill_checkbox, idx_row,2,1,1) # w, row, column, rowspan, colspan
+        glayout.addWidget(self.cell_fill_checkbox, idx_row,1,1,1) # w, row, column, rowspan, colspan
+
+        self.cell_nucleus_checkbox = QCheckBox_custom('nucleus')
+        self.cell_nucleus_checkbox.setChecked(False)
+        self.cell_nucleus_checkbox.clicked.connect(self.cell_nucleus_cb)
+        glayout.addWidget(self.cell_nucleus_checkbox, idx_row,2,1,1) # w, row, column, rowspan, colspan
         #--------------------------------
 
         idx_row += 1
@@ -95,13 +103,14 @@ class FilterUI2DWindow(QWidget):
         glayout.addWidget(self.contour_mesh_checkbox, idx_row,0,1,1) # w, row, column, rowspan, colspan
 
         self.contour_smooth_checkbox = QCheckBox_custom('smooth')
+        self.contour_smooth_checkbox.setChecked(True)
         self.contour_smooth_checkbox.clicked.connect(self.contour_smooth_cb)
         glayout.addWidget(self.contour_smooth_checkbox, idx_row,1,1,1) # w, row, column, rowspan, colspan
 
         self.contour_lines_checkbox = QCheckBox_custom('lines')
         self.contour_lines_checkbox.setChecked(False)
         self.contour_lines_checkbox.clicked.connect(self.contour_lines_cb)
-        glayout.addWidget(self.contour_lines_checkbox, idx_row,3,1,1) # w, row, column, rowspan, colspan
+        glayout.addWidget(self.contour_lines_checkbox, idx_row,2,1,1) # w, row, column, rowspan, colspan
 
         #-----------------------
         idx_row += 1
@@ -125,6 +134,12 @@ class FilterUI2DWindow(QWidget):
         self.mech_grid_checkbox.clicked.connect(self.mech_grid_cb)
         glayout.addWidget(self.mech_grid_checkbox, idx_row,2,1,1) # w, row, column, rowspan, colspan
 
+        #--------------------------
+        self.save_png_checkbox = QCheckBox_custom('save frame*.png')
+        self.save_png_checkbox.clicked.connect(self.save_png_cb)
+        idx_row += 1
+        glayout.addWidget(self.save_png_checkbox, idx_row,0,1,2) # w, row, column, rowspan, colspan
+
         #--------------------
         # axes_act = view3D_menu.addAction("Axes")
 
@@ -146,7 +161,7 @@ class FilterUI2DWindow(QWidget):
         # self.layout.setStretch(0,1000)
 
         self.setLayout(self.vbox)
-        # self.resize(250, 250)
+        self.resize(200, 220)   # try to fix the size
 
 
     #--------
@@ -180,6 +195,9 @@ class FilterUI2DWindow(QWidget):
     def cell_fill_cb(self):
         self.vis_tab.cell_fill_cb(self.cell_fill_checkbox.isChecked())
 
+    def cell_nucleus_cb(self):
+        self.vis_tab.cell_nucleus_cb(self.cell_nucleus_checkbox.isChecked())
+
     def contour_mesh_cb(self):
         bval = self.contour_mesh_checkbox.isChecked()
         if bval:
@@ -205,6 +223,10 @@ class FilterUI2DWindow(QWidget):
 
     def mech_grid_cb(self):
         self.vis_tab.mech_grid_cb(self.mech_grid_checkbox.isChecked())
+
+    def save_png_cb(self):
+        self.vis_tab.png_frame = 0
+        self.vis_tab.save_png = self.save_png_checkbox.isChecked()
         
     #--------
     def yz_slice_cb(self):

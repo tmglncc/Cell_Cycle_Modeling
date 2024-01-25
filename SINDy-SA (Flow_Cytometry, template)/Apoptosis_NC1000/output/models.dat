@@ -456,428 +456,791 @@ G2M' = 1.985e-03 S + -3.190e-03 G2M
 apoptotic' = 5.708e-05 G0G1 + 1.242e-04 S + -2.685e-04 G2M + 1.531e-05 apoptotic
 
 
-*** Using Levenberg-Marquardt algorithm ***
+*** Using Differential Evolution method ***
 
-Param expression = c1, c3, c6, c7, c12, c13, c16, c17, c18, c19,
-Var expression = G0G1, S, G2M, apoptotic
-Model expression = c1*G0G1 + c3*G2M, c6*G0G1 + c7*S, c12*S + c13*G2M, c16*G0G1 + c17*S + c18*G2M + c19*apoptotic lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.8612796551913D+03   r2 =  0.3151649193152D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.8612796551913D+03   r2 =  0.7879122982881D-14
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.8612796551913D+03   r2 =  0.1969780745720D-14
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.8612796551913D+03   r2 =  0.1969780745720D-14
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.8612796551913D+03   r2 =  0.1969780745720D-14
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.8612796551913D+03   r2 =  0.4924451864300D-15
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.8612796551913D+03   r2 =  0.4924451864300D-15
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.8612796551913D+03   r2 =  0.1231112966075D-15
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.8612796551913D+03   r2 =  0.3077782415188D-16
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.8612796551913D+03   r2 =  0.3077782415188D-16
- lsoda--  above warning has been issued i1 times.    
-       it will not be issued again for this problem  
-      in above message,  i1 =        10
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.9414789889785D+03   r2 =  0.1913820837400D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.9414789889785D+03   r2 =  0.4784552093500D-14
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.9414789889785D+03   r2 =  0.1196138023375D-14
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.9414789889785D+03   r2 =  0.1196138023375D-14
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.9414789889785D+03   r2 =  0.2990345058437D-15
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.9414789889785D+03   r2 =  0.2990345058437D-15
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.9414789889785D+03   r2 =  0.7475862646094D-16
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.9414789889785D+03   r2 =  0.7475862646094D-16
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.9414789889785D+03   r2 =  0.7475862646094D-16
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.9414789889785D+03   r2 =  0.7475862646094D-16
- lsoda--  above warning has been issued i1 times.    
-       it will not be issued again for this problem  
-      in above message,  i1 =        10
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.3420217109923D+03   r2 =  0.4769528210536D-14
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.3420217109923D+03   r2 =  0.1192382052634D-14
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.3420217109923D+03   r2 =  0.1192382052634D-14
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.3420217109923D+03   r2 =  0.1192382052634D-14
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.3420217109923D+03   r2 =  0.2980955131585D-15
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.3420217109923D+03   r2 =  0.2980955131585D-15
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.3420217109923D+03   r2 =  0.2980955131585D-15
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.3420217109923D+03   r2 =  0.7452387828963D-16
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.3420217109923D+03   r2 =  0.1863096957241D-16
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.3420217109923D+03   r2 =  0.1863096957241D-16
- lsoda--  above warning has been issued i1 times.    
-       it will not be issued again for this problem  
-      in above message,  i1 =        10
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.3478155682480D+03   r2 =  0.1762687002553D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.3478155682480D+03   r2 =  0.1762687002553D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.3478155682480D+03   r2 =  0.1762687002553D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.3478155682480D+03   r2 =  0.2754198441489D-15
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.3478155682480D+03   r2 =  0.2754198441489D-15
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.3478155682480D+03   r2 =  0.2754198441489D-15
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.3478155682480D+03   r2 =  0.1721374025931D-16
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.3478155682480D+03   r2 =  0.1721374025931D-16
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.3478155682480D+03   r2 =  0.1721374025931D-16
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.3478155682480D+03   r2 =  0.1721374025931D-16
- lsoda--  above warning has been issued i1 times.    
-       it will not be issued again for this problem  
-      in above message,  i1 =        10
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.6633480298063D+03   r2 =  0.5544441290324D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.6633480298063D+03   r2 =  0.5544441290324D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.6633480298063D+03   r2 =  0.5544441290324D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.6633480298063D+03   r2 =  0.5544441290324D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.6633480298063D+03   r2 =  0.5544441290324D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.6633480298063D+03   r2 =  0.4436986178787D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.6633480298063D+03   r2 =  0.4436986178787D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.6633480298063D+03   r2 =  0.3673747304701D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.6633480298063D+03   r2 =  0.3673747304701D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.6633480298063D+03   r2 =  0.3673747304701D-13
- lsoda--  above warning has been issued i1 times.    
-       it will not be issued again for this problem  
-      in above message,  i1 =        10
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1258597139808D+04   r2 =  0.1004293309822D-12
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1258597139808D+04   r2 =  0.1004293309822D-12
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1258597139808D+04   r2 =  0.7902437895080D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1258597139808D+04   r2 =  0.7902437895080D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1258597139808D+04   r2 =  0.6139308590959D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1258597139808D+04   r2 =  0.6139308590959D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1258597139808D+04   r2 =  0.4830810300749D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1258597139808D+04   r2 =  0.4830810300749D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1258597139808D+04   r2 =  0.3752998200355D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1258597139808D+04   r2 =  0.3752998200355D-13
- lsoda--  above warning has been issued i1 times.    
-       it will not be issued again for this problem  
-      in above message,  i1 =        10
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.2700617114033D+03   r2 =  0.2554343471460D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.2700617114033D+03   r2 =  0.2554343471460D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.2700617114033D+03   r2 =  0.2554343471460D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.2145638107409D+04   r2 =  0.1995663034757D-12
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.2145638107409D+04   r2 =  0.1995663034757D-12
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.2145638107409D+04   r2 =  0.1550406518313D-12
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.2145638107409D+04   r2 =  0.1550406518313D-12
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.2145638107409D+04   r2 =  0.1219961460262D-12
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.2145638107409D+04   r2 =  0.1219961460262D-12
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.2145638107409D+04   r2 =  0.9477733327763D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.2145638107409D+04   r2 =  0.9477733327763D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.2145638107409D+04   r2 =  0.7457701636100D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.2145638107409D+04   r2 =  0.7457701636100D-13
- lsoda--  above warning has been issued i1 times.    
-       it will not be issued again for this problem  
-      in above message,  i1 =        10
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1459820772091D+04   r2 =  0.9145054196081D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1459820772091D+04   r2 =  0.9145054196081D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1459820772091D+04   r2 =  0.7195928010141D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1459820772091D+04   r2 =  0.7195928010141D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1459820772091D+04   r2 =  0.5590429603814D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1459820772091D+04   r2 =  0.5590429603814D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1459820772091D+04   r2 =  0.4398916350448D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1459820772091D+04   r2 =  0.4398916350448D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1459820772091D+04   r2 =  0.3417464996827D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1459820772091D+04   r2 =  0.3417464996827D-13
- lsoda--  above warning has been issued i1 times.    
-       it will not be issued again for this problem  
-      in above message,  i1 =        10
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1450369807970D+04   r2 =  0.9288550901997D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1450369807970D+04   r2 =  0.9288550901997D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1450369807970D+04   r2 =  0.7308840525855D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1450369807970D+04   r2 =  0.7308840525855D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1450369807970D+04   r2 =  0.5678149958071D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1450369807970D+04   r2 =  0.5678149958071D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1450369807970D+04   r2 =  0.4467940529144D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1450369807970D+04   r2 =  0.4467940529144D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1450369807970D+04   r2 =  0.3471089052715D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1450369807970D+04   r2 =  0.3471089052715D-13
- lsoda--  above warning has been issued i1 times.    
-       it will not be issued again for this problem  
-      in above message,  i1 =        10
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1221596120145D+04   r2 =  0.8645711549821D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1221596120145D+04   r2 =  0.8645711549821D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1221596120145D+04   r2 =  0.6258354995793D-13
-
-Signs = [-1.  1.  1. -1.  1. -1.  1.  1.  1. -1.]
-Bounds = [[-0.006849546374237218, -0.0], [0.0, 0.013799474298877096], [0.0, 0.0067917779768233485], [-0.004561244688984445, -0.0], [0.0, 0.0039698512950649386], [-0.006379683933107829, -0.0], [0.0, 0.00011415593742701895], [0.0, 0.00024845715080520204], [0.0, 0.0005370606694059684], [-3.061866774744164e-05, -0.0]]
-G0G1' = -3.505e-03 G0G1 + 7.040e-03 G2M
-S' = 3.475e-03 G0G1 + -2.356e-03 S
-G2M' = 2.091e-03 S + -3.391e-03 G2M
-apoptotic' = 3.757e-06 G0G1 + 4.801e-04 S + 5.820e-04 G2M + -1.360e-02 apoptotic
+differential_evolution step 1: f(x)= 8.1495e+06
+differential_evolution step 2: f(x)= 8.1495e+06
+differential_evolution step 3: f(x)= 8.1495e+06
+differential_evolution step 4: f(x)= 8.1495e+06
+differential_evolution step 5: f(x)= 8.1495e+06
+differential_evolution step 6: f(x)= 8.1495e+06
+differential_evolution step 7: f(x)= 8.1495e+06
+differential_evolution step 8: f(x)= 8.1495e+06
+differential_evolution step 9: f(x)= 8.1495e+06
+differential_evolution step 10: f(x)= 8.1495e+06
+differential_evolution step 11: f(x)= 8.1495e+06
+differential_evolution step 12: f(x)= 8.1495e+06
+differential_evolution step 13: f(x)= 6.14924e+06
+differential_evolution step 14: f(x)= 6.14924e+06
+differential_evolution step 15: f(x)= 6.14924e+06
+differential_evolution step 16: f(x)= 6.14924e+06
+differential_evolution step 17: f(x)= 6.14924e+06
+differential_evolution step 18: f(x)= 4.53888e+06
+differential_evolution step 19: f(x)= 4.53888e+06
+differential_evolution step 20: f(x)= 4.53888e+06
+differential_evolution step 21: f(x)= 4.53888e+06
+differential_evolution step 22: f(x)= 4.53888e+06
+differential_evolution step 23: f(x)= 4.13091e+06
+differential_evolution step 24: f(x)= 4.13091e+06
+differential_evolution step 25: f(x)= 4.13091e+06
+differential_evolution step 26: f(x)= 4.13091e+06
+differential_evolution step 27: f(x)= 1.06316e+06
+differential_evolution step 28: f(x)= 1.06316e+06
+differential_evolution step 29: f(x)= 1.06316e+06
+differential_evolution step 30: f(x)= 1.06316e+06
+differential_evolution step 31: f(x)= 1.06316e+06
+differential_evolution step 32: f(x)= 1.06316e+06
+differential_evolution step 33: f(x)= 1.06316e+06
+differential_evolution step 34: f(x)= 1.06316e+06
+differential_evolution step 35: f(x)= 1.06316e+06
+differential_evolution step 36: f(x)= 1.06316e+06
+differential_evolution step 37: f(x)= 1.06316e+06
+differential_evolution step 38: f(x)= 1.06316e+06
+differential_evolution step 39: f(x)= 1.06316e+06
+differential_evolution step 40: f(x)= 1.06316e+06
+differential_evolution step 41: f(x)= 1.06316e+06
+differential_evolution step 42: f(x)= 1.06316e+06
+differential_evolution step 43: f(x)= 1.06316e+06
+differential_evolution step 44: f(x)= 1.06316e+06
+differential_evolution step 45: f(x)= 1.06316e+06
+differential_evolution step 46: f(x)= 1.06316e+06
+differential_evolution step 47: f(x)= 1.06316e+06
+differential_evolution step 48: f(x)= 1.06316e+06
+differential_evolution step 49: f(x)= 1.06316e+06
+differential_evolution step 50: f(x)= 1.06316e+06
+differential_evolution step 51: f(x)= 1.06316e+06
+differential_evolution step 52: f(x)= 1.06316e+06
+differential_evolution step 53: f(x)= 1.06316e+06
+differential_evolution step 54: f(x)= 1.06316e+06
+differential_evolution step 55: f(x)= 1.06316e+06
+differential_evolution step 56: f(x)= 1.06316e+06
+differential_evolution step 57: f(x)= 1.06316e+06
+differential_evolution step 58: f(x)= 1.06316e+06
+differential_evolution step 59: f(x)= 1.06316e+06
+differential_evolution step 60: f(x)= 1.06316e+06
+differential_evolution step 61: f(x)= 1.06316e+06
+differential_evolution step 62: f(x)= 888696
+differential_evolution step 63: f(x)= 888696
+differential_evolution step 64: f(x)= 888696
+differential_evolution step 65: f(x)= 888696
+differential_evolution step 66: f(x)= 888696
+differential_evolution step 67: f(x)= 888696
+differential_evolution step 68: f(x)= 720475
+differential_evolution step 69: f(x)= 720475
+differential_evolution step 70: f(x)= 720475
+differential_evolution step 71: f(x)= 720475
+differential_evolution step 72: f(x)= 720475
+differential_evolution step 73: f(x)= 720475
+differential_evolution step 74: f(x)= 720475
+differential_evolution step 75: f(x)= 712968
+differential_evolution step 76: f(x)= 712968
+differential_evolution step 77: f(x)= 712968
+differential_evolution step 78: f(x)= 233716
+differential_evolution step 79: f(x)= 233716
+differential_evolution step 80: f(x)= 233716
+differential_evolution step 81: f(x)= 233716
+differential_evolution step 82: f(x)= 233716
+differential_evolution step 83: f(x)= 233716
+differential_evolution step 84: f(x)= 233716
+differential_evolution step 85: f(x)= 233716
+differential_evolution step 86: f(x)= 233716
+differential_evolution step 87: f(x)= 233716
+differential_evolution step 88: f(x)= 233716
+differential_evolution step 89: f(x)= 233716
+differential_evolution step 90: f(x)= 233716
+differential_evolution step 91: f(x)= 233716
+differential_evolution step 92: f(x)= 233716
+differential_evolution step 93: f(x)= 233716
+differential_evolution step 94: f(x)= 233716
+differential_evolution step 95: f(x)= 233716
+differential_evolution step 96: f(x)= 233716
+differential_evolution step 97: f(x)= 233716
+differential_evolution step 98: f(x)= 233716
+differential_evolution step 99: f(x)= 233716
+differential_evolution step 100: f(x)= 233716
+differential_evolution step 101: f(x)= 233716
+differential_evolution step 102: f(x)= 233716
+differential_evolution step 103: f(x)= 233716
+differential_evolution step 104: f(x)= 233716
+differential_evolution step 105: f(x)= 233716
+differential_evolution step 106: f(x)= 233716
+differential_evolution step 107: f(x)= 233716
+differential_evolution step 108: f(x)= 233716
+differential_evolution step 109: f(x)= 233716
+differential_evolution step 110: f(x)= 233716
+differential_evolution step 111: f(x)= 233716
+differential_evolution step 112: f(x)= 233716
+differential_evolution step 113: f(x)= 233716
+differential_evolution step 114: f(x)= 233716
+differential_evolution step 115: f(x)= 233716
+differential_evolution step 116: f(x)= 233716
+differential_evolution step 117: f(x)= 233716
+differential_evolution step 118: f(x)= 233716
+differential_evolution step 119: f(x)= 233716
+differential_evolution step 120: f(x)= 233716
+differential_evolution step 121: f(x)= 233716
+differential_evolution step 122: f(x)= 233716
+differential_evolution step 123: f(x)= 172848
+differential_evolution step 124: f(x)= 172848
+differential_evolution step 125: f(x)= 172848
+differential_evolution step 126: f(x)= 172848
+differential_evolution step 127: f(x)= 172848
+differential_evolution step 128: f(x)= 172848
+differential_evolution step 129: f(x)= 172848
+differential_evolution step 130: f(x)= 172848
+differential_evolution step 131: f(x)= 172848
+differential_evolution step 132: f(x)= 172848
+differential_evolution step 133: f(x)= 172848
+differential_evolution step 134: f(x)= 172848
+differential_evolution step 135: f(x)= 135944
+differential_evolution step 136: f(x)= 127222
+differential_evolution step 137: f(x)= 127222
+differential_evolution step 138: f(x)= 127222
+differential_evolution step 139: f(x)= 127222
+differential_evolution step 140: f(x)= 127222
+differential_evolution step 141: f(x)= 127222
+differential_evolution step 142: f(x)= 127222
+differential_evolution step 143: f(x)= 127222
+differential_evolution step 144: f(x)= 127222
+differential_evolution step 145: f(x)= 127222
+differential_evolution step 146: f(x)= 95361.8
+differential_evolution step 147: f(x)= 95361.8
+differential_evolution step 148: f(x)= 95361.8
+differential_evolution step 149: f(x)= 95361.8
+differential_evolution step 150: f(x)= 94664.6
+differential_evolution step 151: f(x)= 94664.6
+differential_evolution step 152: f(x)= 94664.6
+differential_evolution step 153: f(x)= 94664.6
+differential_evolution step 154: f(x)= 94664.6
+differential_evolution step 155: f(x)= 94664.6
+differential_evolution step 156: f(x)= 94664.6
+differential_evolution step 157: f(x)= 94664.6
+differential_evolution step 158: f(x)= 94664.6
+differential_evolution step 159: f(x)= 94664.6
+differential_evolution step 160: f(x)= 94664.6
+differential_evolution step 161: f(x)= 94664.6
+differential_evolution step 162: f(x)= 90720.2
+differential_evolution step 163: f(x)= 90720.2
+differential_evolution step 164: f(x)= 90720.2
+differential_evolution step 165: f(x)= 90720.2
+differential_evolution step 166: f(x)= 90720.2
+differential_evolution step 167: f(x)= 79622
+differential_evolution step 168: f(x)= 79622
+differential_evolution step 169: f(x)= 79622
+differential_evolution step 170: f(x)= 79622
+differential_evolution step 171: f(x)= 79622
+differential_evolution step 172: f(x)= 79622
+differential_evolution step 173: f(x)= 79622
+differential_evolution step 174: f(x)= 79622
+differential_evolution step 175: f(x)= 79622
+differential_evolution step 176: f(x)= 79622
+differential_evolution step 177: f(x)= 79622
+differential_evolution step 178: f(x)= 79622
+differential_evolution step 179: f(x)= 79622
+differential_evolution step 180: f(x)= 79622
+differential_evolution step 181: f(x)= 79622
+differential_evolution step 182: f(x)= 79622
+differential_evolution step 183: f(x)= 79622
+differential_evolution step 184: f(x)= 76090.6
+differential_evolution step 185: f(x)= 76090.6
+differential_evolution step 186: f(x)= 76090.6
+differential_evolution step 187: f(x)= 76090.6
+differential_evolution step 188: f(x)= 76090.6
+differential_evolution step 189: f(x)= 76090.6
+differential_evolution step 190: f(x)= 76090.6
+differential_evolution step 191: f(x)= 76090.6
+differential_evolution step 192: f(x)= 76090.6
+differential_evolution step 193: f(x)= 76090.6
+differential_evolution step 194: f(x)= 76090.6
+differential_evolution step 195: f(x)= 75747.8
+differential_evolution step 196: f(x)= 75747.8
+differential_evolution step 197: f(x)= 75747.8
+differential_evolution step 198: f(x)= 74128.4
+differential_evolution step 199: f(x)= 74128.4
+differential_evolution step 200: f(x)= 74128.4
+differential_evolution step 201: f(x)= 63880.6
+differential_evolution step 202: f(x)= 63880.6
+differential_evolution step 203: f(x)= 63880.6
+differential_evolution step 204: f(x)= 63880.6
+differential_evolution step 205: f(x)= 63880.6
+differential_evolution step 206: f(x)= 63880.6
+differential_evolution step 207: f(x)= 63880.6
+differential_evolution step 208: f(x)= 63880.6
+differential_evolution step 209: f(x)= 63880.6
+differential_evolution step 210: f(x)= 63880.6
+differential_evolution step 211: f(x)= 63093.5
+differential_evolution step 212: f(x)= 63093.5
+differential_evolution step 213: f(x)= 63093.5
+differential_evolution step 214: f(x)= 61814.5
+differential_evolution step 215: f(x)= 56498.8
+differential_evolution step 216: f(x)= 56498.8
+differential_evolution step 217: f(x)= 56498.8
+differential_evolution step 218: f(x)= 56498.8
+differential_evolution step 219: f(x)= 56498.8
+differential_evolution step 220: f(x)= 56498.8
+differential_evolution step 221: f(x)= 56498.8
+differential_evolution step 222: f(x)= 56498.8
+differential_evolution step 223: f(x)= 56498.8
+differential_evolution step 224: f(x)= 56498.8
+differential_evolution step 225: f(x)= 56498.8
+differential_evolution step 226: f(x)= 53702.7
+differential_evolution step 227: f(x)= 53702.7
+differential_evolution step 228: f(x)= 51890.1
+differential_evolution step 229: f(x)= 51890.1
+differential_evolution step 230: f(x)= 51890.1
+differential_evolution step 231: f(x)= 51890.1
+differential_evolution step 232: f(x)= 51890.1
+differential_evolution step 233: f(x)= 51890.1
+differential_evolution step 234: f(x)= 51890.1
+differential_evolution step 235: f(x)= 51890.1
+differential_evolution step 236: f(x)= 51890.1
+differential_evolution step 237: f(x)= 51890.1
+differential_evolution step 238: f(x)= 51890.1
+differential_evolution step 239: f(x)= 51890.1
+differential_evolution step 240: f(x)= 51890.1
+differential_evolution step 241: f(x)= 51890.1
+differential_evolution step 242: f(x)= 51890.1
+differential_evolution step 243: f(x)= 51890.1
+differential_evolution step 244: f(x)= 51890.1
+differential_evolution step 245: f(x)= 51890.1
+differential_evolution step 246: f(x)= 51890.1
+differential_evolution step 247: f(x)= 51890.1
+differential_evolution step 248: f(x)= 51890.1
+differential_evolution step 249: f(x)= 51890.1
+differential_evolution step 250: f(x)= 51890.1
+differential_evolution step 251: f(x)= 51890.1
+differential_evolution step 252: f(x)= 51890.1
+differential_evolution step 253: f(x)= 51890.1
+differential_evolution step 254: f(x)= 51890.1
+differential_evolution step 255: f(x)= 51890.1
+differential_evolution step 256: f(x)= 51890.1
+differential_evolution step 257: f(x)= 51890.1
+differential_evolution step 258: f(x)= 51890.1
+differential_evolution step 259: f(x)= 50745.7
+differential_evolution step 260: f(x)= 50745.7
+differential_evolution step 261: f(x)= 50745.7
+differential_evolution step 262: f(x)= 50745.7
+differential_evolution step 263: f(x)= 49365.5
+differential_evolution step 264: f(x)= 49365.5
+differential_evolution step 265: f(x)= 49365.5
+differential_evolution step 266: f(x)= 49365.5
+differential_evolution step 267: f(x)= 49365.5
+differential_evolution step 268: f(x)= 49365.5
+differential_evolution step 269: f(x)= 49365.5
+differential_evolution step 270: f(x)= 49365.5
+differential_evolution step 271: f(x)= 49365.5
+differential_evolution step 272: f(x)= 49365.5
+differential_evolution step 273: f(x)= 49365.5
+differential_evolution step 274: f(x)= 49365.5
+differential_evolution step 275: f(x)= 49365.5
+differential_evolution step 276: f(x)= 49365.5
+differential_evolution step 277: f(x)= 48746.1
+differential_evolution step 278: f(x)= 48746.1
+differential_evolution step 279: f(x)= 48746.1
+differential_evolution step 280: f(x)= 48746.1
+differential_evolution step 281: f(x)= 48746.1
+differential_evolution step 282: f(x)= 48746.1
+differential_evolution step 283: f(x)= 48605.7
+differential_evolution step 284: f(x)= 48605.7
+differential_evolution step 285: f(x)= 48605.7
+differential_evolution step 286: f(x)= 48605.7
+differential_evolution step 287: f(x)= 48605.7
+differential_evolution step 288: f(x)= 48605.7
+differential_evolution step 289: f(x)= 48605.7
+differential_evolution step 290: f(x)= 48605.7
+differential_evolution step 291: f(x)= 48605.7
+differential_evolution step 292: f(x)= 48605.7
+differential_evolution step 293: f(x)= 48605.7
+differential_evolution step 294: f(x)= 48605.7
+differential_evolution step 295: f(x)= 48605.7
+differential_evolution step 296: f(x)= 48605.7
+differential_evolution step 297: f(x)= 48605.7
+differential_evolution step 298: f(x)= 48605.7
+differential_evolution step 299: f(x)= 48605.7
+differential_evolution step 300: f(x)= 48605.7
+differential_evolution step 301: f(x)= 48605.7
+differential_evolution step 302: f(x)= 48605.7
+differential_evolution step 303: f(x)= 48605.7
+differential_evolution step 304: f(x)= 48605.7
+differential_evolution step 305: f(x)= 48605.7
+differential_evolution step 306: f(x)= 48605.7
+differential_evolution step 307: f(x)= 48605.7
+differential_evolution step 308: f(x)= 48605.7
+differential_evolution step 309: f(x)= 48605.7
+differential_evolution step 310: f(x)= 46539.7
+differential_evolution step 311: f(x)= 46539.7
+differential_evolution step 312: f(x)= 46539.7
+differential_evolution step 313: f(x)= 46539.7
+differential_evolution step 314: f(x)= 46539.7
+differential_evolution step 315: f(x)= 46539.7
+differential_evolution step 316: f(x)= 46539.7
+differential_evolution step 317: f(x)= 46408.6
+differential_evolution step 318: f(x)= 46408.6
+differential_evolution step 319: f(x)= 46408.6
+differential_evolution step 320: f(x)= 46408.6
+differential_evolution step 321: f(x)= 46005.7
+differential_evolution step 322: f(x)= 46005.7
+differential_evolution step 323: f(x)= 46005.7
+differential_evolution step 324: f(x)= 46005.7
+differential_evolution step 325: f(x)= 46005.7
+differential_evolution step 326: f(x)= 46005.7
+differential_evolution step 327: f(x)= 46005.7
+differential_evolution step 328: f(x)= 46005.7
+differential_evolution step 329: f(x)= 46005.7
+differential_evolution step 330: f(x)= 46005.7
+differential_evolution step 331: f(x)= 46005.7
+differential_evolution step 332: f(x)= 46005.7
+differential_evolution step 333: f(x)= 45306
+differential_evolution step 334: f(x)= 45306
+differential_evolution step 335: f(x)= 45306
+differential_evolution step 336: f(x)= 45306
+differential_evolution step 337: f(x)= 45306
+differential_evolution step 338: f(x)= 45306
+differential_evolution step 339: f(x)= 45306
+differential_evolution step 340: f(x)= 45306
+differential_evolution step 341: f(x)= 45306
+differential_evolution step 342: f(x)= 45306
+differential_evolution step 343: f(x)= 45306
+differential_evolution step 344: f(x)= 45306
+differential_evolution step 345: f(x)= 45306
+differential_evolution step 346: f(x)= 45306
+differential_evolution step 347: f(x)= 45306
+differential_evolution step 348: f(x)= 45306
+differential_evolution step 349: f(x)= 45306
+differential_evolution step 350: f(x)= 45306
+differential_evolution step 351: f(x)= 45306
+differential_evolution step 352: f(x)= 45306
+differential_evolution step 353: f(x)= 45306
+differential_evolution step 354: f(x)= 44315.1
+differential_evolution step 355: f(x)= 44315.1
+differential_evolution step 356: f(x)= 44315.1
+differential_evolution step 357: f(x)= 44315.1
+differential_evolution step 358: f(x)= 44315.1
+differential_evolution step 359: f(x)= 44315.1
+differential_evolution step 360: f(x)= 44315.1
+differential_evolution step 361: f(x)= 44253.9
+differential_evolution step 362: f(x)= 44253.9
+differential_evolution step 363: f(x)= 44253.9
+differential_evolution step 364: f(x)= 44253.9
+differential_evolution step 365: f(x)= 44253.9
+differential_evolution step 366: f(x)= 44253.9
+differential_evolution step 367: f(x)= 44253.9
+differential_evolution step 368: f(x)= 44253.9
+differential_evolution step 369: f(x)= 44253.9
+differential_evolution step 370: f(x)= 44253.9
+differential_evolution step 371: f(x)= 44253.9
+differential_evolution step 372: f(x)= 44253.9
+differential_evolution step 373: f(x)= 44253.9
+differential_evolution step 374: f(x)= 44253.9
+differential_evolution step 375: f(x)= 44253.9
+differential_evolution step 376: f(x)= 44253.9
+differential_evolution step 377: f(x)= 44253.9
+differential_evolution step 378: f(x)= 44253.9
+differential_evolution step 379: f(x)= 44253.9
+differential_evolution step 380: f(x)= 44253.9
+differential_evolution step 381: f(x)= 44253.9
+differential_evolution step 382: f(x)= 44253.9
+differential_evolution step 383: f(x)= 44253.9
+differential_evolution step 384: f(x)= 44253.9
+differential_evolution step 385: f(x)= 44253.9
+differential_evolution step 386: f(x)= 44253.9
+differential_evolution step 387: f(x)= 44253.9
+differential_evolution step 388: f(x)= 44253.9
+differential_evolution step 389: f(x)= 44253.9
+differential_evolution step 390: f(x)= 44253.9
+differential_evolution step 391: f(x)= 44253.9
+differential_evolution step 392: f(x)= 44253.9
+differential_evolution step 393: f(x)= 43427.1
+differential_evolution step 394: f(x)= 43427.1
+differential_evolution step 395: f(x)= 43427.1
+differential_evolution step 396: f(x)= 43427.1
+differential_evolution step 397: f(x)= 43427.1
+differential_evolution step 398: f(x)= 43427.1
+differential_evolution step 399: f(x)= 43427.1
+differential_evolution step 400: f(x)= 43427.1
+differential_evolution step 401: f(x)= 43427.1
+differential_evolution step 402: f(x)= 43427.1
+differential_evolution step 403: f(x)= 43427.1
+differential_evolution step 404: f(x)= 43427.1
+differential_evolution step 405: f(x)= 43427.1
+differential_evolution step 406: f(x)= 43427.1
+differential_evolution step 407: f(x)= 43427.1
+differential_evolution step 408: f(x)= 43427.1
+differential_evolution step 409: f(x)= 43427.1
+differential_evolution step 410: f(x)= 43427.1
+differential_evolution step 411: f(x)= 43427.1
+differential_evolution step 412: f(x)= 43427.1
+differential_evolution step 413: f(x)= 43427.1
+differential_evolution step 414: f(x)= 43427.1
+differential_evolution step 415: f(x)= 43427.1
+differential_evolution step 416: f(x)= 43427.1
+differential_evolution step 417: f(x)= 43427.1
+differential_evolution step 418: f(x)= 43427.1
+differential_evolution step 419: f(x)= 43427.1
+differential_evolution step 420: f(x)= 43427.1
+differential_evolution step 421: f(x)= 43427.1
+differential_evolution step 422: f(x)= 43427.1
+differential_evolution step 423: f(x)= 43427.1
+differential_evolution step 424: f(x)= 43427.1
+differential_evolution step 425: f(x)= 43427.1
+differential_evolution step 426: f(x)= 43427.1
+differential_evolution step 427: f(x)= 43427.1
+differential_evolution step 428: f(x)= 43427.1
+differential_evolution step 429: f(x)= 43311.7
+differential_evolution step 430: f(x)= 43311.7
+differential_evolution step 431: f(x)= 43311.7
+differential_evolution step 432: f(x)= 43249.9
+differential_evolution step 433: f(x)= 43249.9
+differential_evolution step 434: f(x)= 43249.9
+differential_evolution step 435: f(x)= 43249.9
+differential_evolution step 436: f(x)= 43249.9
+differential_evolution step 437: f(x)= 43249.9
+differential_evolution step 438: f(x)= 43249.9
+differential_evolution step 439: f(x)= 43249.9
+differential_evolution step 440: f(x)= 43249.9
+differential_evolution step 441: f(x)= 43249.9
+differential_evolution step 442: f(x)= 43249.9
+differential_evolution step 443: f(x)= 43249.9
+differential_evolution step 444: f(x)= 43249.9
+differential_evolution step 445: f(x)= 43249.9
+differential_evolution step 446: f(x)= 43249.9
+differential_evolution step 447: f(x)= 43249.9
+differential_evolution step 448: f(x)= 43249.9
+differential_evolution step 449: f(x)= 43249.9
+differential_evolution step 450: f(x)= 43249.9
+differential_evolution step 451: f(x)= 43249.9
+differential_evolution step 452: f(x)= 43249.9
+differential_evolution step 453: f(x)= 43249.9
+differential_evolution step 454: f(x)= 43249.9
+differential_evolution step 455: f(x)= 43249.9
+differential_evolution step 456: f(x)= 43249.9
+differential_evolution step 457: f(x)= 43249.9
+differential_evolution step 458: f(x)= 43249.9
+differential_evolution step 459: f(x)= 43249.9
+differential_evolution step 460: f(x)= 43249.9
+differential_evolution step 461: f(x)= 43249.9
+differential_evolution step 462: f(x)= 43249.9
+differential_evolution step 463: f(x)= 43249.9
+differential_evolution step 464: f(x)= 43249.9
+differential_evolution step 465: f(x)= 43183.1
+differential_evolution step 466: f(x)= 43183.1
+differential_evolution step 467: f(x)= 43183.1
+differential_evolution step 468: f(x)= 43183.1
+differential_evolution step 469: f(x)= 43183.1
+differential_evolution step 470: f(x)= 43183.1
+differential_evolution step 471: f(x)= 43183.1
+differential_evolution step 472: f(x)= 43183.1
+differential_evolution step 473: f(x)= 43183.1
+differential_evolution step 474: f(x)= 43183.1
+differential_evolution step 475: f(x)= 43183.1
+differential_evolution step 476: f(x)= 43183.1
+differential_evolution step 477: f(x)= 43183.1
+differential_evolution step 478: f(x)= 43183.1
+differential_evolution step 479: f(x)= 43183.1
+differential_evolution step 480: f(x)= 43183.1
+differential_evolution step 481: f(x)= 43183.1
+differential_evolution step 482: f(x)= 43183.1
+differential_evolution step 483: f(x)= 43039.6
+differential_evolution step 484: f(x)= 43039.6
+differential_evolution step 485: f(x)= 43039.6
+differential_evolution step 486: f(x)= 43039.6
+differential_evolution step 487: f(x)= 43039.6
+differential_evolution step 488: f(x)= 43039.6
+differential_evolution step 489: f(x)= 43008.7
+differential_evolution step 490: f(x)= 43001
+differential_evolution step 491: f(x)= 43001
+differential_evolution step 492: f(x)= 43001
+differential_evolution step 493: f(x)= 43001
+differential_evolution step 494: f(x)= 43001
+differential_evolution step 495: f(x)= 43001
+differential_evolution step 496: f(x)= 42920.3
+differential_evolution step 497: f(x)= 42920.3
+differential_evolution step 498: f(x)= 42920.3
+differential_evolution step 499: f(x)= 42920.3
+differential_evolution step 500: f(x)= 42920.3
+differential_evolution step 501: f(x)= 42920.3
+differential_evolution step 502: f(x)= 42920.3
+differential_evolution step 503: f(x)= 42920.3
+differential_evolution step 504: f(x)= 42920.3
+differential_evolution step 505: f(x)= 42920.3
+differential_evolution step 506: f(x)= 42920.3
+differential_evolution step 507: f(x)= 42920.3
+differential_evolution step 508: f(x)= 42920.3
+differential_evolution step 509: f(x)= 42920.3
+differential_evolution step 510: f(x)= 42920.3
+differential_evolution step 511: f(x)= 42920.3
+differential_evolution step 512: f(x)= 42920.3
+differential_evolution step 513: f(x)= 42920.3
+differential_evolution step 514: f(x)= 42920.3
+differential_evolution step 515: f(x)= 42920.3
+differential_evolution step 516: f(x)= 42920.3
+differential_evolution step 517: f(x)= 42920.3
+differential_evolution step 518: f(x)= 42920.3
+differential_evolution step 519: f(x)= 42920.3
+differential_evolution step 520: f(x)= 42920.3
+differential_evolution step 521: f(x)= 42920.3
+differential_evolution step 522: f(x)= 42920.3
+differential_evolution step 523: f(x)= 42920.3
+differential_evolution step 524: f(x)= 42920.3
+differential_evolution step 525: f(x)= 42920.3
+differential_evolution step 526: f(x)= 42920.3
+differential_evolution step 527: f(x)= 42920
+differential_evolution step 528: f(x)= 42920
+differential_evolution step 529: f(x)= 42920
+differential_evolution step 530: f(x)= 42920
+differential_evolution step 531: f(x)= 42920
+differential_evolution step 532: f(x)= 42920
+differential_evolution step 533: f(x)= 42856.4
+differential_evolution step 534: f(x)= 42856.4
+differential_evolution step 535: f(x)= 42856.4
+differential_evolution step 536: f(x)= 42856.4
+differential_evolution step 537: f(x)= 42856.4
+differential_evolution step 538: f(x)= 42856.4
+differential_evolution step 539: f(x)= 42856.4
+differential_evolution step 540: f(x)= 42856.4
+differential_evolution step 541: f(x)= 42856.4
+differential_evolution step 542: f(x)= 42856.4
+differential_evolution step 543: f(x)= 42856.4
+differential_evolution step 544: f(x)= 42826.2
+differential_evolution step 545: f(x)= 42826.2
+differential_evolution step 546: f(x)= 42826.2
+differential_evolution step 547: f(x)= 42826.2
+differential_evolution step 548: f(x)= 42826.2
+differential_evolution step 549: f(x)= 42826.2
+differential_evolution step 550: f(x)= 42826.2
+differential_evolution step 551: f(x)= 42826.2
+differential_evolution step 552: f(x)= 42826.2
+differential_evolution step 553: f(x)= 42826.2
+differential_evolution step 554: f(x)= 42826.2
+differential_evolution step 555: f(x)= 42826.2
+differential_evolution step 556: f(x)= 42826.2
+differential_evolution step 557: f(x)= 42826.2
+differential_evolution step 558: f(x)= 42826.2
+differential_evolution step 559: f(x)= 42826.2
+differential_evolution step 560: f(x)= 42826.2
+differential_evolution step 561: f(x)= 42826.2
+differential_evolution step 562: f(x)= 42826.2
+differential_evolution step 563: f(x)= 42826.2
+differential_evolution step 564: f(x)= 42826.2
+differential_evolution step 565: f(x)= 42826.2
+differential_evolution step 566: f(x)= 42826.2
+differential_evolution step 567: f(x)= 42826.2
+differential_evolution step 568: f(x)= 42826.2
+differential_evolution step 569: f(x)= 42826.2
+differential_evolution step 570: f(x)= 42826.2
+differential_evolution step 571: f(x)= 42826.2
+differential_evolution step 572: f(x)= 42826.2
+differential_evolution step 573: f(x)= 42826.2
+differential_evolution step 574: f(x)= 42826.2
+differential_evolution step 575: f(x)= 42826.2
+differential_evolution step 576: f(x)= 42826.2
+differential_evolution step 577: f(x)= 42826.2
+differential_evolution step 578: f(x)= 42826.2
+differential_evolution step 579: f(x)= 42814.6
+differential_evolution step 580: f(x)= 42814.6
+differential_evolution step 581: f(x)= 42814.6
+differential_evolution step 582: f(x)= 42814.6
+differential_evolution step 583: f(x)= 42814.6
+differential_evolution step 584: f(x)= 42814.6
+differential_evolution step 585: f(x)= 42801.2
+differential_evolution step 586: f(x)= 42801.2
+differential_evolution step 587: f(x)= 42801.2
+differential_evolution step 588: f(x)= 42801.2
+differential_evolution step 589: f(x)= 42801.2
+differential_evolution step 590: f(x)= 42801.2
+differential_evolution step 591: f(x)= 42801.2
+differential_evolution step 592: f(x)= 42801.2
+differential_evolution step 593: f(x)= 42801.2
+differential_evolution step 594: f(x)= 42801.2
+differential_evolution step 595: f(x)= 42801.2
+differential_evolution step 596: f(x)= 42801.2
+differential_evolution step 597: f(x)= 42801.2
+differential_evolution step 598: f(x)= 42801.2
+differential_evolution step 599: f(x)= 42801.2
+differential_evolution step 600: f(x)= 42801.2
+differential_evolution step 601: f(x)= 42801.2
+differential_evolution step 602: f(x)= 42801.2
+differential_evolution step 603: f(x)= 42801.2
+differential_evolution step 604: f(x)= 42801.2
+differential_evolution step 605: f(x)= 42801.2
+differential_evolution step 606: f(x)= 42801.2
+differential_evolution step 607: f(x)= 42801.2
+differential_evolution step 608: f(x)= 42801.2
+differential_evolution step 609: f(x)= 42796.4
+differential_evolution step 610: f(x)= 42775.6
+differential_evolution step 611: f(x)= 42775.6
+differential_evolution step 612: f(x)= 42775.6
+differential_evolution step 613: f(x)= 42772.4
+differential_evolution step 614: f(x)= 42746.5
+differential_evolution step 615: f(x)= 42746.5
+differential_evolution step 616: f(x)= 42746.5
+differential_evolution step 617: f(x)= 42746.5
+differential_evolution step 618: f(x)= 42746.5
+differential_evolution step 619: f(x)= 42746.5
+differential_evolution step 620: f(x)= 42746.5
+differential_evolution step 621: f(x)= 42746.5
+differential_evolution step 622: f(x)= 42746.5
+differential_evolution step 623: f(x)= 42746.5
+differential_evolution step 624: f(x)= 42746.5
+differential_evolution step 625: f(x)= 42746.5
+differential_evolution step 626: f(x)= 42746.5
+differential_evolution step 627: f(x)= 42737.6
+differential_evolution step 628: f(x)= 42737.6
+differential_evolution step 629: f(x)= 42737.6
+differential_evolution step 630: f(x)= 42737.6
+differential_evolution step 631: f(x)= 42737.6
+differential_evolution step 632: f(x)= 42737.6
+differential_evolution step 633: f(x)= 42737.6
+differential_evolution step 634: f(x)= 42737.6
+differential_evolution step 635: f(x)= 42737.6
+differential_evolution step 636: f(x)= 42737.6
+differential_evolution step 637: f(x)= 42737.6
+differential_evolution step 638: f(x)= 42737.6
+differential_evolution step 639: f(x)= 42737.6
+differential_evolution step 640: f(x)= 42737.6
+differential_evolution step 641: f(x)= 42737.6
+differential_evolution step 642: f(x)= 42737.6
+differential_evolution step 643: f(x)= 42737.6
+differential_evolution step 644: f(x)= 42737.6
+differential_evolution step 645: f(x)= 42737.6
+differential_evolution step 646: f(x)= 42737.6
+differential_evolution step 647: f(x)= 42737.6
+differential_evolution step 648: f(x)= 42710.7
+differential_evolution step 649: f(x)= 42710.7
+differential_evolution step 650: f(x)= 42710.7
+differential_evolution step 651: f(x)= 42710.7
+differential_evolution step 652: f(x)= 42710.7
+differential_evolution step 653: f(x)= 42694.1
+differential_evolution step 654: f(x)= 42694.1
+differential_evolution step 655: f(x)= 42694.1
+differential_evolution step 656: f(x)= 42694.1
+differential_evolution step 657: f(x)= 42694.1
+differential_evolution step 658: f(x)= 42685.5
+differential_evolution step 659: f(x)= 42685.5
+differential_evolution step 660: f(x)= 42685.5
+differential_evolution step 661: f(x)= 42685.5
+differential_evolution step 662: f(x)= 42685.5
+differential_evolution step 663: f(x)= 42685.5
+differential_evolution step 664: f(x)= 42685.5
+differential_evolution step 665: f(x)= 42685.5
+differential_evolution step 666: f(x)= 42685.5
+differential_evolution step 667: f(x)= 42685.5
+differential_evolution step 668: f(x)= 42685.5
+differential_evolution step 669: f(x)= 42685.5
+differential_evolution step 670: f(x)= 42685.5
+differential_evolution step 671: f(x)= 42685.5
+differential_evolution step 672: f(x)= 42685.5
+differential_evolution step 673: f(x)= 42685.5
+differential_evolution step 674: f(x)= 42685.5
+differential_evolution step 675: f(x)= 42685.5
+differential_evolution step 676: f(x)= 42685.5
+differential_evolution step 677: f(x)= 42682.5
+differential_evolution step 678: f(x)= 42682.5
+differential_evolution step 679: f(x)= 42682.5
+differential_evolution step 680: f(x)= 42682.5
+differential_evolution step 681: f(x)= 42682.5
+differential_evolution step 682: f(x)= 42682.5
+differential_evolution step 683: f(x)= 42682.5
+differential_evolution step 684: f(x)= 42682.5
+differential_evolution step 685: f(x)= 42682.5
+differential_evolution step 686: f(x)= 42682.5
+differential_evolution step 687: f(x)= 42682.5
+differential_evolution step 688: f(x)= 42682.5
+differential_evolution step 689: f(x)= 42682.5
+differential_evolution step 690: f(x)= 42672.8
+differential_evolution step 691: f(x)= 42672.8
+differential_evolution step 692: f(x)= 42672.8
+differential_evolution step 693: f(x)= 42672.8
+differential_evolution step 694: f(x)= 42672.8
+differential_evolution step 695: f(x)= 42672.8
+differential_evolution step 696: f(x)= 42667.5
+differential_evolution step 697: f(x)= 42667.5
+differential_evolution step 698: f(x)= 42667.5
+differential_evolution step 699: f(x)= 42667.5
+differential_evolution step 700: f(x)= 42667.5
+differential_evolution step 701: f(x)= 42667.5
+differential_evolution step 702: f(x)= 42667.5
+differential_evolution step 703: f(x)= 42667.5
+differential_evolution step 704: f(x)= 42667.5
+differential_evolution step 705: f(x)= 42667.5
+differential_evolution step 706: f(x)= 42667.5
+differential_evolution step 707: f(x)= 42667.5
+differential_evolution step 708: f(x)= 42667.5
+differential_evolution step 709: f(x)= 42667.5
+differential_evolution step 710: f(x)= 42667.4
+differential_evolution step 711: f(x)= 42667.4
+differential_evolution step 712: f(x)= 42667.4
+differential_evolution step 713: f(x)= 42667.4
+differential_evolution step 714: f(x)= 42663.3
+differential_evolution step 715: f(x)= 42663.3
+differential_evolution step 716: f(x)= 42663.3
+differential_evolution step 717: f(x)= 42653.9
+differential_evolution step 718: f(x)= 42653.9
+differential_evolution step 719: f(x)= 42653.9
+differential_evolution step 720: f(x)= 42653.9
+differential_evolution step 721: f(x)= 42653.9
+differential_evolution step 722: f(x)= 42653.9
+differential_evolution step 723: f(x)= 42653.9
+differential_evolution step 724: f(x)= 42653.9
+differential_evolution step 725: f(x)= 42653.9
+differential_evolution step 726: f(x)= 42653.9
+differential_evolution step 727: f(x)= 42653.9
+differential_evolution step 728: f(x)= 42653.9
+differential_evolution step 729: f(x)= 42653.9
+differential_evolution step 730: f(x)= 42653.9
+differential_evolution step 731: f(x)= 42653.9
+differential_evolution step 732: f(x)= 42653.9
+differential_evolution step 733: f(x)= 42653.9
+differential_evolution step 734: f(x)= 42653.9
+differential_evolution step 735: f(x)= 42651.2
+differential_evolution step 736: f(x)= 42651.2
+differential_evolution step 737: f(x)= 42651.2
+differential_evolution step 738: f(x)= 42651.2
+differential_evolution step 739: f(x)= 42651.2
+differential_evolution step 740: f(x)= 42651.2
+differential_evolution step 741: f(x)= 42651.2
+differential_evolution step 742: f(x)= 42651.2
+differential_evolution step 743: f(x)= 42651.2
+differential_evolution step 744: f(x)= 42651.2
+differential_evolution step 745: f(x)= 42651.2
+differential_evolution step 746: f(x)= 42651.2
+differential_evolution step 747: f(x)= 42651.2
+differential_evolution step 748: f(x)= 42651.2
+differential_evolution step 749: f(x)= 42651.2
+differential_evolution step 750: f(x)= 42651.2
+differential_evolution step 751: f(x)= 42651.2
+differential_evolution step 752: f(x)= 42651.2
+differential_evolution step 753: f(x)= 42651.2
+differential_evolution step 754: f(x)= 42651.2
+differential_evolution step 755: f(x)= 42651.2
+differential_evolution step 756: f(x)= 42651.2
+differential_evolution step 757: f(x)= 42651.2
+differential_evolution step 758: f(x)= 42651.2
+differential_evolution step 759: f(x)= 42643.9
+differential_evolution step 760: f(x)= 42643.9
+differential_evolution step 761: f(x)= 42643.9
+differential_evolution step 762: f(x)= 42643.9
+differential_evolution step 763: f(x)= 42643.9
+differential_evolution step 764: f(x)= 42643.9
+differential_evolution step 765: f(x)= 42643.9
+differential_evolution step 766: f(x)= 42643.9
+differential_evolution step 767: f(x)= 42643.9
+differential_evolution step 768: f(x)= 42643.9
+differential_evolution step 769: f(x)= 42643.5
+differential_evolution step 770: f(x)= 42643.5
+differential_evolution step 771: f(x)= 42643.5
+differential_evolution step 772: f(x)= 42643.5
+differential_evolution step 773: f(x)= 42643
+differential_evolution step 774: f(x)= 42643
+differential_evolution step 775: f(x)= 42643
+differential_evolution step 776: f(x)= 42643
+differential_evolution step 777: f(x)= 42643
+differential_evolution step 778: f(x)= 42643
+differential_evolution step 779: f(x)= 42643
+G0G1' = -3.495e-03 G0G1 + 7.023e-03 G2M
+S' = 3.465e-03 G0G1 + -2.348e-03 S
+G2M' = 2.087e-03 S + -3.385e-03 G2M
+apoptotic' = 4.647e-05 G0G1 + 1.242e-06 S + 2.685e-06 G2M + -3.047e-05 apoptotic
 
 
 Modelo 2
@@ -888,18 +1251,1012 @@ G2M' = 1.768e-03 S + -2.723e-03 G2M + 1.832e-06 S^2 + -7.693e-06 S G2M + 7.997e-
 apoptotic' = -8.720e-05 G0G1 + 3.396e-04 S + -1.229e-03 G2M + 7.283e-03 apoptotic + 1.660e-07 G0G1^2 + -1.842e-08 G0G1 S + 7.482e-07 G0G1 G2M + -1.172e-05 G0G1 apoptotic + 1.509e-07 S^2 + 4.143e-06 S G2M + -4.511e-05 S apoptotic + -1.148e-05 G2M^2 + 1.384e-04 G2M apoptotic + -1.854e-04 apoptotic^2
 
 
-*** Using Levenberg-Marquardt algorithm ***
+*** Using Differential Evolution method ***
 
-Param expression = c1, c3, c5, c7, c12, c16, c17, c20, c21, c24, c32, c33, c39, c40, c42, c46, c47, c48, c49, c50, c51, c52, c53, c54, c55, c56, c57, c58, c59,
-Var expression = G0G1, S, G2M, apoptotic
-Model expression = c1*G0G1 + c3*G2M + c5*G0G1**2 + c7*G0G1*G2M + c12*G2M**2, c16*G0G1 + c17*S + c20*G0G1**2 + c21*G0G1*S + c24*S**2, c32*S + c33*G2M + c39*S**2 + c40*S*G2M + c42*G2M**2, c46*G0G1 + c47*S + c48*G2M + c49*apoptotic + c50*G0G1**2 + c51*G0G1*S + c52*G0G1*G2M + c53*G0G1*apoptotic + c54*S**2 + c55*S*G2M + c56*S*apoptotic + c57*G2M**2 + c58*G2M*apoptotic + c59*apoptotic**2
-Signs = [-1.  1. -1. -1.  1.  1. -1.  1. -1. -1.  1. -1.  1. -1. -1.  1.  1.  1.
- -1.  1.  1.  1. -1.  1.  1. -1.  1. -1. -1.]
-Bounds = [[-0.007953818632825703, -0.0], [0.0, 0.015625036611658802], [-1.1944140886552268e-06, -0.0], [-2.3835975951824392e-06, -0.0], [0.0, 7.40779783696844e-06], [0.0, 0.007905286606967538], [-0.005591296783713912, -0.0], [0.0, 1.1453606311379386e-06], [-2.7607314990411164e-07, -0.0], [-6.485379491520324e-07, -0.0], [0.0, 0.003536724269619544], [-0.005446171550680603, -0.0], [0.0, 3.6638391993030345e-06], [-1.538698240583945e-05, -0.0], [-1.599408762394507e-05, -0.0], [0.0, 0.00017439438519259226], [0.0, 0.0006792346401669774], [0.0, 0.0024588220258545622], [-0.014565115485371623, -0.0], [0.0, 3.3199716173833377e-07], [0.0, 3.683012984249511e-08], [0.0, 1.4963607629236856e-06], [-2.3433333044777758e-05, -0.0], [0.0, 3.0187628337563716e-07], [0.0, 8.286573291768179e-06], [-9.021050999726857e-05, -0.0], [0.0, 2.296805502840611e-05], [-0.0002768141817170867, -0.0], [-0.00037086726488879345, -0.0]]
-G0G1' = -3.762e-03 G0G1 + 9.194e-03 G2M + -2.149e-07 G0G1^2 + -8.286e-07 G0G1 G2M + 6.220e-06 G2M^2
-S' = 5.285e-03 G0G1 + -4.840e-03 S + 5.797e-07 G0G1^2 + -1.625e-07 G0G1 S + -3.048e-07 S^2
-G2M' = 1.759e-03 S + -1.362e-03 G2M + 2.143e-06 S^2 + -3.450e-06 S G2M + -9.678e-06 G2M^2
-apoptotic' = 1.328e-04 G0G1 + 4.024e-04 S + 1.015e-04 G2M + -4.446e-03 apoptotic + 1.984e-07 G0G1^2 + 1.710e-08 G0G1 S + 3.073e-07 G0G1 G2M + -1.698e-06 G0G1 apoptotic + 8.086e-08 S^2 + 4.703e-06 S G2M + -9.287e-05 S apoptotic + 3.362e-06 G2M^2 + -2.720e-04 G2M apoptotic + -4.591e-05 apoptotic^2
+differential_evolution step 1: f(x)= 1.54911e+07
+differential_evolution step 2: f(x)= 1.54911e+07
+differential_evolution step 3: f(x)= 9.66885e+06
+differential_evolution step 4: f(x)= 2.45331e+06
+differential_evolution step 5: f(x)= 2.45331e+06
+differential_evolution step 6: f(x)= 2.45331e+06
+differential_evolution step 7: f(x)= 2.45331e+06
+differential_evolution step 8: f(x)= 2.45331e+06
+differential_evolution step 9: f(x)= 2.45331e+06
+differential_evolution step 10: f(x)= 2.45331e+06
+differential_evolution step 11: f(x)= 2.45331e+06
+differential_evolution step 12: f(x)= 2.45331e+06
+differential_evolution step 13: f(x)= 2.45331e+06
+differential_evolution step 14: f(x)= 2.45331e+06
+differential_evolution step 15: f(x)= 2.45331e+06
+differential_evolution step 16: f(x)= 2.45331e+06
+differential_evolution step 17: f(x)= 1.57132e+06
+differential_evolution step 18: f(x)= 1.57132e+06
+differential_evolution step 19: f(x)= 1.57132e+06
+differential_evolution step 20: f(x)= 1.57132e+06
+differential_evolution step 21: f(x)= 1.57132e+06
+differential_evolution step 22: f(x)= 1.57132e+06
+differential_evolution step 23: f(x)= 1.57132e+06
+differential_evolution step 24: f(x)= 1.57132e+06
+differential_evolution step 25: f(x)= 1.57132e+06
+differential_evolution step 26: f(x)= 1.57132e+06
+differential_evolution step 27: f(x)= 1.57132e+06
+differential_evolution step 28: f(x)= 1.57132e+06
+differential_evolution step 29: f(x)= 1.57132e+06
+differential_evolution step 30: f(x)= 1.57132e+06
+differential_evolution step 31: f(x)= 1.57132e+06
+differential_evolution step 32: f(x)= 1.57132e+06
+differential_evolution step 33: f(x)= 1.57132e+06
+differential_evolution step 34: f(x)= 1.57132e+06
+differential_evolution step 35: f(x)= 1.57132e+06
+differential_evolution step 36: f(x)= 1.57132e+06
+differential_evolution step 37: f(x)= 1.57132e+06
+differential_evolution step 38: f(x)= 1.57132e+06
+differential_evolution step 39: f(x)= 1.57132e+06
+differential_evolution step 40: f(x)= 1.57132e+06
+differential_evolution step 41: f(x)= 1.57132e+06
+differential_evolution step 42: f(x)= 1.57132e+06
+differential_evolution step 43: f(x)= 1.57132e+06
+differential_evolution step 44: f(x)= 1.57132e+06
+differential_evolution step 45: f(x)= 1.57132e+06
+differential_evolution step 46: f(x)= 1.57132e+06
+differential_evolution step 47: f(x)= 1.57132e+06
+differential_evolution step 48: f(x)= 1.57132e+06
+differential_evolution step 49: f(x)= 1.57132e+06
+differential_evolution step 50: f(x)= 1.57132e+06
+differential_evolution step 51: f(x)= 1.57132e+06
+differential_evolution step 52: f(x)= 1.57132e+06
+differential_evolution step 53: f(x)= 1.57132e+06
+differential_evolution step 54: f(x)= 1.57132e+06
+differential_evolution step 55: f(x)= 1.57132e+06
+differential_evolution step 56: f(x)= 1.57132e+06
+differential_evolution step 57: f(x)= 1.57132e+06
+differential_evolution step 58: f(x)= 1.57132e+06
+differential_evolution step 59: f(x)= 1.57132e+06
+differential_evolution step 60: f(x)= 1.57132e+06
+differential_evolution step 61: f(x)= 1.57132e+06
+differential_evolution step 62: f(x)= 1.57132e+06
+differential_evolution step 63: f(x)= 1.57132e+06
+differential_evolution step 64: f(x)= 1.57132e+06
+differential_evolution step 65: f(x)= 1.57132e+06
+differential_evolution step 66: f(x)= 1.57132e+06
+differential_evolution step 67: f(x)= 1.57132e+06
+differential_evolution step 68: f(x)= 1.57132e+06
+differential_evolution step 69: f(x)= 1.57132e+06
+differential_evolution step 70: f(x)= 1.57132e+06
+differential_evolution step 71: f(x)= 1.57132e+06
+differential_evolution step 72: f(x)= 1.57132e+06
+differential_evolution step 73: f(x)= 1.57132e+06
+differential_evolution step 74: f(x)= 1.57132e+06
+differential_evolution step 75: f(x)= 1.57132e+06
+differential_evolution step 76: f(x)= 1.57132e+06
+differential_evolution step 77: f(x)= 1.57132e+06
+differential_evolution step 78: f(x)= 1.57132e+06
+differential_evolution step 79: f(x)= 1.57132e+06
+differential_evolution step 80: f(x)= 1.57132e+06
+differential_evolution step 81: f(x)= 1.57132e+06
+differential_evolution step 82: f(x)= 1.57132e+06
+differential_evolution step 83: f(x)= 1.57132e+06
+differential_evolution step 84: f(x)= 1.57132e+06
+differential_evolution step 85: f(x)= 1.57132e+06
+differential_evolution step 86: f(x)= 1.57132e+06
+differential_evolution step 87: f(x)= 1.57132e+06
+differential_evolution step 88: f(x)= 1.57132e+06
+differential_evolution step 89: f(x)= 1.57132e+06
+differential_evolution step 90: f(x)= 1.57132e+06
+differential_evolution step 91: f(x)= 1.57132e+06
+differential_evolution step 92: f(x)= 1.57132e+06
+differential_evolution step 93: f(x)= 1.57132e+06
+differential_evolution step 94: f(x)= 1.57132e+06
+differential_evolution step 95: f(x)= 1.57132e+06
+differential_evolution step 96: f(x)= 1.57132e+06
+differential_evolution step 97: f(x)= 1.57132e+06
+differential_evolution step 98: f(x)= 1.57132e+06
+differential_evolution step 99: f(x)= 1.57132e+06
+differential_evolution step 100: f(x)= 1.57132e+06
+differential_evolution step 101: f(x)= 1.57132e+06
+differential_evolution step 102: f(x)= 1.57132e+06
+differential_evolution step 103: f(x)= 1.57132e+06
+differential_evolution step 104: f(x)= 1.57132e+06
+differential_evolution step 105: f(x)= 1.57132e+06
+differential_evolution step 106: f(x)= 1.57132e+06
+differential_evolution step 107: f(x)= 1.57132e+06
+differential_evolution step 108: f(x)= 1.57132e+06
+differential_evolution step 109: f(x)= 1.57132e+06
+differential_evolution step 110: f(x)= 1.57132e+06
+differential_evolution step 111: f(x)= 1.57132e+06
+differential_evolution step 112: f(x)= 1.57132e+06
+differential_evolution step 113: f(x)= 1.57132e+06
+differential_evolution step 114: f(x)= 1.57132e+06
+differential_evolution step 115: f(x)= 1.57132e+06
+differential_evolution step 116: f(x)= 1.57132e+06
+differential_evolution step 117: f(x)= 1.57132e+06
+differential_evolution step 118: f(x)= 1.57132e+06
+differential_evolution step 119: f(x)= 1.57132e+06
+differential_evolution step 120: f(x)= 1.57132e+06
+differential_evolution step 121: f(x)= 1.57132e+06
+differential_evolution step 122: f(x)= 1.57132e+06
+differential_evolution step 123: f(x)= 1.57132e+06
+differential_evolution step 124: f(x)= 1.57132e+06
+differential_evolution step 125: f(x)= 1.57132e+06
+differential_evolution step 126: f(x)= 1.57132e+06
+differential_evolution step 127: f(x)= 1.57132e+06
+differential_evolution step 128: f(x)= 1.57132e+06
+differential_evolution step 129: f(x)= 1.57132e+06
+differential_evolution step 130: f(x)= 1.57132e+06
+differential_evolution step 131: f(x)= 1.57132e+06
+differential_evolution step 132: f(x)= 1.57132e+06
+differential_evolution step 133: f(x)= 1.57132e+06
+differential_evolution step 134: f(x)= 1.57132e+06
+differential_evolution step 135: f(x)= 1.57132e+06
+differential_evolution step 136: f(x)= 1.57132e+06
+differential_evolution step 137: f(x)= 1.37074e+06
+differential_evolution step 138: f(x)= 1.37074e+06
+differential_evolution step 139: f(x)= 1.37074e+06
+differential_evolution step 140: f(x)= 1.1501e+06
+differential_evolution step 141: f(x)= 1.1501e+06
+differential_evolution step 142: f(x)= 1.12203e+06
+differential_evolution step 143: f(x)= 1.12203e+06
+differential_evolution step 144: f(x)= 1.12203e+06
+differential_evolution step 145: f(x)= 1.12203e+06
+differential_evolution step 146: f(x)= 1.12203e+06
+differential_evolution step 147: f(x)= 1.0094e+06
+differential_evolution step 148: f(x)= 1.0094e+06
+differential_evolution step 149: f(x)= 1.0094e+06
+differential_evolution step 150: f(x)= 1.0094e+06
+differential_evolution step 151: f(x)= 1.0094e+06
+differential_evolution step 152: f(x)= 1.0094e+06
+differential_evolution step 153: f(x)= 1.0094e+06
+differential_evolution step 154: f(x)= 1.0094e+06
+differential_evolution step 155: f(x)= 1.0094e+06
+differential_evolution step 156: f(x)= 1.0094e+06
+differential_evolution step 157: f(x)= 1.0094e+06
+differential_evolution step 158: f(x)= 1.0094e+06
+differential_evolution step 159: f(x)= 1.0094e+06
+differential_evolution step 160: f(x)= 1.0094e+06
+differential_evolution step 161: f(x)= 1.0094e+06
+differential_evolution step 162: f(x)= 1.0094e+06
+differential_evolution step 163: f(x)= 1.0094e+06
+differential_evolution step 164: f(x)= 1.0094e+06
+differential_evolution step 165: f(x)= 1.0094e+06
+differential_evolution step 166: f(x)= 1.0094e+06
+differential_evolution step 167: f(x)= 1.0094e+06
+differential_evolution step 168: f(x)= 1.0094e+06
+differential_evolution step 169: f(x)= 1.0094e+06
+differential_evolution step 170: f(x)= 1.0094e+06
+differential_evolution step 171: f(x)= 1.0094e+06
+differential_evolution step 172: f(x)= 1.0094e+06
+differential_evolution step 173: f(x)= 1.0094e+06
+differential_evolution step 174: f(x)= 1.0094e+06
+differential_evolution step 175: f(x)= 1.0094e+06
+differential_evolution step 176: f(x)= 1.0094e+06
+differential_evolution step 177: f(x)= 1.0094e+06
+differential_evolution step 178: f(x)= 1.0094e+06
+differential_evolution step 179: f(x)= 1.0094e+06
+differential_evolution step 180: f(x)= 1.0094e+06
+differential_evolution step 181: f(x)= 1.0094e+06
+differential_evolution step 182: f(x)= 1.0094e+06
+differential_evolution step 183: f(x)= 1.0094e+06
+differential_evolution step 184: f(x)= 1.0094e+06
+differential_evolution step 185: f(x)= 1.0094e+06
+differential_evolution step 186: f(x)= 1.0094e+06
+differential_evolution step 187: f(x)= 1.0094e+06
+differential_evolution step 188: f(x)= 1.0094e+06
+differential_evolution step 189: f(x)= 1.0094e+06
+differential_evolution step 190: f(x)= 1.0094e+06
+differential_evolution step 191: f(x)= 1.0094e+06
+differential_evolution step 192: f(x)= 1.0094e+06
+differential_evolution step 193: f(x)= 1.0094e+06
+differential_evolution step 194: f(x)= 1.0094e+06
+differential_evolution step 195: f(x)= 1.0094e+06
+differential_evolution step 196: f(x)= 1.0094e+06
+differential_evolution step 197: f(x)= 1.0094e+06
+differential_evolution step 198: f(x)= 1.0094e+06
+differential_evolution step 199: f(x)= 1.0094e+06
+differential_evolution step 200: f(x)= 1.0094e+06
+differential_evolution step 201: f(x)= 1.0094e+06
+differential_evolution step 202: f(x)= 1.0094e+06
+differential_evolution step 203: f(x)= 1.0094e+06
+differential_evolution step 204: f(x)= 1.0094e+06
+differential_evolution step 205: f(x)= 1.0094e+06
+differential_evolution step 206: f(x)= 1.0094e+06
+differential_evolution step 207: f(x)= 1.0094e+06
+differential_evolution step 208: f(x)= 1.0094e+06
+differential_evolution step 209: f(x)= 1.0094e+06
+differential_evolution step 210: f(x)= 1.0094e+06
+differential_evolution step 211: f(x)= 1.0094e+06
+differential_evolution step 212: f(x)= 1.0094e+06
+differential_evolution step 213: f(x)= 1.0094e+06
+differential_evolution step 214: f(x)= 1.0094e+06
+differential_evolution step 215: f(x)= 1.0094e+06
+differential_evolution step 216: f(x)= 1.0094e+06
+differential_evolution step 217: f(x)= 1.0094e+06
+differential_evolution step 218: f(x)= 1.0094e+06
+differential_evolution step 219: f(x)= 1.0094e+06
+differential_evolution step 220: f(x)= 1.0094e+06
+differential_evolution step 221: f(x)= 1.0094e+06
+differential_evolution step 222: f(x)= 1.0094e+06
+differential_evolution step 223: f(x)= 1.0094e+06
+differential_evolution step 224: f(x)= 1.0094e+06
+differential_evolution step 225: f(x)= 1.0094e+06
+differential_evolution step 226: f(x)= 1.0094e+06
+differential_evolution step 227: f(x)= 669511
+differential_evolution step 228: f(x)= 669511
+differential_evolution step 229: f(x)= 669511
+differential_evolution step 230: f(x)= 669511
+differential_evolution step 231: f(x)= 669511
+differential_evolution step 232: f(x)= 669511
+differential_evolution step 233: f(x)= 669511
+differential_evolution step 234: f(x)= 669511
+differential_evolution step 235: f(x)= 669511
+differential_evolution step 236: f(x)= 669511
+differential_evolution step 237: f(x)= 669511
+differential_evolution step 238: f(x)= 669511
+differential_evolution step 239: f(x)= 669511
+differential_evolution step 240: f(x)= 669511
+differential_evolution step 241: f(x)= 617331
+differential_evolution step 242: f(x)= 617331
+differential_evolution step 243: f(x)= 617331
+differential_evolution step 244: f(x)= 617331
+differential_evolution step 245: f(x)= 617331
+differential_evolution step 246: f(x)= 617331
+differential_evolution step 247: f(x)= 617331
+differential_evolution step 248: f(x)= 617331
+differential_evolution step 249: f(x)= 617331
+differential_evolution step 250: f(x)= 617331
+differential_evolution step 251: f(x)= 617331
+differential_evolution step 252: f(x)= 617331
+differential_evolution step 253: f(x)= 617331
+differential_evolution step 254: f(x)= 617331
+differential_evolution step 255: f(x)= 617331
+differential_evolution step 256: f(x)= 617331
+differential_evolution step 257: f(x)= 617331
+differential_evolution step 258: f(x)= 617331
+differential_evolution step 259: f(x)= 617331
+differential_evolution step 260: f(x)= 617331
+differential_evolution step 261: f(x)= 617331
+differential_evolution step 262: f(x)= 617331
+differential_evolution step 263: f(x)= 617331
+differential_evolution step 264: f(x)= 617331
+differential_evolution step 265: f(x)= 617331
+differential_evolution step 266: f(x)= 617331
+differential_evolution step 267: f(x)= 617331
+differential_evolution step 268: f(x)= 617331
+differential_evolution step 269: f(x)= 617331
+differential_evolution step 270: f(x)= 617331
+differential_evolution step 271: f(x)= 617331
+differential_evolution step 272: f(x)= 617331
+differential_evolution step 273: f(x)= 617331
+differential_evolution step 274: f(x)= 617331
+differential_evolution step 275: f(x)= 617331
+differential_evolution step 276: f(x)= 617331
+differential_evolution step 277: f(x)= 617331
+differential_evolution step 278: f(x)= 617331
+differential_evolution step 279: f(x)= 617331
+differential_evolution step 280: f(x)= 617331
+differential_evolution step 281: f(x)= 617331
+differential_evolution step 282: f(x)= 617331
+differential_evolution step 283: f(x)= 617331
+differential_evolution step 284: f(x)= 617331
+differential_evolution step 285: f(x)= 617331
+differential_evolution step 286: f(x)= 617331
+differential_evolution step 287: f(x)= 617331
+differential_evolution step 288: f(x)= 617331
+differential_evolution step 289: f(x)= 617331
+differential_evolution step 290: f(x)= 617331
+differential_evolution step 291: f(x)= 617331
+differential_evolution step 292: f(x)= 617331
+differential_evolution step 293: f(x)= 617331
+differential_evolution step 294: f(x)= 617331
+differential_evolution step 295: f(x)= 617331
+differential_evolution step 296: f(x)= 617331
+differential_evolution step 297: f(x)= 617331
+differential_evolution step 298: f(x)= 617331
+differential_evolution step 299: f(x)= 617331
+differential_evolution step 300: f(x)= 529249
+differential_evolution step 301: f(x)= 529249
+differential_evolution step 302: f(x)= 529249
+differential_evolution step 303: f(x)= 529249
+differential_evolution step 304: f(x)= 529249
+differential_evolution step 305: f(x)= 473563
+differential_evolution step 306: f(x)= 473563
+differential_evolution step 307: f(x)= 473563
+differential_evolution step 308: f(x)= 473563
+differential_evolution step 309: f(x)= 473563
+differential_evolution step 310: f(x)= 473563
+differential_evolution step 311: f(x)= 473563
+differential_evolution step 312: f(x)= 473563
+differential_evolution step 313: f(x)= 473563
+differential_evolution step 314: f(x)= 473563
+differential_evolution step 315: f(x)= 473563
+differential_evolution step 316: f(x)= 473563
+differential_evolution step 317: f(x)= 473563
+differential_evolution step 318: f(x)= 473563
+differential_evolution step 319: f(x)= 473563
+differential_evolution step 320: f(x)= 473563
+differential_evolution step 321: f(x)= 473563
+differential_evolution step 322: f(x)= 473563
+differential_evolution step 323: f(x)= 473563
+differential_evolution step 324: f(x)= 473563
+differential_evolution step 325: f(x)= 473563
+differential_evolution step 326: f(x)= 473563
+differential_evolution step 327: f(x)= 473563
+differential_evolution step 328: f(x)= 473563
+differential_evolution step 329: f(x)= 473563
+differential_evolution step 330: f(x)= 473563
+differential_evolution step 331: f(x)= 473563
+differential_evolution step 332: f(x)= 473563
+differential_evolution step 333: f(x)= 473563
+differential_evolution step 334: f(x)= 473563
+differential_evolution step 335: f(x)= 473563
+differential_evolution step 336: f(x)= 473563
+differential_evolution step 337: f(x)= 473563
+differential_evolution step 338: f(x)= 473563
+differential_evolution step 339: f(x)= 473563
+differential_evolution step 340: f(x)= 473563
+differential_evolution step 341: f(x)= 473563
+differential_evolution step 342: f(x)= 473563
+differential_evolution step 343: f(x)= 473563
+differential_evolution step 344: f(x)= 473563
+differential_evolution step 345: f(x)= 473563
+differential_evolution step 346: f(x)= 473563
+differential_evolution step 347: f(x)= 473563
+differential_evolution step 348: f(x)= 473563
+differential_evolution step 349: f(x)= 473563
+differential_evolution step 350: f(x)= 473563
+differential_evolution step 351: f(x)= 473563
+differential_evolution step 352: f(x)= 473563
+differential_evolution step 353: f(x)= 473563
+differential_evolution step 354: f(x)= 473563
+differential_evolution step 355: f(x)= 473563
+differential_evolution step 356: f(x)= 473563
+differential_evolution step 357: f(x)= 473563
+differential_evolution step 358: f(x)= 473563
+differential_evolution step 359: f(x)= 473563
+differential_evolution step 360: f(x)= 473563
+differential_evolution step 361: f(x)= 473563
+differential_evolution step 362: f(x)= 473563
+differential_evolution step 363: f(x)= 473563
+differential_evolution step 364: f(x)= 473563
+differential_evolution step 365: f(x)= 473563
+differential_evolution step 366: f(x)= 473563
+differential_evolution step 367: f(x)= 473563
+differential_evolution step 368: f(x)= 473563
+differential_evolution step 369: f(x)= 473563
+differential_evolution step 370: f(x)= 473563
+differential_evolution step 371: f(x)= 473563
+differential_evolution step 372: f(x)= 473563
+differential_evolution step 373: f(x)= 473563
+differential_evolution step 374: f(x)= 473563
+differential_evolution step 375: f(x)= 473563
+differential_evolution step 376: f(x)= 473563
+differential_evolution step 377: f(x)= 473563
+differential_evolution step 378: f(x)= 473563
+differential_evolution step 379: f(x)= 473563
+differential_evolution step 380: f(x)= 473563
+differential_evolution step 381: f(x)= 473563
+differential_evolution step 382: f(x)= 473563
+differential_evolution step 383: f(x)= 473563
+differential_evolution step 384: f(x)= 473563
+differential_evolution step 385: f(x)= 473563
+differential_evolution step 386: f(x)= 473563
+differential_evolution step 387: f(x)= 473563
+differential_evolution step 388: f(x)= 473563
+differential_evolution step 389: f(x)= 473563
+differential_evolution step 390: f(x)= 473563
+differential_evolution step 391: f(x)= 473563
+differential_evolution step 392: f(x)= 473563
+differential_evolution step 393: f(x)= 473563
+differential_evolution step 394: f(x)= 473563
+differential_evolution step 395: f(x)= 473563
+differential_evolution step 396: f(x)= 473563
+differential_evolution step 397: f(x)= 473563
+differential_evolution step 398: f(x)= 473563
+differential_evolution step 399: f(x)= 473563
+differential_evolution step 400: f(x)= 473563
+differential_evolution step 401: f(x)= 473563
+differential_evolution step 402: f(x)= 473563
+differential_evolution step 403: f(x)= 473563
+differential_evolution step 404: f(x)= 473563
+differential_evolution step 405: f(x)= 473563
+differential_evolution step 406: f(x)= 473563
+differential_evolution step 407: f(x)= 473563
+differential_evolution step 408: f(x)= 473563
+differential_evolution step 409: f(x)= 473563
+differential_evolution step 410: f(x)= 442052
+differential_evolution step 411: f(x)= 442052
+differential_evolution step 412: f(x)= 442052
+differential_evolution step 413: f(x)= 442052
+differential_evolution step 414: f(x)= 442052
+differential_evolution step 415: f(x)= 442052
+differential_evolution step 416: f(x)= 442052
+differential_evolution step 417: f(x)= 442052
+differential_evolution step 418: f(x)= 442052
+differential_evolution step 419: f(x)= 442052
+differential_evolution step 420: f(x)= 442052
+differential_evolution step 421: f(x)= 442052
+differential_evolution step 422: f(x)= 442052
+differential_evolution step 423: f(x)= 442052
+differential_evolution step 424: f(x)= 442052
+differential_evolution step 425: f(x)= 442052
+differential_evolution step 426: f(x)= 442052
+differential_evolution step 427: f(x)= 442052
+differential_evolution step 428: f(x)= 442052
+differential_evolution step 429: f(x)= 442052
+differential_evolution step 430: f(x)= 442052
+differential_evolution step 431: f(x)= 442052
+differential_evolution step 432: f(x)= 442052
+differential_evolution step 433: f(x)= 442052
+differential_evolution step 434: f(x)= 442052
+differential_evolution step 435: f(x)= 442052
+differential_evolution step 436: f(x)= 442052
+differential_evolution step 437: f(x)= 442052
+differential_evolution step 438: f(x)= 442052
+differential_evolution step 439: f(x)= 442052
+differential_evolution step 440: f(x)= 442052
+differential_evolution step 441: f(x)= 442052
+differential_evolution step 442: f(x)= 442052
+differential_evolution step 443: f(x)= 442052
+differential_evolution step 444: f(x)= 442052
+differential_evolution step 445: f(x)= 442052
+differential_evolution step 446: f(x)= 442052
+differential_evolution step 447: f(x)= 442052
+differential_evolution step 448: f(x)= 442052
+differential_evolution step 449: f(x)= 442052
+differential_evolution step 450: f(x)= 442052
+differential_evolution step 451: f(x)= 442052
+differential_evolution step 452: f(x)= 442052
+differential_evolution step 453: f(x)= 442052
+differential_evolution step 454: f(x)= 442052
+differential_evolution step 455: f(x)= 442052
+differential_evolution step 456: f(x)= 442052
+differential_evolution step 457: f(x)= 442052
+differential_evolution step 458: f(x)= 442052
+differential_evolution step 459: f(x)= 442052
+differential_evolution step 460: f(x)= 442052
+differential_evolution step 461: f(x)= 442052
+differential_evolution step 462: f(x)= 442052
+differential_evolution step 463: f(x)= 371986
+differential_evolution step 464: f(x)= 371986
+differential_evolution step 465: f(x)= 371986
+differential_evolution step 466: f(x)= 371986
+differential_evolution step 467: f(x)= 371986
+differential_evolution step 468: f(x)= 371986
+differential_evolution step 469: f(x)= 371986
+differential_evolution step 470: f(x)= 371986
+differential_evolution step 471: f(x)= 371986
+differential_evolution step 472: f(x)= 371986
+differential_evolution step 473: f(x)= 371986
+differential_evolution step 474: f(x)= 371986
+differential_evolution step 475: f(x)= 371986
+differential_evolution step 476: f(x)= 361680
+differential_evolution step 477: f(x)= 361680
+differential_evolution step 478: f(x)= 361680
+differential_evolution step 479: f(x)= 361680
+differential_evolution step 480: f(x)= 361680
+differential_evolution step 481: f(x)= 361680
+differential_evolution step 482: f(x)= 361680
+differential_evolution step 483: f(x)= 361680
+differential_evolution step 484: f(x)= 361680
+differential_evolution step 485: f(x)= 361680
+differential_evolution step 486: f(x)= 361680
+differential_evolution step 487: f(x)= 361680
+differential_evolution step 488: f(x)= 361680
+differential_evolution step 489: f(x)= 361680
+differential_evolution step 490: f(x)= 361680
+differential_evolution step 491: f(x)= 361680
+differential_evolution step 492: f(x)= 361680
+differential_evolution step 493: f(x)= 361680
+differential_evolution step 494: f(x)= 361680
+differential_evolution step 495: f(x)= 361680
+differential_evolution step 496: f(x)= 361680
+differential_evolution step 497: f(x)= 361680
+differential_evolution step 498: f(x)= 361680
+differential_evolution step 499: f(x)= 361680
+differential_evolution step 500: f(x)= 361680
+differential_evolution step 501: f(x)= 361680
+differential_evolution step 502: f(x)= 361680
+differential_evolution step 503: f(x)= 361680
+differential_evolution step 504: f(x)= 361680
+differential_evolution step 505: f(x)= 361680
+differential_evolution step 506: f(x)= 361680
+differential_evolution step 507: f(x)= 361680
+differential_evolution step 508: f(x)= 361680
+differential_evolution step 509: f(x)= 361680
+differential_evolution step 510: f(x)= 361680
+differential_evolution step 511: f(x)= 361680
+differential_evolution step 512: f(x)= 361680
+differential_evolution step 513: f(x)= 361680
+differential_evolution step 514: f(x)= 361680
+differential_evolution step 515: f(x)= 361680
+differential_evolution step 516: f(x)= 361680
+differential_evolution step 517: f(x)= 361680
+differential_evolution step 518: f(x)= 361680
+differential_evolution step 519: f(x)= 361680
+differential_evolution step 520: f(x)= 361680
+differential_evolution step 521: f(x)= 361680
+differential_evolution step 522: f(x)= 361680
+differential_evolution step 523: f(x)= 361680
+differential_evolution step 524: f(x)= 361680
+differential_evolution step 525: f(x)= 361680
+differential_evolution step 526: f(x)= 361680
+differential_evolution step 527: f(x)= 361680
+differential_evolution step 528: f(x)= 361680
+differential_evolution step 529: f(x)= 361680
+differential_evolution step 530: f(x)= 361680
+differential_evolution step 531: f(x)= 361680
+differential_evolution step 532: f(x)= 361680
+differential_evolution step 533: f(x)= 361680
+differential_evolution step 534: f(x)= 361680
+differential_evolution step 535: f(x)= 361680
+differential_evolution step 536: f(x)= 361680
+differential_evolution step 537: f(x)= 361680
+differential_evolution step 538: f(x)= 361680
+differential_evolution step 539: f(x)= 361680
+differential_evolution step 540: f(x)= 361680
+differential_evolution step 541: f(x)= 361680
+differential_evolution step 542: f(x)= 361680
+differential_evolution step 543: f(x)= 361680
+differential_evolution step 544: f(x)= 361680
+differential_evolution step 545: f(x)= 361680
+differential_evolution step 546: f(x)= 361680
+differential_evolution step 547: f(x)= 361680
+differential_evolution step 548: f(x)= 361680
+differential_evolution step 549: f(x)= 361680
+differential_evolution step 550: f(x)= 361680
+differential_evolution step 551: f(x)= 361680
+differential_evolution step 552: f(x)= 361680
+differential_evolution step 553: f(x)= 361680
+differential_evolution step 554: f(x)= 361680
+differential_evolution step 555: f(x)= 361680
+differential_evolution step 556: f(x)= 361680
+differential_evolution step 557: f(x)= 361680
+differential_evolution step 558: f(x)= 361680
+differential_evolution step 559: f(x)= 361680
+differential_evolution step 560: f(x)= 361680
+differential_evolution step 561: f(x)= 361680
+differential_evolution step 562: f(x)= 361680
+differential_evolution step 563: f(x)= 361680
+differential_evolution step 564: f(x)= 361680
+differential_evolution step 565: f(x)= 361680
+differential_evolution step 566: f(x)= 361680
+differential_evolution step 567: f(x)= 361680
+differential_evolution step 568: f(x)= 361680
+differential_evolution step 569: f(x)= 361680
+differential_evolution step 570: f(x)= 361680
+differential_evolution step 571: f(x)= 361680
+differential_evolution step 572: f(x)= 361680
+differential_evolution step 573: f(x)= 361680
+differential_evolution step 574: f(x)= 361680
+differential_evolution step 575: f(x)= 361680
+differential_evolution step 576: f(x)= 361680
+differential_evolution step 577: f(x)= 361680
+differential_evolution step 578: f(x)= 361680
+differential_evolution step 579: f(x)= 361680
+differential_evolution step 580: f(x)= 361680
+differential_evolution step 581: f(x)= 361680
+differential_evolution step 582: f(x)= 361680
+differential_evolution step 583: f(x)= 361680
+differential_evolution step 584: f(x)= 361680
+differential_evolution step 585: f(x)= 361680
+differential_evolution step 586: f(x)= 361680
+differential_evolution step 587: f(x)= 361680
+differential_evolution step 588: f(x)= 361680
+differential_evolution step 589: f(x)= 361680
+differential_evolution step 590: f(x)= 361680
+differential_evolution step 591: f(x)= 361680
+differential_evolution step 592: f(x)= 361680
+differential_evolution step 593: f(x)= 361680
+differential_evolution step 594: f(x)= 361680
+differential_evolution step 595: f(x)= 361680
+differential_evolution step 596: f(x)= 361680
+differential_evolution step 597: f(x)= 361680
+differential_evolution step 598: f(x)= 361680
+differential_evolution step 599: f(x)= 361680
+differential_evolution step 600: f(x)= 361680
+differential_evolution step 601: f(x)= 361680
+differential_evolution step 602: f(x)= 361680
+differential_evolution step 603: f(x)= 361680
+differential_evolution step 604: f(x)= 361680
+differential_evolution step 605: f(x)= 361680
+differential_evolution step 606: f(x)= 361680
+differential_evolution step 607: f(x)= 361680
+differential_evolution step 608: f(x)= 361680
+differential_evolution step 609: f(x)= 361680
+differential_evolution step 610: f(x)= 361680
+differential_evolution step 611: f(x)= 361680
+differential_evolution step 612: f(x)= 361680
+differential_evolution step 613: f(x)= 361680
+differential_evolution step 614: f(x)= 361680
+differential_evolution step 615: f(x)= 361680
+differential_evolution step 616: f(x)= 361680
+differential_evolution step 617: f(x)= 361680
+differential_evolution step 618: f(x)= 361680
+differential_evolution step 619: f(x)= 361680
+differential_evolution step 620: f(x)= 361680
+differential_evolution step 621: f(x)= 361680
+differential_evolution step 622: f(x)= 361680
+differential_evolution step 623: f(x)= 361680
+differential_evolution step 624: f(x)= 361680
+differential_evolution step 625: f(x)= 361680
+differential_evolution step 626: f(x)= 361680
+differential_evolution step 627: f(x)= 361680
+differential_evolution step 628: f(x)= 361680
+differential_evolution step 629: f(x)= 361680
+differential_evolution step 630: f(x)= 361680
+differential_evolution step 631: f(x)= 361680
+differential_evolution step 632: f(x)= 361680
+differential_evolution step 633: f(x)= 361680
+differential_evolution step 634: f(x)= 361680
+differential_evolution step 635: f(x)= 361680
+differential_evolution step 636: f(x)= 361680
+differential_evolution step 637: f(x)= 361680
+differential_evolution step 638: f(x)= 361680
+differential_evolution step 639: f(x)= 361680
+differential_evolution step 640: f(x)= 361680
+differential_evolution step 641: f(x)= 361680
+differential_evolution step 642: f(x)= 361680
+differential_evolution step 643: f(x)= 361680
+differential_evolution step 644: f(x)= 361680
+differential_evolution step 645: f(x)= 361680
+differential_evolution step 646: f(x)= 361680
+differential_evolution step 647: f(x)= 361680
+differential_evolution step 648: f(x)= 361680
+differential_evolution step 649: f(x)= 361680
+differential_evolution step 650: f(x)= 361680
+differential_evolution step 651: f(x)= 361680
+differential_evolution step 652: f(x)= 361680
+differential_evolution step 653: f(x)= 361680
+differential_evolution step 654: f(x)= 361680
+differential_evolution step 655: f(x)= 361680
+differential_evolution step 656: f(x)= 361680
+differential_evolution step 657: f(x)= 361680
+differential_evolution step 658: f(x)= 361680
+differential_evolution step 659: f(x)= 361680
+differential_evolution step 660: f(x)= 361680
+differential_evolution step 661: f(x)= 361680
+differential_evolution step 662: f(x)= 361680
+differential_evolution step 663: f(x)= 361680
+differential_evolution step 664: f(x)= 361680
+differential_evolution step 665: f(x)= 361680
+differential_evolution step 666: f(x)= 361680
+differential_evolution step 667: f(x)= 361680
+differential_evolution step 668: f(x)= 361680
+differential_evolution step 669: f(x)= 361680
+differential_evolution step 670: f(x)= 361680
+differential_evolution step 671: f(x)= 361680
+differential_evolution step 672: f(x)= 361680
+differential_evolution step 673: f(x)= 361680
+differential_evolution step 674: f(x)= 361680
+differential_evolution step 675: f(x)= 361680
+differential_evolution step 676: f(x)= 361680
+differential_evolution step 677: f(x)= 361680
+differential_evolution step 678: f(x)= 361680
+differential_evolution step 679: f(x)= 361680
+differential_evolution step 680: f(x)= 361680
+differential_evolution step 681: f(x)= 361680
+differential_evolution step 682: f(x)= 361680
+differential_evolution step 683: f(x)= 361680
+differential_evolution step 684: f(x)= 361680
+differential_evolution step 685: f(x)= 361680
+differential_evolution step 686: f(x)= 361680
+differential_evolution step 687: f(x)= 361680
+differential_evolution step 688: f(x)= 361680
+differential_evolution step 689: f(x)= 361680
+differential_evolution step 690: f(x)= 361680
+differential_evolution step 691: f(x)= 361680
+differential_evolution step 692: f(x)= 361680
+differential_evolution step 693: f(x)= 361680
+differential_evolution step 694: f(x)= 361680
+differential_evolution step 695: f(x)= 361680
+differential_evolution step 696: f(x)= 361680
+differential_evolution step 697: f(x)= 361680
+differential_evolution step 698: f(x)= 361680
+differential_evolution step 699: f(x)= 361680
+differential_evolution step 700: f(x)= 361680
+differential_evolution step 701: f(x)= 361680
+differential_evolution step 702: f(x)= 361680
+differential_evolution step 703: f(x)= 361680
+differential_evolution step 704: f(x)= 361680
+differential_evolution step 705: f(x)= 361680
+differential_evolution step 706: f(x)= 361680
+differential_evolution step 707: f(x)= 361680
+differential_evolution step 708: f(x)= 361680
+differential_evolution step 709: f(x)= 361680
+differential_evolution step 710: f(x)= 361680
+differential_evolution step 711: f(x)= 361680
+differential_evolution step 712: f(x)= 361680
+differential_evolution step 713: f(x)= 361680
+differential_evolution step 714: f(x)= 361680
+differential_evolution step 715: f(x)= 361680
+differential_evolution step 716: f(x)= 361680
+differential_evolution step 717: f(x)= 361680
+differential_evolution step 718: f(x)= 361680
+differential_evolution step 719: f(x)= 361680
+differential_evolution step 720: f(x)= 361680
+differential_evolution step 721: f(x)= 361680
+differential_evolution step 722: f(x)= 361680
+differential_evolution step 723: f(x)= 361680
+differential_evolution step 724: f(x)= 361680
+differential_evolution step 725: f(x)= 361680
+differential_evolution step 726: f(x)= 361680
+differential_evolution step 727: f(x)= 361680
+differential_evolution step 728: f(x)= 361680
+differential_evolution step 729: f(x)= 361680
+differential_evolution step 730: f(x)= 361680
+differential_evolution step 731: f(x)= 361680
+differential_evolution step 732: f(x)= 361680
+differential_evolution step 733: f(x)= 361680
+differential_evolution step 734: f(x)= 361680
+differential_evolution step 735: f(x)= 361680
+differential_evolution step 736: f(x)= 361680
+differential_evolution step 737: f(x)= 361680
+differential_evolution step 738: f(x)= 361680
+differential_evolution step 739: f(x)= 361680
+differential_evolution step 740: f(x)= 361680
+differential_evolution step 741: f(x)= 361680
+differential_evolution step 742: f(x)= 361680
+differential_evolution step 743: f(x)= 361680
+differential_evolution step 744: f(x)= 361680
+differential_evolution step 745: f(x)= 361680
+differential_evolution step 746: f(x)= 361680
+differential_evolution step 747: f(x)= 361680
+differential_evolution step 748: f(x)= 361680
+differential_evolution step 749: f(x)= 361680
+differential_evolution step 750: f(x)= 361680
+differential_evolution step 751: f(x)= 361680
+differential_evolution step 752: f(x)= 361680
+differential_evolution step 753: f(x)= 361680
+differential_evolution step 754: f(x)= 361680
+differential_evolution step 755: f(x)= 361680
+differential_evolution step 756: f(x)= 361680
+differential_evolution step 757: f(x)= 361680
+differential_evolution step 758: f(x)= 361680
+differential_evolution step 759: f(x)= 361680
+differential_evolution step 760: f(x)= 361680
+differential_evolution step 761: f(x)= 361680
+differential_evolution step 762: f(x)= 361680
+differential_evolution step 763: f(x)= 361680
+differential_evolution step 764: f(x)= 361680
+differential_evolution step 765: f(x)= 361680
+differential_evolution step 766: f(x)= 361680
+differential_evolution step 767: f(x)= 361680
+differential_evolution step 768: f(x)= 361680
+differential_evolution step 769: f(x)= 361680
+differential_evolution step 770: f(x)= 361680
+differential_evolution step 771: f(x)= 361680
+differential_evolution step 772: f(x)= 361680
+differential_evolution step 773: f(x)= 361680
+differential_evolution step 774: f(x)= 361680
+differential_evolution step 775: f(x)= 361680
+differential_evolution step 776: f(x)= 361680
+differential_evolution step 777: f(x)= 361680
+differential_evolution step 778: f(x)= 361680
+differential_evolution step 779: f(x)= 361680
+differential_evolution step 780: f(x)= 361680
+differential_evolution step 781: f(x)= 361680
+differential_evolution step 782: f(x)= 361680
+differential_evolution step 783: f(x)= 361680
+differential_evolution step 784: f(x)= 361680
+differential_evolution step 785: f(x)= 361680
+differential_evolution step 786: f(x)= 361680
+differential_evolution step 787: f(x)= 361680
+differential_evolution step 788: f(x)= 361680
+differential_evolution step 789: f(x)= 361680
+differential_evolution step 790: f(x)= 361680
+differential_evolution step 791: f(x)= 361680
+differential_evolution step 792: f(x)= 361680
+differential_evolution step 793: f(x)= 361680
+differential_evolution step 794: f(x)= 361680
+differential_evolution step 795: f(x)= 361680
+differential_evolution step 796: f(x)= 361680
+differential_evolution step 797: f(x)= 361680
+differential_evolution step 798: f(x)= 361680
+differential_evolution step 799: f(x)= 361680
+differential_evolution step 800: f(x)= 361680
+differential_evolution step 801: f(x)= 361680
+differential_evolution step 802: f(x)= 361680
+differential_evolution step 803: f(x)= 361680
+differential_evolution step 804: f(x)= 361680
+differential_evolution step 805: f(x)= 361680
+differential_evolution step 806: f(x)= 361680
+differential_evolution step 807: f(x)= 361680
+differential_evolution step 808: f(x)= 361680
+differential_evolution step 809: f(x)= 361680
+differential_evolution step 810: f(x)= 361680
+differential_evolution step 811: f(x)= 361680
+differential_evolution step 812: f(x)= 361680
+differential_evolution step 813: f(x)= 361680
+differential_evolution step 814: f(x)= 361680
+differential_evolution step 815: f(x)= 361680
+differential_evolution step 816: f(x)= 361680
+differential_evolution step 817: f(x)= 361680
+differential_evolution step 818: f(x)= 361680
+differential_evolution step 819: f(x)= 361680
+differential_evolution step 820: f(x)= 361680
+differential_evolution step 821: f(x)= 361680
+differential_evolution step 822: f(x)= 361680
+differential_evolution step 823: f(x)= 361680
+differential_evolution step 824: f(x)= 361680
+differential_evolution step 825: f(x)= 361680
+differential_evolution step 826: f(x)= 361680
+differential_evolution step 827: f(x)= 361680
+differential_evolution step 828: f(x)= 361680
+differential_evolution step 829: f(x)= 361680
+differential_evolution step 830: f(x)= 361680
+differential_evolution step 831: f(x)= 361680
+differential_evolution step 832: f(x)= 361680
+differential_evolution step 833: f(x)= 361680
+differential_evolution step 834: f(x)= 361680
+differential_evolution step 835: f(x)= 361680
+differential_evolution step 836: f(x)= 361680
+differential_evolution step 837: f(x)= 361680
+differential_evolution step 838: f(x)= 361680
+differential_evolution step 839: f(x)= 361680
+differential_evolution step 840: f(x)= 361680
+differential_evolution step 841: f(x)= 361680
+differential_evolution step 842: f(x)= 361680
+differential_evolution step 843: f(x)= 361680
+differential_evolution step 844: f(x)= 361680
+differential_evolution step 845: f(x)= 361680
+differential_evolution step 846: f(x)= 361680
+differential_evolution step 847: f(x)= 361680
+differential_evolution step 848: f(x)= 361680
+differential_evolution step 849: f(x)= 361680
+differential_evolution step 850: f(x)= 361680
+differential_evolution step 851: f(x)= 361680
+differential_evolution step 852: f(x)= 361680
+differential_evolution step 853: f(x)= 361680
+differential_evolution step 854: f(x)= 361680
+differential_evolution step 855: f(x)= 361680
+differential_evolution step 856: f(x)= 361680
+differential_evolution step 857: f(x)= 361680
+differential_evolution step 858: f(x)= 361680
+differential_evolution step 859: f(x)= 361680
+differential_evolution step 860: f(x)= 361680
+differential_evolution step 861: f(x)= 361680
+differential_evolution step 862: f(x)= 361680
+differential_evolution step 863: f(x)= 361680
+differential_evolution step 864: f(x)= 361680
+differential_evolution step 865: f(x)= 361680
+differential_evolution step 866: f(x)= 361680
+differential_evolution step 867: f(x)= 361680
+differential_evolution step 868: f(x)= 361680
+differential_evolution step 869: f(x)= 361680
+differential_evolution step 870: f(x)= 361680
+differential_evolution step 871: f(x)= 361680
+differential_evolution step 872: f(x)= 361680
+differential_evolution step 873: f(x)= 361680
+differential_evolution step 874: f(x)= 361680
+differential_evolution step 875: f(x)= 361680
+differential_evolution step 876: f(x)= 361680
+differential_evolution step 877: f(x)= 361680
+differential_evolution step 878: f(x)= 361680
+differential_evolution step 879: f(x)= 361680
+differential_evolution step 880: f(x)= 361680
+differential_evolution step 881: f(x)= 361680
+differential_evolution step 882: f(x)= 361680
+differential_evolution step 883: f(x)= 361680
+differential_evolution step 884: f(x)= 361680
+differential_evolution step 885: f(x)= 361680
+differential_evolution step 886: f(x)= 361680
+differential_evolution step 887: f(x)= 361680
+differential_evolution step 888: f(x)= 361680
+differential_evolution step 889: f(x)= 361680
+differential_evolution step 890: f(x)= 361680
+differential_evolution step 891: f(x)= 361680
+differential_evolution step 892: f(x)= 361680
+differential_evolution step 893: f(x)= 361680
+differential_evolution step 894: f(x)= 361680
+differential_evolution step 895: f(x)= 361680
+differential_evolution step 896: f(x)= 361680
+differential_evolution step 897: f(x)= 361680
+differential_evolution step 898: f(x)= 361680
+differential_evolution step 899: f(x)= 361680
+differential_evolution step 900: f(x)= 361680
+differential_evolution step 901: f(x)= 361680
+differential_evolution step 902: f(x)= 361680
+differential_evolution step 903: f(x)= 361680
+differential_evolution step 904: f(x)= 361680
+differential_evolution step 905: f(x)= 361680
+differential_evolution step 906: f(x)= 361680
+differential_evolution step 907: f(x)= 361680
+differential_evolution step 908: f(x)= 361680
+differential_evolution step 909: f(x)= 361680
+differential_evolution step 910: f(x)= 361680
+differential_evolution step 911: f(x)= 361680
+differential_evolution step 912: f(x)= 361680
+differential_evolution step 913: f(x)= 361680
+differential_evolution step 914: f(x)= 361680
+differential_evolution step 915: f(x)= 361680
+differential_evolution step 916: f(x)= 361680
+differential_evolution step 917: f(x)= 361680
+differential_evolution step 918: f(x)= 361680
+differential_evolution step 919: f(x)= 361680
+differential_evolution step 920: f(x)= 361680
+differential_evolution step 921: f(x)= 239159
+differential_evolution step 922: f(x)= 239159
+differential_evolution step 923: f(x)= 239159
+differential_evolution step 924: f(x)= 239159
+differential_evolution step 925: f(x)= 239159
+differential_evolution step 926: f(x)= 239159
+differential_evolution step 927: f(x)= 239159
+differential_evolution step 928: f(x)= 239159
+differential_evolution step 929: f(x)= 239159
+differential_evolution step 930: f(x)= 239159
+differential_evolution step 931: f(x)= 239159
+differential_evolution step 932: f(x)= 239159
+differential_evolution step 933: f(x)= 239159
+differential_evolution step 934: f(x)= 239159
+differential_evolution step 935: f(x)= 239159
+differential_evolution step 936: f(x)= 239159
+differential_evolution step 937: f(x)= 239159
+differential_evolution step 938: f(x)= 239159
+differential_evolution step 939: f(x)= 239159
+differential_evolution step 940: f(x)= 239159
+differential_evolution step 941: f(x)= 239159
+differential_evolution step 942: f(x)= 239159
+differential_evolution step 943: f(x)= 239159
+differential_evolution step 944: f(x)= 239159
+differential_evolution step 945: f(x)= 239159
+differential_evolution step 946: f(x)= 239159
+differential_evolution step 947: f(x)= 239159
+differential_evolution step 948: f(x)= 239159
+differential_evolution step 949: f(x)= 239159
+differential_evolution step 950: f(x)= 239159
+differential_evolution step 951: f(x)= 239159
+differential_evolution step 952: f(x)= 239159
+differential_evolution step 953: f(x)= 239159
+differential_evolution step 954: f(x)= 239159
+differential_evolution step 955: f(x)= 239159
+differential_evolution step 956: f(x)= 239159
+differential_evolution step 957: f(x)= 239159
+differential_evolution step 958: f(x)= 239159
+differential_evolution step 959: f(x)= 239159
+differential_evolution step 960: f(x)= 239159
+differential_evolution step 961: f(x)= 239159
+differential_evolution step 962: f(x)= 239159
+differential_evolution step 963: f(x)= 239159
+differential_evolution step 964: f(x)= 239159
+differential_evolution step 965: f(x)= 239159
+differential_evolution step 966: f(x)= 239159
+differential_evolution step 967: f(x)= 239159
+differential_evolution step 968: f(x)= 239159
+differential_evolution step 969: f(x)= 239159
+differential_evolution step 970: f(x)= 239159
+differential_evolution step 971: f(x)= 239159
+differential_evolution step 972: f(x)= 239159
+differential_evolution step 973: f(x)= 239159
+differential_evolution step 974: f(x)= 239159
+differential_evolution step 975: f(x)= 239159
+differential_evolution step 976: f(x)= 239159
+differential_evolution step 977: f(x)= 239159
+differential_evolution step 978: f(x)= 239159
+differential_evolution step 979: f(x)= 239159
+differential_evolution step 980: f(x)= 239159
+differential_evolution step 981: f(x)= 239159
+differential_evolution step 982: f(x)= 239159
+differential_evolution step 983: f(x)= 239159
+differential_evolution step 984: f(x)= 239159
+differential_evolution step 985: f(x)= 239159
+differential_evolution step 986: f(x)= 239159
+differential_evolution step 987: f(x)= 239159
+differential_evolution step 988: f(x)= 239159
+differential_evolution step 989: f(x)= 239159
+differential_evolution step 990: f(x)= 239159
+differential_evolution step 991: f(x)= 239159
+differential_evolution step 992: f(x)= 239159
+differential_evolution step 993: f(x)= 239159
+differential_evolution step 994: f(x)= 239159
+differential_evolution step 995: f(x)= 239159
+differential_evolution step 996: f(x)= 239159
+differential_evolution step 997: f(x)= 239159
+differential_evolution step 998: f(x)= 239159
+differential_evolution step 999: f(x)= 239159
+differential_evolution step 1000: f(x)= 239159
+G0G1' = -2.277e-03 G0G1 + 5.559e-03 G2M + -8.256e-07 G0G1^2 + -1.189e-06 G0G1 G2M + 4.002e-06 G2M^2
+S' = 2.433e-03 G0G1 + -1.675e-03 S + 7.304e-07 G0G1^2 + -1.587e-07 G0G1 S + -3.523e-07 S^2
+G2M' = 1.116e-03 S + -1.954e-03 G2M + 3.092e-06 S^2 + -3.621e-06 S G2M + -4.043e-06 G2M^2
+apoptotic' = 2.035e-05 G0G1 + 2.807e-04 S + 1.130e-03 G2M + -1.029e-02 apoptotic + 9.854e-08 G0G1^2 + 1.759e-08 G0G1 S + 5.630e-07 G0G1 G2M + -1.238e-05 G0G1 apoptotic + 1.014e-07 S^2 + 6.816e-06 S G2M + -3.979e-05 S apoptotic + 1.889e-05 G2M^2 + -1.919e-04 G2M apoptotic + -7.420e-05 apoptotic^2
 
 
 Melhor modelo AIC = 1
@@ -908,77 +2265,3 @@ Melhor modelo AICc = 1
 
 Melhor modelo BIC = 1
 
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1221596120145D+04   r2 =  0.6258354995793D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1221596120145D+04   r2 =  0.4526119202156D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1221596120145D+04   r2 =  0.3744248772441D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1221596120145D+04   r2 =  0.3744248772441D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1221596120145D+04   r2 =  0.2723289987528D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1221596120145D+04   r2 =  0.2723289987528D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1221596120145D+04   r2 =  0.1971302802786D-13
- lsoda--  above warning has been issued i1 times.    
-       it will not be issued again for this problem  
-      in above message,  i1 =        10
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1700664027108D+04   r2 =  0.9490255561020D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1700664027108D+04   r2 =  0.9490255561020D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1700664027108D+04   r2 =  0.7372864880990D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1700664027108D+04   r2 =  0.7372864880990D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1700664027108D+04   r2 =  0.5801453297852D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1700664027108D+04   r2 =  0.5801453297852D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1700664027108D+04   r2 =  0.4507079027979D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1700664027108D+04   r2 =  0.4507079027979D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1700664027108D+04   r2 =  0.3546465185697D-13
- lsoda--  warning..internal t (=r1) and h (=r2) are  
-       such that in the machine, t + h = t on the next step  
-       (h = step size). solver will continue anyway  
-      in above,  r1 =  0.1700664027108D+04   r2 =  0.3546465185697D-13
- lsoda--  above warning has been issued i1 times.    
-       it will not be issued again for this problem  
-      in above message,  i1 =        10

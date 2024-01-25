@@ -1,0 +1,564 @@
+Experimento 1: Grau = 1, Frequência = 1, alpha = 0.001
+
+---------- ITERATION 1 ----------
+SSE = 0.30398740002409896
+Coefficients before sensitivity analysis = [[ 3.52341309e-03 -3.46814140e-03  2.03441312e-03]
+ [ 6.59663093e-05  3.59157159e-03 -1.04029220e-03]]
+ST_sum = [array([1.40936524e-03, 5.37978094e-01, 6.61916652e-01, 2.63865237e-05,
+       5.57124584e-01, 3.38469471e-01])]
+Total points = [ 2.  1. -1.  2. -1.  1.]
+Less important parameter = [0 3]
+Coefficients after sensitivity analysis = [[ 0.         -0.00346814  0.00203441]
+ [ 0.          0.00359157 -0.00104029]]
+
+---------- ITERATION 2 ----------
+SSE = 0.3044048846698396
+Comparing 0.30398740002409896 + 9.0*0.0303987400024099 with 0.3044048846698396: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.         -0.00341345  0.00201532]
+ [ 0.          0.0035926  -0.00104065]]
+ST_sum = [array([0.52949514, 0.6557055 , 0.5572834 , 0.33858576])]
+Total points = [ 1. -1. -1.  1.]
+Less important parameter = [0 3]
+Coefficients after sensitivity analysis = [[0.         0.         0.00201532]
+ [0.         0.0035926  0.        ]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.3044048846698396
+Loss at the current iteration = 0.8982413915010011
+Number of bases at the previous iteration = 4
+Number of bases at the current iteration = 2
+Total number of bases = 6
+F-test = 1.9508113592698821
+SSE = 0.8982413915010011
+Comparing 0.3041961423469693 + 9.0*0.00020874232287032557 with 0.8982413915010011: error has increased
+Ki67_neg' = -3.413e-03 Ki67_neg + 2.015e-03 Ki67_pos
+Ki67_pos' = 3.593e-03 Ki67_neg + -1.041e-03 Ki67_pos
+
+
+Experimento 2: Grau = 1, Frequência = 1, alpha = 0.01
+
+---------- ITERATION 1 ----------
+SSE = 0.3039874000620972
+Coefficients before sensitivity analysis = [[ 3.52245267e-03 -3.46812541e-03  2.03440738e-03]
+ [ 6.59650819e-05  3.59157061e-03 -1.04029171e-03]]
+ST_sum = [array([1.40898107e-03, 5.37975613e-01, 6.61914784e-01, 2.63860327e-05,
+       5.57124432e-01, 3.38469312e-01])]
+Total points = [ 2.  1. -1.  2. -1.  1.]
+Less important parameter = [0 3]
+Coefficients after sensitivity analysis = [[ 0.         -0.00346813  0.00203441]
+ [ 0.          0.00359157 -0.00104029]]
+
+---------- ITERATION 2 ----------
+SSE = 0.30440488466993676
+Comparing 0.3039874000620972 + 9.0*0.03039874000620972 with 0.30440488466993676: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.         -0.00341345  0.00201532]
+ [ 0.          0.00359259 -0.00104065]]
+ST_sum = [array([0.52949497, 0.65570533, 0.55728325, 0.3385856 ])]
+Total points = [ 1. -1. -1.  1.]
+Less important parameter = [0 3]
+Coefficients after sensitivity analysis = [[0.         0.         0.00201532]
+ [0.         0.00359259 0.        ]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.30440488466993676
+Loss at the current iteration = 0.8982413915010012
+Number of bases at the previous iteration = 4
+Number of bases at the current iteration = 2
+Total number of bases = 6
+F-test = 1.9508113592689407
+SSE = 0.8982413915010012
+Comparing 0.304196142366017 + 9.0*0.00020874230391978998 with 0.8982413915010012: error has increased
+Ki67_neg' = -3.413e-03 Ki67_neg + 2.015e-03 Ki67_pos
+Ki67_pos' = 3.593e-03 Ki67_neg + -1.041e-03 Ki67_pos
+
+
+Experimento 3: Grau = 1, Frequência = 1, alpha = 0.1
+
+---------- ITERATION 1 ----------
+SSE = 0.30398740384152345
+Coefficients before sensitivity analysis = [[ 3.51287664e-03 -3.46796591e-03  2.03435010e-03]
+ [ 6.59528435e-05  3.59156082e-03 -1.04028684e-03]]
+ST_sum = [array([1.40515066e-03, 5.37950871e-01, 6.61896148e-01, 2.63811374e-05,
+       5.57122915e-01, 3.38467725e-01])]
+Total points = [ 2.  1. -1.  2. -1.  1.]
+Less important parameter = [0 3]
+Coefficients after sensitivity analysis = [[ 0.         -0.00346797  0.00203435]
+ [ 0.          0.00359156 -0.00104029]]
+
+---------- ITERATION 2 ----------
+SSE = 0.3044048846796477
+Comparing 0.30398740384152345 + 9.0*0.030398740384152346 with 0.3044048846796477: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.         -0.00341344  0.00201532]
+ [ 0.          0.00359258 -0.00104064]]
+ST_sum = [array([0.52949331, 0.6557036 , 0.5572817 , 0.33858399])]
+Total points = [ 1. -1. -1.  1.]
+Less important parameter = [0 3]
+Coefficients after sensitivity analysis = [[0.         0.         0.00201532]
+ [0.         0.00359258 0.        ]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.3044048846796477
+Loss at the current iteration = 0.8982413915010072
+Number of bases at the previous iteration = 4
+Number of bases at the current iteration = 2
+Total number of bases = 6
+F-test = 1.9508113591748255
+SSE = 0.8982413915010072
+Comparing 0.3041961442605856 + 9.0*0.00020874041906213114 with 0.8982413915010072: error has increased
+Ki67_neg' = -3.413e-03 Ki67_neg + 2.015e-03 Ki67_pos
+Ki67_pos' = 3.593e-03 Ki67_neg + -1.041e-03 Ki67_pos
+
+
+Experimento 4: Grau = 1, Frequência = 1, alpha = 1.0
+
+---------- ITERATION 1 ----------
+SSE = 0.30398776225509455
+Coefficients before sensitivity analysis = [[ 3.41985591e-03 -3.46641349e-03  2.03379220e-03]
+ [ 6.58339090e-05  3.59146292e-03 -1.04023804e-03]]
+ST_sum = [array([1.36794237e-03, 5.37710061e-01, 6.61714630e-01, 2.63335636e-05,
+       5.57107728e-01, 3.38451849e-01])]
+Total points = [ 2.  1. -1.  2. -1.  1.]
+Less important parameter = [0 3]
+Coefficients after sensitivity analysis = [[ 0.         -0.00346641  0.00203379]
+ [ 0.          0.00359146 -0.00104024]]
+
+---------- ITERATION 2 ----------
+SSE = 0.3044048856506897
+Comparing 0.30398776225509455 + 9.0*0.030398776225509457 with 0.3044048856506897: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.         -0.00341334  0.00201526]
+ [ 0.          0.00359248 -0.00104059]]
+ST_sum = [array([0.52947669, 0.6556863 , 0.55726622, 0.3385679 ])]
+Total points = [ 1. -1. -1.  1.]
+Less important parameter = [0 3]
+Coefficients after sensitivity analysis = [[0.         0.         0.00201526]
+ [0.         0.00359248 0.        ]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.3044048856506897
+Loss at the current iteration = 0.8982413915016114
+Number of bases at the previous iteration = 4
+Number of bases at the current iteration = 2
+Total number of bases = 6
+F-test = 1.950811349763815
+SSE = 0.8982413915016114
+Comparing 0.3041963239528921 + 9.0*0.00020856169779756573 with 0.8982413915016114: error has increased
+Ki67_neg' = -3.413e-03 Ki67_neg + 2.015e-03 Ki67_pos
+Ki67_pos' = 3.593e-03 Ki67_neg + -1.041e-03 Ki67_pos
+
+
+Experimento 5: Grau = 1, Frequência = 1, alpha = 10.0
+
+---------- ITERATION 1 ----------
+SSE = 0.3040102500003479
+Coefficients before sensitivity analysis = [[ 2.70084058e-03 -3.45417107e-03  2.02935936e-03]
+ [ 6.49104638e-05  3.59048010e-03 -1.03974881e-03]]
+ST_sum = [array([1.08033623e-03, 5.35811017e-01, 6.60272363e-01, 2.59641855e-05,
+       5.56955273e-01, 3.38292671e-01])]
+Total points = [ 2.  1. -1.  2. -1.  1.]
+Less important parameter = [0 3]
+Coefficients after sensitivity analysis = [[ 0.         -0.00345417  0.00202936]
+ [ 0.          0.00359048 -0.00103975]]
+
+---------- ITERATION 2 ----------
+SSE = 0.30440498269561883
+Comparing 0.3040102500003479 + 9.0*0.030401025000034793 with 0.30440498269561883: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.         -0.00341226  0.00201473]
+ [ 0.          0.00359149 -0.0010401 ]]
+ST_sum = [array([0.52931054, 0.6555134 , 0.5571115 , 0.33840705])]
+Total points = [ 1. -1. -1.  1.]
+Less important parameter = [0 3]
+Coefficients after sensitivity analysis = [[0.         0.         0.00201473]
+ [0.         0.00359149 0.        ]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.30440498269561883
+Loss at the current iteration = 0.8982413915620351
+Number of bases at the previous iteration = 4
+Number of bases at the current iteration = 2
+Total number of bases = 6
+F-test = 1.9508104092376382
+SSE = 0.8982413915620351
+Comparing 0.3042076163479834 + 9.0*0.00019736634763545258 with 0.8982413915620351: error has increased
+Ki67_neg' = -3.413e-03 Ki67_neg + 2.015e-03 Ki67_pos
+Ki67_pos' = 3.593e-03 Ki67_neg + -1.041e-03 Ki67_pos
+
+
+Experimento 6: Grau = 2, Frequência = 1, alpha = 0.001
+
+---------- ITERATION 1 ----------
+SSE = 0.1658163768228956
+Coefficients before sensitivity analysis = [[-2.30147381e-02 -3.02204653e-03  2.01463590e-03 -9.39301751e-06
+   1.74215565e-05 -6.56190048e-06]
+ [ 2.54409139e-02  2.70766813e-03 -7.89390337e-04  1.13906526e-05
+  -1.39761945e-05  4.35499851e-06]]
+ST_sum = [array([0.0092059 , 0.46877986, 0.65548194, 0.565042  , 2.19815806,
+       1.73659268, 0.01017637, 0.42001348, 0.25683604, 0.68521081,
+       1.76344087, 1.15254088])]
+Total points = [ 5.  4.  2.  3. -1.  1.  5.  3.  4.  2. -1.  1.]
+Less important parameter = [0 6]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -3.02204653e-03  2.01463590e-03 -9.39301751e-06
+   1.74215565e-05 -6.56190048e-06]
+ [ 0.00000000e+00  2.70766813e-03 -7.89390337e-04  1.13906526e-05
+  -1.39761945e-05  4.35499851e-06]]
+
+---------- ITERATION 2 ----------
+SSE = 0.17434486695101728
+Comparing 0.1658163768228956 + 9.0*0.01658163768228956 with 0.17434486695101728: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -3.98181313e-03  2.34895110e-03 -1.41236052e-06
+   1.20581950e-05 -5.69809914e-06]
+ [ 0.00000000e+00  3.76861174e-03 -1.15894850e-03  2.56868794e-06
+  -8.04743638e-06  3.40013665e-06]]
+ST_sum = [array([0.61765885, 0.76425473, 0.0849613 , 1.52143803, 1.50798954,
+       0.58458705, 0.37707548, 0.1545208 , 1.01538213, 0.89983877])]
+Total points = [ 3.  2.  4. -1.  1.  2.  3.  4. -1.  1.]
+Less important parameter = [2 7]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -3.98181313e-03  2.34895110e-03  0.00000000e+00
+   1.20581950e-05 -5.69809914e-06]
+ [ 0.00000000e+00  3.76861174e-03 -1.15894850e-03  0.00000000e+00
+  -8.04743638e-06  3.40013665e-06]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.17434486695101728
+Loss at the current iteration = 0.1745146512014452
+Number of bases at the previous iteration = 10
+Number of bases at the current iteration = 8
+Total number of bases = 12
+F-test = 0.0009738414063868493
+SSE = 0.1745146512014452
+Comparing 0.17008062188695644 + 9.0*0.00426424506406084 with 0.1745146512014452: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -4.08689445e-03  2.40064371e-03  0.00000000e+00
+   1.08773416e-05 -5.45901181e-06]
+ [ 0.00000000e+00  3.95972522e-03 -1.25296286e-03  0.00000000e+00
+  -5.89979485e-06  2.96530381e-06]]
+ST_sum = [array([0.63395907, 0.78107344, 1.37244431, 1.4447156 , 0.61423258,
+       0.40766399, 0.7444043 , 0.7847612 ])]
+Total points = [ 3.  2.  1. -1.  2.  3.  1. -1.]
+Less important parameter = [0 5]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00  0.00000000e+00  2.40064371e-03  0.00000000e+00
+   1.08773416e-05 -5.45901181e-06]
+ [ 0.00000000e+00  3.95972522e-03  0.00000000e+00  0.00000000e+00
+  -5.89979485e-06  2.96530381e-06]]
+
+---------- ITERATION 4 ----------
+Loss at the previous iteration = 0.1745146512014452
+Loss at the current iteration = 0.8867527225239158
+Number of bases at the previous iteration = 8
+Number of bases at the current iteration = 6
+Total number of bases = 12
+F-test = 8.16250173173509
+SSE = 0.8867527225239158
+Comparing 0.17155863165845267 + 9.0*0.0040609789148498355 with 0.8867527225239158: error has increased
+Ki67_neg' = -4.087e-03 Ki67_neg + 2.401e-03 Ki67_pos + 1.088e-05 Ki67_neg Ki67_pos + -5.459e-06 Ki67_pos^2
+Ki67_pos' = 3.960e-03 Ki67_neg + -1.253e-03 Ki67_pos + -5.900e-06 Ki67_neg Ki67_pos + 2.965e-06 Ki67_pos^2
+
+
+Experimento 7: Grau = 2, Frequência = 1, alpha = 0.01
+
+---------- ITERATION 1 ----------
+SSE = 0.16581639268345938
+Coefficients before sensitivity analysis = [[-2.29863784e-02 -3.02321793e-03  2.01504230e-03 -9.38331946e-06
+   1.74150584e-05 -6.56085769e-06]
+ [ 2.54095059e-02  2.70896922e-03 -7.89842289e-04  1.13798665e-05
+  -1.39689607e-05  4.35383635e-06]]
+ST_sum = [array([0.00919455, 0.46896156, 0.65561416, 0.56445861, 2.19733817,
+       1.73631671, 0.0101638 , 0.42021531, 0.25698309, 0.68456197,
+       1.76252814, 1.15223332])]
+Total points = [ 5.  4.  2.  3. -1.  1.  5.  3.  4.  2. -1.  1.]
+Less important parameter = [0 6]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -3.02321793e-03  2.01504230e-03 -9.38331946e-06
+   1.74150584e-05 -6.56085769e-06]
+ [ 0.00000000e+00  2.70896922e-03 -7.89842289e-04  1.13798665e-05
+  -1.39689607e-05  4.35383635e-06]]
+
+---------- ITERATION 2 ----------
+SSE = 0.17434486695241416
+Comparing 0.16581639268345938 + 9.0*0.016581639268345938 with 0.17434486695241416: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -3.98179871e-03  2.34894399e-03 -1.41253461e-06
+   1.20583370e-05 -5.69812681e-06]
+ [ 0.00000000e+00  3.76859956e-03 -1.15894250e-03  2.56883498e-06
+  -8.04755620e-06  3.40016000e-06]]
+ST_sum = [array([0.61765662, 0.76425242, 0.08497178, 1.52145594, 1.50799686,
+       0.58458516, 0.37707353, 0.15452964, 1.01539725, 0.89984495])]
+Total points = [ 3.  2.  4. -1.  1.  2.  3.  4. -1.  1.]
+Less important parameter = [2 7]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -3.98179871e-03  2.34894399e-03  0.00000000e+00
+   1.20583370e-05 -5.69812681e-06]
+ [ 0.00000000e+00  3.76859956e-03 -1.15894250e-03  0.00000000e+00
+  -8.04755620e-06  3.40016000e-06]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.17434486695241416
+Loss at the current iteration = 0.17451465120159895
+Number of bases at the previous iteration = 10
+Number of bases at the current iteration = 8
+Total number of bases = 12
+F-test = 0.0009738413992488298
+SSE = 0.17451465120159895
+Comparing 0.17008062981793676 + 9.0*0.004264237134477392 with 0.17451465120159895: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -4.08689295e-03  2.40064295e-03  0.00000000e+00
+   1.08773378e-05 -5.45900996e-06]
+ [ 0.00000000e+00  3.95972391e-03 -1.25296220e-03  0.00000000e+00
+  -5.89979157e-06  2.96530218e-06]]
+ST_sum = [array([0.63395883, 0.78107319, 1.37244384, 1.44471511, 0.61423237,
+       0.40766378, 0.74440389, 0.78476077])]
+Total points = [ 3.  2.  1. -1.  2.  3.  1. -1.]
+Less important parameter = [0 5]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00  0.00000000e+00  2.40064295e-03  0.00000000e+00
+   1.08773378e-05 -5.45900996e-06]
+ [ 0.00000000e+00  3.95972391e-03  0.00000000e+00  0.00000000e+00
+  -5.89979157e-06  2.96530218e-06]]
+
+---------- ITERATION 4 ----------
+Loss at the previous iteration = 0.17451465120159895
+Loss at the current iteration = 0.8867527225239165
+Number of bases at the previous iteration = 8
+Number of bases at the current iteration = 6
+Total number of bases = 12
+F-test = 8.162501731726142
+SSE = 0.8867527225239165
+Comparing 0.17155863694582416 + 9.0*0.004060971439554317 with 0.8867527225239165: error has increased
+Ki67_neg' = -4.087e-03 Ki67_neg + 2.401e-03 Ki67_pos + 1.088e-05 Ki67_neg Ki67_pos + -5.459e-06 Ki67_pos^2
+Ki67_pos' = 3.960e-03 Ki67_neg + -1.253e-03 Ki67_pos + -5.900e-06 Ki67_neg Ki67_pos + 2.965e-06 Ki67_pos^2
+
+
+Experimento 8: Grau = 2, Frequência = 1, alpha = 0.1
+
+---------- ITERATION 1 ----------
+SSE = 0.1658179396838533
+Coefficients before sensitivity analysis = [[-2.27066116e-02 -3.03477172e-03  2.01905043e-03 -9.28767208e-06
+   1.73509749e-05 -6.55057436e-06]
+ [ 2.50996679e-02  2.72180276e-03 -7.94299963e-04  1.12734814e-05
+  -1.38976159e-05  4.34237488e-06]]
+ST_sum = [array([0.00908264, 0.47075379, 0.65691825, 0.55870489, 2.18925245,
+       1.73359525, 0.01003987, 0.42220604, 0.25843344, 0.67816231,
+       1.75352624, 1.14920006])]
+Total points = [ 5.  4.  2.  3. -1.  1.  5.  3.  4.  2. -1.  1.]
+Less important parameter = [0 6]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -3.03477172e-03  2.01905043e-03 -9.28767208e-06
+   1.73509749e-05 -6.55057436e-06]
+ [ 0.00000000e+00  2.72180276e-03 -7.94299963e-04  1.12734814e-05
+  -1.38976159e-05  4.34237488e-06]]
+
+---------- ITERATION 2 ----------
+SSE = 0.1743448670920931
+Comparing 0.1658179396838533 + 9.0*0.01658179396838533 with 0.1743448670920931: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -3.98165449e-03  2.34887286e-03 -1.41427547e-06
+   1.20597564e-05 -5.69840346e-06]
+ [ 0.00000000e+00  3.76847777e-03 -1.15888248e-03  2.57030522e-06
+  -8.04875437e-06  3.40039344e-06]]
+ST_sum = [array([0.61763424, 0.76422927, 0.0850765 , 1.52163503, 1.50807007,
+       0.58456627, 0.377054  , 0.15461809, 1.01554843, 0.89990673])]
+Total points = [ 3.  2.  4. -1.  1.  2.  3.  4. -1.  1.]
+Less important parameter = [2 7]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -3.98165449e-03  2.34887286e-03  0.00000000e+00
+   1.20597564e-05 -5.69840346e-06]
+ [ 0.00000000e+00  3.76847777e-03 -1.15888248e-03  0.00000000e+00
+  -8.04875437e-06  3.40039344e-06]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.1743448670920931
+Loss at the current iteration = 0.17451465121698406
+Number of bases at the previous iteration = 10
+Number of bases at the current iteration = 8
+Total number of bases = 12
+F-test = 0.000973840685549296
+SSE = 0.17451465121698406
+Comparing 0.1700814033879732 + 9.0*0.004263463704119896 with 0.17451465121698406: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -4.08687788e-03  2.40063534e-03  0.00000000e+00
+   1.08773008e-05 -5.45899145e-06]
+ [ 0.00000000e+00  3.95971083e-03 -1.25295565e-03  0.00000000e+00
+  -5.89975881e-06  2.96528590e-06]]
+ST_sum = [array([0.6339565 , 0.78107072, 1.37243916, 1.44471021, 0.61423034,
+       0.40766165, 0.74439975, 0.78475646])]
+Total points = [ 3.  2.  1. -1.  2.  3.  1. -1.]
+Less important parameter = [0 5]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00  0.00000000e+00  2.40063534e-03  0.00000000e+00
+   1.08773008e-05 -5.45899145e-06]
+ [ 0.00000000e+00  3.95971083e-03  0.00000000e+00  0.00000000e+00
+  -5.89975881e-06  2.96528590e-06]]
+
+---------- ITERATION 4 ----------
+Loss at the previous iteration = 0.17451465121698406
+Loss at the current iteration = 0.8867527225239823
+Number of bases at the previous iteration = 8
+Number of bases at the current iteration = 6
+Total number of bases = 12
+F-test = 8.162501730830975
+SSE = 0.8867527225239823
+Comparing 0.17155915266431018 + 9.0*0.004060242318506858 with 0.8867527225239823: error has increased
+Ki67_neg' = -4.087e-03 Ki67_neg + 2.401e-03 Ki67_pos + 1.088e-05 Ki67_neg Ki67_pos + -5.459e-06 Ki67_pos^2
+Ki67_pos' = 3.960e-03 Ki67_neg + -1.253e-03 Ki67_pos + -5.900e-06 Ki67_neg Ki67_pos + 2.965e-06 Ki67_pos^2
+
+
+Experimento 9: Grau = 2, Frequência = 1, alpha = 1.0
+
+---------- ITERATION 1 ----------
+SSE = 0.16594036695600248
+Coefficients before sensitivity analysis = [[-2.02454569e-02 -3.13623963e-03  2.05422543e-03 -8.44833121e-06
+   1.67889208e-05 -6.46044146e-06]
+ [ 2.23739747e-02  2.83455548e-03 -8.33442926e-04  1.03393558e-05
+  -1.32714193e-05  4.24182613e-06]]
+ST_sum = [array([0.00809818, 0.48649349, 0.66836278, 0.50821389, 2.11833549,
+       1.70974177, 0.00894959, 0.43969625, 0.27116899, 0.62196949,
+       1.67451612, 1.12259005])]
+Total points = [ 5.  4.  2.  3. -1.  1.  5.  3.  4.  2. -1.  1.]
+Less important parameter = [0 6]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -3.13623963e-03  2.05422543e-03 -8.44833121e-06
+   1.67889208e-05 -6.46044146e-06]
+ [ 0.00000000e+00  2.83455548e-03 -8.33442926e-04  1.03393558e-05
+  -1.32714193e-05  4.24182613e-06]]
+
+---------- ITERATION 2 ----------
+SSE = 0.17434488105013823
+Comparing 0.16594036695600248 + 9.0*0.016594036695600247 with 0.17434488105013823: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -3.98021285e-03  2.34816183e-03 -1.43167740e-06
+   1.20739447e-05 -5.70116888e-06]
+ [ 0.00000000e+00  3.76726031e-03 -1.15828250e-03  2.58500205e-06
+  -8.06073145e-06  3.40272699e-06]]
+ST_sum = [array([0.61741062, 0.76399793, 0.08612332, 1.52342524, 1.50880194,
+       0.58437742, 0.37685879, 0.15550218, 1.01705963, 0.90052429])]
+Total points = [ 3.  2.  4. -1.  1.  2.  3.  4. -1.  1.]
+Less important parameter = [2 7]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -3.98021285e-03  2.34816183e-03  0.00000000e+00
+   1.20739447e-05 -5.70116888e-06]
+ [ 0.00000000e+00  3.76726031e-03 -1.15828250e-03  0.00000000e+00
+  -8.06073145e-06  3.40272699e-06]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.17434488105013823
+Loss at the current iteration = 0.17451465275537467
+Number of bases at the previous iteration = 10
+Number of bases at the current iteration = 8
+Total number of bases = 12
+F-test = 0.000973769371454128
+SSE = 0.17451465275537467
+Comparing 0.17014262400307034 + 9.0*0.004202257047067878 with 0.17451465275537467: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -4.08672717e-03  2.40055931e-03  0.00000000e+00
+   1.08769302e-05 -5.45880637e-06]
+ [ 0.00000000e+00  3.95957999e-03 -1.25289013e-03  0.00000000e+00
+  -5.89943118e-06  2.96512311e-06]]
+ST_sum = [array([0.63393312, 0.78104598, 1.37239241, 1.44466123, 0.61421005,
+       0.40764033, 0.74435842, 0.78471338])]
+Total points = [ 3.  2.  1. -1.  2.  3.  1. -1.]
+Less important parameter = [0 5]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00  0.00000000e+00  2.40055931e-03  0.00000000e+00
+   1.08769302e-05 -5.45880637e-06]
+ [ 0.00000000e+00  3.95957999e-03  0.00000000e+00  0.00000000e+00
+  -5.89943118e-06  2.96512311e-06]]
+
+---------- ITERATION 4 ----------
+Loss at the previous iteration = 0.17451465275537467
+Loss at the current iteration = 0.8867527225305704
+Number of bases at the previous iteration = 8
+Number of bases at the current iteration = 6
+Total number of bases = 12
+F-test = 8.162501641321466
+SSE = 0.8867527225305704
+Comparing 0.17159996692050514 + 9.0*0.004002541644723889 with 0.8867527225305704: error has increased
+Ki67_neg' = -4.087e-03 Ki67_neg + 2.401e-03 Ki67_pos + 1.088e-05 Ki67_neg Ki67_pos + -5.459e-06 Ki67_pos^2
+Ki67_pos' = 3.960e-03 Ki67_neg + -1.253e-03 Ki67_pos + -5.900e-06 Ki67_neg Ki67_pos + 2.965e-06 Ki67_pos^2
+
+
+Experimento 10: Grau = 2, Frequência = 1, alpha = 10.0
+
+---------- ITERATION 1 ----------
+SSE = 0.168646465966933
+Coefficients before sensitivity analysis = [[-9.77452051e-03 -3.55971566e-03  2.19982390e-03 -4.97656196e-06
+   1.44785455e-05 -6.09273567e-06]
+ [ 1.07776696e-02  3.30731495e-03 -9.96554058e-04  6.44895592e-06
+  -1.06755804e-05  3.82735027e-06]]
+ST_sum = [array([0.00390981, 0.55218309, 0.7157347 , 0.29936775, 1.8268248 ,
+       1.61242924, 0.00431107, 0.5130307 , 0.32423883, 0.3879404 ,
+       1.34698718, 1.01289992])]
+Total points = [ 5.  3.  2.  4. -1.  1.  5.  2.  4.  3. -1.  1.]
+Less important parameter = [0 6]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -3.55971566e-03  2.19982390e-03 -4.97656196e-06
+   1.44785455e-05 -6.09273567e-06]
+ [ 0.00000000e+00  3.30731495e-03 -9.96554058e-04  6.44895592e-06
+  -1.06755804e-05  3.82735027e-06]]
+
+---------- ITERATION 2 ----------
+SSE = 0.1743462670811078
+Comparing 0.168646465966933 + 9.0*0.0168646465966933 with 0.1743462670811078: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -3.96585161e-03  2.34107866e-03 -1.60503127e-06
+   1.22152853e-05 -5.72871740e-06]
+ [ 0.00000000e+00  3.75513223e-03 -1.15230565e-03  2.73140847e-06
+  -8.18004421e-06  3.42597317e-06]]
+ST_sum = [array([0.6151829 , 0.76169335, 0.09655152, 1.54125884, 1.51609259,
+       0.58249611, 0.37491417, 0.16430934, 1.03211387, 0.90667635])]
+Total points = [ 3.  2.  4. -1.  1.  2.  3.  4. -1.  1.]
+Less important parameter = [2 7]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -3.96585161e-03  2.34107866e-03  0.00000000e+00
+   1.22152853e-05 -5.72871740e-06]
+ [ 0.00000000e+00  3.75513223e-03 -1.15230565e-03  0.00000000e+00
+  -8.18004421e-06  3.42597317e-06]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.1743462670811078
+Loss at the current iteration = 0.17451480648370477
+Number of bases at the previous iteration = 10
+Number of bases at the current iteration = 8
+Total number of bases = 12
+F-test = 0.0009666934969050555
+SSE = 0.17451480648370477
+Comparing 0.1714963665240204 + 9.0*0.0028499005570873925 with 0.17451480648370477: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -4.08522076e-03  2.39979933e-03  0.00000000e+00
+   1.08732262e-05 -5.45695627e-06]
+ [ 0.00000000e+00  3.95827213e-03 -1.25223525e-03  0.00000000e+00
+  -5.89615620e-06  2.96349579e-06]]
+ST_sum = [array([0.63369944, 0.78079871, 1.37192506, 1.4441716 , 0.61400717,
+       0.40742726, 0.7439452 , 0.78428271])]
+Total points = [ 3.  2.  1. -1.  2.  3.  1. -1.]
+Less important parameter = [0 5]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00  0.00000000e+00  2.39979933e-03  0.00000000e+00
+   1.08732262e-05 -5.45695627e-06]
+ [ 0.00000000e+00  3.95827213e-03  0.00000000e+00  0.00000000e+00
+  -5.89615620e-06  2.96349579e-06]]
+
+---------- ITERATION 4 ----------
+Loss at the previous iteration = 0.17451480648370477
+Loss at the current iteration = 0.8867527231893633
+Number of bases at the previous iteration = 8
+Number of bases at the current iteration = 6
+Total number of bases = 12
+F-test = 8.162492696826424
+SSE = 0.8867527231893633
+Comparing 0.17250251317724852 + 9.0*0.0027275051419069765 with 0.8867527231893633: error has increased
+Ki67_neg' = -4.087e-03 Ki67_neg + 2.401e-03 Ki67_pos + 1.088e-05 Ki67_neg Ki67_pos + -5.459e-06 Ki67_pos^2
+Ki67_pos' = 3.960e-03 Ki67_neg + -1.253e-03 Ki67_pos + -5.900e-06 Ki67_neg Ki67_pos + 2.965e-06 Ki67_pos^2
+
+
+Modelo 1
+
+Ki67_neg' = -3.413e-03 Ki67_neg + 2.015e-03 Ki67_pos
+Ki67_pos' = 3.593e-03 Ki67_neg + -1.041e-03 Ki67_pos
+
+
+*** Using Levenberg-Marquardt algorithm ***
+
+Ki67_neg' = -3.606e-03 Ki67_neg + 2.071e-03 Ki67_pos
+Ki67_pos' = 3.699e-03 Ki67_neg + -1.053e-03 Ki67_pos
+
+
+Modelo 2
+
+Ki67_neg' = -4.087e-03 Ki67_neg + 2.401e-03 Ki67_pos + 1.088e-05 Ki67_neg Ki67_pos + -5.459e-06 Ki67_pos^2
+Ki67_pos' = 3.960e-03 Ki67_neg + -1.253e-03 Ki67_pos + -5.900e-06 Ki67_neg Ki67_pos + 2.965e-06 Ki67_pos^2
+
+
+*** Using Levenberg-Marquardt algorithm ***
+
+Ki67_neg' = -3.568e-03 Ki67_neg + 2.064e-03 Ki67_pos + -1.635e-05 Ki67_neg Ki67_pos + 5.613e-06 Ki67_pos^2
+Ki67_pos' = 3.899e-03 Ki67_neg + -9.485e-04 Ki67_pos + -5.318e-06 Ki67_neg Ki67_pos + 2.347e-06 Ki67_pos^2
+
+
+Melhor modelo AIC = 1
+
+Melhor modelo AICc = 1
+
+Melhor modelo BIC = 1
+
+SSE between data and true model = [3455.49020707 9607.56834094]
+
+Normalized SSE between data and true model = [ 8.87167266 12.19273476]
+

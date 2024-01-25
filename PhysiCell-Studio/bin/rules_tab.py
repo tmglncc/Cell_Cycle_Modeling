@@ -158,12 +158,14 @@ class Rules(QWidget):
         self.celltype_name = None
         self.signal = None
         self.behavior = None
+        self.scale_base_for_max = 10.0
+        self.scale_base_for_min = 0.1
 
         self.max_rule_table_rows = 99
 
         self.update_rules_for_custom_data = True
 
-        self.max_rule_table_cols = 8   # v2: cell type, signal, direction, behavior, max, half-max, Hill power, apply to dead
+        self.max_rule_table_cols = 9   # v2: cell type, signal, direction, behavior, max, half-max, Hill power, apply to dead, baseval
 
         # table columns' indices
         icol = 0
@@ -177,8 +179,6 @@ class Rules(QWidget):
         icol += 1
         # self.rules_minval_idx = icol
         # icol += 1
-        # self.rules_baseval_idx = icol
-        # icol += 1
         self.rules_maxval_idx = icol
         icol += 1
         self.rules_halfmax_idx = icol
@@ -186,6 +186,8 @@ class Rules(QWidget):
         self.rules_hillpower_idx = icol
         icol += 1
         self.rules_applydead_idx = icol
+        icol += 1
+        self.rules_baseval_idx = icol
         icol += 1
 
         self.num_cols = icol
@@ -375,15 +377,15 @@ class Rules(QWidget):
         # label.setAlignment(QtCore.Qt.AlignCenter)
         hlayout.addWidget(label) 
 
-        label = QLabel("Base")
-        lwidth = 30
+        label = QLabel("Base value")
+        lwidth = 72
         label.setFixedWidth(lwidth)
         # label.setAlignment(QtCore.Qt.AlignRight)
         label.setAlignment(QtCore.Qt.AlignCenter)
         hlayout.addWidget(label) 
 
         self.rule_base_val = QLineEdit()
-        # self.rule_base_val.setEnabled(False)
+        self.rule_base_val.setEnabled(False)
         self.rule_base_val.setStyleSheet("background-color: lightgray")
         # self.rule_base_val.setText('1.e-5')
         self.rule_base_val.setText('0.1')
@@ -410,18 +412,18 @@ class Rules(QWidget):
 
         #---
         label = QLabel("")
-        lwidth = 60
+        lwidth = 95
         label.setFixedWidth(lwidth)
         hlayout.addWidget(label) 
 
         #---
-        label = QLabel("Max response")
-        label.setFixedWidth(90)
+        label = QLabel("Saturation value")
+        label.setFixedWidth(100)
         # label.setAlignment(QtCore.Qt.AlignRight)
         label.setAlignment(QtCore.Qt.AlignCenter)
         hlayout.addWidget(label) 
 
-        self.rule_max_val = QLineEdit()
+        self.rule_max_val = QLineEdit()  # saturation value for behavior
         # self.rule_max_val.setText('3.e-4')
         self.rule_max_val.setText('1.0')
         self.rule_max_val.setValidator(QtGui.QDoubleValidator())
@@ -589,9 +591,10 @@ class Rules(QWidget):
 
         self.import_rules_button = QPushButton("Import")
         if self.nanohub_flag:
-            self.import_rules_button.setEnabled(False)
+            self.import_rules_button.setEnabled(True)
         self.import_rules_button.setFixedWidth(100)
-        self.import_rules_button.setStyleSheet("background-color: lightgreen")
+        # self.import_rules_button.setStyleSheet("background-color: lightgreen")
+        self.import_rules_button.setStyleSheet("background-color: yellow")
         self.import_rules_button.clicked.connect(self.import_rules_cb)
         hlayout.addWidget(self.import_rules_button) 
         # hbox.addWidget(self.load_rules_button) 
@@ -604,7 +607,7 @@ class Rules(QWidget):
 
         self.save_button = QPushButton("Save")
         if self.nanohub_flag:
-            self.save_button.setEnabled(False)
+            self.save_button.setEnabled(True)
         self.save_button.setFixedWidth(100)
         # self.save_button.setStyleSheet("background-color: lightgreen")
         self.save_button.setStyleSheet("background-color: yellow")
@@ -619,8 +622,8 @@ class Rules(QWidget):
         label.setAlignment(QtCore.Qt.AlignCenter)
         hbox1.addWidget(label) 
         self.rules_folder = QLineEdit()
-        # if self.nanohub_flag:
-            # self.rules_folder.setEnabled(False)
+        if self.nanohub_flag:
+            self.rules_folder.setEnabled(False)
         self.rules_folder.setFixedWidth(200)
         # self.rules_folder.setAlignment(QtCore.Qt.AlignLeft)
         hbox1.addWidget(self.rules_folder) 
@@ -634,7 +637,7 @@ class Rules(QWidget):
         hbox2.addWidget(label) 
         self.rules_file = QLineEdit()
         if self.nanohub_flag:
-            self.rules_file.setEnabled(False)
+            self.rules_file.setEnabled(True)
         self.rules_file.setFixedWidth(200)
         hbox2.addWidget(self.rules_file) 
         hlayout.addLayout(hbox2) 
@@ -705,8 +708,9 @@ class Rules(QWidget):
         # self.rules_table.cellClicked.connect(self.rules_cell_was_clicked)
 
         # self.rules_table.setColumnCount(10)
-        self.rules_table.setColumnCount(8)
+        self.rules_table.setColumnCount(9)
         self.rules_table.setRowCount(self.max_rule_table_rows)
+        self.rules_table.setColumnHidden(8, True) # hidden column base value
 
         header = self.rules_table.horizontalHeader()       
         # header.setSectionResizeMode(0, QHeaderView.Stretch)
@@ -714,7 +718,7 @@ class Rules(QWidget):
         # header.setSectionResizeMode(9, QHeaderView.ResizeToContents)
 
         # self.rules_table.setHorizontalHeaderLabels(['CellType','Response','Min','Base','Max', 'Signal','Direction','Half-max','Hill power','Apply to dead'])
-        self.rules_table.setHorizontalHeaderLabels(['CellType','Signal','Direction','Behavior','Max','Half-max','Hill power','Apply to dead'])
+        self.rules_table.setHorizontalHeaderLabels(['CellType','Signal','Direction','Behavior', 'Saturation value','Half-max','Hill power','Apply to dead','Base value'])
 
         # Don't like the behavior these offer, e.g., locks down width of 0th column :/
         # header = self.rules_table.horizontalHeader()       
@@ -779,18 +783,18 @@ class Rules(QWidget):
             # self.rules_table.setCellWidget(irow, self.rules_minval_idx, w_me)
             # # w_var_units.textChanged[str].connect(self.custom_data_units_changed)  # being explicit about passing a string 
 
-            # # ------- Base val
-            # w_me = MyQLineEdit()
-            # w_me.setFrame(False)
-            # # item = QTableWidgetItem('')
-            # w_me.vname = w_me  
-            # w_me.wrow = irow
-            # w_me.wcol = self.rules_baseval_idx
-            # # w_var_desc.idx = irow
-            # # w_varval.setValidator(QtGui.QDoubleValidator())
-            # # self.rules_table.setItem(irow, self.custom_icol_desc, item)
-            # self.rules_table.setCellWidget(irow, self.rules_baseval_idx, w_me)
-            # # w_var_desc.textChanged[str].connect(self.custom_data_desc_changed)  # being explicit about passing a string 
+            # ------- Base val
+            w_me = MyQLineEdit()
+            w_me.setFrame(False)
+            # item = QTableWidgetItem('')
+            w_me.vname = w_me  
+            w_me.wrow = irow
+            w_me.wcol = self.rules_baseval_idx
+            # w_var_desc.idx = irow
+            # w_varval.setValidator(QtGui.QDoubleValidator())
+            # self.rules_table.setItem(irow, self.custom_icol_desc, item)
+            self.rules_table.setCellWidget(irow, self.rules_baseval_idx, w_me)
+            # w_var_desc.textChanged[str].connect(self.custom_data_desc_changed)  # being explicit about passing a string 
 
             # ------- Max val
             w_me = MyQLineEdit()
@@ -880,6 +884,14 @@ class Rules(QWidget):
         self.fill_responses_widget()
 
     #-----------------------------------------------------------
+    def delete_substrate(self,name):
+        # print(f"-------- rules_tab.py: delete_substrate(), self.substrates = {self.substrates}")
+        # print(f"     name = {name}")
+        self.substrates.remove(name)
+        self.fill_signals_widget()
+        self.fill_responses_widget()
+
+    #-----------------------------------------------------------
     def add_new_substrate(self,name):
         # print("rules_tab: add_new_substrate(): name= ",name)
         self.substrates.append(name)
@@ -899,6 +911,7 @@ class Rules(QWidget):
         self.fill_signals_widget()
         self.fill_responses_widget()
 
+
     #-----------------------------------------------------------
     def cell_def_rename(self,idx,old_name,new_name):
         # print("rules_tab: cell_def_rename(): idx,old_name,new_name= ",idx,old_name,new_name)
@@ -912,7 +925,7 @@ class Rules(QWidget):
     #-----------------------------------------------------------
     def celltype_combobox_changed_cb(self, idx):
         self.celltype_name = self.celltype_combobox.currentText()
-        print("----------- celltype_combobox_changed_cb(): ", self.celltype_name)
+        # print("----------- celltype_combobox_changed_cb(): ", self.celltype_name)
         if self.signal:
             print("        signal= ", self.signal)
         print("          ", self.celldef_tab.param_d.keys())
@@ -939,7 +952,143 @@ class Rules(QWidget):
         # self.response_l += ["apoptosis","necrosis","migration speed","migration bias","migration persistence time"]
 
     def update_base_value(self):
-        print("\n-------update_base_value(self)")
+        # print("\n-------update_base_value(self)")
+        behavior = self.response_combobox.currentText()
+        # key0 = self.celltype_name
+        key0 = self.celltype_combobox.currentText()
+        print("     behavior=",behavior)
+        btokens = behavior.split()
+        if len(btokens) == 0:
+            return
+
+        base_val = '??'
+        if btokens[0] in ["cycle", "exit"]:
+            cycle_model_idx = self.celldef_tab.param_d[key0]['cycle_choice_idx']
+            # print(behavior, cycle_model_idx )
+            #{0:"live", 1:"basic Ki67", 2:"advanced Ki67", 3:"flow cytometry", 4:"Flow cytometry model (separated)", 5:"cycling quiescent"}
+            if (behavior == 'cycle entry' or behavior == 'exit from cycle phase 0'):
+                if cycle_model_idx == 0 : base_val = self.celldef_tab.param_d[key0]['cycle_live_trate00']
+                elif cycle_model_idx == 1 : base_val = self.celldef_tab.param_d[key0]['cycle_Ki67_trate01']
+                elif cycle_model_idx == 2 : base_val = self.celldef_tab.param_d[key0]['cycle_advancedKi67_trate01']
+                elif cycle_model_idx == 3 : base_val = self.celldef_tab.param_d[key0]['cycle_flowcyto_trate01']
+                elif cycle_model_idx == 4 : base_val = self.celldef_tab.param_d[key0]['cycle_flowcytosep_trate01']
+                elif cycle_model_idx == 5 : base_val = self.celldef_tab.param_d[key0]['cycle_quiescent_trate01']
+            elif (behavior == 'exit from cycle phase 1'):
+                if cycle_model_idx == 1 : base_val = self.celldef_tab.param_d[key0]['cycle_Ki67_trate10']
+                elif cycle_model_idx == 2 : base_val = self.celldef_tab.param_d[key0]['cycle_advancedKi67_trate12']
+                elif cycle_model_idx == 3 : base_val = self.celldef_tab.param_d[key0]['cycle_flowcyto_trate12']
+                elif cycle_model_idx == 4 : base_val = self.celldef_tab.param_d[key0]['cycle_flowcytosep_trate12']
+                elif cycle_model_idx == 5 : base_val = self.celldef_tab.param_d[key0]['cycle_quiescent_trate10']
+            elif (behavior == 'exit from cycle phase 2'):
+                if cycle_model_idx == 2 : base_val = self.celldef_tab.param_d[key0]['cycle_advancedKi67_trate20']
+                elif cycle_model_idx == 3 : base_val = self.celldef_tab.param_d[key0]['cycle_flowcyto_trate20']
+                elif cycle_model_idx == 4 : base_val = self.celldef_tab.param_d[key0]['cycle_flowcytosep_trate23']
+            elif (behavior == 'exit from cycle phase 3'):
+                if cycle_model_idx == 4 : base_val = self.celldef_tab.param_d[key0]['cycle_flowcytosep_trate30']
+                        
+        elif btokens[0] in self.substrates:
+            print(f"update_base_value(): {btokens[0]} is a substrate")
+            # key1 = btokens[0]
+            key1 = 'secretion'
+            key2 = btokens[0]
+            if 'target' in btokens:
+                key3 = "secretion_target"
+            elif 'uptake' in btokens:
+                key3 = "uptake_rate"
+            elif 'export' in btokens:
+                key3 = "net_export_rate"
+            else:  # just "<substrate> secretion" which mean its rate
+                key3 = "secretion_rate"
+            try:
+                # print("\n---key0= ",self.celldef_tab.param_d[key0])
+                # print("\n---key1= ",self.celldef_tab.param_d[key0][key1])
+                # print("\n---key2= ",self.celldef_tab.param_d[key0][key1][key2])
+                base_val = self.celldef_tab.param_d[key0][key1][key2][key3]
+                print("update_base_value(): ------- base_val= ",base_val)
+            except:
+                print("update_base_value(): ---- got exception")
+                return
+        elif btokens[0] == 'apoptosis':
+            base_val = self.celldef_tab.param_d[key0]['apoptosis_death_rate']
+        elif btokens[0] == 'necrosis':
+            base_val = self.celldef_tab.param_d[key0]['necrosis_death_rate']
+        elif btokens[0] == 'migration':
+            if btokens[1] == 'speed':
+                base_val = self.celldef_tab.param_d[key0]['speed']
+            elif btokens[1] == 'bias':
+                base_val = self.celldef_tab.param_d[key0]['migration_bias']
+            elif btokens[1] == 'persistence':
+                base_val = self.celldef_tab.param_d[key0]['persistence_time']
+        elif btokens[0] == 'cell-cell':
+            if btokens[1] == 'adhesion':
+                if len(btokens)==2:
+                    base_val = self.celldef_tab.param_d[key0]['mechanics_adhesion']
+                elif btokens[2] == 'elastic':
+                    base_val = self.celldef_tab.param_d[key0]['mechanics_elastic_constant']
+            elif btokens[1] == 'repulsion':
+                base_val = self.celldef_tab.param_d[key0]['mechanics_repulsion']
+        elif btokens[0] == 'cell-BM':
+            if btokens[1] == 'adhesion':
+                base_val = self.celldef_tab.param_d[key0]['mechanics_BM_adhesion']
+            elif btokens[1] == 'repulsion':
+                base_val = self.celldef_tab.param_d[key0]['mechanics_BM_repulsion']
+        elif behavior == "relative maximum adhesion distance":
+            base_val = self.celldef_tab.param_d[key0]['mechanics_relative_equilibrium_distance']
+        elif behavior == "cell attachment rate":
+            base_val = self.celldef_tab.param_d[key0]['mechanics_attachment_rate']
+        elif behavior == "cell detachment rate":
+            base_val = self.celldef_tab.param_d[key0]['mechanics_detachment_rate']
+        # elif behavior == "maximum number of cell attachments":
+
+        elif btokens[0] == "phagocytose":
+            print("--- handling phagocytose as token 0")
+            print(btokens)
+            if len(btokens)==3 and btokens[1] == "dead" and btokens[2] == "cell":
+                print("--- handling phagocytose dead cell")
+                base_val = self.celldef_tab.param_d[key0]['dead_phagocytosis_rate']
+            else:
+                cell_type = behavior[12:]   # length of "phagocytose" 
+                print("      cell_type (for phagocytose)=",cell_type)
+                base_val = self.celldef_tab.param_d[key0]['live_phagocytosis_rate'][cell_type]
+        elif btokens[0] == "attack":
+            cell_type = behavior[7:]
+            base_val = self.celldef_tab.param_d[key0]['attack_rate'][cell_type]
+        elif behavior[0:len("fuse to")] == "fuse to":
+            cell_type = behavior[len("fuse to")+1:]
+            base_val = self.celldef_tab.param_d[key0]['fusion_rate'][cell_type]
+        elif btokens[0] == "immunogenicity":
+            base_val = '1.0'
+        elif btokens[0] == "is_movable":
+            base_val = '1.0'
+        elif behavior[0:len("transform to")] == "transform to":
+            cell_type = behavior[len("transform to")+1:]
+            base_val = self.celldef_tab.param_d[key0]['transformation_rate'][cell_type]
+        elif behavior == "damage rate":
+            base_val = self.celldef_tab.param_d[key0]["damage_rate"]
+        elif "custom:" in btokens[0]:
+            custom_data_name = btokens[0].split(':')[-1] # return string after colon
+            print(custom_data_name, self.celldef_tab.param_d[key0]['custom_data'][custom_data_name])
+            base_val = self.celldef_tab.param_d[key0]['custom_data'][custom_data_name][0]
+
+        #---------------------
+        # Set the base value 
+        self.rule_base_val.setText(base_val)
+
+        # Compute/set the saturation value
+        if base_val == '??':
+            if "decreases" in self.up_down_combobox.currentText(): saturation_val = 0.0
+            else: saturation_val = 1.0
+        else:
+            if "decreases" in self.up_down_combobox.currentText(): saturation_val = self.scale_base_for_min * float(base_val)
+            else: saturation_val = self.scale_base_for_max * float(base_val)
+            # behaviors with max response
+            if ( behavior == 'migration bias' and saturation_val > 1 ): saturation_val = 1.0
+            if ( behavior == 'is_movable' and saturation_val > 1 ): saturation_val = 1.0
+        self.rule_max_val.setText(str(saturation_val))
+
+        # print(self.celldef_tab.param_d.keys())
+        # for ct in self.celldef_tab.param_d.keys():
+            # print(self.celldef_tab.param_d[ct])
 
         # rwh: create this list once
         # static_names = []
@@ -955,16 +1104,16 @@ class Rules(QWidget):
         # static_names = ["exit from cycle phase " + str(idx)], idx=0,1,…,5   (isn’t “smart” to match cell type’s cycle)
         # [verb + ct] where verb=["phagocytose ","attack ","fuse to ","transform to ","immunogenicity to "]
 
-        if self.signal in self.substrates:
-            print("--- signal is substrate")
-        if self.behavior in static_names:
-            print("--- behavior is static: ",self.behavior)
+        # if self.signal in self.substrates:
+        #     print("--- signal is substrate")
+        # if self.behavior in static_names:
+        #     print("--- behavior is static: ",self.behavior)
 
     #-----------------------------------------------------------
     def signal_combobox_changed_cb(self, idx):
 
         self.signal = self.signal_combobox.currentText()
-        print("signal_combobox_changed_cb(): ", self.celldef_tab.param_d.keys())
+        # print("signal_combobox_changed_cb(): ", self.celldef_tab.param_d.keys())
         # print(f"    '{self.celltype_name}' keys= {self.celldef_tab.param_d[self.celltype_name].keys()}")
 
         # self.update_base_value()
@@ -981,9 +1130,10 @@ class Rules(QWidget):
 
     #-----------------------------------------------------------
     def response_combobox_changed_cb(self, idx):
+        print("------- response_combobox_changed_cb(): idx={idx}")
 
         self.behavior = self.response_combobox.currentText()
-        print("response_combobox_changed_cb(): ", self.celldef_tab.param_d.keys())
+        # print("response_combobox_changed_cb(): ", self.celldef_tab.param_d.keys())
         # print(f"    {self.celltype_name} params= {self.celldef_tab.param_d[self.celltype_name]}")
 
         self.update_base_value()
@@ -1041,18 +1191,16 @@ class Rules(QWidget):
 
         if os.path.isfile(full_rules_fname):
             try:
-                # with open("config/rules.csv", 'rU') as f:
-                with open(full_rules_fname, 'rU') as csvfile:
+                with open(full_rules_fname, 'r') as csvfile:
                     csv_reader = csv.reader(self.strip_comments(csvfile))
                     # print("     fill_rules():  past csv.reader")
-                    # with open(full_rules_fname, 'rU') as f:
                     irow = self.num_rules  # append
                     for elm in csv_reader:
                         # csv_reader_obj = csv.reader(f)
                         # irow = 0
                         print("elm= ",elm)
                         print("len(elm)= ",len(elm))
-                        if len(elm) == self.max_rule_table_cols:   # v2
+                        if len(elm)+1 == self.max_rule_table_cols:   # v2 [plus base value == 9 colummns, but the rules has 8 columns]
 
                             cell_type = elm[0]
                             if cell_type not in self.celldef_tab.param_d.keys():
@@ -1061,12 +1209,13 @@ class Rules(QWidget):
                                 return
 
                                 # self.rules_table.setCellWidget(irow, self.custom_icol_name, w_varname)   # 1st col
-                            for icol in range(self.max_rule_table_cols-1): 
+                            for icol in range(self.max_rule_table_cols-2): 
                                 # print("icol=",icol)
                                 self.rules_table.cellWidget(irow, icol).setText(elm[icol])
+                            self.rules_table.cellWidget(irow, 8).setText('??') # load base value
 
                             # if int(elm[7]) == 0:  # hard-code
-                            if int(elm[self.max_rule_table_cols-1]) == 0:
+                            if int(elm[self.max_rule_table_cols-2]) == 0:
                                 print("setting dead checkbox False")
                                 self.rules_table.cellWidget(irow,self.rules_applydead_idx).setChecked(False)
                             else:
@@ -1114,9 +1263,9 @@ class Rules(QWidget):
         return
 
     #-----------------------------------------------------------
-    def hill(self, x, half_max = 0.5 , hill_power = 2 ):
+    def hill(self, x, base_val = 0.0, saturation_val = 1.0, half_max = 0.5 , hill_power = 2 ):
         z = (x / half_max)** hill_power; 
-        return z/(1.0 + z); 
+        return base_val + (saturation_val-base_val)*(z/(1.0 + z)); 
 
     def plot_new_rule_cb(self):
         try:
@@ -1131,6 +1280,21 @@ class Rules(QWidget):
             if not self.valid_behavior(behavior):
                 self.show_warning("Invalid behavior: " + behavior)
                 return
+            # Check if saturation value is compatible with increase/decrease behaviour
+            direction = self.up_down_combobox.currentText()
+            base_val = self.rule_base_val.text()
+            if base_val == '??':
+                if "decreases" in self.up_down_combobox.currentText(): base_val = 1.0
+                else: base_val = 0.0
+            else: base_val = float(base_val)
+            saturation_val = float(self.rule_max_val.text())
+            # print(base_val,saturation_val, direction)            
+            if ( (saturation_val < base_val) and "increases" in self.up_down_combobox.currentText() ): 
+                self.show_warning(f"Error: Behavior {behavior} cannot be increased with the given [Saturation value]. [Saturation value] must be greater than [Base value].")
+                return
+            if ( (saturation_val > base_val) and "decreases" in self.up_down_combobox.currentText() ): 
+                self.show_warning(f"Error: Behavior {behavior} cannot be decreased with the given [Saturation value]. [Saturation value] must be lower than [Base value].")
+                return  
         except:
             print("\n------------- plot_new_rule_cb(): got exception validating signal, behavior. Return.")
             return
@@ -1154,13 +1318,17 @@ class Rules(QWidget):
 
         half_max = float(self.rule_half_max.text())
         hill_power = int(self.rule_hill_power.text())
+        base_val = self.rule_base_val.text()
+        if base_val == '??':
+            if "decreases" in self.up_down_combobox.currentText(): base_val = 1.0
+            else: base_val = 0.0
+        else: 
+            base_val = float(base_val)
+        saturation_val = float(self.rule_max_val.text())
 
-        # X = np.linspace(min_val,2.0 * half_max, 101)   # guess max = 2 * half-max
         X = np.linspace(0.0, 2.0 * half_max, 101)   # guess max = 2 * half-max
 
-        Y = self.hill(X, half_max=half_max, hill_power=hill_power)
-        if "decreases" in self.up_down_combobox.currentText():
-            Y = 1.0 - Y
+        Y = self.hill(X, base_val=base_val, saturation_val=saturation_val, half_max=half_max, hill_power=hill_power)
 
         self.rules_plot.ax0.plot(X,Y,'r-')
         self.rules_plot.ax0.grid()
@@ -1168,8 +1336,12 @@ class Rules(QWidget):
         self.rules_plot.ax0.set_xlabel('signal: ' + self.signal_combobox.currentText())
         self.rules_plot.ax0.set_ylabel('response: ' + self.response_combobox.currentText())
         self.rules_plot.ax0.set_title(title, fontsize=10)
+        self.rules_plot.ax0.ticklabel_format(style='sci', axis='y', scilimits=[-2,2], useOffset=False)
         self.rules_plot.canvas.update()
         self.rules_plot.canvas.draw()
+
+        # hack to bring to foreground
+        self.rules_plot.hide()
         self.rules_plot.show()
 
         # self.myscroll.setWidget(self.canvas) # self.config_params = QWidget()
@@ -1206,6 +1378,21 @@ class Rules(QWidget):
             if not self.valid_behavior(behavior):
                 self.show_warning("Invalid behavior: " + behavior)
                 return
+            # Check if saturation value is compatible with increase/decrease behaviour
+            direction = self.up_down_combobox.currentText()
+            base_val = self.rule_base_val.text()
+            if base_val == '??':
+                if "decreases" in self.up_down_combobox.currentText(): base_val = 1.0
+                else: base_val = 0.0
+            else: base_val = float(base_val)
+            saturation_val = float(self.rule_max_val.text())
+            # print(base_val,saturation_val, direction)            
+            if ( (saturation_val < base_val) and "increases" in self.up_down_combobox.currentText() ): 
+                self.show_warning(f"Error: Behavior {behavior} cannot be increased with the given [Saturation value]. [Saturation value] must be greater than [Base value].")
+                return
+            if ( (saturation_val > base_val) and "decreases" in self.up_down_combobox.currentText() ): 
+                self.show_warning(f"Error: Behavior {behavior} cannot be decreased with the given [Saturation value]. [Saturation value] must be lower than [Base value].")
+                return  
         except:
             print("\n------------- add_rule_cb(): got exception validating signal, behavior. Return.")
             return
@@ -1240,17 +1427,23 @@ class Rules(QWidget):
         print("add_rule_cb():---> ",rule_str)
 
         irow = self.num_rules
-        print("add_rule_cb():self.num_rules= ",self.num_rules)
+        # print("add_rule_cb():self.num_rules= ",self.num_rules)
 
         # v2 synax:
         # cell type, signal, increases/decreases,behavior, param value at max response, half max, hill power, applies to dead?
 
-        self.rules_table.cellWidget(irow, self.rules_celltype_idx).setText( self.celltype_combobox.currentText() )
+        try:
+            self.rules_table.cellWidget(irow, self.rules_celltype_idx).setText( self.celltype_combobox.currentText() )
+        except:
+            msg = f'add_rule_cb() Error: irow={irow}, idx={self.rules_celltype_idx}, widget={self.rules_table.cellWidget(irow, self.rules_celltype_idx)}.'
+            self.show_warning(msg)
+            return 
+
         self.rules_table.cellWidget(irow, self.rules_signal_idx).setText( self.signal_combobox.currentText() )
         self.rules_table.cellWidget(irow, self.rules_direction_idx).setText( self.up_down_combobox.currentText() )
         self.rules_table.cellWidget(irow, self.rules_response_idx).setText( self.response_combobox.currentText() )  # behavior
         # self.rules_table.cellWidget(irow, self.rules_minval_idx).setText( self.rule_min_val.text() )
-        # self.rules_table.cellWidget(irow, self.rules_baseval_idx).setText( self.rule_base_val.text() )
+        self.rules_table.cellWidget(irow, self.rules_baseval_idx).setText( self.rule_base_val.text() )
         self.rules_table.cellWidget(irow, self.rules_maxval_idx).setText( self.rule_max_val.text() )
         self.rules_table.cellWidget(irow, self.rules_halfmax_idx).setText( self.rule_half_max.text() )
         self.rules_table.cellWidget(irow, self.rules_hillpower_idx).setText( self.rule_hill_power.text() )
@@ -1260,7 +1453,7 @@ class Rules(QWidget):
             self.rules_table.cellWidget(irow,self.rules_applydead_idx).setChecked(False)
 
         self.num_rules += 1
-        print("add_rule_cb(): post-incr, self.num_rules= ",self.num_rules)
+        # print("add_rule_cb(): post-incr, self.num_rules= ",self.num_rules)
 
         # self.rules_text.appendPlainText(rule_str)
         return
@@ -1270,7 +1463,7 @@ class Rules(QWidget):
         # row_num = self.max_custom_data_rows - 1
         self.rules_table.insertRow(row_num)
         for irow in [row_num]:
-            print("=== add_row_rules_table(): irow=",irow)
+            # print("=== add_row_rules_table(): irow=",irow)
             # ------- CellType
             w_me = MyQLineEdit()
             w_me.setFrame(False)
@@ -1326,18 +1519,18 @@ class Rules(QWidget):
             # self.rules_table.setCellWidget(irow, self.rules_minval_idx, w_me)
             # # w_var_units.textChanged[str].connect(self.custom_data_units_changed)  # being explicit about passing a string 
 
-            # ------- Base val  (in v1, not v2)
-            # w_me = MyQLineEdit()
-            # w_me.setFrame(False)
-            # # item = QTableWidgetItem('')
-            # w_me.vname = w_me  
-            # w_me.wrow = irow
-            # w_me.wcol = self.rules_baseval_idx
-            # # w_var_desc.idx = irow
-            # # w_varval.setValidator(QtGui.QDoubleValidator())
-            # # self.rules_table.setItem(irow, self.custom_icol_desc, item)
-            # self.rules_table.setCellWidget(irow, self.rules_baseval_idx, w_me)
-            # # w_var_desc.textChanged[str].connect(self.custom_data_desc_changed)  # being explicit about passing a string 
+            # ------- Base val
+            w_me = MyQLineEdit()
+            w_me.setFrame(False)
+            # item = QTableWidgetItem('')
+            w_me.vname = w_me  
+            w_me.wrow = irow
+            w_me.wcol = self.rules_baseval_idx
+            # w_var_desc.idx = irow
+            # w_varval.setValidator(QtGui.QDoubleValidator())
+            # self.rules_table.setItem(irow, self.custom_icol_desc, item)
+            self.rules_table.setCellWidget(irow, self.rules_baseval_idx, w_me)
+            # w_var_desc.textChanged[str].connect(self.custom_data_desc_changed)  # being explicit about passing a string 
 
             # ------- Max val
             w_me = MyQLineEdit()
@@ -1389,7 +1582,12 @@ class Rules(QWidget):
     # Delete an entire rule. 
     def delete_rule_cb(self):
         row = self.rules_table.currentRow()
-        print("------------- delete_rule_cb(), row=",row)
+        # print(f'------------- delete_rule_cb(), row={row}, self.num_rules={self.num_rules}')
+        # if row < 0:
+        if (row < 0) or (row+1 > self.num_rules) or (self.num_rules <= 0):
+            msg = f'Error: Select a row with a rule before deleting.'
+            self.show_warning(msg)
+            return
         # varname = self.custom_data_table.cellWidget(row,self.custom_icol_name).text()
         # print(" custom var name= ",varname)
         # print(" master_custom_var_d= ",self.master_custom_var_d)
@@ -1411,7 +1609,12 @@ class Rules(QWidget):
             # print("---- decrement wrow in irow=",irow)
             # self.rules_celltype_idx = 0
             # self.rules_response_idx = 1
-            self.rules_table.cellWidget(irow,self.rules_celltype_idx).wrow -= 1  # sufficient to only decr the "name" column
+            try:
+                self.rules_table.cellWidget(irow,self.rules_celltype_idx).wrow -= 1  # sufficient to only decr the "name" column
+            except:
+                msg = f'Warning: could not decrement row {irow} from the Rules table. Select a row before deleting.'
+                self.show_warning(msg)
+                return
 
             # print(f"   after removing {varname}, master_custom_var_d= ",self.master_custom_var_d)
 
@@ -1421,6 +1624,7 @@ class Rules(QWidget):
         # self.enable_all_custom_data()
 
         self.num_rules -= 1
+        # print("---- num_rules=",self.num_rules)
 
         # print(" 2)master_custom_var_d= ",self.master_custom_var_d)
         # print("------------- LEAVING  delete_custom_data_cb")
@@ -1473,28 +1677,37 @@ class Rules(QWidget):
             self.rules_plot = RulesPlotWindow()
         self.rules_plot.ax0.cla()
         # min_val = float(self.rules_table.cellWidget(irow, self.rules_minval_idx).text())
-        min_val = 0.0  # TODO - fix
-        # base_val = float(self.rule_base_val.text())
-        max_val = float(self.rules_table.cellWidget(irow, self.rules_maxval_idx).text())
-        # X = np.linspace(min_val,max_val, 101) 
-
+        
         half_max = float(self.rules_table.cellWidget(irow, self.rules_halfmax_idx).text())
+        base_val = self.rules_table.cellWidget(irow, self.rules_baseval_idx).text()
+        hill_power = int(self.rules_table.cellWidget(irow, self.rules_hillpower_idx).text())
+        if base_val == '??':
+            if "decreases" in self.rules_table.cellWidget(irow, self.rules_direction_idx).text(): base_val = 1.0
+            else: base_val = 0.0
+        else: 
+            base_val = float(base_val)
+        saturation_val = float(self.rules_table.cellWidget(irow, self.rules_maxval_idx).text())
+        
         X = np.linspace(0.0, 2.0 * half_max, 101)   # guess max = 2 * half-max
 
-        hill_power = int(self.rules_table.cellWidget(irow, self.rules_hillpower_idx).text())
-        Y = self.hill(X, half_max=half_max, hill_power=hill_power)
-        if "decreases" in self.rules_table.cellWidget(irow, self.rules_direction_idx).text():
-            Y = 1.0 - Y
+        Y = self.hill(X, base_val=base_val, saturation_val=saturation_val, half_max=half_max, hill_power=hill_power)
+    
         self.rules_plot.ax0.plot(X,Y,'r-')
         self.rules_plot.ax0.grid()
         title = "Rule " + str(irow+1) + ": cell type: " + self.rules_table.cellWidget(irow, self.rules_celltype_idx).text()
         self.rules_plot.ax0.set_xlabel('signal: ' + self.rules_table.cellWidget(irow, self.rules_signal_idx).text())
         self.rules_plot.ax0.set_ylabel('response: ' + self.rules_table.cellWidget(irow, self.rules_response_idx).text())
         self.rules_plot.ax0.set_title(title, fontsize=10)
+        self.rules_plot.ax0.ticklabel_format(style='sci', axis='y', scilimits=[-2,2], useOffset=False)
         self.rules_plot.canvas.update()
         self.rules_plot.canvas.draw()
 
+        # self.rules_plot.show()
+
+        # hack to bring to foreground
+        self.rules_plot.hide()
         self.rules_plot.show()
+
         return
 
     #-----------------------------------------------------------
@@ -1569,12 +1782,12 @@ class Rules(QWidget):
         full_rules_fname = os.path.abspath(os.path.join(".",folder_name, file_name))
         # if os.path.isfile(full_rules_fname):
         try:
-            # with open("config/rules.csv", 'rU') as f:
             with open(full_rules_fname, 'w') as f:
                 # rules_text = self.rules_text.toPlainText()
                 # f.write(rules_text )
                 # print("rules_tab.py: save_rules_cb(): self.num_rules= ",self.num_rules)
-                for irow in range(self.num_rules):
+                # for irow in range(self.num_rules):
+                for irow in range(100):   # rwh: hack
         # self.rules_celltype_idx = 0
         # self.rules_response_idx = 1
         # self.rules_minval_idx = 2
@@ -1586,6 +1799,9 @@ class Rules(QWidget):
         # self.rules_hillpower_idx = 8
         # self.rules_applydead_idx = 9
                     rule_str = self.rules_table.cellWidget(irow, self.rules_celltype_idx).text()
+                    print("   irow=",irow, ", col 1 text=",rule_str)
+                    if rule_str == '':
+                        break
                     rule_str += ','
                     rule_str += self.rules_table.cellWidget(irow, self.rules_signal_idx).text()
                     rule_str += ','
@@ -1717,6 +1933,7 @@ class Rules(QWidget):
         for s in self.substrates:
             self.response_l.append(s + " export")
         self.response_l.append("cycle entry")
+        self.response_l.append("damage rate")
         for idx in range(6):  # TODO: hardwired
             self.response_l.append("exit from cycle phase " + str(idx))
 
@@ -1838,36 +2055,19 @@ class Rules(QWidget):
             #     self.fill_rules(full_rules_fname)
 
             if self.nanohub_flag:  # sigh
-                full_rules_fname = os.path.join(self.absolute_data_dir, file_name)
+                # full_rules_fname = os.path.join(self.absolute_data_dir, file_name)
+                full_rules_fname = os.path.join('.', file_name)
                 self.fill_rules(full_rules_fname)
             else:
                 self.fill_rules(full_rules_fname)
 
-            # self.fill_rules(full_rules_fname)
-            # self.fill_rules(folder_name, file_name)
-
-            # if os.path.isfile(full_rules_fname):
-            #     try:
-            #         # with open("config/rules.csv", 'rU') as f:
-            #         with open(full_rules_fname, 'rU') as f:
-            #             text = f.read()
-            #             self.rules_text.setPlainText(text)
-            #     except Exception as e:
-            #     # self.dialog_critical(str(e))
-            #     # print("error opening config/cells_rules.csv")
-            #         print(f'rules_tab.py: Error opening or reading {full_rules_fname}')
-            #         logging.error(f'rules_tab.py: Error opening or reading {full_rules_fname}')
-            #         # sys.exit(1)
-            # else:
-            #     print(f'{full_rules_fname} is not a valid file')
-            #     logging.error(f'{full_rules_fname} is not a valid file')
-
+        # if no rules are defined in the .xml, set default folder, file and enable them in the tab
         else:  # should empty the Rules tab
             # self.rules_text.setPlainText("")
-            self.rules_folder.setText("")
-            self.rules_file.setText("")
-            self.rules_enabled.setChecked(False)
-            # self.rules_table.clear()  # NO, this is not the droid you're looking for
+            self.rules_folder.setText("config")
+            self.rules_file.setText("rules.csv")
+            self.rules_enabled.setChecked(True)
+
             self.clear_rules()
         return
 

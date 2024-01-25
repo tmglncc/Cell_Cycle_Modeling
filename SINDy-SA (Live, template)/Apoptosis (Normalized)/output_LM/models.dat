@@ -1,0 +1,914 @@
+Experimento 1: Grau = 1, Frequência = 1, alpha = 0.001
+
+---------- ITERATION 1 ----------
+SSE = 0.03312727771258043
+Coefficients before sensitivity analysis = [[ 0.00000000e+00  6.65171954e-04  0.00000000e+00]
+ [ 0.00000000e+00  2.75991267e-05 -5.00722320e-04]]
+ST_sum = [array([0.30310556, 0.01257637, 0.00548792])]
+Total points = [-1. -1.  1.]
+Less important parameter = [2]
+Coefficients after sensitivity analysis = [[0.00000000e+00 6.65171954e-04 0.00000000e+00]
+ [0.00000000e+00 2.75991267e-05 0.00000000e+00]]
+
+---------- ITERATION 2 ----------
+SSE = 0.03316606387576914
+Comparing 0.03312727771258043 + 0.01*0.0033127277712580432 with 0.03316606387576914: error has increased
+live' = 6.652e-04 live
+apoptotic' = 2.760e-05 live + -5.007e-04 apoptotic
+
+
+Experimento 2: Grau = 1, Frequência = 1, alpha = 0.01
+
+---------- ITERATION 1 ----------
+SSE = 0.03312727771274132
+Coefficients before sensitivity analysis = [[ 0.00000000e+00  6.65171954e-04  0.00000000e+00]
+ [ 0.00000000e+00  2.75984015e-05 -5.00693151e-04]]
+ST_sum = [array([0.30310556, 0.01257604, 0.0054876 ])]
+Total points = [-1. -1.  1.]
+Less important parameter = [2]
+Coefficients after sensitivity analysis = [[0.00000000e+00 6.65171954e-04 0.00000000e+00]
+ [0.00000000e+00 2.75984015e-05 0.00000000e+00]]
+
+---------- ITERATION 2 ----------
+SSE = 0.03316606387576915
+Comparing 0.03312727771274132 + 0.01*0.0033127277712741324 with 0.03316606387576915: error has increased
+live' = 6.652e-04 live
+apoptotic' = 2.760e-05 live + -5.007e-04 apoptotic
+
+
+Experimento 3: Grau = 1, Frequência = 1, alpha = 0.1
+
+---------- ITERATION 1 ----------
+SSE = 0.033127277728810106
+Coefficients before sensitivity analysis = [[ 0.00000000e+00  6.65171952e-04  0.00000000e+00]
+ [ 0.00000000e+00  2.75911536e-05 -5.00401642e-04]]
+ST_sum = [array([0.30310556, 0.01257274, 0.0054844 ])]
+Total points = [-1. -1.  1.]
+Less important parameter = [2]
+Coefficients after sensitivity analysis = [[0.00000000e+00 6.65171952e-04 0.00000000e+00]
+ [0.00000000e+00 2.75911536e-05 0.00000000e+00]]
+
+---------- ITERATION 2 ----------
+SSE = 0.03316606387576926
+Comparing 0.033127277728810106 + 0.01*0.0033127277728810106 with 0.03316606387576926: error has increased
+live' = 6.652e-04 live
+apoptotic' = 2.760e-05 live + -5.007e-04 apoptotic
+
+
+Experimento 4: Grau = 1, Frequência = 1, alpha = 1.0
+
+---------- ITERATION 1 ----------
+SSE = 0.03312727931698804
+Coefficients before sensitivity analysis = [[ 0.00000000e+00  6.65171934e-04  0.00000000e+00]
+ [ 0.00000000e+00  2.75191359e-05 -4.97505107e-04]]
+ST_sum = [array([0.30310555, 0.01253992, 0.00545266])]
+Total points = [-1. -1.  1.]
+Less important parameter = [2]
+Coefficients after sensitivity analysis = [[0.00000000e+00 6.65171934e-04 0.00000000e+00]
+ [0.00000000e+00 2.75191359e-05 0.00000000e+00]]
+
+---------- ITERATION 2 ----------
+SSE = 0.03316606387578252
+Comparing 0.03312727931698804 + 0.01*0.0033127279316988046 with 0.03316606387578252: error has increased
+live' = 6.652e-04 live
+apoptotic' = 2.760e-05 live + -5.007e-04 apoptotic
+
+
+Experimento 5: Grau = 1, Frequência = 1, alpha = 10.0
+
+---------- ITERATION 1 ----------
+SSE = 0.033127421088113757
+Coefficients before sensitivity analysis = [[ 0.00000000e+00  6.65171753e-04  0.00000000e+00]
+ [ 0.00000000e+00  2.68422744e-05 -4.70281903e-04]]
+ST_sum = [array([0.30310546, 0.01223149, 0.00515429])]
+Total points = [-1. -1.  1.]
+Less important parameter = [2]
+Coefficients after sensitivity analysis = [[0.00000000e+00 6.65171753e-04 0.00000000e+00]
+ [0.00000000e+00 2.68422744e-05 0.00000000e+00]]
+
+---------- ITERATION 2 ----------
+SSE = 0.033166063877108756
+Comparing 0.033127421088113757 + 0.01*0.0033127421088113757 with 0.033166063877108756: error has increased
+live' = 6.652e-04 live
+apoptotic' = 2.760e-05 live + -5.007e-04 apoptotic
+
+
+Experimento 6: Grau = 2, Frequência = 1, alpha = 0.001
+
+---------- ITERATION 1 ----------
+SSE = 0.03156767438955097
+Coefficients before sensitivity analysis = [[ 0.00000000e+00  6.79309997e-04  0.00000000e+00 -1.82332645e-08
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  7.82579099e-05 -2.02383922e-03 -5.11059679e-07
+   3.34955736e-05 -5.48995164e-04]]
+ST_sum = [array([0.30954798, 0.00946508, 0.03566056, 0.02218128, 0.26529653,
+       0.41821341, 0.16486544])]
+Total points = [-1.  1.  3.  4.  1. -1.  2.]
+Less important parameter = [3]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00  6.79309997e-04  0.00000000e+00 -1.82332645e-08
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  7.82579099e-05  0.00000000e+00 -5.11059679e-07
+   3.34955736e-05 -5.48995164e-04]]
+
+---------- ITERATION 2 ----------
+SSE = 0.0315978535245036
+Comparing 0.03156767438955097 + 0.01*0.0031567674389550975 with 0.0315978535245036: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.00000000e+00  6.79309997e-04  0.00000000e+00 -1.82332645e-08
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  2.84903422e-05  0.00000000e+00  3.30066183e-08
+  -7.36649629e-06  2.12714084e-04]]
+ST_sum = [array([0.30954798, 0.00946508, 0.01298248, 0.01713409, 0.09197536,
+       0.06387889])]
+Total points = [-1.  1.  3.  2. -1.  1.]
+Less important parameter = [2]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00  6.79309997e-04  0.00000000e+00 -1.82332645e-08
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  3.30066183e-08
+  -7.36649629e-06  2.12714084e-04]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.0315978535245036
+Loss at the current iteration = 0.033792163307270605
+Number of bases at the previous iteration = 6
+Number of bases at the current iteration = 5
+Total number of bases = 7
+F-test = 0.06944490014378199
+SSE = 0.033792163307270605
+Comparing 0.03158276395702729 + 0.01*1.5089567476315319e-05 with 0.033792163307270605: error has increased
+live' = 6.793e-04 live + -1.823e-08 live^2
+apoptotic' = 2.849e-05 live + 3.301e-08 live^2 + -7.367e-06 live apoptotic + 2.127e-04 apoptotic^2
+
+
+Experimento 7: Grau = 2, Frequência = 1, alpha = 0.01
+
+---------- ITERATION 1 ----------
+SSE = 0.03156767445647548
+Coefficients before sensitivity analysis = [[ 0.00000000e+00  6.79309995e-04  0.00000000e+00 -1.82332625e-08
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  7.81908494e-05 -2.02111498e-03 -5.10318297e-07
+   3.34398308e-05 -5.47954622e-04]]
+ST_sum = [array([0.30954798, 0.00946508, 0.03563001, 0.02215142, 0.26491167,
+       0.41751742, 0.16455296])]
+Total points = [-1.  1.  3.  4.  1. -1.  2.]
+Less important parameter = [3]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00  6.79309995e-04  0.00000000e+00 -1.82332625e-08
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  7.81908494e-05  0.00000000e+00 -5.10318297e-07
+   3.34398308e-05 -5.47954622e-04]]
+
+---------- ITERATION 2 ----------
+SSE = 0.03159785352451742
+Comparing 0.03156767445647548 + 0.01*0.003156767445647548 with 0.03159785352451742: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.00000000e+00  6.79309995e-04  0.00000000e+00 -1.82332625e-08
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  2.84903690e-05  0.00000000e+00  3.30031229e-08
+  -7.36621001e-06  2.12708189e-04]]
+ST_sum = [array([0.30954798, 0.00946508, 0.01298249, 0.01713227, 0.09197179,
+       0.06387712])]
+Total points = [-1.  1.  3.  2. -1.  1.]
+Less important parameter = [2]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00  6.79309995e-04  0.00000000e+00 -1.82332625e-08
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  3.30031229e-08
+  -7.36621001e-06  2.12708189e-04]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.03159785352451742
+Loss at the current iteration = 0.0337921633076933
+Number of bases at the previous iteration = 6
+Number of bases at the current iteration = 5
+Total number of bases = 7
+F-test = 0.06944490015669179
+SSE = 0.0337921633076933
+Comparing 0.03158276399049645 + 0.01*1.5089534020969186e-05 with 0.0337921633076933: error has increased
+live' = 6.793e-04 live + -1.823e-08 live^2
+apoptotic' = 2.849e-05 live + 3.301e-08 live^2 + -7.367e-06 live apoptotic + 2.127e-04 apoptotic^2
+
+
+Experimento 8: Grau = 2, Frequência = 1, alpha = 0.1
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450729917474D+04   r2 =  0.1938884661366D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450729917474D+04   r2 =  0.1938884661366D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450729917474D+04   r2 =  0.1312929097384D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450729917474D+04   r2 =  0.1312929097384D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450729917474D+04   r2 =  0.8890589776203D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450729917474D+04   r2 =  0.8890589776203D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450729917474D+04   r2 =  0.6020324077379D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450729917474D+04   r2 =  0.6020324077379D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450729917474D+04   r2 =  0.4076703898057D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450729917474D+04   r2 =  0.4076703898057D-13
+ lsoda--  above warning has been issued i1 times.    
+       it will not be issued again for this problem  
+      in above message,  i1 =        10
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450753443600D+04   r2 =  0.1938810507615D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450753443600D+04   r2 =  0.1938810507615D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450753443600D+04   r2 =  0.1312878883661D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450753443600D+04   r2 =  0.1312878883661D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450753443600D+04   r2 =  0.8890249750519D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450753443600D+04   r2 =  0.8890249750519D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450753443600D+04   r2 =  0.6020093826646D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450753443600D+04   r2 =  0.6020093826646D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450753443600D+04   r2 =  0.4076547982188D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450753443600D+04   r2 =  0.4076547982188D-13
+ lsoda--  above warning has been issued i1 times.    
+       it will not be issued again for this problem  
+      in above message,  i1 =        10
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450988670650D+04   r2 =  0.1938060466408D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450988670650D+04   r2 =  0.1938060466408D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450988670650D+04   r2 =  0.1312370988094D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450988670650D+04   r2 =  0.1312370988094D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450988670650D+04   r2 =  0.8886810500719D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450988670650D+04   r2 =  0.8886810500719D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450988670650D+04   r2 =  0.6017764914965D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450988670650D+04   r2 =  0.6017764914965D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450988670650D+04   r2 =  0.4074970943609D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3450988670650D+04   r2 =  0.4074970943609D-13
+ lsoda--  above warning has been issued i1 times.    
+       it will not be issued again for this problem  
+      in above message,  i1 =        10
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3453339283388D+04   r2 =  0.1930478531482D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3453339283388D+04   r2 =  0.1930478531482D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3453339283388D+04   r2 =  0.1307236828658D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3453339283388D+04   r2 =  0.1307236828658D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3453339283388D+04   r2 =  0.8852044186621D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3453339283388D+04   r2 =  0.8852044186621D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3453339283388D+04   r2 =  0.5994222666013D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3453339283388D+04   r2 =  0.5994222666013D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3453339283388D+04   r2 =  0.4059029147646D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3453339283388D+04   r2 =  0.4059029147646D-13
+ lsoda--  above warning has been issued i1 times.    
+       it will not be issued again for this problem  
+      in above message,  i1 =        10
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3476672772848D+04   r2 =  0.2200104140138D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3476672772848D+04   r2 =  0.2200104140138D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3476672772848D+04   r2 =  0.1489815665893D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3476672772848D+04   r2 =  0.1489815665893D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3476672772848D+04   r2 =  0.1008838935324D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3476672772848D+04   r2 =  0.1008838935324D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3476672772848D+04   r2 =  0.6831422307648D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3476672772848D+04   r2 =  0.6831422307648D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3476672772848D+04   r2 =  0.4625944648977D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3476672772848D+04   r2 =  0.4625944648977D-13
+ lsoda--  above warning has been issued i1 times.    
+       it will not be issued again for this problem  
+      in above message,  i1 =        10
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2603404903737D+04   r2 =  0.1670243921353D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2603404903737D+04   r2 =  0.1670243921353D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2603404903737D+04   r2 =  0.1131017170732D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2603404903737D+04   r2 =  0.1131017170732D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2603404903737D+04   r2 =  0.7658760640506D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2603404903737D+04   r2 =  0.7658760640506D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2603404903737D+04   r2 =  0.5186182497177D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2603404903737D+04   r2 =  0.5186182497177D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2603404903737D+04   r2 =  0.3511859184079D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2603404903737D+04   r2 =  0.3511859184079D-13
+ lsoda--  above warning has been issued i1 times.    
+       it will not be issued again for this problem  
+      in above message,  i1 =        10
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1765872363248D+04   r2 =  0.1034618766512D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1765872363248D+04   r2 =  0.1034618766512D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1765872363248D+04   r2 =  0.7005992209441D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1765872363248D+04   r2 =  0.7005992209441D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1765872363248D+04   r2 =  0.4744155859865D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1765872363248D+04   r2 =  0.4744155859865D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1765872363248D+04   r2 =  0.3212537803334D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1765872363248D+04   r2 =  0.3212537803334D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1765872363248D+04   r2 =  0.2175392091385D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1765872363248D+04   r2 =  0.2175392091385D-13
+ lsoda--  above warning has been issued i1 times.    
+       it will not be issued again for this problem  
+      in above message,  i1 =        10
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1969794047442D+04   r2 =  0.9951547754611D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1969794047442D+04   r2 =  0.9951547754611D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1969794047442D+04   r2 =  0.7879348261985D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1969794047442D+04   r2 =  0.7879348261985D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1969794047442D+04   r2 =  0.6238640517490D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1969794047442D+04   r2 =  0.6238640517490D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1969794047442D+04   r2 =  0.4939575484211D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1969794047442D+04   r2 =  0.4939575484211D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1969794047442D+04   r2 =  0.3911013288202D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1969794047442D+04   r2 =  0.3911013288202D-13
+ lsoda--  above warning has been issued i1 times.    
+       it will not be issued again for this problem  
+      in above message,  i1 =        10
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1870270433278D+04   r2 =  0.1134039061085D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1870270433278D+04   r2 =  0.1134039061085D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1870270433278D+04   r2 =  0.7679223579083D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1870270433278D+04   r2 =  0.7679223579083D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1870270433278D+04   r2 =  0.5200039116918D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1870270433278D+04   r2 =  0.5200039116918D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1870270433278D+04   r2 =  0.3521242289538D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1870270433278D+04   r2 =  0.3521242289538D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1870270433278D+04   r2 =  0.2384433459604D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1870270433278D+04   r2 =  0.2384433459604D-13
+ lsoda--  above warning has been issued i1 times.    
+       it will not be issued again for this problem  
+      in above message,  i1 =        10
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1577867942070D+04   r2 =  0.1089695639459D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1577867942070D+04   r2 =  0.1089695639459D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1577867942070D+04   r2 =  0.7378949046564D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1577867942070D+04   r2 =  0.7378949046564D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1577867942070D+04   r2 =  0.4996706149877D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1577867942070D+04   r2 =  0.4996706149877D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1577867942070D+04   r2 =  0.3383553970987D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1577867942070D+04   r2 =  0.3383553970987D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1577867942070D+04   r2 =  0.2291196866733D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1577867942070D+04   r2 =  0.2291196866733D-13
+ lsoda--  above warning has been issued i1 times.    
+       it will not be issued again for this problem  
+      in above message,  i1 =        10
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2681981795320D+04   r2 =  0.1815952972907D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2681981795320D+04   r2 =  0.1815952972907D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2681981795320D+04   r2 =  0.1229685058177D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2681981795320D+04   r2 =  0.1229685058177D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2681981795320D+04   r2 =  0.8326897033483D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2681981795320D+04   r2 =  0.8326897033483D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2681981795320D+04   r2 =  0.5638615655703D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2681981795320D+04   r2 =  0.5638615655703D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2681981795320D+04   r2 =  0.3818227412312D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2681981795320D+04   r2 =  0.3818227412312D-13
+ lsoda--  above warning has been issued i1 times.    
+       it will not be issued again for this problem  
+      in above message,  i1 =        10
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2873802716486D+04   r2 =  0.2060037261691D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2873802716486D+04   r2 =  0.2060037261691D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2873802716486D+04   r2 =  0.1394968414812D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2873802716486D+04   r2 =  0.1394968414812D-12
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2873802716486D+04   r2 =  0.9446124662455D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2873802716486D+04   r2 =  0.9446124662455D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2873802716486D+04   r2 =  0.6396508350382D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2873802716486D+04   r2 =  0.6396508350382D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2873802716486D+04   r2 =  0.4331439668495D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.2873802716486D+04   r2 =  0.4331439668495D-13
+ lsoda--  above warning has been issued i1 times.    
+       it will not be issued again for this problem  
+      in above message,  i1 =        10
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1634098724373D+04   r2 =  0.8246561227742D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1634098724373D+04   r2 =  0.8246561227742D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1634098724373D+04   r2 =  0.5584215711746D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1634098724373D+04   r2 =  0.5584215711746D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1634098724373D+04   r2 =  0.3781390115725D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1634098724373D+04   r2 =  0.3781390115725D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1634098724373D+04   r2 =  0.2560594351187D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1634098724373D+04   r2 =  0.2560594351187D-13
+
+---------- ITERATION 1 ----------
+SSE = 0.0315676809640888
+Coefficients before sensitivity analysis = [[ 0.00000000e+00  6.79309977e-04  0.00000000e+00 -1.82332417e-08
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  7.75304092e-05 -1.99428536e-03 -5.03017288e-07
+   3.28908888e-05 -5.37707672e-04]]
+ST_sum = [array([0.30954797, 0.00946507, 0.03532906, 0.02185737, 0.26112163,
+       0.41066353, 0.16147576])]
+Total points = [-1.  1.  3.  4.  1. -1.  2.]
+Less important parameter = [3]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00  6.79309977e-04  0.00000000e+00 -1.82332417e-08
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  7.75304092e-05  0.00000000e+00 -5.03017288e-07
+   3.28908888e-05 -5.37707672e-04]]
+
+---------- ITERATION 2 ----------
+SSE = 0.031597853525898834
+Comparing 0.0315676809640888 + 0.01*0.0031567680964088803 with 0.031597853525898834: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.00000000e+00  6.79309977e-04  0.00000000e+00 -1.82332417e-08
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  2.84906368e-05  0.00000000e+00  3.29681799e-08
+  -7.36334814e-06  2.12649254e-04]]
+ST_sum = [array([0.30954797, 0.00946507, 0.01298261, 0.01711413, 0.09193606,
+       0.06385942])]
+Total points = [-1.  1.  3.  2. -1.  1.]
+Less important parameter = [2]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00  6.79309977e-04  0.00000000e+00 -1.82332417e-08
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  3.29681799e-08
+  -7.36334814e-06  2.12649254e-04]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.031597853525898834
+Loss at the current iteration = 0.033792163349944844
+Number of bases at the previous iteration = 6
+Number of bases at the current iteration = 5
+Total number of bases = 7
+F-test = 0.06944490144710205
+SSE = 0.033792163349944844
+Comparing 0.031582767244993815 + 0.01*1.5086280905015487e-05 with 0.033792163349944844: error has increased
+live' = 6.793e-04 live + -1.823e-08 live^2
+apoptotic' = 2.849e-05 live + 3.301e-08 live^2 + -7.367e-06 live apoptotic + 2.127e-04 apoptotic^2
+
+
+Experimento 9: Grau = 2, Frequência = 1, alpha = 1.0
+
+---------- ITERATION 1 ----------
+SSE = 0.031568182294162805
+Coefficients before sensitivity analysis = [[ 0.00000000e+00  6.79309798e-04  0.00000000e+00 -1.82330343e-08
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  7.18057279e-05 -1.76171345e-03 -4.39771453e-07
+   2.81359021e-05 -4.48954388e-04]]
+ST_sum = [array([0.30954789, 0.00946496, 0.03272043, 0.01930838, 0.22829005,
+       0.35129452, 0.1348228 ])]
+Total points = [-1.  1.  3.  4.  1. -1.  2.]
+Less important parameter = [3]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00  6.79309798e-04  0.00000000e+00 -1.82330343e-08
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  7.18057279e-05  0.00000000e+00 -4.39771453e-07
+   2.81359021e-05 -4.48954388e-04]]
+
+---------- ITERATION 2 ----------
+SSE = 0.03159785366327299
+Comparing 0.031568182294162805 + 0.01*0.0031568182294162807 with 0.03159785366327299: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.00000000e+00  6.79309798e-04  0.00000000e+00 -1.82330343e-08
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  2.84933063e-05  0.00000000e+00  3.26198131e-08
+  -7.33481657e-06  2.12061693e-04]]
+ST_sum = [array([0.30954789, 0.00946496, 0.01298383, 0.01693329, 0.09157982,
+       0.06368297])]
+Total points = [-1.  1.  3.  2. -1.  1.]
+Less important parameter = [2]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00  6.79309798e-04  0.00000000e+00 -1.82330343e-08
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  3.26198131e-08
+  -7.33481657e-06  2.12061693e-04]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.03159785366327299
+Loss at the current iteration = 0.03379216755559604
+Number of bases at the previous iteration = 6
+Number of bases at the current iteration = 5
+Total number of bases = 7
+F-test = 0.06944502989687432
+SSE = 0.03379216755559604
+Comparing 0.031583017978717896 + 0.01*1.4835684555090933e-05 with 0.03379216755559604: error has increased
+live' = 6.793e-04 live + -1.823e-08 live^2
+apoptotic' = 2.849e-05 live + 3.301e-08 live^2 + -7.367e-06 live apoptotic + 2.127e-04 apoptotic^2
+
+
+Experimento 10: Grau = 2, Frequência = 1, alpha = 10.0
+
+---------- ITERATION 1 ----------
+SSE = 0.03157807046096264
+Coefficients before sensitivity analysis = [[ 0.00000000e+00  6.79308005e-04  0.00000000e+00 -1.82309606e-08
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  4.90414439e-05 -8.36301706e-04 -1.89997206e-07
+   9.36987656e-06 -9.89781486e-05]]
+ST_sum = [array([0.30954707, 0.00946389, 0.02234721, 0.00916587, 0.09862957,
+       0.11698883, 0.02972353])]
+Total points = [-1.  1.  3.  4.  1. -1.  2.]
+Less important parameter = [3]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00  6.79308005e-04  0.00000000e+00 -1.82309606e-08
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  4.90414439e-05  0.00000000e+00 -1.89997206e-07
+   9.36987656e-06 -9.89781486e-05]]
+
+---------- ITERATION 2 ----------
+SSE = 0.0315978666650496
+Comparing 0.03157807046096264 + 0.01*0.0031578070460962643 with 0.0315978666650496: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.00000000e+00  6.79308005e-04  0.00000000e+00 -1.82309606e-08
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  2.85192087e-05  0.00000000e+00  2.92393191e-08
+  -7.05795037e-06  2.06360087e-04]]
+ST_sum = [array([0.30954707, 0.00946389, 0.01299563, 0.01517844, 0.08812297,
+       0.06197076])]
+Total points = [-1.  1.  3.  2. -1.  1.]
+Less important parameter = [2]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00  6.79308005e-04  0.00000000e+00 -1.82309606e-08
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  2.92393191e-08
+  -7.05795037e-06  2.06360087e-04]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.0315978666650496
+Loss at the current iteration = 0.03379256933152186
+Number of bases at the previous iteration = 6
+Number of bases at the current iteration = 5
+Total number of bases = 7
+F-test = 0.06945730513192587
+SSE = 0.03379256933152186
+Comparing 0.03158796856300612 + 0.01*9.898102043479073e-06 with 0.03379256933152186: error has increased
+live' = 6.793e-04 live + -1.823e-08 live^2
+apoptotic' = 2.849e-05 live + 3.301e-08 live^2 + -7.367e-06 live apoptotic + 2.127e-04 apoptotic^2
+
+
+Modelo 1
+
+live' = 6.652e-04 live
+apoptotic' = 2.760e-05 live + -5.007e-04 apoptotic
+
+
+*** Using Levenberg-Marquardt algorithm ***
+
+live' = 6.783e-04 live
+apoptotic' = 3.860e-05 live + -8.271e-04 apoptotic
+
+
+Modelo 2
+
+live' = 6.793e-04 live + -1.823e-08 live^2
+apoptotic' = 2.849e-05 live + 3.301e-08 live^2 + -7.367e-06 live apoptotic + 2.127e-04 apoptotic^2
+
+
+*** Using Levenberg-Marquardt algorithm ***
+
+live' = 6.964e-04 live + -4.986e-08 live^2
+apoptotic' = 3.012e-05 live + 1.200e-07 live^2 + -1.818e-05 live apoptotic + 5.007e-04 apoptotic^2
+
+
+Melhor modelo AIC = 1
+
+Melhor modelo AICc = 1
+
+Melhor modelo BIC = 1
+
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1634098724373D+04   r2 =  0.1733924094227D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.1634098724373D+04   r2 =  0.1733924094227D-13
+ lsoda--  above warning has been issued i1 times.    
+       it will not be issued again for this problem  
+      in above message,  i1 =        10

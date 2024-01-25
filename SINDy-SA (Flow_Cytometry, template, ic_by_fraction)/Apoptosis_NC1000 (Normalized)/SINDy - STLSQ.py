@@ -51,7 +51,7 @@ plot_qoi = True
 plot_musig = False
 plot_simulation = False
 plot_derivative = False
-calibration_mode = "LM"
+calibration_mode = "DE"
 
 stlsq_alphas = [0.001, 0.01, 0.1, 1.0, 10.0]
 
@@ -93,8 +93,8 @@ for poly_degree in poly_degrees:
 			)
 
 			# Define method properties
-			# differentiation_method = ps.FiniteDifference(order = fd_order)
-			differentiation_method = ps.SmoothedFiniteDifference()
+			differentiation_method = ps.FiniteDifference(order = fd_order)
+			# differentiation_method = ps.SmoothedFiniteDifference()
 			feature_library = ps.PolynomialLibrary(degree = poly_degree) # + ps.FourierLibrary(n_frequencies = fourier_nfreq)
 			optimizer = ps.STLSQ(
 				alpha = stlsq_alpha,
@@ -166,6 +166,13 @@ for model_id, model in enumerate(model_set):
 			print("\n")
 
 			simulation = model.simulate(X0_test, t = t_test)
+		elif calibration_mode == "DE":
+			mc = ModelCalibration(model, model_id, X_test, t, X0_test, 0)
+			mc.differential_evolution(normalize = True)
+			model.print(precision = precision)
+			print("\n")
+
+			simulation = model.simulate(X0_test, t = t_test)
 		elif calibration_mode == "Bayes":
 			mc = ModelCalibration(model, model_id, X_test, t, X0_test, 0)
 			mc.bayesian_calibration()
@@ -183,36 +190,36 @@ for model_id, model in enumerate(model_set):
 		continue
 
 	# Generate figures
-	for std_factor in range(0, 1):
-		fig, ax1 = plt.subplots(1, 1, figsize = (15, 7.5), dpi = 300)
+	for std_factor in range(1, 2):
+		fig, ax1 = plt.subplots(1, 1, figsize = (10.54, 5.92), dpi = 300)
 		ax2 = ax1.twinx()
-		ax1.plot(t_test, X_test[:,0], "bo", label = r"Data G0G1$(t)$", alpha = 0.5, markersize = 3)
-		ax1.plot(t_test, X_test[:,1], "g^", label = r"Data S$(t)$", alpha = 0.5, markersize = 3)
-		ax1.plot(t_test, X_test[:,2], "rs", label = r"Data G2M$(t)$", alpha = 0.5, markersize = 3)
-		ax2.plot(t_test, X_test[:,3], "mD", label = r"Data apoptotic$(t)$", alpha = 0.5, markersize = 3)
-		# ax1.errorbar(t_test, X_test[:,0], yerr = std_factor*X_std[:,0], fmt = 'bo', label = r"Data G0G1$(t)$", capsize = 2.0, alpha = 0.5, markersize = 3)
-		# ax1.errorbar(t_test, X_test[:,1], yerr = std_factor*X_std[:,1], fmt = 'g^', label = r"Data S$(t)$", capsize = 2.0, alpha = 0.5, markersize = 3)
-		# ax1.errorbar(t_test, X_test[:,2], yerr = std_factor*X_std[:,2], fmt = 'rs', label = r"Data G2M$(t)$", capsize = 2.0, alpha = 0.5, markersize = 3)
-		# ax2.errorbar(t_test, X_test[:,3], yerr = std_factor*X_std[:,3], fmt = 'mD', label = r"Data apoptotic$(t)$", capsize = 2.0, alpha = 0.5, markersize = 3)
-		ax1.plot(t_test, true_solution[:,0], "b:", label = r"True G0G1$(t)$", alpha = 1.0, linewidth = 1)
+		ax1.plot(t_test, X_test[:,0], "ko", label = r"Data G$_0$ G$_1$$(t)$", alpha = 0.3, markersize = 3)
+		ax1.plot(t_test, X_test[:,1], "k^", label = r"Data S$(t)$", alpha = 0.3, markersize = 3)
+		ax1.plot(t_test, X_test[:,2], "ks", label = r"Data G$_2$ M$(t)$", alpha = 0.3, markersize = 3)
+		# ax2.plot(t_test, X_test[:,3], "kD", label = r"Data $A(t)$", alpha = 0.3, markersize = 3)
+		# ax1.errorbar(t_test, X_test[:,0], yerr = std_factor*X_std[:,0], fmt = 'ko', label = r"Data G$_0$ G$_1$$(t)$", capsize = 2.0, alpha = 0.3, markersize = 3)
+		# ax1.errorbar(t_test, X_test[:,1], yerr = std_factor*X_std[:,1], fmt = 'k^', label = r"Data S$(t)$", capsize = 2.0, alpha = 0.3, markersize = 3)
+		# ax1.errorbar(t_test, X_test[:,2], yerr = std_factor*X_std[:,2], fmt = 'ks', label = r"Data G$_2$ M$(t)$", capsize = 2.0, alpha = 0.3, markersize = 3)
+		ax2.errorbar(t_test, X_test[:,3], yerr = std_factor*X_std[:,3], fmt = 'kD', label = r"Data $A(t)$", capsize = 2.0, alpha = 0.3, markersize = 3)
+		ax1.plot(t_test, true_solution[:,0], "b:", label = r"True G$_0$ G$_1$$(t)$", alpha = 1.0, linewidth = 1)
 		ax1.plot(t_test, true_solution[:,1], "g:", label = r"True S$(t)$", alpha = 1.0, linewidth = 1)
-		ax1.plot(t_test, true_solution[:,2], "r:", label = r"True G2M$(t)$", alpha = 1.0, linewidth = 1)
-		ax2.plot(t_test, true_solution[:,3], "m:", label = r"True apoptotic$(t)$", alpha = 1.0, linewidth = 1)
-		ax1.plot(t_test, simulation[:,0], "b", label = r"SINDy-SA G0G1$(t)$", alpha = 1.0, linewidth = 1)
+		ax1.plot(t_test, true_solution[:,2], "r:", label = r"True G$_2$ M$(t)$", alpha = 1.0, linewidth = 1)
+		ax2.plot(t_test, true_solution[:,3], "y:", label = r"True $A(t)$", alpha = 1.0, linewidth = 1)
+		ax1.plot(t_test, simulation[:,0], "b", label = r"SINDy-SA G$_0$ G$_1$$(t)$", alpha = 1.0, linewidth = 1)
 		ax1.plot(t_test, simulation[:,1], "g", label = r"SINDy-SA S$(t)$", alpha = 1.0, linewidth = 1)
-		ax1.plot(t_test, simulation[:,2], "r", label = r"SINDy-SA G2M$(t)$", alpha = 1.0, linewidth = 1)
-		ax2.plot(t_test, simulation[:,3], "m", label = r"SINDy-SA apoptotic$(t)$", alpha = 1.0, linewidth = 1)
+		ax1.plot(t_test, simulation[:,2], "r", label = r"SINDy-SA G$_2$ M$(t)$", alpha = 1.0, linewidth = 1)
+		ax2.plot(t_test, simulation[:,3], "y", label = r"SINDy-SA $A(t)$", alpha = 1.0, linewidth = 1)
 		if calibration_mode == "Bayes":
 			ax1.fill_between(t, simulation_min[:,0], simulation_max[:,0], color = "b", alpha = 0.4)
 			ax1.fill_between(t, simulation_min[:,1], simulation_max[:,1], color = "g", alpha = 0.4)
 			ax1.fill_between(t, simulation_min[:,2], simulation_max[:,2], color = "r", alpha = 0.4)
-			ax2.fill_between(t, simulation_min[:,3], simulation_max[:,3], color = "m", alpha = 0.4)
+			ax2.fill_between(t, simulation_min[:,3], simulation_max[:,3], color = "y", alpha = 0.4)
 		ax1.set_xlabel(r"Time $t$")
-		ax1.set_ylabel(r"G0G1$(t)$, S$(t)$, G2M$(t)$", color = 'k')
-		ax2.set_ylabel(r"Apoptotic$(t)$", color = 'k')
+		ax1.set_ylabel(r"G$_0$ G$_1$$(t)$, S$(t)$, G$_2$ M$(t)$", color = 'k')
+		ax2.set_ylabel(r"$A(t)$", color = 'k')
 		ax1.legend(loc = 2)
 		ax2.legend(loc = 4)
-		plt.savefig(os.path.join("output", "model" + str(model_id+1) + "_ic0_std" + str(std_factor) + ".png"), bbox_inches = 'tight')
+		plt.savefig(os.path.join("output", "model" + str(model_id+1) + "_ic0_std" + str(std_factor) + ".pdf"), bbox_inches = 'tight')
 		plt.close()
 
 	# Compute SSE

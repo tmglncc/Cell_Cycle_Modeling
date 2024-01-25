@@ -25,6 +25,8 @@ from matplotlib.collections import LineCollection
 from matplotlib.patches import Circle, Ellipse, Rectangle
 from matplotlib.collections import PatchCollection
 import matplotlib.colors as mplc
+#import colorcet as cc
+import cmaps
 from mpl_toolkits.axes_grid1.axes_divider import make_axes_locatable
 from matplotlib import gridspec
 from collections import deque
@@ -59,15 +61,12 @@ from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
 #---------------------------------------------------------------
 class Vis(VisBase, QWidget):
 
-    def __init__(self, nanohub_flag, config_tab, run_tab, model3D_flag, tensor_flag):
-        # super().__init__()
-        # super(Vis,self).__init__(a=a,b=b,c=c)
-        super(Vis,self).__init__(nanohub_flag=nanohub_flag, config_tab=config_tab, run_tab=run_tab, model3D_flag=model3D_flag,tensor_flag=tensor_flag)
-        # self.d=d
-        # super().__init__(nanohub_flag, run_tab, model3D_flag)
-        # global self.config_params
+    def __init__(self, studio_flag, rules_flag, nanohub_flag, config_tab, microenv_tab, celldef_tab, user_params_tab, rules_tab, ics_tab, run_tab, model3D_flag, tensor_flag, ecm_flag):
+
+        super(Vis,self).__init__(studio_flag=studio_flag, rules_flag=rules_flag,  nanohub_flag=nanohub_flag, config_tab=config_tab, microenv_tab=microenv_tab, celldef_tab=celldef_tab, user_params_tab=user_params_tab, rules_tab=rules_tab, ics_tab=ics_tab, run_tab=run_tab, model3D_flag=model3D_flag,tensor_flag=tensor_flag, ecm_flag=ecm_flag)
 
         self.figure = None
+        # self.png_frame = 0
 
         # self.vis2D = True
         # self.model3D_flag = model3D_flag
@@ -85,11 +84,11 @@ class Vis(VisBase, QWidget):
         # self.population_plot = None
         self.celltype_name = []
         self.celltype_color = []
+        self.discrete_variable = None
 
         self.animating_flag = False
 
         self.xml_root = None
-        self.current_svg_frame = 0
         self.timer = QtCore.QTimer()
         self.timer.timeout.connect(self.play_plot_cb)
 
@@ -102,18 +101,17 @@ class Vis(VisBase, QWidget):
         self.cell_alpha = 0.5
 
         self.num_contours = 50
-        self.shading_choice = 'auto'  # 'auto'(was 'flat') vs. 'gouraud' (smooth)
+        # self.shading_choice = 'auto'  # 'auto'(was 'flat') vs. 'gouraud' (smooth)
+        self.shading_choice = 'gouraud'  # 'auto'(was 'flat') vs. 'gouraud' (smooth)
 
         self.fontsize = 7
         self.label_fontsize = 6
         self.title_fontsize = 10
 
-        # self.plot_svg_flag = True
         self.plot_cells_svg = True
 
         self.cell_scalars_l = []
 
-        # self.plot_svg_flag = False
         self.field_index = 4  # substrate (0th -> 4 in the .mat)
         self.substrate_name = None
 
@@ -150,9 +148,8 @@ class Vis(VisBase, QWidget):
         self.show_mechanics_grid = False
         self.show_vectors = False
 
-        self.show_nucleus = False
-        # self.show_edge = False
         self.show_edge = True
+        self.show_nucleus = False
         self.alpha = 0.7
 
         basic_length = 12.0
@@ -258,19 +255,33 @@ class Vis(VisBase, QWidget):
         #     print(line.strip())
         self.ax0.cla()
         if self.substrates_checked_flag:  # do first so cells are plotted on top
-            self.plot_substrate(self.current_svg_frame)
+            self.plot_substrate(self.current_frame)
         if self.cells_checked_flag:
             if self.plot_cells_svg:
-                self.plot_svg(self.current_svg_frame)
+                self.plot_svg(self.current_frame)
+            elif self.physiboss_vis_flag:
+                self.plot_cell_physiboss(self.current_frame)
             else:
-                self.plot_cell_scalar(self.current_svg_frame)
+                self.plot_cell_scalar(self.current_frame)
+
+        # show grid(s), but only if Cells or Substrates checked?
+        if self.show_voxel_grid:
+            self.plot_voxel_grid()
+        if self.show_mechanics_grid:
+            self.plot_mechanics_grid()
 
         self.called_from_update = True
-        self.frame_count.setText(str(self.current_svg_frame))
+        self.frame_count.setText(str(self.current_frame))
         self.called_from_update = False
 
         self.canvas.update()
         self.canvas.draw()
+
+        if self.save_png:
+            self.png_frame += 1
+            png_file = os.path.join(self.output_dir, f"frame{self.png_frame:04d}.png")
+            print("---->  ", png_file)
+            self.figure.savefig(png_file)
 
 
     #------------------------------
@@ -302,7 +313,7 @@ class Vis(VisBase, QWidget):
     def plot_vecs(self):
         # global current_frame
 
-        fname = "output%08d.xml" % self.current_svg_frame
+        fname = "output%08d.xml" % self.current_frame
         # print("plot_vecs(): fname = ",fname)
         # full_fname = os.path.join(self.output_dir, fname)
         # mcds=pyMCDS_cells("output00000049.xml")
@@ -387,10 +398,10 @@ class Vis(VisBase, QWidget):
 
         # return
 
-        if self.show_voxel_grid:
-            self.plot_voxel_grid()
-        if self.show_mechanics_grid:
-            self.plot_mechanics_grid()
+        # if self.show_voxel_grid:
+        #     self.plot_voxel_grid()
+        # if self.show_mechanics_grid:
+        #     self.plot_mechanics_grid()
 
         # if self.show_vectors:
         #     self.plot_vecs()
@@ -441,7 +452,14 @@ class Vis(VisBase, QWidget):
         try:
             tree = ET.parse(full_fname)
         except:
-            print("------ plot_svg(): error trying to parse ",full_name)
+            print("------ plot_svg(): error trying to parse ",full_fname)
+            msgBox = QMessageBox()
+            msgBox.setIcon(QMessageBox.Information)
+            # msg = "plot_cell_scalar(): error from mcds.get_cell_df()[" + cell_scalar_name + "]. You are probably trying to use out-of-date scalars. Resetting to .svg plots, so you will need to refresh the cell scalar dropdown combobox in the Plot tab."
+            msg = "plot_svg(): error parsing "+full_fname+". You may have a partially written .svg file due to a canceled simulation."
+            msgBox.setText(msg)
+            msgBox.setStandardButtons(QMessageBox.Ok)
+            msgBox.exec()
             return
         root = tree.getroot()
         #  print('--- root.tag ---')
@@ -486,12 +504,15 @@ class Vis(VisBase, QWidget):
         num_cells = 0
         #  print('------ search cells')
         for child in cells_parent:
-            #    print(child.tag, child.attrib)
-            #    print('attrib=',child.attrib)
+            # print(child.tag, child.attrib)
+            # print(f'------ attrib={child.attrib}\n')
             for circle in child:  # two circles in each child: outer + nucleus
                 #  circle.attrib={'cx': '1085.59','cy': '1225.24','fill': 'rgb(159,159,96)','r': '6.67717','stroke': 'rgb(159,159,96)','stroke-width': '0.5'}
                 #      print('  --- cx,cy=',circle.attrib['cx'],circle.attrib['cy'])
-                xval = float(circle.attrib['cx'])
+                try:
+                    xval = float(circle.attrib['cx'])
+                except:
+                    continue
 
                 # map SVG coords into comp domain
                 # xval = (xval-self.svg_xmin)/self.svg_xrange * self.x_range + self.xmin
@@ -608,14 +629,107 @@ class Vis(VisBase, QWidget):
     #     self.update_plots()
 
     #-----------------------------------------------------
+    def plot_cell_physiboss(self, frame):
+        
+        xml_file_root = "output%08d.xml" % frame
+        xml_file = os.path.join(self.output_dir, xml_file_root)
+        
+        if not Path(xml_file).is_file():
+            print("vis_tab.py: plot_cell_physiboss(): error file not found ",xml_file)
+            return
+
+        mcds = pyMCDS(xml_file_root, self.output_dir, microenv=False, graph=False, verbose=False)
+        total_min = mcds.get_time()
+        
+        try:
+            cell_types = mcds.get_cell_df()["cell_type"]
+        except:
+            print("vis_tab.py: plot_cell_physiboss(): error performing mcds.get_cell_df()['cell_type']")
+            return
+            
+        physiboss_state_file = os.path.join(self.output_dir, "states_%08d.csv" % frame)
+        
+        if not Path(physiboss_state_file).is_file():
+            print("vis_tab.py: plot_cell_physiboss(): error file not found ",physiboss_state_file)
+            return
+        
+        cell_scalar = {id: 9 for id in mcds.get_cell_df().index}
+        
+        name_cellline = list(self.physiboss_node_dict.keys())[self.physiboss_selected_cell_line]
+        id_cellline = list(self.celldef_tab.param_d.keys()).index(name_cellline)
+        
+        with open(physiboss_state_file, newline='') as csvfile:
+            states_reader = csv.reader(csvfile, delimiter=',')
+                
+            for row in states_reader:
+                if row[0] != 'ID':
+                    ID = int(row[0])
+                    if cell_types[ID] == id_cellline:
+                        nodes = row[1].split(" -- ")             
+
+                        if self.physiboss_selected_node in nodes:
+                            cell_scalar.update({ID: 2})      
+                        else:
+                            cell_scalar.update({ID: 0})
+                    else:
+                        cell_scalar.update({ID: 9})
+                        
+        cell_scalar = pandas.Series(cell_scalar)
+            
+        # To plot green/red/grey cells, we use a qualitative cell map called Set1
+        cbar_name = "Set1"
+        vmin = 0
+        vmax = 9
+        
+        num_cells = len(cell_scalar)
+        cell_vol = mcds.get_cell_df()['total_volume']
+        
+        four_thirds_pi =  4.188790204786391
+        cell_radii = np.divide(cell_vol, four_thirds_pi)
+        cell_radii = np.power(cell_radii, 0.333333333333333333333333333333333333333)
+
+        xvals = mcds.get_cell_df()['position_x']
+        yvals = mcds.get_cell_df()['position_y']
+
+        mins = total_min
+        hrs = int(mins/60)
+        days = int(hrs/24)
+        self.title_str = '%d days, %d hrs, %d mins' % (days, hrs-days*24, mins-hrs*60)
+        self.title_str += " (" + str(num_cells) + " agents)"
+
+        if (self.cell_edge):
+            try:
+                cell_plot = self.circles(xvals,yvals, s=cell_radii, c=cell_scalar, edgecolor='black', linewidth=self.cell_line_width, cmap=cbar_name, vmin=vmin, vmax=vmax)
+            except (ValueError):
+                print("\n------ ERROR: Exception from circles with edges\n")
+                pass
+        else:
+            cell_plot = self.circles(xvals,yvals, s=cell_radii, c=cell_scalar, cmap=cbar_name, vmin=vmin, vmax=vmax)
+
+        if self.cax2:
+            try:
+                self.cax2.remove()
+            except:
+                pass
+   
+        self.ax0.set_title(self.title_str, fontsize=self.title_fontsize)
+        self.ax0.set_xlim(self.plot_xmin, self.plot_xmax)
+        self.ax0.set_ylim(self.plot_ymin, self.plot_ymax)
+
+        if self.view_aspect_square:
+            self.ax0.set_aspect('equal')
+        else:
+            self.ax0.set_aspect('auto')
+    
+    
     def plot_cell_scalar(self, frame):
         if self.disable_cell_scalar_cb:
             return
             
-        if self.show_voxel_grid:
-            self.plot_voxel_grid()
-        if self.show_mechanics_grid:
-            self.plot_mechanics_grid()
+        # if self.show_voxel_grid:
+        #     self.plot_voxel_grid()
+        # if self.show_mechanics_grid:
+        #     self.plot_mechanics_grid()
 
 
         xml_file_root = "output%08d.xml" % frame
@@ -629,72 +743,36 @@ class Vis(VisBase, QWidget):
             return
 
         mcds = pyMCDS(xml_file_root, self.output_dir, microenv=False, graph=False, verbose=False)
-        total_min = mcds.get_time()
-        
-        if self.physiboss_vis_flag:
-            try:
-                cell_types = mcds.get_cell_df()["cell_type"]
-            except:
-                print("vis_tab.py: plot_cell_scalar(): error performing mcds.get_cell_df()['cell_type']")
-                return
-            
-            physiboss_state_file = os.path.join(self.output_dir, "states_%08d.csv" % frame)
-            
-            if not Path(physiboss_state_file).is_file():
-                print("vis_tab.py: plot_cell_scalar(): error file not found ",physiboss_state_file)
-                return
-            
-            cell_scalar = {}
-            with open(physiboss_state_file, newline='') as csvfile:
-                states_reader = csv.reader(csvfile, delimiter=',')
-                    
-                for row in states_reader:
-                    if row[0] != 'ID':
-                        ID = int(row[0])
-                        if cell_types[ID] == self.physiboss_selected_cell_line:
-                            nodes = row[1].split(" -- ")                      
-                            if self.physiboss_selected_node in nodes:
-                                cell_scalar.update({ID: 2})      
-                            else:
-                                cell_scalar.update({ID: 0})
-                        else:
-                            cell_scalar.update({ID: 9})
-                            
-            cell_scalar = pandas.Series(cell_scalar)
-            
-            # To plot green/red/grey cells, we use a qualitative cell map called Set1
-            cbar_name = "Set1"
-            vmin = 0
-            vmax = 9
-            
-        else:
-            try:
-                cell_scalar = mcds.get_cell_df()[cell_scalar_name]
-            except:
-                print("vis_tab.py: plot_cell_scalar(): error performing mcds.get_cell_df()[cell_scalar_name]")
-                msgBox = QMessageBox()
-                msgBox.setIcon(QMessageBox.Information)
-                msg = "plot_cell_scalar(): error from mcds.get_cell_df()[" + cell_scalar_name + "]. You are probably trying to use out-of-date scalars. Resetting to .svg plots, so you will need to refresh the cell scalar dropdown combobox in the Plot tab."
-                msgBox.setText(msg)
-                msgBox.setStandardButtons(QMessageBox.Ok)
-                msgBox.exec()
-                # kill any animation ("Play" button) happening
-                self.animating_flag = False
-                self.play_button.setText("Play")
-                self.timer.stop()
+        total_min = mcds.get_time()  # warning: can return float that's epsilon from integer value
+    
+        try:
+            cell_scalar = mcds.get_cell_df()[cell_scalar_name]
+        except:
+            print("vis_tab.py: plot_cell_scalar(): error performing mcds.get_cell_df()[cell_scalar_name]")
+            msgBox = QMessageBox()
+            msgBox.setIcon(QMessageBox.Information)
+            # msg = "plot_cell_scalar(): error from mcds.get_cell_df()[" + cell_scalar_name + "]. You are probably trying to use out-of-date scalars. Resetting to .svg plots, so you will need to refresh the cell scalar dropdown combobox in the Plot tab."
+            msg = "plot_cell_scalar(): error from mcds.get_cell_df()[" + cell_scalar_name + "]. You may be trying to use out-of-date scalars. Please reset the 'full list' or 'partial'."
+            msgBox.setText(msg)
+            msgBox.setStandardButtons(QMessageBox.Ok)
+            msgBox.exec()
+            # kill any animation ("Play" button) happening
+            self.animating_flag = False
+            self.play_button.setText("Play")
+            self.timer.stop()
 
-                self.cells_svg_rb.setChecked(True)
-                self.plot_cells_svg = True
-                self.disable_cell_scalar_widgets()
-                return
-        
-                    
-            if self.fix_cells_cmap_flag:
-                vmin = self.cells_cmin_value
-                vmax = self.cells_cmax_value
-            else:
-                vmin = cell_scalar.min()
-                vmax = cell_scalar.max()
+            # self.cells_svg_rb.setChecked(True)
+            # self.plot_cells_svg = True
+            # self.disable_cell_scalar_widgets()
+            return
+    
+                
+        if self.fix_cells_cmap_flag:
+            vmin = self.cells_cmin_value
+            vmax = self.cells_cmax_value
+        else:
+            vmin = cell_scalar.min()
+            vmax = cell_scalar.max()
             
         num_cells = len(cell_scalar)
         # print("  len(cell_scalar) = ",len(cell_scalar))
@@ -713,31 +791,43 @@ class Vis(VisBase, QWidget):
         # self.title_str += "   cells: " + svals[2] + "d, " + svals[4] + "h, " + svals[7][:-3] + "m"
         # self.title_str = "(" + str(frame) + ") Current time: " + str(total_min) + "m"
         
-        discrete_variable = None
         # print(cell_scalar_name, " - discrete: ", (cell_scalar % 1  == 0).all()) # Possible test if the variable is discrete or continuum variable (issue: in some time the continuum variable can be classified as discrete (example time=0))
         
         # if( cell_scalar_name == 'cell_type' or cell_scalar_name == 'current_phase'): discrete_variable = list(set(cell_scalar)) # It's a set of possible value of the variable
         if cell_scalar_name in self.discrete_cell_scalars: 
-            discrete_variable = list(set(cell_scalar)) # It's a set of possible value of the variable
+            if cell_scalar_name == "current_phase":   # and if "Fixed" range is checked
+                self.cycle_phases = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18, 100,101,102,103,104]
+                # if self.discrete_variable is None:
+                self.discrete_variable = self.cycle_phases
+            else:
+                self.discrete_variable = list(set(cell_scalar)) # It's a set of possible value of the variable
         # if( discrete_variable ): # Generic way: if variable is discrete
             self.cell_scalar_cbar_combobox.setEnabled(False)
             from_list = matplotlib.colors.LinearSegmentedColormap.from_list
-            discrete_variable.sort()
-            if (len(discrete_variable) == 1): 
-                cbar_name = from_list(None, plt.cm.Set1(range(0,2)), len(discrete_variable))
+            self.discrete_variable.sort()
+            if (len(self.discrete_variable) == 1): 
+                cbar_name = from_list(None, cmaps.gray_gray[0:2], len(self.discrete_variable))  # annoying hack
             else: 
-                cbar_name = from_list(None, plt.cm.Set1(range(0,len(discrete_variable))), len(discrete_variable))
+                try:
+                    cbar_name = from_list(None, cmaps.paint_clist[0:len(self.discrete_variable)], len(self.discrete_variable))
+                except:
+                    return
+
+            # usual categorical colormap on matplotlib has at max 20 colors (using colorcet the colormap glasbey_bw has n colors )
+            # cbar_name = from_list(None, cc.glasbey_bw, len(self.discrete_variable))
             vmin = None
             vmax = None
             # Change the values between 0 and number of possible values
-            for i, value in enumerate(discrete_variable):
+            for i, value in enumerate(self.discrete_variable):
                 cell_scalar = cell_scalar.replace(value,i)
+                # print("cell_scalar=",cell_scalar)
         else: 
             self.cell_scalar_cbar_combobox.setEnabled(True)
 
-        mins = total_min
+        mins = round(total_min)  # hack, assume we want integer mins
         hrs = int(mins/60)
         days = int(hrs/24)
+        # print(f"mins={mins}, hrs={hrs}, days={days}")
         self.title_str = '%d days, %d hrs, %d mins' % (days, hrs-days*24, mins-hrs*60)
         self.title_str += " (" + str(num_cells) + " agents)"
 
@@ -747,6 +837,8 @@ class Vis(VisBase, QWidget):
         if (self.cell_fill):
             if (self.cell_edge):
                 try:
+                    # print("plot circles with vmin,vmax=",vmin,vmax)  # None,None
+                    # print("plot circles with cbar_name=",cbar_name)  # <matplotlib.colors.LinearSegmentedColormap object at 0x1690d5330>
                     cell_plot = self.circles(xvals,yvals, s=cell_radii, c=cell_scalar, edgecolor='black', linewidth=self.cell_line_width, cmap=cbar_name, vmin=vmin, vmax=vmax)
                     # cell_plot = self.circles(xvals,yvals, s=cell_radii, edgecolor=cell_scalar, linewidth=0.5, cmap=cbar_name, vmin=vmin, vmax=vmax)
                 except (ValueError):
@@ -768,44 +860,46 @@ class Vis(VisBase, QWidget):
         # print("# axes = ",num_axes)
         # if num_axes > 1: 
         # if self.axis_id_cellscalar:
-        if not self.physiboss_vis_flag:
-            if self.cax2:
+        if self.cax2:
+            # print("# axes(after cell_scalar remove) = ",len(self.figure.axes))
+            # print(" self.figure.axes= ",self.figure.axes)
+            #ppp
+            if( self.discrete_variable ): # Generic way: if variable is discrete
                 try:
                     self.cax2.remove()
                 except:
                     pass
-                # print("# axes(after cell_scalar remove) = ",len(self.figure.axes))
-                # print(" self.figure.axes= ",self.figure.axes)
-                #ppp
                 ax2_divider = make_axes_locatable(self.ax0)
                 self.cax2 = ax2_divider.append_axes("bottom", size="4%", pad="8%")
-                self.cbar2 = self.figure.colorbar(cell_plot, cax=self.cax2, orientation="horizontal")
-
-                # print("\n# axes(redraw cell_scalar) = ",len(self.figure.axes))
-                # print(" self.figure.axes= ",self.figure.axes)
-                # self.axis_id_cellscalar = len(self.figure.axes) - 1
+                self.cbar2 = self.figure.colorbar(cell_plot, ticks=range(0,len(self.discrete_variable)), cax=self.cax2, orientation="horizontal")
+                # self.cbar2.ax.tick_params(length=0) # remove tick line
+                cell_plot.set_clim(vmin=-0.5,vmax=len(self.discrete_variable)-0.5) # scaling bar to the center of the ticks
+                self.cbar2.set_ticklabels(self.discrete_variable) # It's possible to give strings
                 self.cbar2.ax.tick_params(labelsize=self.fontsize)
                 self.cbar2.ax.set_xlabel(cell_scalar_name)
+                self.discrete_variable = None
             else:
+                try:
+                    self.cax2.remove()
+                except:
+                    pass
                 ax2_divider = make_axes_locatable(self.ax0)
                 self.cax2 = ax2_divider.append_axes("bottom", size="4%", pad="8%")
-                self.cbar2 = self.figure.colorbar(cell_plot, cax=self.cax2, orientation="horizontal")
+                self.cbar2 = self.figure.colorbar(cell_plot, ticks=None,cax=self.cax2, orientation="horizontal")
                 self.cbar2.ax.tick_params(labelsize=self.fontsize)
-                # print(" self.figure.axes= ",self.figure.axes)
                 self.cbar2.ax.set_xlabel(cell_scalar_name)
-        
-        elif self.cax2:
-            try:
-                    self.cax2.remove()
-            except:
-                pass
-        
-        if( discrete_variable ): # Generic way: if variable is discrete
-            self.cbar2 = self.figure.colorbar(cell_plot, ticks=range(0,len(discrete_variable)), cax=self.cax2, orientation="horizontal")
-            # self.cbar2.ax.tick_params(length=0) # remove tick line
-            cell_plot.set_clim(vmin=-0.5,vmax=len(discrete_variable)-0.5) # scaling bar to the center of the ticks
-            self.cbar2.set_ticklabels(discrete_variable) # It's possible to give strings
+
+            # print("\n# axes(redraw cell_scalar) = ",len(self.figure.axes))
+            # print(" self.figure.axes= ",self.figure.axes)
+            # self.axis_id_cellscalar = len(self.figure.axes) - 1
+        else:
+            ax2_divider = make_axes_locatable(self.ax0)
+            self.cax2 = ax2_divider.append_axes("bottom", size="4%", pad="8%")
+            self.cbar2 = self.figure.colorbar(cell_plot, cax=self.cax2, orientation="horizontal")
+            self.cbar2.ax.tick_params(labelsize=self.fontsize)
+            # print(" self.figure.axes= ",self.figure.axes)
             self.cbar2.ax.set_xlabel(cell_scalar_name)
+        
    
         self.ax0.set_title(self.title_str, fontsize=self.title_fontsize)
         self.ax0.set_xlim(self.plot_xmin, self.plot_xmax)

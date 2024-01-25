@@ -49,7 +49,7 @@ plot_qoi = True
 plot_musig = False
 plot_simulation = False
 plot_derivative = False
-calibration_mode = "Bayes"
+calibration_mode = "DE"
 
 stlsq_alphas = [0.001, 0.01, 0.1, 1.0, 10.0]
 
@@ -65,7 +65,7 @@ X_plot = X
 t_plot = t
 X0_plot = X_plot[0, :]
 
-ic_size = 10
+ic_size = 20
 X = np.delete(X, slice(ic_size), 0)
 X_std = np.delete(X_std, slice(ic_size), 0)
 t = np.delete(t, slice(ic_size), None)
@@ -108,9 +108,12 @@ for poly_degree in poly_degrees:
 				fit_intercept = False,
 				verbose = True,
 				window = 3,
-				epsilon = 2.5,
+				epsilon = 0.01,
 				time = t,
-				sa_times = np.array([3600.0])
+				sa_times = np.array([3600.0]),
+				non_physical_features = [['1'],
+					['1']
+				]
 			)
 
 			# Compute sparse regression
@@ -162,7 +165,14 @@ for model_id, model in enumerate(model_set):
 			simulation = model.simulate(X0_test, t = t_test)
 		elif calibration_mode == "LM":
 			mc = ModelCalibration(model, model_id, X_test, t, X0_test, 0)
-			mc.levenberg_marquardt()
+			mc.levenberg_marquardt(X_std, normalize = True)
+			model.print(precision = precision)
+			print("\n")
+
+			simulation = model.simulate(X0_test, t = t_test)
+		elif calibration_mode == "DE":
+			mc = ModelCalibration(model, model_id, X_test, t, X0_test, 0)
+			mc.differential_evolution(normalize = True)
 			model.print(precision = precision)
 			print("\n")
 
@@ -205,7 +215,7 @@ for model_id, model in enumerate(model_set):
 		plt.close()
 
 	# Compute SSE
-	sse = ms.compute_SSE(X_test.reshape(simulation.shape), simulation)
+	sse = ms.compute_SSE(np.copy(X_test.reshape(simulation.shape)), np.copy(simulation), normalize = True)
 
 	# Set mean SSE to the model
 	ms.set_model_SSE(model_id, sse)

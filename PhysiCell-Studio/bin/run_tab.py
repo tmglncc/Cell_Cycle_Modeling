@@ -12,6 +12,7 @@ import sys
 import os
 import time
 import logging
+import shutil
 from pathlib import Path
 from pretty_print_xml import pretty_print
 from PyQt5 import QtCore, QtGui
@@ -94,7 +95,7 @@ class RunModel(QWidget):
         self.exec_name = QLineEdit()
         if self.nanohub_flag:
             self.exec_name.setText('myproj')
-            self.exec_name.setEnabled(False)
+            # self.exec_name.setEnabled(False)
         else:
             # self.exec_name.setText('../myproj')
             self.exec_name.setText('template')
@@ -132,6 +133,7 @@ class RunModel(QWidget):
     # replicate what we do in the "save" function in the main module
     def update_xml_from_gui(self):
         if not self.user_params_tab.validate_utable():
+            self.show_error_message(self, "run_tab.py update_xml_from_gui(): Error: invalid user params table.")
             self.enable_run(True)
             return False
 
@@ -156,6 +158,14 @@ class RunModel(QWidget):
 
     def run_model_cb(self):
         logging.debug(f'===========  run_model_cb():  ============')
+
+        exec_file = self.exec_name.text()
+        # print("run_model_cb(): exec_file=",exec_file)
+        # if not os.path.is_file(Path(exec_file)):
+        if not Path(exec_file).is_file():
+            self.show_error_message(f"Exec file {exec_file} does not exist.")
+            return
+
         self.celldef_tab.check_valid_cell_defs()
 
         if self.config_tab.save_svg.isChecked() and self.config_tab.save_full.isChecked():
@@ -217,6 +227,12 @@ class RunModel(QWidget):
                 self.tree.write(self.config_file)
                 # print("run_tab.py: ----> here 5")
                 pretty_print(self.config_file, self.config_file)
+
+                default_config_file = os.path.join(self.output_dir,"PhysiCell_settings.xml")
+                abs_default_config_file = os.path.abspath(default_config_file )
+                print(f"run_tab.py:  also copy to {abs_default_config_file }")
+                shutil.copy(self.config_file, default_config_file)
+
                 # self.tree.write(new_config_file)  # saves modified XML to <output_dir>/config.xml 
                 # sys.exit(1)
 
@@ -244,14 +260,10 @@ class RunModel(QWidget):
                 self.vis_tab.reset_model()
                 self.vis_tab.update_plots()
 
-                if self.celldef_tab.intracellular_type_dropdown.currentText().find("boolean") >= 0:
-                    print("\n--- run_tab:  calling vis_tab.build_physiboss_info()")
-                    self.vis_tab.build_physiboss_info()
-                else:
-                    print("\n--- run_tab:  calling vis_tab.disable_physiboss_info()")
-                    self.vis_tab.disable_physiboss_info()
-                    # self.vis_tab.physiboss_vis_hide
-
+                # Problem with this is that it only looks at the currently selected cell type
+                # Also, build_physiboss_info will look into all cell types, and if they are no boolean network, will hide everything
+                print("\n--- run_tab:  calling vis_tab.build_physiboss_info()")
+                self.vis_tab.build_physiboss_info()              
 
             if self.p is None:  # No process running.
                 self.enable_run(False)
@@ -291,8 +303,10 @@ class RunModel(QWidget):
     def cancel_model_cb(self):
         # logging.debug(f'===========  cancel_model_cb():  ============')
         if self.p:  # process running.
-            self.p.kill()
-            # self.p.terminate()
+            if self.nanohub_flag:
+                self.p.terminate()
+            else:
+                self.p.kill()   # I *think* this worked better for Windows (but still worked for other OSes, on the desktop)
             # self.run_button.setEnabled(True)
             self.enable_run(True)
 

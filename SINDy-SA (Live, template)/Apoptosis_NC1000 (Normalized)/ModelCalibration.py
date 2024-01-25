@@ -6,6 +6,7 @@ import pymc3 as pm
 import time
 import arviz as az
 from scipy.optimize import curve_fit
+from scipy.optimize import differential_evolution
 from scipy.stats import gaussian_kde
 from tqdm import tqdm
 
@@ -54,6 +55,30 @@ class ModelCalibration:
 				return solution.flatten()
 
 			return subfunc
+		"""
+		return function
+
+	def __create_ssr_func(self, param_expression, var_expression, model_expression, n_vars):
+		function = """def func(X0, normalization_factor):
+			import numpy as np
+			from scipy.integrate import odeint
+			def model(X, t, """ + param_expression + """):
+				""" + var_expression + """ = X
+				dXdt = """ + (model_expression if n_vars == 1 else """[""" + model_expression + """]""") + """
+				return dXdt
+
+			def sum_of_squared_residuals(params, t, X):
+				""" + param_expression + """ = params
+				X_pred = odeint(model, X0, t, args = (""" + param_expression +"""))
+				
+				residuals = X - X_pred
+				residuals_norm = np.full(residuals.shape, normalization_factor)
+				residuals /= residuals_norm
+
+				ssr = np.sum(residuals**2.0)
+				return ssr
+
+			return sum_of_squared_residuals
 		"""
 		return function
 
@@ -176,11 +201,17 @@ def model_wrapper(time, """ + param_expression + """ """ + init_cond_expression 
 		param_names = np.reshape(param_names, ind.shape)
 		param_expression = ", ".join(param_names[ind].flatten()) + ","
 
+		print("Param expression = " + param_expression)
+
 		var_names = self.model.feature_names
 		var_expression = ", ".join(var_names)
 
+		print("Var expression = " + var_expression)
+
 		symbolic_equations = self.model.symbolic_equations(param_names, self.__input_fmt)
 		model_expression = ", ".join(symbolic_equations)
+
+		print("Model expression = " + model_expression)
 
 		wrapper = {}
 		function = self.__create_model_func(param_expression, var_expression, model_expression, len(var_names))
@@ -196,11 +227,13 @@ def model_wrapper(time, """ + param_expression + """ """ + init_cond_expression 
 
 		coef = self.model.coefficients()
 		bounds = []
-		for c in coef[ind].flatten():
+		for i, c in enumerate(coef[ind].flatten()):
 			if c < 0.0:
 				bounds.append([(1.0 + bounds_perc)*c, (1.0 - bounds_perc)*c])
 			else:
 				bounds.append([(1.0 - bounds_perc)*c, (1.0 + bounds_perc)*c])
+
+		print("Bounds = " + str(bounds))
 
 		np.random.seed(seed)
 		p0 = np.zeros((number_of_restarts, coef[ind].shape[0]))
@@ -231,6 +264,114 @@ def model_wrapper(time, """ + param_expression + """ """ + init_cond_expression 
 				continue
 
 		self.model.coefficients(all_coef[np.argmin(residuals)])
+
+	def __update_bounds_if_necessary(self, coefficients, bounds, bounds_perc, bounds_tol = 1.0e-3):
+		new_bounds = []
+		for i, c in enumerate(coefficients):
+			lower_bound = bounds[i][0]
+			upper_bound = bounds[i][1]
+			if abs(c - lower_bound) < bounds_tol*abs(c):
+				if c < 0.0:
+					new_bounds.append([(1.0 + bounds_perc)*lower_bound, upper_bound])
+				else:
+					new_bounds.append([(1.0 - bounds_perc)*lower_bound, upper_bound])
+			elif abs(c - upper_bound) < bounds_tol*abs(c):
+				if c < 0.0:
+					new_bounds.append([lower_bound, (1.0 - bounds_perc)*upper_bound])
+				else:
+					new_bounds.append([lower_bound, (1.0 + bounds_perc)*upper_bound])
+			else:
+				new_bounds.append(bounds[i])
+
+		return new_bounds
+
+	def __check_bounds(self, bounds, new_bounds, bounds_tol = 1.0e-3):
+		bounds_array = np.array(bounds)
+		new_bounds_array = np.array(new_bounds)
+		error = np.abs(new_bounds_array - bounds_array)
+		tol = bounds_tol*np.abs(bounds_array)
+
+		# for i in range(error.shape[0]):
+		# 	for j in range(error.shape[1]):
+		# 		if error[i,j] > tol[i,j]:
+		# 			return True
+
+		# return False
+
+		return np.any(error > tol)
+
+	def differential_evolution(self, normalize = False, bounds_perc = 0.99, number_of_restarts = 20,
+		strategy = 'best1bin', maxiter = 500, popsize_factor = 5, tol = 1.0e-10,
+		mutation = (0.5, 1), recombination = 0.7, polish = True, disp = True,
+		seed = 7):
+		print("*** Using Differential Evolution method ***\n")
+
+		ind = self.model.coefficients() != 0.0
+		param_names = np.array(["c" + str(i) for i in range(len(ind.flatten()))])
+		param_names = np.reshape(param_names, ind.shape)
+		param_expression = ", ".join(param_names[ind].flatten()) + ","
+
+		var_names = self.model.feature_names
+		var_expression = ", ".join(var_names)
+
+		symbolic_equations = self.model.symbolic_equations(param_names, self.__input_fmt)
+		model_expression = ", ".join(symbolic_equations)
+
+		wrapper = {}
+		function = self.__create_ssr_func(param_expression, var_expression, model_expression, len(var_names))
+		exec(function, wrapper)
+
+		normalization_factor = np.ones(self.X.shape[1])
+		if normalize:
+			for i in range(self.X.shape[1]):
+				normalization_factor[i] = np.max(self.X[:,i]) - np.min(self.X[:,i])
+
+		coef = self.model.coefficients()
+		bounds = []
+		for i, c in enumerate(coef[ind].flatten()):
+			if c < 0.0:
+				bounds.append([(1.0 + bounds_perc)*c, (1.0 - bounds_perc)*c])
+			else:
+				bounds.append([(1.0 - bounds_perc)*c, (1.0 + bounds_perc)*c])
+
+		# Opções para a otimização
+		popsize = popsize_factor*len(coef[ind].flatten())
+		options = {
+			'strategy': strategy,			# Estratégia de mutação e recombinação
+			'maxiter': maxiter,				# Número máximo de gerações/iterações para a evolução diferencial
+			'popsize': popsize,				# Tamanho da população
+			'tol': tol,						# Tolerância para a convergência da otimização
+			'mutation': mutation,			# Valor de mutação para a evolução diferencial
+			'recombination': recombination,	# Taxa de recombinação para a evolução diferencial
+			'polish': polish,				# Se deve ser aplicado o método L-BFGS-B após a evolução diferencial para refinar o resultado
+			'disp': disp,					# Se exibe mensagens de status durante a otimização
+			'seed': seed					# Semente aleatória para reprodução dos resultados
+		}
+
+		for restart in range(1, number_of_restarts+1):
+			print("Restart = " + str(restart))
+
+			# Ajuste do modelo usando Evolução Diferencial
+			if restart == 1:
+				result = differential_evolution(wrapper['func'](self.X0, normalization_factor), bounds, args=(self.t, self.X), **options)
+			else:
+				result = differential_evolution(wrapper['func'](self.X0, normalization_factor), bounds, args=(self.t, self.X), x0=result.x, **options)
+
+			new_bounds = self.__update_bounds_if_necessary(result.x, bounds, bounds_perc)
+			updated_bounds = self.__check_bounds(bounds, new_bounds)
+			if not updated_bounds:
+				break
+			
+			bounds = new_bounds
+
+		print("Success = " + str(result.success))
+		print("Message = " + result.message)
+
+		# Obter os parâmetros estimados
+		coef = np.zeros(self.model.coefficients().shape)
+		coef[ind] = result.x
+
+		self.model.coefficients(coef)
 
 	def bayesian_calibration(self, bounds_perc = 0.2, sd_bound_perc = 0.1, draws = 2500, seed = 7):
 		print("*** Performing Bayesian calibration ***\n")

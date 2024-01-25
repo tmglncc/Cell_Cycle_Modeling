@@ -62,6 +62,8 @@ except:
 from filters3D import FilterUI3DWindow
 from filters2D import FilterUI2DWindow
 
+from populate_tree_cell_defs import populate_tree_cell_defs
+
 class QCheckBox_custom(QCheckBox):  # it's insane to have to do this!
     def __init__(self,name):
         super(QCheckBox, self).__init__(name)
@@ -83,6 +85,8 @@ class QCheckBox_custom(QCheckBox):  # it's insane to have to do this!
                     height : 15px;
                     border-radius : 3px;
                 }
+                QCheckBox:disabled {background-color:lightgray;}
+                QCheckBox:indicator:disabled {background-color:lightgray;}
                 """
         self.setStyleSheet(checkbox_style)
 
@@ -290,9 +294,26 @@ class PopulationPlotWindow(QWidget):
 
         self.setLayout(self.layout)
 
+        # self.hide()
+        # self.show()
+
     def close_plot_cb(self):
         self.close()
 
+class PhysiBoSSStatesPopulationPlotWindow(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.layout = QVBoxLayout()
+        self.label = QLabel("PhysiBoSS states populations")
+        # self.layout.addWidget(self.label)
+
+        self.figure = plt.figure()
+        self.canvas = FigureCanvasQTAgg(self.figure)
+        self.canvas.setStyleSheet("background-color:transparent;")
+        self.ax0 = self.figure.add_subplot(111, adjustable='box')
+        self.layout.addWidget(self.canvas)
+        self.setLayout(self.layout)
+        
 class QHLine(QFrame):
     def __init__(self):
         super(QHLine, self).__init__()
@@ -304,7 +325,7 @@ class QHLine(QFrame):
 #---------------------------------------------------------------
 class VisBase():
 
-    def __init__(self, nanohub_flag, config_tab, run_tab, model3D_flag, tensor_flag, **kw):
+    def __init__(self, studio_flag, rules_flag, nanohub_flag, config_tab, microenv_tab, celldef_tab, user_params_tab, rules_tab, ics_tab, run_tab, model3D_flag, tensor_flag, ecm_flag, **kw):
         # super().__init__()
         # global self.config_params
         super(VisBase,self).__init__(**kw)
@@ -312,10 +333,23 @@ class VisBase():
 
         self.vis_filter_init_flag = True
 
+        self.studio_flag = studio_flag 
+        self.rules_flag = rules_flag 
+
+        self.microenv_tab = microenv_tab
+        self.celldef_tab = celldef_tab
+        self.user_params_tab = user_params_tab
+        self.rules_tab = rules_tab
+        self.ics_tab = ics_tab
+
+        self.png_frame = 0
+        self.save_png= False
+
         # self.vis2D = True
         self.model3D_flag = model3D_flag 
         print("--- VisBase: model3D_flag=",model3D_flag)
         self.tensor_flag = tensor_flag 
+        self.ecm_flag = ecm_flag 
 
         if not self.model3D_flag:
             # self.discrete_cell_scalars = ['cell_type', 'cycle_model', 'current_phase','is_motile','current_death_model','dead', 'number_of_nuclei']
@@ -387,6 +421,7 @@ class VisBase():
         self.population_plot = {"cell_type":None, "cycle_model":None, "current_phase":None, "is_motile":None,"current_death_model":None, "dead":None}
 
         self.discrete_scalar = 'cell_type'
+        self.physiboss_population_plot = None
         self.legend_svg_plot = None
         self.filterUI = None
 
@@ -427,7 +462,8 @@ class VisBase():
         self.contour_mesh = True
         self.contour_lines = False
         self.num_contours = 50
-        self.shading_choice = 'auto'  # 'auto'(was 'flat') vs. 'gouraud' (smooth)
+        # self.shading_choice = 'auto'  # 'auto'(was 'flat') vs. 'gouraud' (smooth)
+        self.shading_choice = 'gouraud'  # 'auto'(was 'flat') vs. 'gouraud' (smooth)
 
         self.fontsize = 7
         self.label_fontsize = 6
@@ -572,12 +608,14 @@ class VisBase():
 
 
         self.substrates_cbar_combobox = QComboBox()
-        self.substrates_cbar_combobox.addItem("jet")
-        self.substrates_cbar_combobox.addItem("jet_r")
-        self.substrates_cbar_combobox.addItem("viridis")
-        self.substrates_cbar_combobox.addItem("viridis_r")
         self.substrates_cbar_combobox.addItem("YlOrRd")
         self.substrates_cbar_combobox.addItem("YlOrRd_r")
+        self.substrates_cbar_combobox.addItem("viridis")
+        self.substrates_cbar_combobox.addItem("viridis_r")
+        self.substrates_cbar_combobox.addItem("turbo")
+        self.substrates_cbar_combobox.addItem("plasma")
+        self.substrates_cbar_combobox.addItem("jet")
+        # # self.substrates_cbar_combobox.addItem("jet_r")
         self.substrates_cbar_combobox.setEnabled(False)
 
         self.scroll_plot = QScrollArea()  # might contain centralWidget
@@ -641,31 +679,31 @@ class VisBase():
         #------
         self.vbox.addWidget(QHLine())
 
-        hbox = QHBoxLayout()
-        self.cells_checkbox = QCheckBox_custom('cells')
+        self.cells_hbox = QHBoxLayout()
+        self.cells_checkbox = QCheckBox_custom("cells")
         self.cells_checkbox.setChecked(True)
         self.cells_checkbox.clicked.connect(self.cells_toggle_cb)
         self.cells_checked_flag = True
-        hbox.addWidget(self.cells_checkbox) 
+        self.cells_hbox.addWidget(self.cells_checkbox) 
 
         # Need to create the following regardless of 2D/3D
-        self.cells_svg_rb = QRadioButton('.svg')
+        self.cells_svg_rb = QRadioButton(".svg")
         self.cells_svg_rb.setChecked(True)
 
-        self.cells_mat_rb = QRadioButton('.mat')
+        self.cells_mat_rb = QRadioButton(".mat")
         # self.cell_edge_checkbox = QCheckBox_custom('edge')
-
+        
         if not self.model3D_flag:  # 2D vis
 
             # Apparently, the physiboss UI causes the radio btns to disappear in a QFrame, so skip for now.
             # hbox2 = QHBoxLayout()
             self.cells_svg_rb.clicked.connect(self.cells_svg_mat_cb)
             # hbox2.addWidget(self.cells_svg_rb)
-            hbox.addWidget(self.cells_svg_rb)
+            self.cells_hbox.addWidget(self.cells_svg_rb)
 
             self.cells_mat_rb.clicked.connect(self.cells_svg_mat_cb)
             # hbox2.addWidget(self.cells_mat_rb)
-            hbox.addWidget(self.cells_mat_rb)
+            self.cells_hbox.addWidget(self.cells_mat_rb)
             # hbox2.addStretch(1)  # not sure about this, but keeps buttons shoved to left
 
             # radio_frame = QFrame()
@@ -686,12 +724,12 @@ class VisBase():
         # self.cell_scalar_combobox = QComboBox()
         self.cell_scalar_combobox = ExtendedComboBox()
         self.cell_scalar_combobox.setFixedWidth(270)
-        self.cell_scalar_combobox.addItem('cell_type')
+        self.cell_scalar_combobox.addItem("cell_type")
         # self.cell_scalar_combobox.currentIndexChanged.connect(self.cell_scalar_changed_cb)
 
         # e.g., dict_keys(['ID', 'position_x', 'position_y', 'position_z', 'total_volume', 'cell_type', 'cycle_model', 'current_phase', 'elapsed_time_in_phase', 'nuclear_volume', 'cytoplasmic_volume', 'fluid_fraction', 'calcified_fraction', 'orientation_x', 'orientation_y', 'orientation_z', 'polarity', 'migration_speed', 'motility_vector_x', 'motility_vector_y', 'motility_vector_z', 'migration_bias', 'motility_bias_direction_x', 'motility_bias_direction_y', 'motility_bias_direction_z', 'persistence_time', 'motility_reserved', 'chemotactic_sensitivities_x', 'chemotactic_sensitivities_y', 'adhesive_affinities_x', 'adhesive_affinities_y', 'dead_phagocytosis_rate', 'live_phagocytosis_rates_x', 'live_phagocytosis_rates_y', 'attack_rates_x', 'attack_rates_y', 'damage_rate', 'fusion_rates_x', 'fusion_rates_y', 'transformation_rates_x', 'transformation_rates_y', 'oncoprotein', 'elastic_coefficient', 'kill_rate', 'attachment_lifetime', 'attachment_rate', 'oncoprotein_saturation', 'oncoprotein_threshold', 'max_attachment_distance', 'min_attachment_distance'])
 
-        self.vbox.addLayout(hbox)
+        self.vbox.addLayout(self.cells_hbox)
 
         #------------------
         hbox = QHBoxLayout()
@@ -722,12 +760,14 @@ class VisBase():
         hbox = QHBoxLayout()
         self.cell_scalar_cbar_combobox = QComboBox()
         self.cell_scalar_cbar_combobox .setFixedWidth(120)
-        self.cell_scalar_cbar_combobox.addItem("jet")
-        self.cell_scalar_cbar_combobox.addItem("jet_r")
         self.cell_scalar_cbar_combobox.addItem("viridis")
         self.cell_scalar_cbar_combobox.addItem("viridis_r")
         self.cell_scalar_cbar_combobox.addItem("YlOrRd")
         self.cell_scalar_cbar_combobox.addItem("YlOrRd_r")
+        self.cell_scalar_cbar_combobox.addItem("turbo")
+        self.cell_scalar_cbar_combobox.addItem("plasma")
+        self.cell_scalar_cbar_combobox.addItem("jet")
+        # self.cell_scalar_cbar_combobox.addItem("jet_r")
         # self.cell_scalar_cbar_combobox.setEnabled(False)
         self.cell_scalar_cbar_combobox.setEnabled(self.model3D_flag)  # for 3D
         # self.cell_scalar_cbar_combobox.setEnabled(self.vis.cell_scalar_cbar_combobox_changed_cb)  # for 3D
@@ -756,6 +796,7 @@ class VisBase():
         self.cells_cmin.setText('0.0')
         if not self.model3D_flag:
             self.cells_cmin.setEnabled(False)
+            self.cells_cmin.setStyleSheet("background-color: lightgray;")
         self.cells_cmin.returnPressed.connect(self.cells_cmin_cmax_cb)
         self.cells_cmin.setFixedWidth(cvalue_width)
         self.cells_cmin.setValidator(QtGui.QDoubleValidator())
@@ -769,6 +810,7 @@ class VisBase():
         self.cells_cmax.setText('1.0')
         if not self.model3D_flag:
             self.cells_cmax.setEnabled(False)
+            self.cells_cmax.setStyleSheet("background-color: lightgray;")
         self.cells_cmax.returnPressed.connect(self.cells_cmin_cmax_cb)
         self.cells_cmax.setFixedWidth(cvalue_width)
         self.cells_cmax.setValidator(QtGui.QDoubleValidator())
@@ -818,6 +860,7 @@ class VisBase():
         self.cmin = QLineEdit()
         self.cmin.setText('0.0')
         self.cmin.setEnabled(False)
+        self.cmin.setStyleSheet("background-color: lightgray;")
         # self.cmin.textChanged.connect(self.change_plot_range)
         self.cmin.returnPressed.connect(self.cmin_cmax_cb)
         self.cmin.setFixedWidth(cvalue_width)
@@ -832,6 +875,7 @@ class VisBase():
         self.cmax = QLineEdit()
         self.cmax.setText('1.0')
         self.cmax.setEnabled(False)
+        self.cmax.setStyleSheet("background-color: lightgray;")
         self.cmax.returnPressed.connect(self.cmin_cmax_cb)
         self.cmax.setFixedWidth(cvalue_width)
         self.cmax.setValidator(QtGui.QDoubleValidator())
@@ -907,16 +951,17 @@ class VisBase():
 
         #-----------
         self.physiboss_qline = None
-        self.physiboss_hbox_1 = None
         
-        self.physiboss_vis_checkbox = None
+        self.cells_physiboss_rb = None
         self.physiboss_vis_flag = False
+        self.physiboss_widgets = False
         self.physiboss_selected_cell_line = None
         self.physiboss_selected_node = None
-        self.physiboss_hbox_2 = None
+        self.physiboss_hbox = None
 
         self.physiboss_cell_type_combobox = None
         self.physiboss_node_combobox = None
+        self.physiboss_population_counts_button = None
         #-----------
         # self.frame_count.textChanged.connect(self.change_frame_count_cb)   # too annoying
         self.frame_count.returnPressed.connect(self.change_frame_count_cb)
@@ -951,6 +996,7 @@ class VisBase():
 
     def filterUI_cb(self):
         print("---- vis_base: filterUI_cb()")
+        # print("    filterUI_cb():  vis_filter_init_flag=",self.vis_filter_init_flag)
         # self.filterUI = FilterUIWindow()
         if self.vis_filter_init_flag:
             if self.model3D_flag:
@@ -960,6 +1006,9 @@ class VisBase():
                 pass
 
             self.vis_filter_init_flag = False
+
+        # hack to bring to foreground
+        self.filterUI.hide()
         self.filterUI.show()
 
 
@@ -1204,25 +1253,6 @@ class VisBase():
             self.population_plot[self.discrete_scalar].canvas.draw()
             self.population_plot[self.discrete_scalar].show()
 
-
-    def disable_physiboss_info(self):
-        print("vis_tab: ------- disable_physiboss_info()")
-        if self.physiboss_vis_checkbox is not None:
-            print("vis_tab: ------- self.physiboss_vis_checkbox is not None; try disabling")
-            try:
-                self.physiboss_vis_checkbox.setChecked(False)
-                self.physiboss_vis_checkbox.setEnabled(False)
-                self.physiboss_cell_type_combobox.setEnabled(False)
-                self.physiboss_node_combobox.setEnabled(False)
-                self.physiboss_vis_hide()
-
-            except:
-                print("ERROR: Exception disabling physiboss widgets")
-                pass
-        else:
-            print("vis_tab: ------- self.physiboss_vis_checkbox is None")
-
-
     # ------ overridden for 3D (vis3D_tab.py)
     def build_physiboss_info(self):
         config_file = self.run_tab.config_xml_name.text()
@@ -1305,23 +1335,19 @@ class VisBase():
             
     def physiboss_vis_show(self):
 
-        if self.physiboss_vis_checkbox is None:
+        if not self.physiboss_widgets:
+            
+            self.physiboss_widgets = True
+                
+            self.cells_physiboss_rb = QRadioButton("physiboss")
+            self.cells_physiboss_rb.setChecked(False)
+            self.cells_physiboss_rb.clicked.connect(self.cells_svg_mat_cb)
+            self.cells_hbox.addWidget(self.cells_physiboss_rb)
                 
             self.physiboss_qline = QHLine()
             self.vbox.addWidget(self.physiboss_qline)
             
-            self.physiboss_hbox_1 = QHBoxLayout()
-            
-            self.physiboss_vis_checkbox = QCheckBox_custom('Color by PhysiBoSS node state')
-            self.physiboss_vis_flag = False
-            self.physiboss_vis_checkbox.setEnabled(not self.plot_cells_svg)
-            self.physiboss_vis_checkbox.setChecked(self.physiboss_vis_flag)
-            self.physiboss_vis_checkbox.clicked.connect(self.physiboss_vis_toggle_cb)
-            self.physiboss_hbox_1.addWidget(self.physiboss_vis_checkbox)
-            
-            self.vbox.addLayout(self.physiboss_hbox_1)
-            
-            self.physiboss_hbox_2 = QHBoxLayout()
+            self.physiboss_hbox = QHBoxLayout()
 
             self.physiboss_cell_type_combobox = QComboBox()
             self.physiboss_cell_type_combobox.setEnabled(False)
@@ -1329,28 +1355,41 @@ class VisBase():
             self.physiboss_node_combobox = QComboBox()
             self.physiboss_node_combobox.setEnabled(False)
             self.physiboss_node_combobox.currentIndexChanged.connect(self.physiboss_vis_node_cb)
-            self.physiboss_hbox_2.addWidget(self.physiboss_cell_type_combobox)
-            self.physiboss_hbox_2.addWidget(self.physiboss_node_combobox)
+            self.physiboss_hbox.addWidget(self.physiboss_cell_type_combobox)
+            self.physiboss_hbox.addWidget(self.physiboss_node_combobox)
 
-            self.vbox.addLayout(self.physiboss_hbox_2)
+            self.vbox.addLayout(self.physiboss_hbox)
+            
+            self.physiboss_population_counts_button = QPushButton("Boolean states plot")
+            self.physiboss_population_counts_button.setFixedWidth(200)
+            self.physiboss_population_counts_button.setEnabled(False)
+            self.physiboss_population_counts_button.clicked.connect(self.physiboss_state_counts_cb)
+            self.vbox.addWidget(self.physiboss_population_counts_button)
         
     def physiboss_vis_hide(self):
         print("\n--------- physiboss_vis_hide()")
 
-        if self.physiboss_vis_checkbox is not None:
-            self.physiboss_vis_checkbox.disconnect()
+        if self.physiboss_widgets:
+            self.physiboss_widgets = False
+            
+            self.cells_physiboss_rb.disconnect()
+            self.cells_physiboss_rb.deleteLater()
+            
             self.physiboss_cell_type_combobox.disconnect()
             self.physiboss_node_combobox.disconnect()
             self.physiboss_qline.deleteLater()
             
-            self.physiboss_vis_checkbox.deleteLater()
-            self.physiboss_hbox_1.deleteLater()
-
             self.physiboss_cell_type_combobox.deleteLater()
             self.physiboss_node_combobox.deleteLater()
 
-            self.physiboss_hbox_2.deleteLater()
-
+            self.physiboss_hbox.deleteLater()
+            
+            self.physiboss_population_counts_button.disconnect()
+            self.physiboss_population_counts_button.deleteLater()
+            
+            self.cells_svg_rb.setChecked(True)
+            self.cells_mat_rb.setChecked(False)
+            
     def fill_physiboss_cell_types_combobox(self, cell_types):
         self.physiboss_cell_type_combobox.clear()
         for s in cell_types:
@@ -1366,20 +1405,172 @@ class VisBase():
         self.physiboss_vis_flag = bval
         self.physiboss_cell_type_combobox.setEnabled(bval)
         self.physiboss_node_combobox.setEnabled(bval)
-        self.cell_scalar_combobox.setEnabled(not bval)
-        self.cell_scalar_cbar_combobox.setEnabled(not bval)
+        self.physiboss_population_counts_button.setEnabled(bval)
+        
         self.update_plots()
         
     def physiboss_vis_cell_type_cb(self, idx):
-        if idx > 0:
-            self.fill_physiboss_nodes_combobox(self.physiboss_node_dict[list(self.physiboss_node_dict.keys())[idx]])
+        if idx >= 0:
             self.physiboss_selected_cell_line = idx
+            self.fill_physiboss_nodes_combobox(self.physiboss_node_dict[list(self.physiboss_node_dict.keys())[idx]])
             self.update_plots()
             
     def physiboss_vis_node_cb(self, idx):
         self.physiboss_selected_node = self.physiboss_node_dict[list(self.physiboss_node_dict.keys())[self.physiboss_selected_cell_line]][idx]
         self.update_plots()
         
+        
+    def physiboss_state_counts_cb(self):
+        print("---- physiboss_state_counts_cb(): --> window for 2D physiboss state population plots")
+
+        xml_pattern = self.output_dir + "/" + "output*.xml"
+        xml_files = glob.glob(xml_pattern)
+
+        num_xml = len(xml_files)
+        if num_xml == 0:
+            print("last_plot_cb(): WARNING: no output*.xml files present")
+            msgBox = QMessageBox()
+            msgBox.setIcon(QMessageBox.Information)
+            msgBox.setText("Could not find any " + self.output_dir + "/output*.xml")
+            msgBox.setStandardButtons(QMessageBox.Ok)
+            msgBox.exec()
+            return
+
+        xml_files.sort()
+
+        cell_def_name = list(self.physiboss_node_dict.keys())[self.physiboss_selected_cell_line]
+        all_states = set()
+        states_pops = []
+        mcds = []
+        for i_frame, fname in enumerate(xml_files):
+            basename = os.path.basename(fname)
+            t_mcds = pyMCDS(basename, self.output_dir, microenv=False, graph=False, verbose=False)
+            mcds.append(t_mcds)
+
+            try:
+                cell_types = t_mcds.get_cell_df()["cell_type"]
+            except:
+                print("vis_tab.py: physiboss_state_counts_cb(): error performing mcds.get_cell_df()['cell_type']")
+                return
+
+
+            physiboss_state_file = os.path.join(self.output_dir, "states_%08d.csv" % i_frame)
+
+            if not Path(physiboss_state_file).is_file():
+                print("vis_tab.py: physiboss_state_counts_cb(): error file not found ",physiboss_state_file)
+                return
+    
+            name_cellline = list(self.physiboss_node_dict.keys())[self.physiboss_selected_cell_line]
+            id_cellline = list(self.celldef_tab.param_d.keys()).index(name_cellline)
+    
+            states_pop = {}
+            with open(physiboss_state_file, newline='') as csvfile:
+                states_reader = csv.reader(csvfile, delimiter=',')
+                for row in states_reader:
+                    if row[0] != 'ID':
+                        ID = int(row[0])
+                        if cell_types[ID] == id_cellline:
+                            if row[1] in states_pop.keys():
+                                states_pop[row[1]] += 1
+                            else:
+                                states_pop[row[1]] = 1
+
+            states_pops.append(states_pop)
+            all_states = all_states.union(set(states_pop.keys()))
+
+        pop_data = np.zeros((len(xml_files), len(all_states)))
+        states_index = {state:i for i, state in enumerate(all_states)}
+        for i_frame, fname in enumerate(xml_files):
+            for state, pop in states_pops[i_frame].items():
+                pop_data[i_frame, states_index[state]] = pop
+
+
+
+        tval = np.linspace(0, mcds[-1].get_time(), len(xml_files))
+        if not self.physiboss_population_plot:
+            self.physiboss_population_plot = PhysiBoSSStatesPopulationPlotWindow()
+
+        self.physiboss_population_plot.ax0.cla()
+        self.physiboss_population_plot.ax0.plot(tval, pop_data, label=[label if len(label) < 100 else label[0:100] + "..." for label in states_index.keys()])
+
+
+        self.physiboss_population_plot.ax0.set_xlabel('time (mins)')
+        self.physiboss_population_plot.ax0.set_ylabel('# of cells')
+        self.physiboss_population_plot.ax0.set_title("PhysiBoSS state populations of cell line " + cell_def_name, fontsize=10)
+        self.physiboss_population_plot.ax0.legend(loc='center right', prop={'size': 8})
+        self.physiboss_population_plot.canvas.update()
+        self.physiboss_population_plot.canvas.draw()
+        self.physiboss_population_plot.show()
+        
+    #-------------------------------------
+    # def reset_xml_root(self):
+    def reset_xml_root(self, config_file):
+        self.celldef_tab.clear_custom_data_tab()
+        self.celldef_tab.param_d.clear()  # seems unnecessary as being done in populate_tree. argh.
+        self.celldef_tab.current_cell_def = None
+        self.celldef_tab.cell_adhesion_affinity_celltype = None
+
+        self.microenv_tab.param_d.clear()
+
+        print(f"\nreset_xml_root() self.tree = {self.tree}")
+        self.xml_root = self.tree.getroot()
+        print(f"reset_xml_root() self.xml_root = {self.xml_root}")
+        self.config_tab.xml_root = self.xml_root
+        self.microenv_tab.xml_root = self.xml_root
+        self.celldef_tab.xml_root = self.xml_root
+        self.user_params_tab.xml_root = self.xml_root
+
+        self.config_tab.fill_gui()
+        if self.model3D_flag and self.xml_root.find(".//domain//use_2D").text.lower() == 'true':
+            print("You're running a 3D Studio, but the model is 2D")
+            msgBox = QMessageBox()
+            msgBox.setIcon(QMessageBox.Information)
+            msgBox.setText('The model has been loaded; however, it is 2D and you are running the 3D (plotting) Studio. You may want to run a new Studio without 3D, i.e., no "-3", for this 2D model.')
+            msgBox.setStandardButtons(QMessageBox.Ok)
+            returnValue = msgBox.exec()
+
+        self.microenv_tab.clear_gui()
+        self.microenv_tab.populate_tree()
+
+        # self.celldef_tab.config_path = self.current_xml_file
+        self.celldef_tab.config_path = config_file
+        self.celldef_tab.fill_substrates_comboboxes()   # do before populate_tree_cell_defs
+        # populate_tree_cell_defs(self.celldef_tab, self.skip_validate_flag)
+        populate_tree_cell_defs(self.celldef_tab, False)
+
+        self.celldef_tab.fill_celltypes_comboboxes()
+
+        if self.rules_flag:
+            self.rules_tab.xml_root = self.xml_root
+            self.rules_tab.clear_rules()
+            self.rules_tab.fill_gui()   # do *after* populate_cell_defs() 
+
+        if self.studio_flag:
+            self.ics_tab.reset_info()
+
+        self.microenv_tab.celldef_tab = self.celldef_tab
+
+        self.user_params_tab.clear_gui()
+        self.user_params_tab.fill_gui()
+
+    #-------------------------------------
+    def show_sample_model(self, config_file):
+        # logging.debug(f'studio: show_sample_model(): self.config_file = {self.config_file}')
+        print(f'\nvis_base.py: show_sample_model(): self.config_file = {config_file}')
+        self.tree = ET.parse(config_file)
+        print(f'studio: show_sample_model(): self.tree = {self.tree}')
+        if self.studio_flag:
+            self.run_tab.tree = self.tree  #rwh
+        # self.xml_root = self.tree.getroot()
+        self.reset_xml_root(config_file)
+
+        title_prefix = "PhysiCell Model Builder: "
+        if self.studio_flag:
+            title_prefix = "PhysiCell Studio: "
+        self.setWindowTitle(title_prefix + config_file)
+        if self.model3D_flag:
+            self.reset_domain_box()
+
     #-------------------------------------
     def output_folder_cb(self):
         print(f"output_folder_cb(): old={self.output_dir}")
@@ -1409,8 +1600,25 @@ class VisBase():
             self.reset_model()
             self.update_plots()
 
+            # June 2023 - also attempt to read PhysiCell_settings.xml and repopulate the Studio 
+            # self.run_tab.config_file = self.current_xml_file
+            config_file = os.path.join(self.output_dir, "PhysiCell_settings.xml")
+            print(f"vis_base.py: select_plot_output_cb():  config_file is {config_file}")
+            if not Path(config_file).is_file():
+                msgBox = QMessageBox()
+                msgBox.setIcon(QMessageBox.Information)
+                msgBox.setText(f"Unable to find a PhysiCell_settings.xml in {self.output_dir}, therefore parameters in the other GUI tabs will not be updated.")
+                msgBox.setStandardButtons(QMessageBox.Ok)
+                msgBox.exec()
+                return
+            else:
+                self.run_tab.config_xml_name.setText(config_file)
+                self.show_sample_model(config_file)
+                # self.vis_tab.update_output_dir(self.config_tab.folder.text())
+
+
         else:
-            print("vis_tab: output_folder_cb():  full_path_model_name is NOT valid")
+            print("vis_base.py: output_folder_cb():  full_path_model_name is NOT valid")
 
 
     def disable_cell_scalar_widgets(self):
@@ -1421,9 +1629,9 @@ class VisBase():
 
         self.fix_cells_cmap_checkbox.setEnabled(False)
         self.cells_cmin.setEnabled(False)
+        self.cells_cmin.setStyleSheet("background-color: lightgray;")
         self.cells_cmax.setEnabled(False)
-        if self.physiboss_vis_checkbox is not None:
-            self.physiboss_vis_checkbox.setEnabled(False)
+        self.cells_cmax.setStyleSheet("background-color: lightgray;")
         # self.fix_cmap_checkbox.setEnabled(bval)
 
         if self.cax2:
@@ -1437,6 +1645,8 @@ class VisBase():
         # print("\n---------cells_svg_mat_cb(self)")
         radioBtn = self.sender()
         if "svg" in radioBtn.text():
+            if self.physiboss_widgets:
+                self.physiboss_vis_toggle_cb(False)
             self.plot_cells_svg = True
             self.disable_cell_scalar_widgets()
 
@@ -1448,9 +1658,7 @@ class VisBase():
             # self.fix_cells_cmap_checkbox.setEnabled(False)
             # self.cells_cmin.setEnabled(False)
             # self.cells_cmax.setEnabled(False)
-            # if self.physiboss_vis_checkbox is not None:
-            #     self.physiboss_vis_checkbox.setEnabled(False)
-            # # self.fix_cmap_checkbox.setEnabled(bval)
+            # self.fix_cmap_checkbox.setEnabled(bval)
 
             # if self.cax2:
             #     try:   # otherwise, physiboss UI can crash
@@ -1458,8 +1666,17 @@ class VisBase():
             #     except:
             #         pass
             #     self.cax2 = None
+        elif radioBtn.text() == "physiboss":
+            
+            self.plot_cells_svg = False
+            self.disable_cell_scalar_widgets()
+            self.physiboss_vis_toggle_cb(True)
 
-        else:
+            
+        else:   # doing ".mat", i.e., cell scalars, not svg
+            if self.physiboss_widgets:
+                self.physiboss_vis_toggle_cb(False)
+    
             if not self.cell_scalars_filled: 
                 # self.add_default_cell_vars()   # rwh: just do once? 
                 # print("\nvis_base:---------cells_svg_mat_cb(self):  calling add_partial_cell_vars()")
@@ -1475,8 +1692,12 @@ class VisBase():
             self.fix_cells_cmap_checkbox.setEnabled(True)
             self.cells_cmin.setEnabled(True)
             self.cells_cmax.setEnabled(True)
-            if self.physiboss_vis_checkbox is not None:
-                self.physiboss_vis_checkbox.setEnabled(True)
+            if self.fix_cells_cmap_checkbox.isChecked():
+                self.cells_cmin.setStyleSheet("background-color: white;")
+                self.cells_cmax.setStyleSheet("background-color: white;")
+            else:
+                self.cells_cmin.setStyleSheet("background-color: lightgray;")
+                self.cells_cmax.setStyleSheet("background-color: lightgray;")
 
         # print("\n>>> calling update_plots() from "+ inspect.stack()[0][3])
         self.update_plots()
@@ -1698,6 +1919,9 @@ class VisBase():
         # print('field_dict= ',self.field_dict)
         # print('field_min_max= ',self.field_min_max)
         # self.substrates_combobox.setCurrentIndex(2)  # not working; gets reset to oxygen somehow after a Run
+        if self.ecm_flag:
+            self.substrates_combobox.addItem('ECM anisotropy')
+            self.substrates_combobox.addItem('ECM density')
 
     def colorbar_combobox_changed_cb(self,idx):
         self.update_plots()
@@ -1810,12 +2034,12 @@ class VisBase():
                     substrate_name = var.attrib['name']
                     # print("substrate: ",substrate_name )
                     sub_names.append(substrate_name)
-                self.substrates_combobox.clear()
-                # print("sub_names = ",sub_names)
-                self.substrates_combobox.addItems(sub_names)
+                # self.substrates_combobox.clear()
+                # # print("sub_names = ",sub_names)
+                # self.substrates_combobox.addItems(sub_names)
 
-        self.cmin_value = 0.0
-        self.cmax_value = 1.0
+        # self.cmin_value = 0.0
+        # self.cmax_value = 1.0
 
         # and plot 1st frame (.svg)
         self.current_svg_frame = 0
@@ -1896,33 +2120,41 @@ class VisBase():
 
         xml_files.sort()
         # print('last_plot_cb():xml_files (after sort)= ',xml_files)
+        last_xml = int(xml_files[-1][-12:-4])
 
         # svg_pattern = "snapshot*.svg"
-        svg_pattern = self.output_dir + "/" + "snapshot*.svg"
-        svg_files = glob.glob(svg_pattern)   # rwh: problematic with celltypes3 due to snapshot_standard*.svg and snapshot<8digits>.svg
-        svg_files.sort()
-        # print('last_plot_cb(): svg_files (after sort)= ',svg_files)
-        num_xml = len(xml_files)
-        # print('svg_files = ',svg_files)
-        num_svg = len(svg_files)
-        if num_svg == 0:
-            print("Missing .svg file in output dir: ",self.output_dir)
-            msgBox = QMessageBox()
-            msgBox.setIcon(QMessageBox.Information)
-            msgBox.setText("Missing .svg file in output dir " + self.output_dir)
-            msgBox.setStandardButtons(QMessageBox.Ok)
-            msgBox.exec()
-            return
 
-    #    print('num_xml, num_svg = ',num_xml, num_svg)
-        last_xml = int(xml_files[-1][-12:-4])
-        last_svg = int(svg_files[-1][-12:-4])
-        # print('last_xml, _svg = ',last_xml,last_svg)
-        self.current_svg_frame = last_xml
-        if last_svg < last_xml:
-            self.current_svg_frame = last_svg
+        if self.cells_svg_rb.isChecked():
+            svg_pattern = self.output_dir + "/" + "snapshot*.svg"
+            svg_files = glob.glob(svg_pattern)   # rwh: problematic with celltypes3 due to snapshot_standard*.svg and snapshot<8digits>.svg
+            svg_files.sort()
+            # print('last_plot_cb(): svg_files (after sort)= ',svg_files)
+            num_xml = len(xml_files)
+            # print('svg_files = ',svg_files)
+            num_svg = len(svg_files)
+            if num_svg == 0:
+                print("Missing .svg file in output dir: ",self.output_dir)
+                msgBox = QMessageBox()
+                msgBox.setIcon(QMessageBox.Information)
+                msgBox.setText("Missing .svg file in output dir " + self.output_dir)
+                msgBox.setStandardButtons(QMessageBox.Ok)
+                msgBox.exec()
+                return
 
-        self.current_frame = self.current_svg_frame
+            # print('num_xml, num_svg = ',num_xml, num_svg)
+            # last_xml = int(xml_files[-1][-12:-4])
+            last_svg = int(svg_files[-1][-12:-4])
+            # print('last_xml, _svg = ',last_xml,last_svg)
+            self.current_svg_frame = last_xml
+            if last_svg < last_xml:
+                self.current_svg_frame = last_svg
+
+            self.current_frame = self.current_svg_frame
+
+        else:   # plotting .mat, not .svg
+            self.current_frame = last_xml
+            print('self.current_frame= ',self.current_frame)
+
         self.update_plots()
 
 
@@ -1935,7 +2167,11 @@ class VisBase():
         if self.current_svg_frame < 0:
            self.current_svg_frame = 0
 
-        self.current_frame = self.current_svg_frame
+        self.current_frame -= 1
+        if self.current_frame < 0:
+           self.current_frame = 0
+
+        # self.current_frame = self.current_svg_frame
         # print('back_plot_cb(): svg # ',self.current_svg_frame)
 
         self.update_plots()
@@ -1946,8 +2182,8 @@ class VisBase():
             self.reset_model()
             self.reset_model_flag = False
 
-        self.current_svg_frame+= 1
-        self.current_frame = self.current_svg_frame
+        self.current_svg_frame += 1  # not even used anymore?
+        self.current_frame += 1
         # print('svg # ',self.current_svg_frame)
 
         self.update_plots()
@@ -1963,23 +2199,35 @@ class VisBase():
             self.current_frame = self.current_svg_frame
             # print('svg # ',self.current_svg_frame)
 
-            fname = "snapshot%08d.svg" % self.current_svg_frame
-            full_fname = os.path.join(self.output_dir, fname)
-            # print("full_fname = ",full_fname)
-            # with debug_view:
-                # print("plot_svg:", full_fname) 
-            # print("-- plot_svg:", full_fname) 
-            if not os.path.isfile(full_fname):
-                # print("Once output files are generated, click the slider.")   
-                # print("play_plot_cb():  Reached the end (or no output files found).")
-                # self.timer.stop()
-                self.current_svg_frame -= 1
-                self.current_frame -= 1
+            if self.cells_svg_rb.isChecked():
+                fname = "snapshot%08d.svg" % self.current_svg_frame
+                full_fname = os.path.join(self.output_dir, fname)
+                # print("full_fname = ",full_fname)
+                # with debug_view:
+                    # print("plot_svg:", full_fname) 
+                # print("-- plot_svg:", full_fname) 
+                if not os.path.isfile(full_fname):
+                    # print("Once output files are generated, click the slider.")   
+                    # print("play_plot_cb():  Reached the end (or no output files found).")
+                    # self.timer.stop()
+                    self.current_svg_frame -= 1
+                    self.current_frame -= 1
 
-                self.animating_flag = True
-                # self.current_svg_frame = 0
-                self.animate()
-                return
+                    self.animating_flag = True
+                    # self.current_svg_frame = 0
+                    self.animate()
+                    return
+            else:
+                fname = "output%08d.xml" % self.current_svg_frame
+                full_fname = os.path.join(self.output_dir, fname)
+                if not os.path.isfile(full_fname):
+                    self.current_svg_frame -= 1
+                    self.current_frame -= 1
+
+                    self.animating_flag = True
+                    # self.current_svg_frame = 0
+                    self.animate()
+                    return
 
             self.update_plots()
 
@@ -1990,6 +2238,11 @@ class VisBase():
 
     def cell_fill_cb(self,bval):
         self.cell_fill = bval
+        self.update_plots()
+
+    def cell_nucleus_cb(self,bval):
+        self.cell_nucleus = bval
+        self.show_nucleus = bval
         self.update_plots()
 
     #----
@@ -2028,11 +2281,15 @@ class VisBase():
     #----------------------------------------------
     def cells_toggle_cb(self,bval):
         self.cells_checked_flag = bval
+        # print("----- vis_base: cells_toggle_cb(): bval=",bval)
 
         # these widgets reflect the toggle
         self.cells_svg_rb.setEnabled(bval)
         self.cells_mat_rb.setEnabled(bval)
         # self.cell_edge_checkbox.setEnabled(bval)
+
+        if self.physiboss_widgets:
+            self.cells_physiboss_rb.setEnabled(bval)
 
         # these widgets depend on whether we're using .mat (scalars)
         if bval:
@@ -2042,8 +2299,25 @@ class VisBase():
             self.full_list_button.setEnabled(not self.plot_cells_svg)
             self.partial_button.setEnabled(not self.plot_cells_svg)
             self.fix_cells_cmap_checkbox.setEnabled(not self.plot_cells_svg)
-            self.cells_cmin.setEnabled(not self.plot_cells_svg)
-            self.cells_cmax.setEnabled(not self.plot_cells_svg)
+            self.cells_cmin.setEnabled(not self.plot_cells_svg)  # if plotting svg, do not enable cells_cmin
+            # self.cells_cmin.setStyleSheet("background-color: white;")
+            self.cells_cmax.setEnabled(not self.plot_cells_svg)  # if plotting svg, do not enable cells_cmax
+            # self.cells_cmax.setStyleSheet("background-color: white;")
+            
+            if self.physiboss_widgets:
+                self.physiboss_cell_type_combobox.setEnabled(self.physiboss_vis_flag)
+                self.physiboss_node_combobox.setEnabled(self.physiboss_vis_flag)
+                self.physiboss_population_counts_button.setEnabled(self.physiboss_vis_flag)
+
+            if self.plot_cells_svg:
+                # self.fix_cells_cmap_checkbox.setEnabled(False)
+                # self.cells_cmin.setEnabled(False)
+                self.cells_cmin.setStyleSheet("background-color: lightgray;")
+                # self.cells_cmax.setEnabled(False)
+                self.cells_cmax.setStyleSheet("background-color: lightgray;")
+            else:
+                self.cells_cmin.setStyleSheet("background-color: white;")
+                self.cells_cmax.setStyleSheet("background-color: white;")
         else:
             # print("--- cells_toggle_cb:  conditional block 2")
             self.cell_scalar_combobox.setEnabled(False)
@@ -2052,8 +2326,13 @@ class VisBase():
             self.partial_button.setEnabled(False)
             self.fix_cells_cmap_checkbox.setEnabled(False)
             self.cells_cmin.setEnabled(False)
+            self.cells_cmin.setStyleSheet("background-color: lightgray;")
             self.cells_cmax.setEnabled(False)
-
+            self.cells_cmax.setStyleSheet("background-color: lightgray;")
+            if self.physiboss_widgets:
+                self.physiboss_cell_type_combobox.setEnabled(False)
+                self.physiboss_node_combobox.setEnabled(False)
+                self.physiboss_population_counts_button.setEnabled(False)
 
         if not self.cells_checked_flag:
             self.cell_scalar_combobox.setEnabled(False)
@@ -2078,6 +2357,12 @@ class VisBase():
         self.fix_cmap_checkbox.setEnabled(bval)
         self.cmin.setEnabled(bval)
         self.cmax.setEnabled(bval)
+        if bval and self.fix_cmap_checkbox.isChecked():
+            self.cmin.setStyleSheet("background-color: white;")
+            self.cmax.setStyleSheet("background-color: white;")
+        elif not bval:
+            self.cmin.setStyleSheet("background-color: lightgray;")
+            self.cmax.setStyleSheet("background-color: lightgray;")
         self.substrates_combobox.setEnabled(bval)
         self.substrates_cbar_combobox.setEnabled(bval)
 
@@ -2100,6 +2385,12 @@ class VisBase():
         self.fix_cells_cmap_flag = bval
         self.cells_cmin.setEnabled(bval)
         self.cells_cmax.setEnabled(bval)
+        if bval:
+            self.cells_cmin.setStyleSheet("background-color: white;")
+            self.cells_cmax.setStyleSheet("background-color: white;")
+        else:
+            self.cells_cmin.setStyleSheet("background-color: lightgray;")
+            self.cells_cmax.setStyleSheet("background-color: lightgray;")
 
         self.update_plots()
 
@@ -2109,6 +2400,12 @@ class VisBase():
         self.fix_cmap_flag = bval
         self.cmin.setEnabled(bval)
         self.cmax.setEnabled(bval)
+        if bval:
+            self.cmin.setStyleSheet("background-color: white;")
+            self.cmax.setStyleSheet("background-color: white;")
+        else:
+            self.cmin.setStyleSheet("background-color: lightgray;")
+            self.cmax.setStyleSheet("background-color: lightgray;")
 
             # self.substrates_combobox.addItem(s)
         # field_name = self.field_dict[self.substrate_choice.value]
@@ -2118,17 +2415,21 @@ class VisBase():
         # print("field_name= ",field_name)
         # print(self.cmap_fixed_toggle.value)
         # if (self.colormap_fixed_toggle.value):  # toggle on fixed range
-        if (bval):  # toggle on fixed range
-            # self.colormap_min.disabled = False
-            # self.colormap_max.disabled = False
-            self.field_min_max[field_name][0] = self.cmin.text
-            self.field_min_max[field_name][1] = self.cmax.text
-            self.field_min_max[field_name][2] = True
-            # self.save_min_max.disabled = False
-        else:  # toggle off fixed range
-            # self.colormap_min.disabled = True
-            # self.colormap_max.disabled = True
-            self.field_min_max[field_name][2] = False
+        # --- rwh: TODO
+        try:
+            if (bval):  # toggle on fixed range
+                # self.colormap_min.disabled = False
+                # self.colormap_max.disabled = False
+                self.field_min_max[field_name][0] = self.cmin.text
+                self.field_min_max[field_name][1] = self.cmax.text
+                self.field_min_max[field_name][2] = True
+                # self.save_min_max.disabled = False
+            else:  # toggle off fixed range
+                # self.colormap_min.disabled = True
+                # self.colormap_max.disabled = True
+                self.field_min_max[field_name][2] = False
+        except:
+            print("------- vis_base: fix_cmap_toggle_cb(): exception updating field_min_max for ",field_name)
 
         # print("\n>>> calling update_plots() from "+ inspect.stack()[0][3])
         self.update_plots()
@@ -2496,7 +2797,7 @@ class VisBase():
             print("Error reading ",basename, "in ",self.output_dir)
             return None
         
-        # # hard-coding colors (as is done in PhysiCell for "paint by cell type")
+        # # hard-coding colors (as is done in PhysiCell /modulels/PhysiCell_pathology.cpp  "paint_by_number_cell_coloring")
         # # self.self.cell_colors = list( [0.5,0.5,0.5], [1,0,0], [1,1,0], [0,1,0], [0,0,1], 
         # self.cell_colors = ( [0.5,0.5,0.5], [1,0,0], [1,1,0], [0,1,0], [0,0,1], 
         #                 [1,0,1], [1,0.65,0], [0.2,0.8,0.2], [0,1,1], [1, 0.41, 0.71],
@@ -2553,6 +2854,7 @@ class VisBase():
 
         my_display_data = self.get_simularium_info()
         if my_display_data is None:
+            print("Error: get_simularium_info is None")
             return
 
         my_xrange = self.xmax - self.xmin

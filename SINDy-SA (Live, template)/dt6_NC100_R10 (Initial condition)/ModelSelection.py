@@ -33,7 +33,18 @@ class ModelSelection:
 			# self.k[model_id] = np.count_nonzero(np.absolute(model.coefficients()) >= 5.0e-4)
 			self.k[model_id] = np.count_nonzero(model.coefficients() != 0.0)
 
-	def compute_SSE(self, target, predicted):
+	def compute_SSE(self, target, predicted, normalize = False):
+		normalization_factor = np.ones(target.shape[1])
+		if normalize:
+			for i in range(target.shape[1]):
+				normalization_factor[i] = np.max(target[:,i]) - np.min(target[:,i])
+
+		target_norm = np.full(target.shape, normalization_factor)
+		target /= target_norm
+
+		predicted_norm = np.full(predicted.shape, normalization_factor)
+		predicted /= predicted_norm
+
 		squared_errors = (target - predicted)**2.0
 		return np.sum(squared_errors)
 

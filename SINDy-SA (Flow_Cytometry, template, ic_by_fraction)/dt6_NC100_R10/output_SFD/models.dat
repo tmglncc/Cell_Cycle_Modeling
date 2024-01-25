@@ -1,0 +1,1787 @@
+Experimento 1: Grau = 1, Frequência = 1, alpha = 0.001
+
+---------- ITERATION 1 ----------
+SSE = 0.22218376971145387
+Coefficients before sensitivity analysis = [[-0.00598029  0.0004738   0.          0.00049319]
+ [ 0.00316217  0.00098063 -0.00013755  0.        ]
+ [ 0.00163311  0.          0.00049647 -0.00026179]]
+ST_sum = [array([0.00239211, 0.09248487, 0.05740718, 0.00126487, 0.1914193 ,
+       0.03092622, 0.00065325, 0.11162689, 0.0304719 ])]
+Total points = [ 2. -1.  1.  2. -1.  1.  2. -1.  1.]
+Less important parameter = [0 3 6]
+Coefficients after sensitivity analysis = [[ 0.          0.0004738   0.          0.00049319]
+ [ 0.          0.00098063 -0.00013755  0.        ]
+ [ 0.          0.          0.00049647 -0.00026179]]
+
+---------- ITERATION 2 ----------
+SSE = 0.22409594399583374
+Comparing 0.22218376971145387 + 1.0*0.022218376971145388 with 0.22409594399583374: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.          0.00031838  0.          0.00071149]
+ [ 0.          0.00099315 -0.0001379   0.        ]
+ [ 0.          0.          0.00053129 -0.0003188 ]]
+ST_sum = [array([0.06214713, 0.08281743, 0.19386247, 0.03100637, 0.11945628,
+       0.03710811])]
+Total points = [ 1. -1. -1.  1. -1.  1.]
+Less important parameter = [0 3 5]
+Coefficients after sensitivity analysis = [[0.         0.         0.         0.00071149]
+ [0.         0.00099315 0.         0.        ]
+ [0.         0.         0.00053129 0.        ]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.22409594399583374
+Loss at the current iteration = 0.22470592297358116
+Number of bases at the previous iteration = 6
+Number of bases at the current iteration = 3
+Total number of bases = 9
+F-test = 0.0027219545649552774
+SSE = 0.22470592297358116
+Comparing 0.2231398568536438 + 1.0*0.0009560871421899347 with 0.22470592297358116: error has increased
+G0G1' = 3.184e-04 G0G1 + 7.115e-04 G2M
+S' = 9.931e-04 G0G1 + -1.379e-04 S
+G2M' = 5.313e-04 S + -3.188e-04 G2M
+
+
+Experimento 2: Grau = 1, Frequência = 1, alpha = 0.01
+
+---------- ITERATION 1 ----------
+SSE = 0.22218376983257657
+Coefficients before sensitivity analysis = [[-0.00597891  0.00047376  0.          0.00049324]
+ [ 0.00316148  0.00098063 -0.00013754  0.        ]
+ [ 0.00163274  0.          0.00049648 -0.0002618 ]]
+ST_sum = [array([0.00239156, 0.09247804, 0.05741289, 0.00126459, 0.19141882,
+       0.03092524, 0.0006531 , 0.1116283 , 0.03047303])]
+Total points = [ 2. -1.  1.  2. -1.  1.  2. -1.  1.]
+Less important parameter = [0 3 6]
+Coefficients after sensitivity analysis = [[ 0.          0.00047376  0.          0.00049324]
+ [ 0.          0.00098063 -0.00013754  0.        ]
+ [ 0.          0.          0.00049648 -0.0002618 ]]
+
+---------- ITERATION 2 ----------
+SSE = 0.22409594399593932
+Comparing 0.22218376983257657 + 1.0*0.022218376983257657 with 0.22409594399593932: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.          0.00031838  0.          0.00071149]
+ [ 0.          0.00099314 -0.0001379   0.        ]
+ [ 0.          0.          0.00053129 -0.00031879]]
+ST_sum = [array([0.06214751, 0.08281707, 0.19386144, 0.03100536, 0.11945586,
+       0.03710769])]
+Total points = [ 1. -1. -1.  1. -1.  1.]
+Less important parameter = [0 3 5]
+Coefficients after sensitivity analysis = [[0.         0.         0.         0.00071149]
+ [0.         0.00099314 0.         0.        ]
+ [0.         0.         0.00053129 0.        ]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.22409594399593932
+Loss at the current iteration = 0.22470592297358125
+Number of bases at the previous iteration = 6
+Number of bases at the current iteration = 3
+Total number of bases = 9
+F-test = 0.0027219545644832192
+SSE = 0.22470592297358125
+Comparing 0.22313985691425794 + 1.0*0.0009560870816813782 with 0.22470592297358125: error has increased
+G0G1' = 3.184e-04 G0G1 + 7.115e-04 G2M
+S' = 9.931e-04 G0G1 + -1.379e-04 S
+G2M' = 5.313e-04 S + -3.188e-04 G2M
+
+
+Experimento 3: Grau = 1, Frequência = 1, alpha = 0.1
+
+---------- ITERATION 1 ----------
+SSE = 0.2221837818892407
+Coefficients before sensitivity analysis = [[-0.00596518  0.00047341  0.          0.00049373]
+ [ 0.00315457  0.0009806  -0.0001375   0.        ]
+ [ 0.00162906  0.          0.00049654 -0.00026189]]
+ST_sum = [array([0.00238607, 0.09240987, 0.05746976, 0.00126183, 0.19141401,
+       0.03091545, 0.00065162, 0.11164233, 0.03048437])]
+Total points = [ 2. -1.  1.  2. -1.  1.  2. -1.  1.]
+Less important parameter = [0 3 6]
+Coefficients after sensitivity analysis = [[ 0.          0.00047341  0.          0.00049373]
+ [ 0.          0.0009806  -0.0001375   0.        ]
+ [ 0.          0.          0.00049654 -0.00026189]]
+
+---------- ITERATION 2 ----------
+SSE = 0.2240959440064962
+Comparing 0.2221837818892407 + 1.0*0.02221837818892407 with 0.2240959440064962: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.          0.0003184   0.          0.00071146]
+ [ 0.          0.00099309 -0.00013785  0.        ]
+ [ 0.          0.          0.00053127 -0.00031876]]
+ST_sum = [array([0.06215122, 0.08281342, 0.19385117, 0.03099528, 0.11945168,
+       0.03710351])]
+Total points = [ 1. -1. -1.  1. -1.  1.]
+Less important parameter = [0 3 5]
+Coefficients after sensitivity analysis = [[0.         0.         0.         0.00071146]
+ [0.         0.00099309 0.         0.        ]
+ [0.         0.         0.00053127 0.        ]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.2240959440064962
+Loss at the current iteration = 0.22470592297359016
+Number of bases at the previous iteration = 6
+Number of bases at the current iteration = 3
+Total number of bases = 9
+F-test = 0.0027219545172859592
+SSE = 0.22470592297359016
+Comparing 0.22313986294786847 + 1.0*0.0009560810586277529 with 0.22470592297359016: error has increased
+G0G1' = 3.184e-04 G0G1 + 7.115e-04 G2M
+S' = 9.931e-04 G0G1 + -1.379e-04 S
+G2M' = 5.313e-04 S + -3.188e-04 G2M
+
+
+Experimento 4: Grau = 1, Frequência = 1, alpha = 1.0
+
+---------- ITERATION 1 ----------
+SSE = 0.22218493397908945
+Coefficients before sensitivity analysis = [[-0.0058313   0.00047001  0.          0.00049848]
+ [ 0.00308713  0.00098035 -0.00013706  0.        ]
+ [ 0.00159308  0.          0.00049715 -0.00026283]]
+ST_sum = [array([0.00233252, 0.09174603, 0.05802356, 0.00123485, 0.19136467,
+       0.0308176 , 0.00063723, 0.1117782 , 0.03059395])]
+Total points = [ 2. -1.  1.  2. -1.  1.  2. -1.  1.]
+Less important parameter = [0 3 6]
+Coefficients after sensitivity analysis = [[ 0.          0.00047001  0.          0.00049848]
+ [ 0.          0.00098035 -0.00013706  0.        ]
+ [ 0.          0.          0.00049715 -0.00026283]]
+
+---------- ITERATION 2 ----------
+SSE = 0.22409594506046496
+Comparing 0.22218493397908945 + 1.0*0.022218493397908948 with 0.22409594506046496: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.          0.00031859  0.          0.00071114]
+ [ 0.          0.00099256 -0.00013741  0.        ]
+ [ 0.          0.          0.00053109 -0.0003184 ]]
+ST_sum = [array([0.06218831, 0.08277698, 0.19374857, 0.03089458, 0.11940995,
+       0.03706177])]
+Total points = [ 1. -1. -1.  1. -1.  1.]
+Less important parameter = [0 3 5]
+Coefficients after sensitivity analysis = [[0.         0.         0.         0.00071114]
+ [0.         0.00099256 0.         0.        ]
+ [0.         0.         0.00053109 0.        ]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.22409594506046496
+Loss at the current iteration = 0.22470592297448302
+Number of bases at the previous iteration = 6
+Number of bases at the current iteration = 3
+Total number of bases = 9
+F-test = 0.002721949805265261
+SSE = 0.22470592297448302
+Comparing 0.2231404395197772 + 1.0*0.0009555055406877538 with 0.22470592297448302: error has increased
+G0G1' = 3.184e-04 G0G1 + 7.115e-04 G2M
+S' = 9.931e-04 G0G1 + -1.379e-04 S
+G2M' = 5.313e-04 S + -3.188e-04 G2M
+
+
+Experimento 5: Grau = 1, Frequência = 1, alpha = 10.0
+
+---------- ITERATION 1 ----------
+SSE = 0.22226166515540935
+Coefficients before sensitivity analysis = [[-0.00476309  0.00044325  0.          0.00053583]
+ [ 0.00254349  0.00097734 -0.00013273  0.        ]
+ [ 0.0013057   0.          0.00050161 -0.00026966]]
+ST_sum = [array([0.00190524, 0.0865223 , 0.06237047, 0.0010174 , 0.19077708,
+       0.02984243, 0.00052228, 0.1127829 , 0.0313886 ])]
+Total points = [ 2. -1.  1.  2. -1.  1.  2. -1.  1.]
+Less important parameter = [0 3 6]
+Coefficients after sensitivity analysis = [[ 0.          0.00044325  0.          0.00053583]
+ [ 0.          0.00097734 -0.00013273  0.        ]
+ [ 0.          0.          0.00050161 -0.00026966]]
+
+---------- ITERATION 2 ----------
+SSE = 0.22409604876089795
+Comparing 0.22226166515540935 + 1.0*0.022226166515540935 with 0.22409604876089795: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.          0.00032047  0.          0.00070804]
+ [ 0.          0.00098736 -0.00013297  0.        ]
+ [ 0.          0.          0.00052925 -0.00031484]]
+ST_sum = [array([0.06255587, 0.08241588, 0.19273174, 0.02989659, 0.1189961 ,
+       0.03664783])]
+Total points = [ 1. -1. -1.  1. -1.  1.]
+Less important parameter = [0 3 5]
+Coefficients after sensitivity analysis = [[0.         0.         0.         0.00070804]
+ [0.         0.00098736 0.         0.        ]
+ [0.         0.         0.00052925 0.        ]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.22409604876089795
+Loss at the current iteration = 0.22470592306376827
+Number of bases at the previous iteration = 6
+Number of bases at the current iteration = 3
+Total number of bases = 9
+F-test = 0.002721486194167731
+SSE = 0.22470592306376827
+Comparing 0.22317885695815365 + 1.0*0.0009171918027442993 with 0.22470592306376827: error has increased
+G0G1' = 3.184e-04 G0G1 + 7.115e-04 G2M
+S' = 9.931e-04 G0G1 + -1.379e-04 S
+G2M' = 5.313e-04 S + -3.188e-04 G2M
+
+
+Experimento 6: Grau = 2, Frequência = 1, alpha = 0.001
+
+---------- ITERATION 1 ----------
+SSE = 0.19739108380595122
+Coefficients before sensitivity analysis = [[ 1.77725609e-02 -2.42138968e-03  0.00000000e+00  4.73845072e-03
+   9.37660281e-05  0.00000000e+00 -2.87117408e-04  0.00000000e+00
+   0.00000000e+00  2.20352204e-04]
+ [-7.95908629e-03  2.40691789e-03 -1.21386814e-03  0.00000000e+00
+  -1.37491625e-04  2.28736934e-04  0.00000000e+00 -9.53185894e-05
+   0.00000000e+00  0.00000000e+00]
+ [-6.68387178e-03  0.00000000e+00 -1.35534925e-04  1.14333232e-03
+   0.00000000e+00  0.00000000e+00  0.00000000e+00  2.68210151e-05
+  -9.90703224e-05  9.05999808e-05]]
+ST_sum = [array([7.10902436e-03, 4.72655265e-01, 5.51555664e-01, 8.93192680e+00,
+       1.63091876e+01, 7.46385799e+00, 3.18363452e-03, 4.69830371e-01,
+       2.72926112e-01, 1.30971222e+01, 2.50974555e+01, 1.20466077e+01,
+       2.67354871e-03, 3.04736726e-02, 1.33083882e-01, 3.38970865e+00,
+       6.48201664e+00, 3.06883879e+00])]
+Total points = [ 5.  4.  3.  1. -1.  2.  5.  3.  4.  1. -1.  2.  5.  4.  3.  1. -1.  2.]
+Less important parameter = [ 0  6 12]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -2.42138968e-03  0.00000000e+00  4.73845072e-03
+   9.37660281e-05  0.00000000e+00 -2.87117408e-04  0.00000000e+00
+   0.00000000e+00  2.20352204e-04]
+ [ 0.00000000e+00  2.40691789e-03 -1.21386814e-03  0.00000000e+00
+  -1.37491625e-04  2.28736934e-04  0.00000000e+00 -9.53185894e-05
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00 -1.35534925e-04  1.14333232e-03
+   0.00000000e+00  0.00000000e+00  0.00000000e+00  2.68210151e-05
+  -9.90703224e-05  9.05999808e-05]]
+
+---------- ITERATION 2 ----------
+SSE = 0.20333961405731948
+Comparing 0.19739108380595122 + 1.0*0.019739108380595123 with 0.20333961405731948: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -2.02726440e-03  0.00000000e+00  4.38695067e-03
+   8.87906535e-05  0.00000000e+00 -2.71751578e-04  0.00000000e+00
+   0.00000000e+00  2.07610395e-04]
+ [ 0.00000000e+00  2.10415518e-03 -1.02436965e-03  0.00000000e+00
+  -1.42573745e-04  2.38153339e-04  0.00000000e+00 -9.95403726e-05
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00 -1.89541231e-04  1.13542211e-03
+   0.00000000e+00  0.00000000e+00  0.00000000e+00  2.69305329e-05
+  -9.95685550e-05  9.15065506e-05]]
+ST_sum = [array([ 0.39572201,  0.51064106,  8.45798455, 15.43635925,  7.03226233,
+        0.41073109,  0.23031927, 13.5812328 , 26.13064156, 12.58016751,
+        0.04261645,  0.13216313,  3.4035498 ,  6.51461523,  3.09954649])]
+Total points = [ 4.  3.  1. -1.  2.  3.  4.  1. -1.  2.  4.  3.  1. -1.  2.]
+Less important parameter = [ 0  6 10]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00  0.00000000e+00  0.00000000e+00  4.38695067e-03
+   8.87906535e-05  0.00000000e+00 -2.71751578e-04  0.00000000e+00
+   0.00000000e+00  2.07610395e-04]
+ [ 0.00000000e+00  2.10415518e-03  0.00000000e+00  0.00000000e+00
+  -1.42573745e-04  2.38153339e-04  0.00000000e+00 -9.95403726e-05
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  1.13542211e-03
+   0.00000000e+00  0.00000000e+00  0.00000000e+00  2.69305329e-05
+  -9.95685550e-05  9.15065506e-05]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.20333961405731948
+Loss at the current iteration = 0.2068563521537791
+Number of bases at the previous iteration = 15
+Number of bases at the current iteration = 12
+Total number of bases = 18
+F-test = 0.017294899042486992
+SSE = 0.2068563521537791
+Comparing 0.20036534893163535 + 1.0*0.0029742651256841335 with 0.2068563521537791: error has increased
+G0G1' = -2.027e-03 G0G1 + 4.387e-03 G2M + 8.879e-05 G0G1^2 + -2.718e-04 G0G1 G2M + 2.076e-04 G2M^2
+S' = 2.104e-03 G0G1 + -1.024e-03 S + -1.426e-04 G0G1^2 + 2.382e-04 G0G1 S + -9.954e-05 S^2
+G2M' = -1.895e-04 S + 1.135e-03 G2M + 2.693e-05 S^2 + -9.957e-05 S G2M + 9.151e-05 G2M^2
+
+
+Experimento 7: Grau = 2, Frequência = 1, alpha = 0.01
+
+---------- ITERATION 1 ----------
+SSE = 0.1973910868628151
+Coefficients before sensitivity analysis = [[ 1.77609847e-02 -2.42100816e-03  0.00000000e+00  4.73801500e-03
+   9.37598846e-05  0.00000000e+00 -2.87098663e-04  0.00000000e+00
+   0.00000000e+00  2.20337398e-04]
+ [-7.95401138e-03  2.40662361e-03 -1.21366071e-03  0.00000000e+00
+  -1.37498286e-04  2.28749034e-04  0.00000000e+00 -9.53239924e-05
+   0.00000000e+00  0.00000000e+00]
+ [-6.67969589e-03  0.00000000e+00 -1.35542308e-04  1.14327641e-03
+   0.00000000e+00  0.00000000e+00  0.00000000e+00  2.68202538e-05
+  -9.90675874e-05  9.05977597e-05]]
+ST_sum = [array([7.10439389e-03, 4.72580793e-01, 5.51504947e-01, 8.93134158e+00,
+       1.63081228e+01, 7.46335646e+00, 3.18160455e-03, 4.69772930e-01,
+       2.72879474e-01, 1.30977567e+01, 2.50987832e+01, 1.20472906e+01,
+       2.67187836e-03, 3.04753326e-02, 1.33077374e-01, 3.38961245e+00,
+       6.48183770e+00, 3.06876356e+00])]
+Total points = [ 5.  4.  3.  1. -1.  2.  5.  3.  4.  1. -1.  2.  5.  4.  3.  1. -1.  2.]
+Less important parameter = [ 0  6 12]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -2.42100816e-03  0.00000000e+00  4.73801500e-03
+   9.37598846e-05  0.00000000e+00 -2.87098663e-04  0.00000000e+00
+   0.00000000e+00  2.20337398e-04]
+ [ 0.00000000e+00  2.40662361e-03 -1.21366071e-03  0.00000000e+00
+  -1.37498286e-04  2.28749034e-04  0.00000000e+00 -9.53239924e-05
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00 -1.35542308e-04  1.14327641e-03
+   0.00000000e+00  0.00000000e+00  0.00000000e+00  2.68202538e-05
+  -9.90675874e-05  9.05977597e-05]]
+
+---------- ITERATION 2 ----------
+SSE = 0.20333961407246529
+Comparing 0.1973910868628151 + 1.0*0.01973910868628151 with 0.20333961407246529: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -2.02715144e-03  0.00000000e+00  4.38676352e-03
+   8.87880259e-05  0.00000000e+00 -2.71743670e-04  0.00000000e+00
+   0.00000000e+00  2.07604504e-04]
+ [ 0.00000000e+00  2.10406774e-03 -1.02429483e-03  0.00000000e+00
+  -1.42576684e-04  2.38158577e-04  0.00000000e+00 -9.95427030e-05
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00 -1.89514439e-04  1.13537030e-03
+   0.00000000e+00  0.00000000e+00  0.00000000e+00  2.69296893e-05
+  -9.95654577e-05  9.15037164e-05]]
+ST_sum = [array([ 0.39569996,  0.51061927,  8.45773425, 15.43591005,  7.03206282,
+        0.41071402,  0.23030245, 13.58151275, 26.13121636, 12.58046203,
+        0.04261043,  0.1321571 ,  3.40344319,  6.51441258,  3.09945048])]
+Total points = [ 4.  3.  1. -1.  2.  3.  4.  1. -1.  2.  4.  3.  1. -1.  2.]
+Less important parameter = [ 0  6 10]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00  0.00000000e+00  0.00000000e+00  4.38676352e-03
+   8.87880259e-05  0.00000000e+00 -2.71743670e-04  0.00000000e+00
+   0.00000000e+00  2.07604504e-04]
+ [ 0.00000000e+00  2.10406774e-03  0.00000000e+00  0.00000000e+00
+  -1.42576684e-04  2.38158577e-04  0.00000000e+00 -9.95427030e-05
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  1.13537030e-03
+   0.00000000e+00  0.00000000e+00  0.00000000e+00  2.69296893e-05
+  -9.95654577e-05  9.15037164e-05]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.20333961407246529
+Loss at the current iteration = 0.20685635215378084
+Number of bases at the previous iteration = 15
+Number of bases at the current iteration = 12
+Total number of bases = 18
+F-test = 0.01729489896672213
+SSE = 0.20685635215378084
+Comparing 0.2003653504676402 + 1.0*0.0029742636048250976 with 0.20685635215378084: error has increased
+G0G1' = -2.027e-03 G0G1 + 4.387e-03 G2M + 8.879e-05 G0G1^2 + -2.718e-04 G0G1 G2M + 2.076e-04 G2M^2
+S' = 2.104e-03 G0G1 + -1.024e-03 S + -1.426e-04 G0G1^2 + 2.382e-04 G0G1 S + -9.954e-05 S^2
+G2M' = -1.895e-04 S + 1.135e-03 G2M + 2.693e-05 S^2 + -9.957e-05 S G2M + 9.151e-05 G2M^2
+
+
+Experimento 8: Grau = 2, Frequência = 1, alpha = 0.1
+
+---------- ITERATION 1 ----------
+SSE = 0.19739138864483777
+Coefficients before sensitivity analysis = [[ 1.76460414e-02 -2.41721259e-03  0.00000000e+00  4.73367640e-03
+   9.36987108e-05  0.00000000e+00 -2.86912020e-04  0.00000000e+00
+   0.00000000e+00  2.20189993e-04]
+ [-7.90361189e-03  2.40369571e-03 -1.21159602e-03  0.00000000e+00
+  -1.37564626e-04  2.28869536e-04  0.00000000e+00 -9.53777988e-05
+   0.00000000e+00  0.00000000e+00]
+ [-6.63822213e-03  0.00000000e+00 -1.35613966e-04  1.14271785e-03
+   0.00000000e+00  0.00000000e+00  0.00000000e+00  2.68126411e-05
+  -9.90402327e-05  9.05755254e-05]]
+ST_sum = [array([7.05841655e-03, 4.71839897e-01, 5.50999933e-01, 8.92551431e+00,
+       1.62975208e+01, 7.45836353e+00, 3.16144475e-03, 4.69201402e-01,
+       2.72415249e-01, 1.31040761e+01, 2.51120049e+01, 1.20540908e+01,
+       2.65528885e-03, 3.04914442e-02, 1.33012358e-01, 3.38865033e+00,
+       6.48004792e+00, 3.06801043e+00])]
+Total points = [ 5.  4.  3.  1. -1.  2.  5.  3.  4.  1. -1.  2.  5.  4.  3.  1. -1.  2.]
+Less important parameter = [ 0  6 12]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -2.41721259e-03  0.00000000e+00  4.73367640e-03
+   9.36987108e-05  0.00000000e+00 -2.86912020e-04  0.00000000e+00
+   0.00000000e+00  2.20189993e-04]
+ [ 0.00000000e+00  2.40369571e-03 -1.21159602e-03  0.00000000e+00
+  -1.37564626e-04  2.28869536e-04  0.00000000e+00 -9.53777988e-05
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00 -1.35613966e-04  1.14271785e-03
+   0.00000000e+00  0.00000000e+00  0.00000000e+00  2.68126411e-05
+  -9.90402327e-05  9.05755254e-05]]
+
+---------- ITERATION 2 ----------
+SSE = 0.2033396155855849
+Comparing 0.19739138864483777 + 1.0*0.01973913886448378 with 0.2033396155855849: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -2.02602238e-03  0.00000000e+00  4.38489290e-03
+   8.87617632e-05  0.00000000e+00 -2.71664630e-04  0.00000000e+00
+   0.00000000e+00  2.07545634e-04]
+ [ 0.00000000e+00  2.10319360e-03 -1.02354698e-03  0.00000000e+00
+  -1.42606080e-04  2.38210976e-04  0.00000000e+00 -9.95660112e-05
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00 -1.89246690e-04  1.13485254e-03
+   0.00000000e+00  0.00000000e+00  0.00000000e+00  2.69212594e-05
+  -9.95345058e-05  9.14753934e-05]]
+ST_sum = [array([ 0.39547957,  0.51040153,  8.45523253, 15.4314203 ,  7.03006873,
+        0.41054339,  0.2301343 , 13.58431288, 26.13696561, 12.58340778,
+        0.04255023,  0.13209684,  3.40237779,  6.51238744,  3.09849112])]
+Total points = [ 4.  3.  1. -1.  2.  3.  4.  1. -1.  2.  4.  3.  1. -1.  2.]
+Less important parameter = [ 0  6 10]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00  0.00000000e+00  0.00000000e+00  4.38489290e-03
+   8.87617632e-05  0.00000000e+00 -2.71664630e-04  0.00000000e+00
+   0.00000000e+00  2.07545634e-04]
+ [ 0.00000000e+00  2.10319360e-03  0.00000000e+00  0.00000000e+00
+  -1.42606080e-04  2.38210976e-04  0.00000000e+00 -9.95660112e-05
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  1.13485254e-03
+   0.00000000e+00  0.00000000e+00  0.00000000e+00  2.69212594e-05
+  -9.95345058e-05  9.14753934e-05]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.2033396155855849
+Loss at the current iteration = 0.20685635215400014
+Number of bases at the previous iteration = 15
+Number of bases at the current iteration = 12
+Total number of bases = 18
+F-test = 0.01729489139776145
+SSE = 0.20685635215400014
+Comparing 0.2003655021152113 + 1.0*0.00297411347037356 with 0.20685635215400014: error has increased
+G0G1' = -2.027e-03 G0G1 + 4.387e-03 G2M + 8.879e-05 G0G1^2 + -2.718e-04 G0G1 G2M + 2.076e-04 G2M^2
+S' = 2.104e-03 G0G1 + -1.024e-03 S + -1.426e-04 G0G1^2 + 2.382e-04 G0G1 S + -9.954e-05 S^2
+G2M' = -1.895e-04 S + 1.135e-03 G2M + 2.693e-05 S^2 + -9.957e-05 S G2M + 9.151e-05 G2M^2
+
+
+Experimento 9: Grau = 2, Frequência = 1, alpha = 1.0
+
+---------- ITERATION 1 ----------
+SSE = 0.19741804087951662
+Coefficients before sensitivity analysis = [[ 1.65729731e-02 -2.38109062e-03  0.00000000e+00  4.69203309e-03
+   9.31116063e-05  0.00000000e+00 -2.85121401e-04  0.00000000e+00
+   0.00000000e+00  2.18777994e-04]
+ [-7.43228960e-03  2.37580555e-03 -1.19185200e-03  0.00000000e+00
+  -1.38202041e-04  2.30026791e-04  0.00000000e+00 -9.58944879e-05
+   0.00000000e+00  0.00000000e+00]
+ [-6.25015426e-03  0.00000000e+00 -1.36127585e-04  1.13718810e-03
+   0.00000000e+00  0.00000000e+00  0.00000000e+00  2.67364683e-05
+  -9.87661347e-05  9.03508782e-05]]
+ST_sum = [array([6.62918922e-03, 4.64788888e-01, 5.46152652e-01, 8.86958815e+00,
+       1.61958080e+01, 7.41053571e+00, 2.97291584e-03, 4.63757243e-01,
+       2.67976003e-01, 1.31647947e+01, 2.52389811e+01, 1.21193913e+01,
+       2.50006170e-03, 3.06069263e-02, 1.32368695e-01, 3.37902341e+00,
+       6.46211412e+00, 3.06040109e+00])]
+Total points = [ 5.  4.  3.  1. -1.  2.  5.  3.  4.  1. -1.  2.  5.  4.  3.  1. -1.  2.]
+Less important parameter = [ 0  6 12]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -2.38109062e-03  0.00000000e+00  4.69203309e-03
+   9.31116063e-05  0.00000000e+00 -2.85121401e-04  0.00000000e+00
+   0.00000000e+00  2.18777994e-04]
+ [ 0.00000000e+00  2.37580555e-03 -1.19185200e-03  0.00000000e+00
+  -1.38202041e-04  2.30026791e-04  0.00000000e+00 -9.58944879e-05
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00 -1.36127585e-04  1.13718810e-03
+   0.00000000e+00  0.00000000e+00  0.00000000e+00  2.67364683e-05
+  -9.87661347e-05  9.03508782e-05]]
+
+---------- ITERATION 2 ----------
+SSE = 0.2033397654756195
+Comparing 0.19741804087951662 + 1.0*0.01974180408795166 with 0.2033397654756195: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -2.01478799e-03  0.00000000e+00  4.36627981e-03
+   8.85004344e-05  0.00000000e+00 -2.70878129e-04  0.00000000e+00
+   0.00000000e+00  2.06959834e-04]
+ [ 0.00000000e+00  2.09450141e-03 -1.01611051e-03  0.00000000e+00
+  -1.42898305e-04  2.38731884e-04  0.00000000e+00 -9.97977276e-05
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00 -1.86584719e-04  1.12970489e-03
+   0.00000000e+00  0.00000000e+00  0.00000000e+00  2.68374473e-05
+  -9.92267734e-05  9.11937984e-05]]
+ST_sum = [array([ 0.39328662,  0.50823497,  8.43033898, 15.38674456,  7.01022627,
+        0.40884668,  0.22846229, 13.61214957, 26.19412072, 12.6126927 ,
+        0.04195171,  0.13149765,  3.39178539,  6.49225299,  3.08895282])]
+Total points = [ 4.  3.  1. -1.  2.  3.  4.  1. -1.  2.  4.  3.  1. -1.  2.]
+Less important parameter = [ 0  6 10]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00  0.00000000e+00  0.00000000e+00  4.36627981e-03
+   8.85004344e-05  0.00000000e+00 -2.70878129e-04  0.00000000e+00
+   0.00000000e+00  2.06959834e-04]
+ [ 0.00000000e+00  2.09450141e-03  0.00000000e+00  0.00000000e+00
+  -1.42898305e-04  2.38731884e-04  0.00000000e+00 -9.97977276e-05
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  1.12970489e-03
+   0.00000000e+00  0.00000000e+00  0.00000000e+00  2.68374473e-05
+  -9.92267734e-05  9.11937984e-05]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.2033397654756195
+Loss at the current iteration = 0.20685635217580126
+Number of bases at the previous iteration = 15
+Number of bases at the current iteration = 12
+Total number of bases = 18
+F-test = 0.01729414161542053
+SSE = 0.20685635217580126
+Comparing 0.20037890317756807 + 1.0*0.002960862298051439 with 0.20685635217580126: error has increased
+G0G1' = -2.027e-03 G0G1 + 4.387e-03 G2M + 8.879e-05 G0G1^2 + -2.718e-04 G0G1 G2M + 2.076e-04 G2M^2
+S' = 2.104e-03 G0G1 + -1.024e-03 S + -1.426e-04 G0G1^2 + 2.382e-04 G0G1 S + -9.954e-05 S^2
+G2M' = -1.895e-04 S + 1.135e-03 G2M + 2.693e-05 S^2 + -9.957e-05 S G2M + 9.151e-05 G2M^2
+
+
+Experimento 10: Grau = 2, Frequência = 1, alpha = 10.0
+
+---------- ITERATION 1 ----------
+SSE = 0.19845256035536515
+Coefficients before sensitivity analysis = [[ 1.02879204e-02 -2.12868163e-03  0.00000000e+00  4.38046171e-03
+   8.87222800e-05  0.00000000e+00 -2.71772466e-04  0.00000000e+00
+   0.00000000e+00  2.08376617e-04]
+ [-4.64226443e-03  2.18037563e-03 -1.04902669e-03  0.00000000e+00
+  -1.42987554e-04  2.38682318e-04  0.00000000e+00 -9.97562670e-05
+   0.00000000e+00  0.00000000e+00]
+ [-3.94428970e-03  0.00000000e+00 -1.29829653e-04  1.08625016e-03
+   0.00000000e+00  0.00000000e+00  0.00000000e+00  2.59893242e-05
+  -9.60560072e-05  8.80264079e-05]]
+ST_sum = [array([4.11516817e-03, 4.15518655e-01, 5.09885744e-01, 8.45147146e+00,
+       1.54375457e+01, 7.05821612e+00, 1.85690577e-03, 4.25609324e-01,
+       2.35863161e-01, 1.36206512e+01, 2.61886822e+01, 1.26074528e+01,
+       1.57771588e-03, 2.91908992e-02, 1.26439519e-01, 3.28459742e+00,
+       6.28479470e+00, 2.98166570e+00])]
+Total points = [ 5.  4.  3.  1. -1.  2.  5.  3.  4.  1. -1.  2.  5.  4.  3.  1. -1.  2.]
+Less important parameter = [ 0  6 12]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00 -2.12868163e-03  0.00000000e+00  4.38046171e-03
+   8.87222800e-05  0.00000000e+00 -2.71772466e-04  0.00000000e+00
+   0.00000000e+00  2.08376617e-04]
+ [ 0.00000000e+00  2.18037563e-03 -1.04902669e-03  0.00000000e+00
+  -1.42987554e-04  2.38682318e-04  0.00000000e+00 -9.97562670e-05
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00 -1.29829653e-04  1.08625016e-03
+   0.00000000e+00  0.00000000e+00  0.00000000e+00  2.59893242e-05
+  -9.60560072e-05  8.80264079e-05]]
+
+---------- ITERATION 2 ----------
+SSE = 0.2033534358478242
+Comparing 0.19845256035536515 + 1.0*0.019845256035536517 with 0.2033534358478242: error has NOT increased
+Coefficients before sensitivity analysis = [[ 0.00000000e+00 -1.90779151e-03  0.00000000e+00  4.18900821e-03
+   8.60109527e-05  0.00000000e+00 -2.63385576e-04  0.00000000e+00
+   0.00000000e+00  2.01379098e-04]
+ [ 0.00000000e+00  2.01222604e-03 -9.45721998e-04  0.00000000e+00
+  -1.45657585e-04  2.43651016e-04  0.00000000e+00 -1.01986136e-04
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00 -1.61431693e-04  1.08106444e-03
+   0.00000000e+00  0.00000000e+00  0.00000000e+00  2.60453491e-05
+  -9.63184028e-05  8.85324215e-05]]
+ST_sum = [array([ 0.3724009 ,  0.48760056,  8.19319693, 14.96114355,  6.82119335,
+        0.39278652,  0.21263613, 13.874992  , 26.73385734, 12.88926934,
+        0.0362963 ,  0.1258359 ,  3.291678  ,  6.30196284,  2.9988056 ])]
+Total points = [ 4.  3.  1. -1.  2.  3.  4.  1. -1.  2.  4.  3.  1. -1.  2.]
+Less important parameter = [ 0  6 10]
+Coefficients after sensitivity analysis = [[ 0.00000000e+00  0.00000000e+00  0.00000000e+00  4.18900821e-03
+   8.60109527e-05  0.00000000e+00 -2.63385576e-04  0.00000000e+00
+   0.00000000e+00  2.01379098e-04]
+ [ 0.00000000e+00  2.01222604e-03  0.00000000e+00  0.00000000e+00
+  -1.45657585e-04  2.43651016e-04  0.00000000e+00 -1.01986136e-04
+   0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  1.08106444e-03
+   0.00000000e+00  0.00000000e+00  0.00000000e+00  2.60453491e-05
+  -9.63184028e-05  8.85324215e-05]]
+
+---------- ITERATION 3 ----------
+Loss at the previous iteration = 0.2033534358478242
+Loss at the current iteration = 0.20685635435407945
+Number of bases at the previous iteration = 15
+Number of bases at the current iteration = 12
+Total number of bases = 18
+F-test = 0.01722576504129784
+SSE = 0.20685635435407945
+Comparing 0.20090299810159468 + 1.0*0.0024504377462295224 with 0.20685635435407945: error has increased
+G0G1' = -2.027e-03 G0G1 + 4.387e-03 G2M + 8.879e-05 G0G1^2 + -2.718e-04 G0G1 G2M + 2.076e-04 G2M^2
+S' = 2.104e-03 G0G1 + -1.024e-03 S + -1.426e-04 G0G1^2 + 2.382e-04 G0G1 S + -9.954e-05 S^2
+G2M' = -1.895e-04 S + 1.135e-03 G2M + 2.693e-05 S^2 + -9.957e-05 S G2M + 9.151e-05 G2M^2
+
+
+Modelo 1
+
+G0G1' = 3.184e-04 G0G1 + 7.115e-04 G2M
+S' = 9.931e-04 G0G1 + -1.379e-04 S
+G2M' = 5.313e-04 S + -3.188e-04 G2M
+
+
+*** Using Differential Evolution method ***
+
+differential_evolution step 1: f(x)= 0.33036
+differential_evolution step 2: f(x)= 0.33036
+differential_evolution step 3: f(x)= 0.0653684
+differential_evolution step 4: f(x)= 0.0387807
+differential_evolution step 5: f(x)= 0.0387807
+differential_evolution step 6: f(x)= 0.0335625
+differential_evolution step 7: f(x)= 0.0335625
+differential_evolution step 8: f(x)= 0.0335625
+differential_evolution step 9: f(x)= 0.0260702
+differential_evolution step 10: f(x)= 0.0220698
+differential_evolution step 11: f(x)= 0.0213574
+differential_evolution step 12: f(x)= 0.0213574
+differential_evolution step 13: f(x)= 0.0213574
+differential_evolution step 14: f(x)= 0.0213574
+differential_evolution step 15: f(x)= 0.0213574
+differential_evolution step 16: f(x)= 0.0213574
+differential_evolution step 17: f(x)= 0.0213574
+differential_evolution step 18: f(x)= 0.0198708
+differential_evolution step 19: f(x)= 0.0198708
+differential_evolution step 20: f(x)= 0.0198708
+differential_evolution step 21: f(x)= 0.0198708
+differential_evolution step 22: f(x)= 0.0198708
+differential_evolution step 23: f(x)= 0.0198708
+differential_evolution step 24: f(x)= 0.0174089
+differential_evolution step 25: f(x)= 0.0174089
+differential_evolution step 26: f(x)= 0.0174089
+differential_evolution step 27: f(x)= 0.0174089
+differential_evolution step 28: f(x)= 0.0174089
+differential_evolution step 29: f(x)= 0.0174089
+differential_evolution step 30: f(x)= 0.0174089
+differential_evolution step 31: f(x)= 0.0174089
+differential_evolution step 32: f(x)= 0.0174089
+differential_evolution step 33: f(x)= 0.0174089
+differential_evolution step 34: f(x)= 0.0174089
+differential_evolution step 35: f(x)= 0.0174089
+differential_evolution step 36: f(x)= 0.0171016
+differential_evolution step 37: f(x)= 0.0171016
+differential_evolution step 38: f(x)= 0.0171016
+differential_evolution step 39: f(x)= 0.0170535
+differential_evolution step 40: f(x)= 0.0170535
+differential_evolution step 41: f(x)= 0.0170535
+differential_evolution step 42: f(x)= 0.0170535
+differential_evolution step 43: f(x)= 0.0170535
+differential_evolution step 44: f(x)= 0.0170535
+differential_evolution step 45: f(x)= 0.0170535
+differential_evolution step 46: f(x)= 0.0170535
+differential_evolution step 47: f(x)= 0.0170535
+differential_evolution step 48: f(x)= 0.0170535
+differential_evolution step 49: f(x)= 0.0170013
+differential_evolution step 50: f(x)= 0.0170013
+differential_evolution step 51: f(x)= 0.0170013
+differential_evolution step 52: f(x)= 0.0170013
+differential_evolution step 53: f(x)= 0.0170013
+differential_evolution step 54: f(x)= 0.0169915
+differential_evolution step 55: f(x)= 0.0169915
+differential_evolution step 56: f(x)= 0.0169915
+differential_evolution step 57: f(x)= 0.0169915
+differential_evolution step 58: f(x)= 0.0169915
+differential_evolution step 59: f(x)= 0.016909
+differential_evolution step 60: f(x)= 0.016909
+differential_evolution step 61: f(x)= 0.016909
+differential_evolution step 62: f(x)= 0.016909
+differential_evolution step 63: f(x)= 0.016909
+differential_evolution step 64: f(x)= 0.016909
+differential_evolution step 65: f(x)= 0.016909
+differential_evolution step 66: f(x)= 0.016909
+differential_evolution step 67: f(x)= 0.016909
+differential_evolution step 68: f(x)= 0.016909
+differential_evolution step 69: f(x)= 0.016909
+differential_evolution step 70: f(x)= 0.0168795
+differential_evolution step 71: f(x)= 0.0168795
+differential_evolution step 72: f(x)= 0.0168795
+differential_evolution step 73: f(x)= 0.0168795
+differential_evolution step 74: f(x)= 0.0168795
+differential_evolution step 75: f(x)= 0.0168795
+differential_evolution step 76: f(x)= 0.0168795
+differential_evolution step 77: f(x)= 0.0168795
+differential_evolution step 78: f(x)= 0.0168795
+differential_evolution step 79: f(x)= 0.0168795
+differential_evolution step 80: f(x)= 0.0168795
+differential_evolution step 81: f(x)= 0.0168795
+differential_evolution step 82: f(x)= 0.0168795
+differential_evolution step 83: f(x)= 0.0168795
+differential_evolution step 84: f(x)= 0.0168728
+differential_evolution step 85: f(x)= 0.0168728
+differential_evolution step 86: f(x)= 0.0168728
+differential_evolution step 87: f(x)= 0.0168728
+differential_evolution step 88: f(x)= 0.0168728
+differential_evolution step 89: f(x)= 0.0168728
+differential_evolution step 90: f(x)= 0.01687
+differential_evolution step 91: f(x)= 0.01687
+differential_evolution step 92: f(x)= 0.01687
+differential_evolution step 93: f(x)= 0.016863
+differential_evolution step 94: f(x)= 0.016863
+differential_evolution step 95: f(x)= 0.016863
+differential_evolution step 96: f(x)= 0.016863
+differential_evolution step 97: f(x)= 0.016863
+differential_evolution step 98: f(x)= 0.016863
+differential_evolution step 99: f(x)= 0.016863
+differential_evolution step 100: f(x)= 0.016863
+differential_evolution step 101: f(x)= 0.016863
+differential_evolution step 102: f(x)= 0.0168618
+differential_evolution step 103: f(x)= 0.0168618
+differential_evolution step 104: f(x)= 0.0168598
+differential_evolution step 105: f(x)= 0.0168598
+differential_evolution step 106: f(x)= 0.0168598
+differential_evolution step 107: f(x)= 0.016853
+differential_evolution step 108: f(x)= 0.016853
+differential_evolution step 109: f(x)= 0.016853
+differential_evolution step 110: f(x)= 0.016853
+differential_evolution step 111: f(x)= 0.016853
+differential_evolution step 112: f(x)= 0.016853
+differential_evolution step 113: f(x)= 0.016853
+differential_evolution step 114: f(x)= 0.016853
+differential_evolution step 115: f(x)= 0.016853
+differential_evolution step 116: f(x)= 0.016853
+differential_evolution step 117: f(x)= 0.016853
+differential_evolution step 118: f(x)= 0.016853
+differential_evolution step 119: f(x)= 0.016853
+differential_evolution step 120: f(x)= 0.016853
+differential_evolution step 121: f(x)= 0.0168471
+differential_evolution step 122: f(x)= 0.0168471
+differential_evolution step 123: f(x)= 0.0168471
+differential_evolution step 124: f(x)= 0.0168471
+differential_evolution step 125: f(x)= 0.0168471
+differential_evolution step 126: f(x)= 0.0168471
+differential_evolution step 127: f(x)= 0.0168471
+differential_evolution step 128: f(x)= 0.0168471
+differential_evolution step 129: f(x)= 0.0168471
+differential_evolution step 130: f(x)= 0.0168471
+differential_evolution step 131: f(x)= 0.0168471
+differential_evolution step 132: f(x)= 0.0168471
+differential_evolution step 133: f(x)= 0.0168471
+differential_evolution step 134: f(x)= 0.0168468
+differential_evolution step 135: f(x)= 0.0168468
+differential_evolution step 136: f(x)= 0.0168453
+differential_evolution step 137: f(x)= 0.0168453
+differential_evolution step 138: f(x)= 0.0168426
+differential_evolution step 139: f(x)= 0.0168426
+differential_evolution step 140: f(x)= 0.0168426
+differential_evolution step 141: f(x)= 0.0168426
+differential_evolution step 142: f(x)= 0.0168424
+differential_evolution step 143: f(x)= 0.0168424
+differential_evolution step 144: f(x)= 0.0168424
+differential_evolution step 145: f(x)= 0.0168417
+differential_evolution step 146: f(x)= 0.0168417
+differential_evolution step 147: f(x)= 0.0168417
+differential_evolution step 148: f(x)= 0.0168417
+differential_evolution step 149: f(x)= 0.0168417
+differential_evolution step 150: f(x)= 0.0168417
+differential_evolution step 151: f(x)= 0.0168417
+differential_evolution step 152: f(x)= 0.0168417
+differential_evolution step 153: f(x)= 0.0168417
+differential_evolution step 154: f(x)= 0.0168417
+differential_evolution step 155: f(x)= 0.0168417
+G0G1' = -3.308e-06 G0G1 + 1.195e-03 G2M
+S' = 8.506e-04 G0G1 + -3.895e-06 S
+G2M' = 3.769e-04 S + -3.521e-06 G2M
+
+
+Modelo 2
+
+G0G1' = -2.027e-03 G0G1 + 4.387e-03 G2M + 8.879e-05 G0G1^2 + -2.718e-04 G0G1 G2M + 2.076e-04 G2M^2
+S' = 2.104e-03 G0G1 + -1.024e-03 S + -1.426e-04 G0G1^2 + 2.382e-04 G0G1 S + -9.954e-05 S^2
+G2M' = -1.895e-04 S + 1.135e-03 G2M + 2.693e-05 S^2 + -9.957e-05 S G2M + 9.151e-05 G2M^2
+
+
+*** Using Differential Evolution method ***
+
+differential_evolution step 1: f(x)= 5.71616
+differential_evolution step 2: f(x)= 5.71616
+differential_evolution step 3: f(x)= 2.08643
+differential_evolution step 4: f(x)= 1.48905
+differential_evolution step 5: f(x)= 1.48905
+differential_evolution step 6: f(x)= 1.48905
+differential_evolution step 7: f(x)= 1.48905
+differential_evolution step 8: f(x)= 1.48905
+differential_evolution step 9: f(x)= 1.48905
+differential_evolution step 10: f(x)= 1.48905
+differential_evolution step 11: f(x)= 1.48905
+differential_evolution step 12: f(x)= 1.48905
+differential_evolution step 13: f(x)= 1.48905
+differential_evolution step 14: f(x)= 1.48905
+differential_evolution step 15: f(x)= 1.48905
+differential_evolution step 16: f(x)= 1.48905
+differential_evolution step 17: f(x)= 1.48905
+differential_evolution step 18: f(x)= 1.48905
+differential_evolution step 19: f(x)= 1.48905
+differential_evolution step 20: f(x)= 0.745089
+differential_evolution step 21: f(x)= 0.745089
+differential_evolution step 22: f(x)= 0.745089
+differential_evolution step 23: f(x)= 0.745089
+differential_evolution step 24: f(x)= 0.745089
+differential_evolution step 25: f(x)= 0.745089
+differential_evolution step 26: f(x)= 0.745089
+differential_evolution step 27: f(x)= 0.745089
+differential_evolution step 28: f(x)= 0.745089
+differential_evolution step 29: f(x)= 0.745089
+differential_evolution step 30: f(x)= 0.661031
+differential_evolution step 31: f(x)= 0.661031
+differential_evolution step 32: f(x)= 0.660687
+differential_evolution step 33: f(x)= 0.660687
+differential_evolution step 34: f(x)= 0.660687
+differential_evolution step 35: f(x)= 0.660687
+differential_evolution step 36: f(x)= 0.660687
+differential_evolution step 37: f(x)= 0.660687
+differential_evolution step 38: f(x)= 0.660687
+differential_evolution step 39: f(x)= 0.660687
+differential_evolution step 40: f(x)= 0.660687
+differential_evolution step 41: f(x)= 0.660687
+differential_evolution step 42: f(x)= 0.660687
+differential_evolution step 43: f(x)= 0.660687
+differential_evolution step 44: f(x)= 0.660687
+differential_evolution step 45: f(x)= 0.421263
+differential_evolution step 46: f(x)= 0.421263
+differential_evolution step 47: f(x)= 0.421263
+differential_evolution step 48: f(x)= 0.421263
+differential_evolution step 49: f(x)= 0.421263
+differential_evolution step 50: f(x)= 0.378419
+differential_evolution step 51: f(x)= 0.378419
+differential_evolution step 52: f(x)= 0.378419
+differential_evolution step 53: f(x)= 0.378419
+differential_evolution step 54: f(x)= 0.378419
+differential_evolution step 55: f(x)= 0.378419
+differential_evolution step 56: f(x)= 0.378419
+differential_evolution step 57: f(x)= 0.378419
+differential_evolution step 58: f(x)= 0.378419
+differential_evolution step 59: f(x)= 0.378419
+differential_evolution step 60: f(x)= 0.378419
+differential_evolution step 61: f(x)= 0.378419
+differential_evolution step 62: f(x)= 0.171268
+differential_evolution step 63: f(x)= 0.171268
+differential_evolution step 64: f(x)= 0.171268
+differential_evolution step 65: f(x)= 0.171268
+differential_evolution step 66: f(x)= 0.171268
+differential_evolution step 67: f(x)= 0.171268
+differential_evolution step 68: f(x)= 0.171268
+differential_evolution step 69: f(x)= 0.171268
+differential_evolution step 70: f(x)= 0.171268
+differential_evolution step 71: f(x)= 0.171268
+differential_evolution step 72: f(x)= 0.171268
+differential_evolution step 73: f(x)= 0.171268
+differential_evolution step 74: f(x)= 0.171268
+differential_evolution step 75: f(x)= 0.171268
+differential_evolution step 76: f(x)= 0.171268
+differential_evolution step 77: f(x)= 0.171268
+differential_evolution step 78: f(x)= 0.171268
+differential_evolution step 79: f(x)= 0.171268
+differential_evolution step 80: f(x)= 0.171268
+differential_evolution step 81: f(x)= 0.171268
+differential_evolution step 82: f(x)= 0.171268
+differential_evolution step 83: f(x)= 0.171268
+differential_evolution step 84: f(x)= 0.171268
+differential_evolution step 85: f(x)= 0.171268
+differential_evolution step 86: f(x)= 0.171268
+differential_evolution step 87: f(x)= 0.171268
+differential_evolution step 88: f(x)= 0.171268
+differential_evolution step 89: f(x)= 0.171268
+differential_evolution step 90: f(x)= 0.171268
+differential_evolution step 91: f(x)= 0.171268
+differential_evolution step 92: f(x)= 0.171268
+differential_evolution step 93: f(x)= 0.171268
+differential_evolution step 94: f(x)= 0.171268
+differential_evolution step 95: f(x)= 0.171268
+differential_evolution step 96: f(x)= 0.171268
+differential_evolution step 97: f(x)= 0.171268
+differential_evolution step 98: f(x)= 0.171268
+differential_evolution step 99: f(x)= 0.0974808
+differential_evolution step 100: f(x)= 0.0974808
+differential_evolution step 101: f(x)= 0.0974808
+differential_evolution step 102: f(x)= 0.0974808
+differential_evolution step 103: f(x)= 0.0974808
+differential_evolution step 104: f(x)= 0.0974808
+differential_evolution step 105: f(x)= 0.0974808
+differential_evolution step 106: f(x)= 0.0974808
+differential_evolution step 107: f(x)= 0.0974808
+differential_evolution step 108: f(x)= 0.0974808
+differential_evolution step 109: f(x)= 0.0974808
+differential_evolution step 110: f(x)= 0.0974808
+differential_evolution step 111: f(x)= 0.0974808
+differential_evolution step 112: f(x)= 0.0974808
+differential_evolution step 113: f(x)= 0.0974808
+differential_evolution step 114: f(x)= 0.0974808
+differential_evolution step 115: f(x)= 0.0974808
+differential_evolution step 116: f(x)= 0.0974808
+differential_evolution step 117: f(x)= 0.0974808
+differential_evolution step 118: f(x)= 0.0974808
+differential_evolution step 119: f(x)= 0.0974808
+differential_evolution step 120: f(x)= 0.0974808
+differential_evolution step 121: f(x)= 0.0974808
+differential_evolution step 122: f(x)= 0.0974808
+differential_evolution step 123: f(x)= 0.0974808
+differential_evolution step 124: f(x)= 0.0974808
+differential_evolution step 125: f(x)= 0.0974808
+differential_evolution step 126: f(x)= 0.0974808
+differential_evolution step 127: f(x)= 0.0974808
+differential_evolution step 128: f(x)= 0.0974808
+differential_evolution step 129: f(x)= 0.0974808
+differential_evolution step 130: f(x)= 0.0974808
+differential_evolution step 131: f(x)= 0.0974808
+differential_evolution step 132: f(x)= 0.0974808
+differential_evolution step 133: f(x)= 0.0974808
+differential_evolution step 134: f(x)= 0.0974808
+differential_evolution step 135: f(x)= 0.0974808
+differential_evolution step 136: f(x)= 0.0974808
+differential_evolution step 137: f(x)= 0.0974808
+differential_evolution step 138: f(x)= 0.0974808
+differential_evolution step 139: f(x)= 0.0974808
+differential_evolution step 140: f(x)= 0.0974808
+differential_evolution step 141: f(x)= 0.0974808
+differential_evolution step 142: f(x)= 0.0974808
+differential_evolution step 143: f(x)= 0.0974808
+differential_evolution step 144: f(x)= 0.0974808
+differential_evolution step 145: f(x)= 0.0974808
+differential_evolution step 146: f(x)= 0.0974808
+differential_evolution step 147: f(x)= 0.0974808
+differential_evolution step 148: f(x)= 0.0974808
+differential_evolution step 149: f(x)= 0.0974808
+differential_evolution step 150: f(x)= 0.0974808
+differential_evolution step 151: f(x)= 0.0974808
+differential_evolution step 152: f(x)= 0.0974808
+differential_evolution step 153: f(x)= 0.0974808
+differential_evolution step 154: f(x)= 0.0974808
+differential_evolution step 155: f(x)= 0.0974808
+differential_evolution step 156: f(x)= 0.0974808
+differential_evolution step 157: f(x)= 0.0974808
+differential_evolution step 158: f(x)= 0.0974808
+differential_evolution step 159: f(x)= 0.0974808
+differential_evolution step 160: f(x)= 0.0974808
+differential_evolution step 161: f(x)= 0.0974808
+differential_evolution step 162: f(x)= 0.0974808
+differential_evolution step 163: f(x)= 0.0974808
+differential_evolution step 164: f(x)= 0.0974808
+differential_evolution step 165: f(x)= 0.0974808
+differential_evolution step 166: f(x)= 0.0974808
+differential_evolution step 167: f(x)= 0.0974808
+differential_evolution step 168: f(x)= 0.0974808
+differential_evolution step 169: f(x)= 0.0974808
+differential_evolution step 170: f(x)= 0.0974808
+differential_evolution step 171: f(x)= 0.0974808
+differential_evolution step 172: f(x)= 0.0974808
+differential_evolution step 173: f(x)= 0.0974808
+differential_evolution step 174: f(x)= 0.0974808
+differential_evolution step 175: f(x)= 0.0974808
+differential_evolution step 176: f(x)= 0.0974808
+differential_evolution step 177: f(x)= 0.0974808
+differential_evolution step 178: f(x)= 0.0974808
+differential_evolution step 179: f(x)= 0.0974808
+differential_evolution step 180: f(x)= 0.0974808
+differential_evolution step 181: f(x)= 0.0974808
+differential_evolution step 182: f(x)= 0.0974808
+differential_evolution step 183: f(x)= 0.0974808
+differential_evolution step 184: f(x)= 0.0974808
+differential_evolution step 185: f(x)= 0.0974808
+differential_evolution step 186: f(x)= 0.0974808
+differential_evolution step 187: f(x)= 0.0974808
+differential_evolution step 188: f(x)= 0.0974808
+differential_evolution step 189: f(x)= 0.0974808
+differential_evolution step 190: f(x)= 0.0974808
+differential_evolution step 191: f(x)= 0.0974808
+differential_evolution step 192: f(x)= 0.0974808
+differential_evolution step 193: f(x)= 0.0974808
+differential_evolution step 194: f(x)= 0.0974808
+differential_evolution step 195: f(x)= 0.0974808
+differential_evolution step 196: f(x)= 0.0974808
+differential_evolution step 197: f(x)= 0.0974808
+differential_evolution step 198: f(x)= 0.0974808
+differential_evolution step 199: f(x)= 0.0935067
+differential_evolution step 200: f(x)= 0.0935067
+differential_evolution step 201: f(x)= 0.0935067
+differential_evolution step 202: f(x)= 0.0935067
+differential_evolution step 203: f(x)= 0.0935067
+differential_evolution step 204: f(x)= 0.0935067
+differential_evolution step 205: f(x)= 0.0935067
+differential_evolution step 206: f(x)= 0.0935067
+differential_evolution step 207: f(x)= 0.0935067
+differential_evolution step 208: f(x)= 0.0935067
+differential_evolution step 209: f(x)= 0.0935067
+differential_evolution step 210: f(x)= 0.0935067
+differential_evolution step 211: f(x)= 0.0935067
+differential_evolution step 212: f(x)= 0.0935067
+differential_evolution step 213: f(x)= 0.0935067
+differential_evolution step 214: f(x)= 0.0935067
+differential_evolution step 215: f(x)= 0.0935067
+differential_evolution step 216: f(x)= 0.0935067
+differential_evolution step 217: f(x)= 0.0935067
+differential_evolution step 218: f(x)= 0.0935067
+differential_evolution step 219: f(x)= 0.0935067
+differential_evolution step 220: f(x)= 0.0935067
+differential_evolution step 221: f(x)= 0.0935067
+differential_evolution step 222: f(x)= 0.0935067
+differential_evolution step 223: f(x)= 0.0935067
+differential_evolution step 224: f(x)= 0.0935067
+differential_evolution step 225: f(x)= 0.0935067
+differential_evolution step 226: f(x)= 0.0935067
+differential_evolution step 227: f(x)= 0.0935067
+differential_evolution step 228: f(x)= 0.0935067
+differential_evolution step 229: f(x)= 0.0935067
+differential_evolution step 230: f(x)= 0.0935067
+differential_evolution step 231: f(x)= 0.0935067
+differential_evolution step 232: f(x)= 0.0935067
+differential_evolution step 233: f(x)= 0.0935067
+differential_evolution step 234: f(x)= 0.0935067
+differential_evolution step 235: f(x)= 0.0935067
+differential_evolution step 236: f(x)= 0.0935067
+differential_evolution step 237: f(x)= 0.0935067
+differential_evolution step 238: f(x)= 0.0935067
+differential_evolution step 239: f(x)= 0.0935067
+differential_evolution step 240: f(x)= 0.0935067
+differential_evolution step 241: f(x)= 0.0935067
+differential_evolution step 242: f(x)= 0.0935067
+differential_evolution step 243: f(x)= 0.0935067
+differential_evolution step 244: f(x)= 0.0935067
+differential_evolution step 245: f(x)= 0.0935067
+differential_evolution step 246: f(x)= 0.0935067
+differential_evolution step 247: f(x)= 0.0935067
+differential_evolution step 248: f(x)= 0.0935067
+differential_evolution step 249: f(x)= 0.0935067
+differential_evolution step 250: f(x)= 0.0935067
+differential_evolution step 251: f(x)= 0.0935067
+differential_evolution step 252: f(x)= 0.0935067
+differential_evolution step 253: f(x)= 0.0935067
+differential_evolution step 254: f(x)= 0.0935067
+differential_evolution step 255: f(x)= 0.0935067
+differential_evolution step 256: f(x)= 0.0935067
+differential_evolution step 257: f(x)= 0.0935067
+differential_evolution step 258: f(x)= 0.0935067
+differential_evolution step 259: f(x)= 0.0935067
+differential_evolution step 260: f(x)= 0.0935067
+differential_evolution step 261: f(x)= 0.0935067
+differential_evolution step 262: f(x)= 0.0935067
+differential_evolution step 263: f(x)= 0.0935067
+differential_evolution step 264: f(x)= 0.0935067
+differential_evolution step 265: f(x)= 0.0935067
+differential_evolution step 266: f(x)= 0.0935067
+differential_evolution step 267: f(x)= 0.0935067
+differential_evolution step 268: f(x)= 0.0935067
+differential_evolution step 269: f(x)= 0.0935067
+differential_evolution step 270: f(x)= 0.0935067
+differential_evolution step 271: f(x)= 0.0935067
+differential_evolution step 272: f(x)= 0.0935067
+differential_evolution step 273: f(x)= 0.0935067
+differential_evolution step 274: f(x)= 0.0935067
+differential_evolution step 275: f(x)= 0.0935067
+differential_evolution step 276: f(x)= 0.0935067
+differential_evolution step 277: f(x)= 0.0935067
+differential_evolution step 278: f(x)= 0.0935067
+differential_evolution step 279: f(x)= 0.0935067
+differential_evolution step 280: f(x)= 0.0935067
+differential_evolution step 281: f(x)= 0.0935067
+differential_evolution step 282: f(x)= 0.0935067
+differential_evolution step 283: f(x)= 0.0935067
+differential_evolution step 284: f(x)= 0.0935067
+differential_evolution step 285: f(x)= 0.0935067
+differential_evolution step 286: f(x)= 0.0935067
+differential_evolution step 287: f(x)= 0.0935067
+differential_evolution step 288: f(x)= 0.0935067
+differential_evolution step 289: f(x)= 0.0935067
+differential_evolution step 290: f(x)= 0.0935067
+differential_evolution step 291: f(x)= 0.0935067
+differential_evolution step 292: f(x)= 0.0935067
+differential_evolution step 293: f(x)= 0.0935067
+differential_evolution step 294: f(x)= 0.0935067
+differential_evolution step 295: f(x)= 0.0935067
+differential_evolution step 296: f(x)= 0.0935067
+differential_evolution step 297: f(x)= 0.0935067
+differential_evolution step 298: f(x)= 0.0935067
+differential_evolution step 299: f(x)= 0.0935067
+differential_evolution step 300: f(x)= 0.0501751
+differential_evolution step 301: f(x)= 0.0501751
+differential_evolution step 302: f(x)= 0.0501751
+differential_evolution step 303: f(x)= 0.0501751
+differential_evolution step 304: f(x)= 0.0501751
+differential_evolution step 305: f(x)= 0.0501751
+differential_evolution step 306: f(x)= 0.0501751
+differential_evolution step 307: f(x)= 0.0501751
+differential_evolution step 308: f(x)= 0.0501751
+differential_evolution step 309: f(x)= 0.0501751
+differential_evolution step 310: f(x)= 0.0501751
+differential_evolution step 311: f(x)= 0.0501751
+differential_evolution step 312: f(x)= 0.0501751
+differential_evolution step 313: f(x)= 0.0501751
+differential_evolution step 314: f(x)= 0.0501751
+differential_evolution step 315: f(x)= 0.0501751
+differential_evolution step 316: f(x)= 0.0501751
+differential_evolution step 317: f(x)= 0.0501751
+differential_evolution step 318: f(x)= 0.0501751
+differential_evolution step 319: f(x)= 0.0501751
+differential_evolution step 320: f(x)= 0.0501751
+differential_evolution step 321: f(x)= 0.0501751
+differential_evolution step 322: f(x)= 0.0501751
+differential_evolution step 323: f(x)= 0.0501751
+differential_evolution step 324: f(x)= 0.0501751
+differential_evolution step 325: f(x)= 0.0501751
+differential_evolution step 326: f(x)= 0.0501751
+differential_evolution step 327: f(x)= 0.0501751
+differential_evolution step 328: f(x)= 0.0501751
+differential_evolution step 329: f(x)= 0.0501751
+differential_evolution step 330: f(x)= 0.0501751
+differential_evolution step 331: f(x)= 0.042395
+differential_evolution step 332: f(x)= 0.042395
+differential_evolution step 333: f(x)= 0.042395
+differential_evolution step 334: f(x)= 0.042395
+differential_evolution step 335: f(x)= 0.042395
+differential_evolution step 336: f(x)= 0.042395
+differential_evolution step 337: f(x)= 0.042395
+differential_evolution step 338: f(x)= 0.042395
+differential_evolution step 339: f(x)= 0.042395
+differential_evolution step 340: f(x)= 0.042395
+differential_evolution step 341: f(x)= 0.042395
+differential_evolution step 342: f(x)= 0.042395
+differential_evolution step 343: f(x)= 0.042395
+differential_evolution step 344: f(x)= 0.042395
+differential_evolution step 345: f(x)= 0.042395
+differential_evolution step 346: f(x)= 0.042395
+differential_evolution step 347: f(x)= 0.042395
+differential_evolution step 348: f(x)= 0.042395
+differential_evolution step 349: f(x)= 0.042395
+differential_evolution step 350: f(x)= 0.042395
+differential_evolution step 351: f(x)= 0.042395
+differential_evolution step 352: f(x)= 0.042395
+differential_evolution step 353: f(x)= 0.042395
+differential_evolution step 354: f(x)= 0.042395
+differential_evolution step 355: f(x)= 0.042395
+differential_evolution step 356: f(x)= 0.042395
+differential_evolution step 357: f(x)= 0.042395
+differential_evolution step 358: f(x)= 0.042395
+differential_evolution step 359: f(x)= 0.042395
+differential_evolution step 360: f(x)= 0.042395
+differential_evolution step 361: f(x)= 0.042395
+differential_evolution step 362: f(x)= 0.042395
+differential_evolution step 363: f(x)= 0.042395
+differential_evolution step 364: f(x)= 0.042395
+differential_evolution step 365: f(x)= 0.042395
+differential_evolution step 366: f(x)= 0.042395
+differential_evolution step 367: f(x)= 0.042395
+differential_evolution step 368: f(x)= 0.042395
+differential_evolution step 369: f(x)= 0.042395
+differential_evolution step 370: f(x)= 0.042395
+differential_evolution step 371: f(x)= 0.042395
+differential_evolution step 372: f(x)= 0.042395
+differential_evolution step 373: f(x)= 0.042395
+differential_evolution step 374: f(x)= 0.042395
+differential_evolution step 375: f(x)= 0.042395
+differential_evolution step 376: f(x)= 0.042395
+differential_evolution step 377: f(x)= 0.042395
+differential_evolution step 378: f(x)= 0.042395
+differential_evolution step 379: f(x)= 0.042395
+differential_evolution step 380: f(x)= 0.042395
+differential_evolution step 381: f(x)= 0.042395
+differential_evolution step 382: f(x)= 0.042395
+differential_evolution step 383: f(x)= 0.042395
+differential_evolution step 384: f(x)= 0.042395
+differential_evolution step 385: f(x)= 0.042395
+differential_evolution step 386: f(x)= 0.042395
+differential_evolution step 387: f(x)= 0.042395
+differential_evolution step 388: f(x)= 0.042395
+differential_evolution step 389: f(x)= 0.042395
+differential_evolution step 390: f(x)= 0.042395
+differential_evolution step 391: f(x)= 0.042395
+differential_evolution step 392: f(x)= 0.042395
+differential_evolution step 393: f(x)= 0.042395
+differential_evolution step 394: f(x)= 0.042395
+differential_evolution step 395: f(x)= 0.042395
+differential_evolution step 396: f(x)= 0.042395
+differential_evolution step 397: f(x)= 0.042395
+differential_evolution step 398: f(x)= 0.042395
+differential_evolution step 399: f(x)= 0.042395
+differential_evolution step 400: f(x)= 0.042395
+differential_evolution step 401: f(x)= 0.042395
+differential_evolution step 402: f(x)= 0.042395
+differential_evolution step 403: f(x)= 0.042395
+differential_evolution step 404: f(x)= 0.042395
+differential_evolution step 405: f(x)= 0.042395
+differential_evolution step 406: f(x)= 0.042395
+differential_evolution step 407: f(x)= 0.042395
+differential_evolution step 408: f(x)= 0.042395
+differential_evolution step 409: f(x)= 0.042395
+differential_evolution step 410: f(x)= 0.042395
+differential_evolution step 411: f(x)= 0.042395
+differential_evolution step 412: f(x)= 0.042395
+differential_evolution step 413: f(x)= 0.042395
+differential_evolution step 414: f(x)= 0.042395
+differential_evolution step 415: f(x)= 0.042395
+differential_evolution step 416: f(x)= 0.042395
+differential_evolution step 417: f(x)= 0.042395
+differential_evolution step 418: f(x)= 0.042395
+differential_evolution step 419: f(x)= 0.042395
+differential_evolution step 420: f(x)= 0.042395
+differential_evolution step 421: f(x)= 0.042395
+differential_evolution step 422: f(x)= 0.042395
+differential_evolution step 423: f(x)= 0.042395
+differential_evolution step 424: f(x)= 0.042395
+differential_evolution step 425: f(x)= 0.042395
+differential_evolution step 426: f(x)= 0.042395
+differential_evolution step 427: f(x)= 0.042395
+differential_evolution step 428: f(x)= 0.042395
+differential_evolution step 429: f(x)= 0.042395
+differential_evolution step 430: f(x)= 0.042395
+differential_evolution step 431: f(x)= 0.042395
+differential_evolution step 432: f(x)= 0.042395
+differential_evolution step 433: f(x)= 0.042395
+differential_evolution step 434: f(x)= 0.042395
+differential_evolution step 435: f(x)= 0.042395
+differential_evolution step 436: f(x)= 0.042395
+differential_evolution step 437: f(x)= 0.042395
+differential_evolution step 438: f(x)= 0.042395
+differential_evolution step 439: f(x)= 0.042395
+differential_evolution step 440: f(x)= 0.042395
+differential_evolution step 441: f(x)= 0.042395
+differential_evolution step 442: f(x)= 0.042395
+differential_evolution step 443: f(x)= 0.042395
+differential_evolution step 444: f(x)= 0.042395
+differential_evolution step 445: f(x)= 0.042395
+differential_evolution step 446: f(x)= 0.042395
+differential_evolution step 447: f(x)= 0.042395
+differential_evolution step 448: f(x)= 0.042395
+differential_evolution step 449: f(x)= 0.042395
+differential_evolution step 450: f(x)= 0.042395
+differential_evolution step 451: f(x)= 0.042395
+differential_evolution step 452: f(x)= 0.042395
+differential_evolution step 453: f(x)= 0.042395
+differential_evolution step 454: f(x)= 0.042395
+differential_evolution step 455: f(x)= 0.042395
+differential_evolution step 456: f(x)= 0.042395
+differential_evolution step 457: f(x)= 0.042395
+differential_evolution step 458: f(x)= 0.042395
+differential_evolution step 459: f(x)= 0.042395
+differential_evolution step 460: f(x)= 0.042395
+differential_evolution step 461: f(x)= 0.042395
+differential_evolution step 462: f(x)= 0.042395
+differential_evolution step 463: f(x)= 0.042395
+differential_evolution step 464: f(x)= 0.042395
+differential_evolution step 465: f(x)= 0.042395
+differential_evolution step 466: f(x)= 0.042395
+differential_evolution step 467: f(x)= 0.042395
+differential_evolution step 468: f(x)= 0.042395
+differential_evolution step 469: f(x)= 0.042395
+differential_evolution step 470: f(x)= 0.042395
+differential_evolution step 471: f(x)= 0.042395
+differential_evolution step 472: f(x)= 0.042395
+differential_evolution step 473: f(x)= 0.042395
+differential_evolution step 474: f(x)= 0.042395
+differential_evolution step 475: f(x)= 0.042395
+differential_evolution step 476: f(x)= 0.042395
+differential_evolution step 477: f(x)= 0.042395
+differential_evolution step 478: f(x)= 0.042395
+differential_evolution step 479: f(x)= 0.042395
+differential_evolution step 480: f(x)= 0.042395
+differential_evolution step 481: f(x)= 0.042395
+differential_evolution step 482: f(x)= 0.042395
+differential_evolution step 483: f(x)= 0.042395
+differential_evolution step 484: f(x)= 0.042395
+differential_evolution step 485: f(x)= 0.042395
+differential_evolution step 486: f(x)= 0.042395
+differential_evolution step 487: f(x)= 0.042395
+differential_evolution step 488: f(x)= 0.042395
+differential_evolution step 489: f(x)= 0.042395
+differential_evolution step 490: f(x)= 0.042395
+differential_evolution step 491: f(x)= 0.042395
+differential_evolution step 492: f(x)= 0.042395
+differential_evolution step 493: f(x)= 0.042395
+differential_evolution step 494: f(x)= 0.042395
+differential_evolution step 495: f(x)= 0.042395
+differential_evolution step 496: f(x)= 0.042395
+differential_evolution step 497: f(x)= 0.042395
+differential_evolution step 498: f(x)= 0.042395
+differential_evolution step 499: f(x)= 0.042395
+differential_evolution step 500: f(x)= 0.042395
+differential_evolution step 501: f(x)= 0.042395
+differential_evolution step 502: f(x)= 0.042395
+differential_evolution step 503: f(x)= 0.042395
+differential_evolution step 504: f(x)= 0.042395
+differential_evolution step 505: f(x)= 0.042395
+differential_evolution step 506: f(x)= 0.042395
+differential_evolution step 507: f(x)= 0.042395
+differential_evolution step 508: f(x)= 0.042395
+differential_evolution step 509: f(x)= 0.042395
+differential_evolution step 510: f(x)= 0.042395
+differential_evolution step 511: f(x)= 0.042395
+differential_evolution step 512: f(x)= 0.042395
+differential_evolution step 513: f(x)= 0.042395
+differential_evolution step 514: f(x)= 0.042395
+differential_evolution step 515: f(x)= 0.042395
+differential_evolution step 516: f(x)= 0.042395
+differential_evolution step 517: f(x)= 0.042395
+differential_evolution step 518: f(x)= 0.042395
+differential_evolution step 519: f(x)= 0.042395
+differential_evolution step 520: f(x)= 0.042395
+differential_evolution step 521: f(x)= 0.042395
+differential_evolution step 522: f(x)= 0.042395
+differential_evolution step 523: f(x)= 0.042395
+differential_evolution step 524: f(x)= 0.042395
+differential_evolution step 525: f(x)= 0.042395
+differential_evolution step 526: f(x)= 0.042395
+differential_evolution step 527: f(x)= 0.042395
+differential_evolution step 528: f(x)= 0.042395
+differential_evolution step 529: f(x)= 0.042395
+differential_evolution step 530: f(x)= 0.042395
+differential_evolution step 531: f(x)= 0.042395
+differential_evolution step 532: f(x)= 0.042395
+differential_evolution step 533: f(x)= 0.042395
+differential_evolution step 534: f(x)= 0.042395
+differential_evolution step 535: f(x)= 0.042395
+differential_evolution step 536: f(x)= 0.042395
+differential_evolution step 537: f(x)= 0.042395
+differential_evolution step 538: f(x)= 0.042395
+differential_evolution step 539: f(x)= 0.042395
+differential_evolution step 540: f(x)= 0.042395
+differential_evolution step 541: f(x)= 0.042395
+differential_evolution step 542: f(x)= 0.042395
+differential_evolution step 543: f(x)= 0.042395
+differential_evolution step 544: f(x)= 0.042395
+differential_evolution step 545: f(x)= 0.042395
+differential_evolution step 546: f(x)= 0.042395
+differential_evolution step 547: f(x)= 0.0404132
+differential_evolution step 548: f(x)= 0.0404132
+differential_evolution step 549: f(x)= 0.0404132
+differential_evolution step 550: f(x)= 0.0404132
+differential_evolution step 551: f(x)= 0.0404132
+differential_evolution step 552: f(x)= 0.0404132
+differential_evolution step 553: f(x)= 0.0404132
+differential_evolution step 554: f(x)= 0.0404132
+differential_evolution step 555: f(x)= 0.0404132
+differential_evolution step 556: f(x)= 0.0404132
+differential_evolution step 557: f(x)= 0.0404132
+differential_evolution step 558: f(x)= 0.0404132
+differential_evolution step 559: f(x)= 0.0404132
+differential_evolution step 560: f(x)= 0.0404132
+differential_evolution step 561: f(x)= 0.0404132
+differential_evolution step 562: f(x)= 0.0404132
+differential_evolution step 563: f(x)= 0.0404132
+differential_evolution step 564: f(x)= 0.0404132
+differential_evolution step 565: f(x)= 0.0404132
+differential_evolution step 566: f(x)= 0.0404132
+differential_evolution step 567: f(x)= 0.0404132
+differential_evolution step 568: f(x)= 0.0404132
+differential_evolution step 569: f(x)= 0.0404132
+differential_evolution step 570: f(x)= 0.0290737
+differential_evolution step 571: f(x)= 0.0290737
+differential_evolution step 572: f(x)= 0.0290737
+differential_evolution step 573: f(x)= 0.0290737
+differential_evolution step 574: f(x)= 0.0290737
+differential_evolution step 575: f(x)= 0.0290737
+differential_evolution step 576: f(x)= 0.0290737
+differential_evolution step 577: f(x)= 0.0290737
+differential_evolution step 578: f(x)= 0.0290737
+differential_evolution step 579: f(x)= 0.0290737
+differential_evolution step 580: f(x)= 0.0290737
+differential_evolution step 581: f(x)= 0.0290737
+differential_evolution step 582: f(x)= 0.0290737
+differential_evolution step 583: f(x)= 0.0290737
+differential_evolution step 584: f(x)= 0.0290737
+differential_evolution step 585: f(x)= 0.0290737
+differential_evolution step 586: f(x)= 0.0290737
+differential_evolution step 587: f(x)= 0.0290737
+differential_evolution step 588: f(x)= 0.0290737
+differential_evolution step 589: f(x)= 0.0290737
+differential_evolution step 590: f(x)= 0.0290737
+differential_evolution step 591: f(x)= 0.0290737
+differential_evolution step 592: f(x)= 0.0290737
+differential_evolution step 593: f(x)= 0.0290737
+differential_evolution step 594: f(x)= 0.0290737
+differential_evolution step 595: f(x)= 0.0290737
+differential_evolution step 596: f(x)= 0.0290737
+differential_evolution step 597: f(x)= 0.0290737
+differential_evolution step 598: f(x)= 0.0290737
+differential_evolution step 599: f(x)= 0.0290737
+differential_evolution step 600: f(x)= 0.0290737
+differential_evolution step 601: f(x)= 0.0290737
+differential_evolution step 602: f(x)= 0.0290737
+differential_evolution step 603: f(x)= 0.0290737
+differential_evolution step 604: f(x)= 0.0290737
+differential_evolution step 605: f(x)= 0.0290737
+differential_evolution step 606: f(x)= 0.0290737
+differential_evolution step 607: f(x)= 0.0290737
+differential_evolution step 608: f(x)= 0.0290737
+differential_evolution step 609: f(x)= 0.0290737
+differential_evolution step 610: f(x)= 0.0290737
+differential_evolution step 611: f(x)= 0.0290737
+differential_evolution step 612: f(x)= 0.0290737
+differential_evolution step 613: f(x)= 0.0290737
+differential_evolution step 614: f(x)= 0.0290737
+differential_evolution step 615: f(x)= 0.0290737
+differential_evolution step 616: f(x)= 0.0290737
+differential_evolution step 617: f(x)= 0.0290737
+differential_evolution step 618: f(x)= 0.0290737
+differential_evolution step 619: f(x)= 0.0290737
+differential_evolution step 620: f(x)= 0.0290737
+differential_evolution step 621: f(x)= 0.0290737
+differential_evolution step 622: f(x)= 0.0290737
+differential_evolution step 623: f(x)= 0.0290737
+differential_evolution step 624: f(x)= 0.0290737
+differential_evolution step 625: f(x)= 0.0290737
+differential_evolution step 626: f(x)= 0.0290737
+differential_evolution step 627: f(x)= 0.0290737
+differential_evolution step 628: f(x)= 0.0290737
+differential_evolution step 629: f(x)= 0.0290737
+differential_evolution step 630: f(x)= 0.0290737
+differential_evolution step 631: f(x)= 0.0290737
+differential_evolution step 632: f(x)= 0.0290737
+differential_evolution step 633: f(x)= 0.0290737
+differential_evolution step 634: f(x)= 0.0290737
+differential_evolution step 635: f(x)= 0.0290737
+differential_evolution step 636: f(x)= 0.0290737
+differential_evolution step 637: f(x)= 0.0290737
+differential_evolution step 638: f(x)= 0.0290737
+differential_evolution step 639: f(x)= 0.0290737
+differential_evolution step 640: f(x)= 0.0290737
+differential_evolution step 641: f(x)= 0.0290737
+differential_evolution step 642: f(x)= 0.0290737
+differential_evolution step 643: f(x)= 0.0290737
+differential_evolution step 644: f(x)= 0.0290737
+differential_evolution step 645: f(x)= 0.0290737
+differential_evolution step 646: f(x)= 0.0290737
+differential_evolution step 647: f(x)= 0.0290737
+differential_evolution step 648: f(x)= 0.0290737
+differential_evolution step 649: f(x)= 0.0290737
+differential_evolution step 650: f(x)= 0.0290737
+differential_evolution step 651: f(x)= 0.0290737
+differential_evolution step 652: f(x)= 0.0290737
+differential_evolution step 653: f(x)= 0.0290737
+differential_evolution step 654: f(x)= 0.0290737
+differential_evolution step 655: f(x)= 0.0290737
+differential_evolution step 656: f(x)= 0.0290737
+differential_evolution step 657: f(x)= 0.0290737
+differential_evolution step 658: f(x)= 0.0290737
+differential_evolution step 659: f(x)= 0.0290737
+differential_evolution step 660: f(x)= 0.0290737
+differential_evolution step 661: f(x)= 0.0290737
+differential_evolution step 662: f(x)= 0.0290737
+differential_evolution step 663: f(x)= 0.0290737
+differential_evolution step 664: f(x)= 0.0290737
+differential_evolution step 665: f(x)= 0.0290737
+differential_evolution step 666: f(x)= 0.0290737
+differential_evolution step 667: f(x)= 0.0290737
+differential_evolution step 668: f(x)= 0.0290737
+differential_evolution step 669: f(x)= 0.0290737
+differential_evolution step 670: f(x)= 0.0290737
+differential_evolution step 671: f(x)= 0.0290737
+differential_evolution step 672: f(x)= 0.0290737
+differential_evolution step 673: f(x)= 0.0290737
+differential_evolution step 674: f(x)= 0.0290737
+differential_evolution step 675: f(x)= 0.0290737
+differential_evolution step 676: f(x)= 0.0290737
+differential_evolution step 677: f(x)= 0.0290737
+differential_evolution step 678: f(x)= 0.0290737
+differential_evolution step 679: f(x)= 0.0290737
+differential_evolution step 680: f(x)= 0.0290737
+differential_evolution step 681: f(x)= 0.0290737
+differential_evolution step 682: f(x)= 0.0290737
+differential_evolution step 683: f(x)= 0.0290737
+differential_evolution step 684: f(x)= 0.0290737
+differential_evolution step 685: f(x)= 0.0290737
+differential_evolution step 686: f(x)= 0.0290737
+differential_evolution step 687: f(x)= 0.0290737
+differential_evolution step 688: f(x)= 0.0290737
+differential_evolution step 689: f(x)= 0.0290737
+differential_evolution step 690: f(x)= 0.0290737
+differential_evolution step 691: f(x)= 0.0290737
+differential_evolution step 692: f(x)= 0.0290737
+differential_evolution step 693: f(x)= 0.0290737
+differential_evolution step 694: f(x)= 0.0290737
+differential_evolution step 695: f(x)= 0.0290737
+differential_evolution step 696: f(x)= 0.0290737
+differential_evolution step 697: f(x)= 0.0290737
+differential_evolution step 698: f(x)= 0.0290737
+differential_evolution step 699: f(x)= 0.0290737
+differential_evolution step 700: f(x)= 0.0290737
+differential_evolution step 701: f(x)= 0.0290737
+differential_evolution step 702: f(x)= 0.0290737
+differential_evolution step 703: f(x)= 0.0290737
+differential_evolution step 704: f(x)= 0.0290737
+differential_evolution step 705: f(x)= 0.0290737
+differential_evolution step 706: f(x)= 0.0290737
+differential_evolution step 707: f(x)= 0.0290737
+differential_evolution step 708: f(x)= 0.0290737
+differential_evolution step 709: f(x)= 0.0290737
+differential_evolution step 710: f(x)= 0.0290737
+differential_evolution step 711: f(x)= 0.0290737
+differential_evolution step 712: f(x)= 0.0290737
+differential_evolution step 713: f(x)= 0.0290737
+differential_evolution step 714: f(x)= 0.0290737
+differential_evolution step 715: f(x)= 0.0290737
+differential_evolution step 716: f(x)= 0.0290737
+differential_evolution step 717: f(x)= 0.0290737
+differential_evolution step 718: f(x)= 0.0290737
+differential_evolution step 719: f(x)= 0.0290737
+differential_evolution step 720: f(x)= 0.0290737
+differential_evolution step 721: f(x)= 0.0290737
+differential_evolution step 722: f(x)= 0.0290737
+differential_evolution step 723: f(x)= 0.0290737
+differential_evolution step 724: f(x)= 0.0290737
+differential_evolution step 725: f(x)= 0.0290737
+differential_evolution step 726: f(x)= 0.0290737
+differential_evolution step 727: f(x)= 0.0290737
+differential_evolution step 728: f(x)= 0.0290737
+differential_evolution step 729: f(x)= 0.0290737
+differential_evolution step 730: f(x)= 0.0290737
+differential_evolution step 731: f(x)= 0.0290737
+differential_evolution step 732: f(x)= 0.0290737
+differential_evolution step 733: f(x)= 0.0290737
+differential_evolution step 734: f(x)= 0.0290737
+differential_evolution step 735: f(x)= 0.0290737
+differential_evolution step 736: f(x)= 0.0290737
+differential_evolution step 737: f(x)= 0.0290737
+differential_evolution step 738: f(x)= 0.0290737
+differential_evolution step 739: f(x)= 0.0290737
+differential_evolution step 740: f(x)= 0.0290737
+differential_evolution step 741: f(x)= 0.0290737
+differential_evolution step 742: f(x)= 0.0290737
+differential_evolution step 743: f(x)= 0.0290737
+differential_evolution step 744: f(x)= 0.0290737
+differential_evolution step 745: f(x)= 0.0290737
+differential_evolution step 746: f(x)= 0.0290737
+differential_evolution step 747: f(x)= 0.0290737
+differential_evolution step 748: f(x)= 0.0290737
+differential_evolution step 749: f(x)= 0.0290737
+differential_evolution step 750: f(x)= 0.0290737
+differential_evolution step 751: f(x)= 0.0290737
+differential_evolution step 752: f(x)= 0.0290737
+differential_evolution step 753: f(x)= 0.0290737
+differential_evolution step 754: f(x)= 0.0290737
+differential_evolution step 755: f(x)= 0.0290737
+differential_evolution step 756: f(x)= 0.0290737
+differential_evolution step 757: f(x)= 0.0290737
+differential_evolution step 758: f(x)= 0.0290737
+differential_evolution step 759: f(x)= 0.0290737
+differential_evolution step 760: f(x)= 0.0290737
+differential_evolution step 761: f(x)= 0.0290737
+differential_evolution step 762: f(x)= 0.0290737
+differential_evolution step 763: f(x)= 0.0290737
+differential_evolution step 764: f(x)= 0.0290737
+differential_evolution step 765: f(x)= 0.0290737
+differential_evolution step 766: f(x)= 0.0290737
+differential_evolution step 767: f(x)= 0.0290737
+differential_evolution step 768: f(x)= 0.0290737
+differential_evolution step 769: f(x)= 0.0290737
+differential_evolution step 770: f(x)= 0.0290737
+differential_evolution step 771: f(x)= 0.0290737
+differential_evolution step 772: f(x)= 0.0290737
+differential_evolution step 773: f(x)= 0.0290737
+differential_evolution step 774: f(x)= 0.0290737
+differential_evolution step 775: f(x)= 0.0290737
+differential_evolution step 776: f(x)= 0.0290737
+differential_evolution step 777: f(x)= 0.0290737
+differential_evolution step 778: f(x)= 0.0290737
+differential_evolution step 779: f(x)= 0.0290737
+differential_evolution step 780: f(x)= 0.0290737
+differential_evolution step 781: f(x)= 0.0290737
+differential_evolution step 782: f(x)= 0.0290737
+differential_evolution step 783: f(x)= 0.0290737
+differential_evolution step 784: f(x)= 0.0290737
+differential_evolution step 785: f(x)= 0.0290737
+differential_evolution step 786: f(x)= 0.0290737
+differential_evolution step 787: f(x)= 0.0290737
+differential_evolution step 788: f(x)= 0.0290737
+differential_evolution step 789: f(x)= 0.0290737
+differential_evolution step 790: f(x)= 0.0290737
+differential_evolution step 791: f(x)= 0.0290737
+differential_evolution step 792: f(x)= 0.0290737
+differential_evolution step 793: f(x)= 0.0290737
+differential_evolution step 794: f(x)= 0.0290737
+differential_evolution step 795: f(x)= 0.0290737
+differential_evolution step 796: f(x)= 0.0290737
+differential_evolution step 797: f(x)= 0.0290737
+differential_evolution step 798: f(x)= 0.0290737
+differential_evolution step 799: f(x)= 0.0290737
+differential_evolution step 800: f(x)= 0.0290737
+differential_evolution step 801: f(x)= 0.0290737
+differential_evolution step 802: f(x)= 0.0290737
+differential_evolution step 803: f(x)= 0.0290737
+differential_evolution step 804: f(x)= 0.0290737
+differential_evolution step 805: f(x)= 0.0290737
+differential_evolution step 806: f(x)= 0.0290737
+differential_evolution step 807: f(x)= 0.0290737
+differential_evolution step 808: f(x)= 0.0290737
+differential_evolution step 809: f(x)= 0.0290737
+differential_evolution step 810: f(x)= 0.0290737
+differential_evolution step 811: f(x)= 0.0290737
+differential_evolution step 812: f(x)= 0.0290737
+differential_evolution step 813: f(x)= 0.0290737
+differential_evolution step 814: f(x)= 0.0290737
+differential_evolution step 815: f(x)= 0.0290737
+differential_evolution step 816: f(x)= 0.0290737
+differential_evolution step 817: f(x)= 0.0290737
+differential_evolution step 818: f(x)= 0.0290737
+differential_evolution step 819: f(x)= 0.0290737
+differential_evolution step 820: f(x)= 0.0290737
+differential_evolution step 821: f(x)= 0.0290737
+differential_evolution step 822: f(x)= 0.0290737
+differential_evolution step 823: f(x)= 0.0290737
+differential_evolution step 824: f(x)= 0.0290737
+differential_evolution step 825: f(x)= 0.0290737
+differential_evolution step 826: f(x)= 0.0290737
+differential_evolution step 827: f(x)= 0.0290737
+differential_evolution step 828: f(x)= 0.0290737
+differential_evolution step 829: f(x)= 0.0290737
+differential_evolution step 830: f(x)= 0.0290737
+differential_evolution step 831: f(x)= 0.0290737
+differential_evolution step 832: f(x)= 0.0290737
+differential_evolution step 833: f(x)= 0.0290737
+differential_evolution step 834: f(x)= 0.0290737
+differential_evolution step 835: f(x)= 0.0290737
+differential_evolution step 836: f(x)= 0.0290737
+differential_evolution step 837: f(x)= 0.0290737
+differential_evolution step 838: f(x)= 0.0290737
+differential_evolution step 839: f(x)= 0.0290737
+differential_evolution step 840: f(x)= 0.0290737
+differential_evolution step 841: f(x)= 0.0290737
+differential_evolution step 842: f(x)= 0.0290737
+differential_evolution step 843: f(x)= 0.0290737
+differential_evolution step 844: f(x)= 0.0290737
+differential_evolution step 845: f(x)= 0.0290737
+differential_evolution step 846: f(x)= 0.0290737
+differential_evolution step 847: f(x)= 0.0290737
+differential_evolution step 848: f(x)= 0.0290737
+differential_evolution step 849: f(x)= 0.0290737
+differential_evolution step 850: f(x)= 0.0290737
+differential_evolution step 851: f(x)= 0.0290737
+differential_evolution step 852: f(x)= 0.0290737
+differential_evolution step 853: f(x)= 0.0290737
+differential_evolution step 854: f(x)= 0.0290737
+differential_evolution step 855: f(x)= 0.0290737
+differential_evolution step 856: f(x)= 0.0290737
+differential_evolution step 857: f(x)= 0.0290737
+differential_evolution step 858: f(x)= 0.0290737
+differential_evolution step 859: f(x)= 0.0290737
+differential_evolution step 860: f(x)= 0.0290737
+differential_evolution step 861: f(x)= 0.0290737
+differential_evolution step 862: f(x)= 0.0290737
+differential_evolution step 863: f(x)= 0.0290737
+differential_evolution step 864: f(x)= 0.0290737
+differential_evolution step 865: f(x)= 0.0290737
+differential_evolution step 866: f(x)= 0.0290737
+differential_evolution step 867: f(x)= 0.0290737
+differential_evolution step 868: f(x)= 0.0290737
+differential_evolution step 869: f(x)= 0.0290737
+differential_evolution step 870: f(x)= 0.0290737
+differential_evolution step 871: f(x)= 0.0290737
+differential_evolution step 872: f(x)= 0.0290737
+differential_evolution step 873: f(x)= 0.0290737
+differential_evolution step 874: f(x)= 0.0290737
+differential_evolution step 875: f(x)= 0.0290737
+differential_evolution step 876: f(x)= 0.0290737
+differential_evolution step 877: f(x)= 0.0290737
+differential_evolution step 878: f(x)= 0.0290737
+differential_evolution step 879: f(x)= 0.0290737
+differential_evolution step 880: f(x)= 0.0290737
+differential_evolution step 881: f(x)= 0.0290737
+differential_evolution step 882: f(x)= 0.0290737
+differential_evolution step 883: f(x)= 0.0290737
+differential_evolution step 884: f(x)= 0.0290737
+differential_evolution step 885: f(x)= 0.0290737
+differential_evolution step 886: f(x)= 0.0290737
+differential_evolution step 887: f(x)= 0.0290737
+differential_evolution step 888: f(x)= 0.0290737
+differential_evolution step 889: f(x)= 0.0290737
+differential_evolution step 890: f(x)= 0.0290737
+differential_evolution step 891: f(x)= 0.0290737
+differential_evolution step 892: f(x)= 0.0290737
+differential_evolution step 893: f(x)= 0.0290737
+differential_evolution step 894: f(x)= 0.0290737
+differential_evolution step 895: f(x)= 0.0290737
+differential_evolution step 896: f(x)= 0.0290737
+differential_evolution step 897: f(x)= 0.0290737
+differential_evolution step 898: f(x)= 0.0290737
+differential_evolution step 899: f(x)= 0.0290737
+differential_evolution step 900: f(x)= 0.0290737
+differential_evolution step 901: f(x)= 0.0290737
+differential_evolution step 902: f(x)= 0.0290737
+differential_evolution step 903: f(x)= 0.0290737
+differential_evolution step 904: f(x)= 0.0290737
+differential_evolution step 905: f(x)= 0.0290737
+differential_evolution step 906: f(x)= 0.0290737
+differential_evolution step 907: f(x)= 0.0290737
+differential_evolution step 908: f(x)= 0.0290737
+differential_evolution step 909: f(x)= 0.0290737
+differential_evolution step 910: f(x)= 0.0290737
+differential_evolution step 911: f(x)= 0.0290737
+differential_evolution step 912: f(x)= 0.0290737
+differential_evolution step 913: f(x)= 0.0290737
+differential_evolution step 914: f(x)= 0.0290737
+differential_evolution step 915: f(x)= 0.0290737
+differential_evolution step 916: f(x)= 0.0290737
+differential_evolution step 917: f(x)= 0.0290737
+differential_evolution step 918: f(x)= 0.0290737
+differential_evolution step 919: f(x)= 0.0290737
+differential_evolution step 920: f(x)= 0.0290737
+differential_evolution step 921: f(x)= 0.0290737
+differential_evolution step 922: f(x)= 0.0290737
+differential_evolution step 923: f(x)= 0.0290737
+differential_evolution step 924: f(x)= 0.0290737
+differential_evolution step 925: f(x)= 0.0290737
+differential_evolution step 926: f(x)= 0.0290737
+differential_evolution step 927: f(x)= 0.0290737
+differential_evolution step 928: f(x)= 0.0290737
+differential_evolution step 929: f(x)= 0.0290737
+differential_evolution step 930: f(x)= 0.0290737
+differential_evolution step 931: f(x)= 0.0290737
+differential_evolution step 932: f(x)= 0.0290737
+differential_evolution step 933: f(x)= 0.0290737
+differential_evolution step 934: f(x)= 0.0290737
+differential_evolution step 935: f(x)= 0.0290737
+differential_evolution step 936: f(x)= 0.0290737
+differential_evolution step 937: f(x)= 0.0290737
+differential_evolution step 938: f(x)= 0.0290737
+differential_evolution step 939: f(x)= 0.0290737
+differential_evolution step 940: f(x)= 0.0290737
+differential_evolution step 941: f(x)= 0.0290737
+differential_evolution step 942: f(x)= 0.0290737
+differential_evolution step 943: f(x)= 0.0290737
+differential_evolution step 944: f(x)= 0.0290737
+differential_evolution step 945: f(x)= 0.0290737
+differential_evolution step 946: f(x)= 0.0290737
+differential_evolution step 947: f(x)= 0.0290737
+differential_evolution step 948: f(x)= 0.0290737
+differential_evolution step 949: f(x)= 0.0290737
+differential_evolution step 950: f(x)= 0.0290737
+differential_evolution step 951: f(x)= 0.0290737
+differential_evolution step 952: f(x)= 0.0290737
+differential_evolution step 953: f(x)= 0.0290737
+differential_evolution step 954: f(x)= 0.0290737
+differential_evolution step 955: f(x)= 0.0290737
+differential_evolution step 956: f(x)= 0.0290737
+differential_evolution step 957: f(x)= 0.0290737
+differential_evolution step 958: f(x)= 0.0290737
+differential_evolution step 959: f(x)= 0.0290737
+differential_evolution step 960: f(x)= 0.0290737
+differential_evolution step 961: f(x)= 0.0290737
+differential_evolution step 962: f(x)= 0.0290737
+differential_evolution step 963: f(x)= 0.0290737
+differential_evolution step 964: f(x)= 0.0290737
+differential_evolution step 965: f(x)= 0.0290737
+differential_evolution step 966: f(x)= 0.0290737
+differential_evolution step 967: f(x)= 0.0290737
+differential_evolution step 968: f(x)= 0.0290737
+differential_evolution step 969: f(x)= 0.0290737
+differential_evolution step 970: f(x)= 0.0290737
+differential_evolution step 971: f(x)= 0.0290737
+differential_evolution step 972: f(x)= 0.0290737
+differential_evolution step 973: f(x)= 0.0290737
+differential_evolution step 974: f(x)= 0.0290737
+differential_evolution step 975: f(x)= 0.0290737
+differential_evolution step 976: f(x)= 0.0290737
+differential_evolution step 977: f(x)= 0.0290737
+differential_evolution step 978: f(x)= 0.0290737
+differential_evolution step 979: f(x)= 0.0290737
+differential_evolution step 980: f(x)= 0.0290737
+differential_evolution step 981: f(x)= 0.0290737
+differential_evolution step 982: f(x)= 0.0290737
+differential_evolution step 983: f(x)= 0.0290737
+differential_evolution step 984: f(x)= 0.0290737
+differential_evolution step 985: f(x)= 0.0290737
+differential_evolution step 986: f(x)= 0.0290737
+differential_evolution step 987: f(x)= 0.0290737
+differential_evolution step 988: f(x)= 0.0290737
+differential_evolution step 989: f(x)= 0.0290737
+differential_evolution step 990: f(x)= 0.0290737
+differential_evolution step 991: f(x)= 0.0290737
+differential_evolution step 992: f(x)= 0.0290737
+differential_evolution step 993: f(x)= 0.0290737
+differential_evolution step 994: f(x)= 0.0290737
+differential_evolution step 995: f(x)= 0.0290737
+differential_evolution step 996: f(x)= 0.0290737
+differential_evolution step 997: f(x)= 0.0290737
+differential_evolution step 998: f(x)= 0.0290737
+differential_evolution step 999: f(x)= 0.0290737
+differential_evolution step 1000: f(x)= 0.0290737
+G0G1' = -1.529e-03 G0G1 + 4.555e-03 G2M + -9.200e-05 G0G1^2 + -5.339e-05 G0G1 G2M + 3.256e-04 G2M^2
+S' = 3.420e-03 G0G1 + -7.615e-04 S + 1.797e-04 G0G1^2 + -1.681e-05 G0G1 S + -1.182e-04 S^2
+G2M' = 1.849e-04 S + -7.097e-04 G2M + 4.875e-05 S^2 + -6.242e-05 S G2M + -5.435e-05 G2M^2
+
+
+Melhor modelo AIC = 1
+
+Melhor modelo AICc = 1
+
+Melhor modelo BIC = 1
+
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3600727575229D+03   r2 =  0.2488672558172D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3600727575229D+03   r2 =  0.2488672558172D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3600727575229D+03   r2 =  0.2488672558172D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3600727575229D+03   r2 =  0.2488672558172D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3600727575229D+03   r2 =  0.2020541712793D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3600727575229D+03   r2 =  0.2020541712793D-13
+ lsoda--  warning..internal t (=r1) and h (=r2) are  
+       such that in the machine, t + h = t on the next step  
+       (h = step size). solver will continue anyway  
+      in above,  r1 =  0.3600727575229D+03   r2 =  0.2020541712793D-13

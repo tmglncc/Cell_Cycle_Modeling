@@ -265,16 +265,21 @@ Modelo 1
 live' = 7.043e-04 live
 
 
-*** Performing Bayesian calibration ***
+*** Using Differential Evolution method ***
 
--- Running Monte Carlo simulations:
-
-
--- Monte Carlo simulations done in 1.442 minutes
-
-
-
-live' = 7.068e-04 live
+differential_evolution step 1: f(x)= 7.10933e-05
+differential_evolution step 2: f(x)= 7.10933e-05
+differential_evolution step 3: f(x)= 7.10933e-05
+differential_evolution step 4: f(x)= 6.45201e-05
+differential_evolution step 5: f(x)= 6.45201e-05
+differential_evolution step 6: f(x)= 6.41821e-05
+differential_evolution step 7: f(x)= 6.41821e-05
+differential_evolution step 8: f(x)= 6.41801e-05
+differential_evolution step 9: f(x)= 6.41797e-05
+differential_evolution step 10: f(x)= 6.41797e-05
+differential_evolution step 11: f(x)= 6.41797e-05
+differential_evolution step 12: f(x)= 6.41797e-05
+live' = 7.071e-04 live
 
 
 Modelo 2
@@ -282,16 +287,26 @@ Modelo 2
 live' = 6.920e-04 live + 1.073e-08 live^2
 
 
-*** Performing Bayesian calibration ***
+*** Using Differential Evolution method ***
 
--- Running Monte Carlo simulations:
-
-
--- Monte Carlo simulations done in 2.534 minutes
-
-
-
-live' = 6.959e-04 live + 9.470e-09 live^2
+differential_evolution step 1: f(x)= 7.63401e-05
+differential_evolution step 2: f(x)= 7.63401e-05
+differential_evolution step 3: f(x)= 7.63401e-05
+differential_evolution step 4: f(x)= 7.63401e-05
+differential_evolution step 5: f(x)= 6.40594e-05
+differential_evolution step 6: f(x)= 6.34563e-05
+differential_evolution step 7: f(x)= 6.32888e-05
+differential_evolution step 8: f(x)= 6.32888e-05
+differential_evolution step 9: f(x)= 6.32888e-05
+differential_evolution step 10: f(x)= 6.32888e-05
+differential_evolution step 11: f(x)= 6.3284e-05
+differential_evolution step 12: f(x)= 6.3284e-05
+differential_evolution step 13: f(x)= 6.3284e-05
+differential_evolution step 14: f(x)= 6.3281e-05
+differential_evolution step 15: f(x)= 6.3281e-05
+differential_evolution step 16: f(x)= 6.3281e-05
+differential_evolution step 17: f(x)= 6.32809e-05
+live' = 6.916e-04 live + 1.384e-08 live^2
 
 
 Melhor modelo AIC = 1

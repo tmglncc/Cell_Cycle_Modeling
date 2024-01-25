@@ -51,7 +51,7 @@ plot_qoi = True
 plot_musig = False
 plot_simulation = False
 plot_derivative = False
-calibration_mode = "LM"
+calibration_mode = "DE"
 
 stlsq_alphas = [0.001, 0.01, 0.1, 1.0, 10.0]
 
@@ -162,6 +162,13 @@ for model_id, model in enumerate(model_set):
 		elif calibration_mode == "LM":
 			mc = ModelCalibration(model, model_id, X_test, t, X0_test, 0)
 			mc.levenberg_marquardt(X_std)
+			model.print(precision = precision)
+			print("\n")
+
+			simulation = model.simulate(X0_test, t = t_test)
+		elif calibration_mode == "DE":
+			mc = ModelCalibration(model, model_id, X_test, t, X0_test, 0)
+			mc.differential_evolution()
 			model.print(precision = precision)
 			print("\n")
 

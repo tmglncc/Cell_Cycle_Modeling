@@ -41,9 +41,9 @@ def validate_cell_defs(cell_defs_elm, skip_validate):
         if skip_validate:
             logging.debug(f'Continuing in spite of these missing elements.')
         else:
-            # logging.debug(f'\n A configuration file (.xml) for the PMB needs to explicitly \nprovide all required parameters for each <cell_definition>.\nIt cannot use the legacy hierarchical format where only\n partial parameters are provided and the rest are inherited from a parent.")
+            # logging.debug(f'\n A configuration file (.xml) for the Studio needs to explicitly \nprovide all required parameters for each <cell_definition>.\nIt cannot use the legacy hierarchical format where only\n partial parameters are provided and the rest are inherited from a parent.")
             warn_user = """
-            A configuration file (.xml) for the PMB needs to explicitly 
+            A configuration file (.xml) for the Studio needs to explicitly 
             provide all required parameters for each <cell_definition>.
             It cannot use the legacy hierarchical format where only 
             partial parameters are provided and the rest are inherited from a parent.
@@ -902,7 +902,7 @@ def populate_tree_cell_defs(cell_def_tab, skip_validate):
             if mypath is not None:
                 cell_def_tab.param_d[cell_def_name]["mechanics_attachment_rate"] = mypath.text
             else:
-                cell_def_tab.param_d[cell_def_name]["mechanics_attachment_rate"] = '10.0'
+                cell_def_tab.param_d[cell_def_name]["mechanics_attachment_rate"] = '0.0'
 
             mypath =  uep.find(mechanics_path+"detachment_rate")
             if mypath is not None:

@@ -48,7 +48,7 @@ plot_qoi = True
 plot_musig = False
 plot_simulation = False
 plot_derivative = False
-calibration_mode = "Bayes"
+calibration_mode = "DE"
 
 stlsq_alphas = [0.001, 0.01, 0.1, 1.0, 10.0]
 
@@ -159,7 +159,14 @@ for model_id, model in enumerate(model_set):
 			simulation = model.simulate(X0_test, t = t_test)
 		elif calibration_mode == "LM":
 			mc = ModelCalibration(model, model_id, X_test, t, X0_test, 0)
-			mc.levenberg_marquardt()
+			mc.levenberg_marquardt(X_std, normalize = True)
+			model.print(precision = precision)
+			print("\n")
+
+			simulation = model.simulate(X0_test, t = t_test)
+		elif calibration_mode == "DE":
+			mc = ModelCalibration(model, model_id, X_test, t, X0_test, 0)
+			mc.differential_evolution(normalize = True)
 			model.print(precision = precision)
 			print("\n")
 
@@ -197,7 +204,7 @@ for model_id, model in enumerate(model_set):
 		plt.close()
 
 	# Compute SSE
-	sse = ms.compute_SSE(X_test.reshape(simulation.shape), simulation)
+	sse = ms.compute_SSE(np.copy(X_test.reshape(simulation.shape)), np.copy(simulation), normalize = True)
 
 	# Set mean SSE to the model
 	ms.set_model_SSE(model_id, sse)
