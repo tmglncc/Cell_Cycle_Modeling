@@ -4,6 +4,10 @@ We explore the use of cell cycle agent-based models (ABMs) built on the PhysiCel
 
 ![Graphical abstract](https://drive.google.com/uc?export=view&id=1UzC3t9bN82OQ9aRQtFUnwnB_P99Xq9qR)
 
+## Requirements
+
+Our experiments have been performed using the **PhysiCell** platform (version 1.10.4), **SINDy-SA** framework (version 1.0), and Jupyter notebooks. The implementation of the PhysiCell platform is predominantly in C++, while the algorithms for running multiple simulation replicates, gathering statistical data, computing errors and computational costs, assessing the convergence of cell phase solution profiles, and creating various types of plots are developed in Python using Jupyter notebooks. The SINDy-SA framework incorporating the differential evolution algorithm is also built in Python. For instructions on how to use PhysiCell, please visit [https://github.com/MathCancer/PhysiCell](https://github.com/MathCancer/PhysiCell) and look at _QuickStart.md_ and _UserGuide.pdf_ in the documentation folder. For the requirements to apply the SINDy-SA framework, please visit [https://github.com/tmglncc/SINDy-SA](https://github.com/tmglncc/SINDy-SA).
+
 ## Cite as
 
 Naozuka, G.T.; Rocha, H.L.; Pereira, T.J.; Libotte, G.B.; Almeida, R.C. Cell Cycle Modeling, 2024. Version 1.0. Available online: [https://github.com/tmglncc/Cell_Cycle_Modeling](https://github.com/tmglncc/Cell_Cycle_Modeling) (accessed on 25 January 2024), doi: [10.5281/zenodo.10569158](https://zenodo.org/doi/10.5281/zenodo.10569158).
