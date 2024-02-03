@@ -4,20 +4,26 @@ We explore the use of cell cycle agent-based models (ABMs) built on the PhysiCel
 
 ![Graphical abstract](https://drive.google.com/uc?export=view&id=1XW2vh6OuLil_fONrHP1b_4zxib3PKBPO)
 
-## Running PhysiCell and SINDy-SA
+## Requirements and running PhysiCell and SINDy-SA
 
-Our experiments have been performed using the **PhysiCell** platform (version 1.10.4), **SINDy-SA** framework (version 1.0), and Jupyter notebooks. The implementation of the PhysiCell platform is predominantly in C++, while the algorithms for running multiple simulation replicates, gathering statistical data, computing errors and computational costs, assessing the convergence of cell phase solution profiles, and creating various types of plots are developed in Python using Jupyter notebooks. The SINDy-SA framework incorporating the differential evolution algorithm is also built in Python. For instructions on how to use PhysiCell, please visit [https://github.com/MathCancer/PhysiCell](https://github.com/MathCancer/PhysiCell) and look at _QuickStart.md_ and _UserGuide.pdf_ in the _documentation_ folder. For instructions on how to run the SINDy-SA framework and its requirements, please visit [https://github.com/tmglncc/SINDy-SA](https://github.com/tmglncc/SINDy-SA).
+Our experiments have been performed using the **PhysiCell** platform (version 1.10.4), **SINDy-SA** framework (version 1.0), and Jupyter notebooks. The implementation of the PhysiCell platform is predominantly in C++, while the algorithms for running multiple simulation replicates, gathering statistical data, computing errors and computational costs, assessing the convergence of cell phase solution profiles, and creating various types of plots are developed in Python using Jupyter notebooks. The SINDy-SA framework incorporating the differential evolution algorithm is also built in Python.
+
+For requirements and instructions on how to use PhysiCell, please access [https://github.com/MathCancer/PhysiCell](https://github.com/MathCancer/PhysiCell) and look at _QuickStart.md_ and _UserGuide.pdf_ in the _documentation_ folder.
+
+For requirements and instructions on how to run the SINDy-SA framework, please access [https://github.com/tmglncc/SINDy-SA](https://github.com/tmglncc/SINDy-SA).
 
 ## Repository organization
 
 This Github repository is organized according to the following directories:
 
 - **Computational Cost Plot** and **Computational Cost Plot (ic_by_fraction)**: contain a Jupyter notebook to compute the computational cost for multiple experimental settings;
-- **Error Plot** and **Error Plot (ic_by_fraction)**: contain Jupyter notebooks to compute the error for multiple experimental settings, based on both cell subpopulation counts and fractions;
-- **PhysiCell (template, NULL)** and **PhysiCell (template, NULL, ic_by_fraction)**: contain a PhysiCell project modeling cell cycle dynamics, including the mechanism of apoptosis-induced cell death, and Jupyter notebooks for running multiple simulation replicates, gathering statistical data, assessing the convergence of cell phase solution profiles, and creating various types of plots.
-- **SINDy-SA** folders: apply the SINDy-SA framework to build a surrogate ordinary differential equation models from PhysiCell simulation data for multiple scenarios.
+- **Error Plot** and **Error Plot (ic_by_fraction)**: contain Jupyter notebooks to compute the error for multiple experimental settings, based on cell subpopulation counts and fractions;
+- **PhysiCell (template, NULL)** and **PhysiCell (template, NULL, ic_by_fraction)**: contain a PhysiCell project modeling the cell cycle dynamics, including the mechanism of apoptosis-induced cell death. They also contain Jupyter notebooks for running multiple simulation replicates, gathering statistical data, assessing the convergence of cell phase solution profiles, and creating various types of plots;
+- **SINDy-SA** folders: apply the SINDy-SA framework to build surrogate ODE-based models from PhysiCell simulation data for multiple cell cycle scenarios and experimental settings.
 
-Of note, **ic_by_fraction** denotes experiments in which the ABM initial condition is defined based on percentages of cell phase fractions.
+Of note, **ic_by_fraction** indicates experiments in which the ABM initial condition is defined based on percentages of cell phase fractions.
+
+To facilitate the visualization and extraction of PhysiCell simulation data, we also include the employed versions of **PhysiCell-Studio** and **Python-loader** in the Github repository.
 
 ## Cite as
 
