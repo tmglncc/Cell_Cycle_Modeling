@@ -23,7 +23,7 @@ This Github repository is organized according to the following directories:
 
 Of note, **ic_by_fraction** indicates experiments in which the ABM initial condition is defined based on percentages of cell phase fractions.
 
-To facilitate the visualization and extraction of PhysiCell simulation data, we also include the employed versions of **PhysiCell-Studio** and **Python-loader** in the Github repository.
+To facilitate the visualization and extraction of PhysiCell simulation data, we also include the employed versions of **PhysiCell-Studio** and **Python-loader** in this Github repository.
 
 ## Cite as
 
