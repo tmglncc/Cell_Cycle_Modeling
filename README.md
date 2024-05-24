@@ -24,7 +24,15 @@ This GitHub repository is organized according to the following directories and f
 
 - **Computational Cost Plot** and **Computational Cost Plot (ic_by_fraction)** folders: contain _plot_cost.ipynb_ to plot the computational costs for multiple experimental settings.
 - **Error Plot** and **Error Plot (ic_by_fraction)** folders: contain _plot_error_by_fraction.ipynb_ and _plot_error_by_population.ipynb_ to plot the sum of squared errors (SSE) up to the final simulation time for tumor cell fractions/populations between the standard ODE-based model solution and PhysiCell simulations averaged across replicates.
-- **PhysiCell (template, NULL)** and **PhysiCell (template, NULL, ic_by_fraction)** folders: contain a PhysiCell project modeling the cell cycle dynamics, including the mechanism of apoptosis-induced cell death. They also contain Jupyter notebooks for running multiple simulation replicates (_run_replicates.py_), gathering statistical data (_plot_stochastic_by_fraction.ipynb_ and _plot_stochastic_by_population.ipynb_), assessing the convergence of cell phase solution profiles (_plot_distribution.ipynb_), and creating various types of plots.
+- **PhysiCell (template, NULL)** and **PhysiCell (template, NULL, ic_by_fraction)** folders: contain a PhysiCell project modeling the cell cycle dynamics, including the mechanism of apoptosis-induced cell death. They also contain the following Python scripts and Jupyter notebooks:
+  - _run_replicates.py_: runs multiple simulation replicates;
+  - _plot_stochastic_by_population.ipynb_: gathers statistical information (mean and standard deviation) regarding the dynamics of tumor cell subpopulations;
+  - _plot_stochastic_by_fraction.ipynb_: gathers statistical information (mean and standard deviation) regarding the dynamics of tumor cell fractions;
+  - _compute_cost.ipynb_: computes the computational costs;
+  - _compute_error.ipynb_: computes the sum of squared errors (SSE) up to the final simulation time for tumor cell fractions between the standard ODE-based model solution and PhysiCell simulations averaged across replicates;
+  - _plot_distribution.ipynb_: constructs frequency histograms, calibrates distribution parameters, and generates essential metrics such as the sum of squared errors (SSE) and model selection criteria. These criteria include first-order Akaike (AIC), second-order Akaike (AICc), and Bayesian (BIC) information criteria. It also assesses the weights of the selection criteria that indicate the best probability distribution based on the data;
+  - _plot_kl_divergence.ipynb_: compares kernel density approximations of solution profiles at the final simulation time of each experimental setting with the corresponding reference experiments featuring R = 300 replicates;
+  - _plot_heatmap.ipynb_: plots heatmaps of Kullback-Leibler divergence.
 - **SINDy-SA** folders: apply the SINDy-SA framework to build surrogate ODE-based models from PhysiCell simulation data for multiple cell cycle scenarios and experimental settings.
 
 Of note, **ic_by_fraction** indicates experiments in which the ABM initial condition is defined based on percentages of cell phase fractions.
