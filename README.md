@@ -1,12 +1,6 @@
-# Connecting different approaches for cell cycle modeling: learning ordinary differential equations from individual-based models
+# Cell Cycle Modeling
 
-*Background and Objectives*: We explore the use of cell cycle agent-based models (ABMs) built on the PhysiCell platform alongside their corresponding surrogate ordinary differential equation (ODE) models. We also address issues related to the stochastic nature, computational cost, and accuracy of  ABMs in assessing PhysiCell simulations.
-
-*Methods*: Considering the potential benefits of surrogate representations as substitutes for costly computational models, we showcase the use of a sparse identification machine learning tool, namely SINDy-SA, to build surrogate ODE-based representations for ABMs developed on the PhysiCell platform.
-
-*Results*: We show that three key parameters impact both the computational efficiency and accuracy of the PhysiCell simulations: the time step for cell phase transitions, the initial cell count, and the number of replicates. Examining the stochastic characteristics of simulation profiles for cell cycle subpopulation counts and corresponding fractions over time through probability distributions revealed two primary findings: various established probability distributions can appropriately model their dynamics and the convergence to the mean behavior of subpopulation fractions with respect to the number of replicates is faster than that of the subpopulation counts. Finally, the SINDy-SA framework successfully identified the mathematical structures for all employed cell cycle models, even when including apoptosis-induced cell death.
-
-*Conclusions*: We believe that the insights gained from this study can assist researchers in modeling hybrid discrete-continuous multiscale models for tumor growth using the PhysiCell platform and in developing corresponding surrogate representations through the SINDy-SA framework.
+We investigate the feasibility of deriving surrogate ordinary differential equations (ODEs)  from individual-based models (IBMs) simulated in the PhysiCell platform. As a preliminary demonstration, we focus on data generated from simulations of several cell cycle models, each with varying complexities and corresponding ODE representations. Our approach begins with an evaluation of the stochastic characteristics, computational requirements, and accuracy of PhysiCell simulations. These simulations heavily depend on parameters such as the time step governing cell phase transitions, initial cell population, and the number of replicates. We then demonstrate the application of a sparse identification machine learning tool, SINDy-SA, to construct surrogate ODE-based models for IBMs. The SINDy-SA framework effectively identified the mathematical structures for all cell cycle models used in our study. Given the ability of surrogate models to reduce computational costs while maintaining accuracy, we believe that the insights from this study will aid researchers in modeling hybrid discrete-continuous multiscale systems using the PhysiCell platform and in developing corresponding surrogate models through the SINDy-SA framework.
 
 ![Graphical abstract](https://drive.google.com/uc?export=view&id=1XW2vh6OuLil_fONrHP1b_4zxib3PKBPO)
 
@@ -41,4 +35,6 @@ To facilitate the visualization and extraction of PhysiCell simulation data, we 
 
 ## Cite as
 
-Naozuka, G.T.; Rocha, H.L.; Pereira, T.J.; Libotte, G.B.; Almeida, R.C. Cell Cycle Modeling, 2024. Version 1.0. Available online: [https://github.com/tmglncc/Cell_Cycle_Modeling](https://github.com/tmglncc/Cell_Cycle_Modeling) (accessed on 25 January 2024), doi: [10.5281/zenodo.10569158](https://zenodo.org/doi/10.5281/zenodo.10569158).
+Naozuka, Gustavo Taiji and Rocha, Heber L. and Pereira, Thiago J. and Libotte, Gustavo and Almeida, Regina C. C., Connecting different approaches for cell cycle modeling: learning ordinary differential equations from individual-based models (April 07, 2025). Available at SSRN: [https://ssrn.com/abstract=4740316](https://ssrn.com/abstract=4740316) or [http://dx.doi.org/10.2139/ssrn.4740316](http://dx.doi.org/10.2139/ssrn.4740316)
+
+Naozuka, G.T.; Rocha, H.L.; Pereira, T.J.; Libotte, G.B.; Almeida, R.C. Cell Cycle Modeling, 2024. Version 1.0. Available online: [https://github.com/tmglncc/Cell_Cycle_Modeling](https://github.com/tmglncc/Cell_Cycle_Modeling) (accessed on 25 January 2024), doi: [10.5281/zenodo.10569158](https://zenodo.org/doi/10.5281/zenodo.10569158)
