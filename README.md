@@ -35,6 +35,4 @@ To facilitate the visualization and extraction of PhysiCell simulation data, we 
 
 ## Cite as
 
-Naozuka, Gustavo Taiji and Rocha, Heber L. and Pereira, Thiago J. and Libotte, Gustavo and Almeida, Regina C. C., Connecting different approaches for cell cycle modeling: learning ordinary differential equations from individual-based models (April 07, 2025). Available at SSRN: [https://ssrn.com/abstract=4740316](https://ssrn.com/abstract=4740316) or [http://dx.doi.org/10.2139/ssrn.4740316](http://dx.doi.org/10.2139/ssrn.4740316)
-
 Naozuka, G.T.; Rocha, H.L.; Pereira, T.J.; Libotte, G.B.; Almeida, R.C. Cell Cycle Modeling, 2024. Version 1.0. Available online: [https://github.com/tmglncc/Cell_Cycle_Modeling](https://github.com/tmglncc/Cell_Cycle_Modeling) (accessed on 25 January 2024), doi: [10.5281/zenodo.10569158](https://zenodo.org/doi/10.5281/zenodo.10569158)
